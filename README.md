@@ -1,7 +1,7 @@
 # LsyAdmin-Mvc
 
 #### 介绍
-使用ASP.NET MVC搭建的通用权限后台管理系统，持续更新中。。。
+使用ASP.NET MVC搭建的通用权限后台管理系统，持续更新中。。。<br>
 RightControl后台layui模板不太好看，换成ok-admin v2.0在写一遍。
 
 #### 软件架构
