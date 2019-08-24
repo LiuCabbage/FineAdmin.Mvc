@@ -13,5 +13,18 @@ namespace LsyAdmin.Web.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public ActionResult GetAuthCode() {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult OutLogin()
+        {
+            return RedirectToAction("Index", "Login");
+        }
+        [HttpPost]
+        public ActionResult CheckLogin() {
+            return View();
+        }
     }
 }

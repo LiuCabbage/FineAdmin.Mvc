@@ -240,33 +240,6 @@ layui.use(["element", "layer", "okUtils", "okTab", "okLayer"], function () {
         });
     });
 
-    /**
-     * 退出操作
-     */
-    $("#logout").click(function () {
-        okLayer.confirm("确定要退出吗？", function (index) {
-            window.location = "/login.html";
-        });
-    });
-
-    /**
-     * 锁定账户
-     */
-    $("#lock").click(function () {
-        okLayer.confirm("确定要锁定账户吗？", function (index) {
-            layer.close(index);
-            $(".yy").show();
-            layer.prompt({btn: ['确定'], title: '输入密码解锁(123456)', closeBtn: 0, formType: 1}, function (value, index, elem) {
-                if (value == "123456") {
-                    layer.close(index);
-                    $(".yy").hide();
-                } else {
-                    layer.msg('密码错误', {anim: 6, time: 1000});
-                }
-            });
-        });
-    });
-
     console.log(" _                  _       _           _             __  __           \n" +
                 "| |    ___ _   _   / \\   __| |_ __ ___ (_)_ __       |  \\/  |_   _____ \n" +
                 "| |   / __| | | | / _ \\ / _` | '_ ` _ \\| | '_ \\ _____| |\\/| \\ \\ / / __|\n" +

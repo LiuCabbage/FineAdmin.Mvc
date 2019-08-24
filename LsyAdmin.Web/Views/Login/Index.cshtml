@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "LsyAdmin-Mvc 后台登录";
+}
+
+<div id="app">
+    <form class="layui-form">
+        <div class="login_face"><img src="/Content/images/a.png" class="userAvatar"></div>
+        <div class="layui-form-item input-item">
+            <label for="userName">用户名</label>
+            <input type="text" lay-verify="required" name="userName" placeholder="请输入用户名" autocomplete="off" id="userName"
+                   class="layui-input">
+        </div>
+        <div class="layui-form-item input-item">
+            <label for="password">密码</label>
+            <input type="password" lay-verify="required|pass" name="password" placeholder="请输入密码" autocomplete="off"
+                   id="password" class="layui-input">
+        </div>
+        <div class="layui-form-item input-item" id="imgCode">
+            <label for="code">验证码</label>
+            <input type="text" lay-verify="required|yzmCode" name="code" placeholder="请输入验证码" autocomplete="off" id="code"
+                   class="layui-input">
+            <div class="img ok-none-select" id="codeImg"></div>
+        </div>
+        <div class="layui-form-item">
+            <button class="layui-btn layui-block" lay-filter="login" lay-submit="">登录</button>
+        </div>
+    </form>
+</div>
+
+<!--js逻辑-->
+<script src="../lib/layui/layui.js"></script>
+<script>
+    layui.config({
+        base: "/lib/okplugins/"
+    }).use(['form', 'jquery', 'okGVerify'], function () {
+        var form = layui.form;
+        var $ = layui.jquery;
+        var okGVerify = layui.okGVerify;
+        var verifyCode = new okGVerify("#codeImg");
+        // var res = verifyCode.validate(document.getElementById("code").value);
+        form.verify({
+            pass: [
+                /^[\S]{6,12}$/,
+                '密码必须6到12位，且不能出现空格'
+            ],
+            yzmCode: function (val) {
+                if (verifyCode.validate(val) != "true") {
+                    return verifyCode.validate(val)
+                }
+            }
+        });
+
+        form.on('submit(login)', function (data) {
+            layer.msg("登陆中...", { icon: 6, time: 1000, anim: 0 }, function () {
+                window.location = "../index.html";
+            });
+            return false;
+        });
+
+        //表单输入效果
+        $("#app .input-item .layui-input").click(function (e) {
+            e.stopPropagation();
+            $(this).addClass("layui-input-focus").find(".layui-input").focus();
+        })
+        $("#app .layui-form-item .layui-input").focus(function () {
+            $(this).parent().addClass("layui-input-focus");
+        })
+        $("#app .layui-form-item .layui-input").blur(function () {
+            $(this).parent().removeClass("layui-input-focus");
+            if ($(this).val() != '') {
+                $(this).parent().addClass("layui-input-active");
+            } else {
+                $(this).parent().removeClass("layui-input-active");
+            }
+        })
+    });
+</script>
