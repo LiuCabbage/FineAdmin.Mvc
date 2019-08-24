@@ -1,0 +1,154 @@
+{
+  "code": 0,
+  "status": true,
+  "msg": "访问成功",
+  "data": {
+    "count": 16,
+    "list": [
+      {
+        "id": 1,
+        "u_name": "智走",
+        "u_email": "315464879@layui.com",
+        "u_sex": "男",
+        "u_status": "1",
+        "u_grade": "超级会员",
+        "u_endtime": "2018-08-09T16:00:00.000Z"
+      },
+      {
+        "id": 2,
+        "u_name": "风中叶",
+        "u_email": "4887989@qq.com",
+        "u_sex": "男",
+        "u_status": "1",
+        "u_grade": "高级会员",
+        "u_endtime": "2018-09-01T16:00:00.000Z"
+      },
+      {
+        "id": 3,
+        "u_name": "王天成",
+        "u_email": "4887989@qq.com",
+        "u_sex": "男",
+        "u_status": "1",
+        "u_grade": "高级会员",
+        "u_endtime": "2018-04-01T16:00:00.000Z"
+      },
+      {
+        "id": 4,
+        "u_name": "楼天成",
+        "u_email": "213123@dasf.com",
+        "u_sex": "男",
+        "u_status": "1",
+        "u_grade": "普通会员",
+        "u_endtime": "2018-05-01T16:00:00.000Z"
+      },
+      {
+        "id": 5,
+        "u_name": "王玉华",
+        "u_email": "26345231@dasf.com",
+        "u_sex": "男",
+        "u_status": "1",
+        "u_grade": "普通会员",
+        "u_endtime": "2018-05-01T16:00:00.000Z"
+      },
+      {
+        "id": 6,
+        "u_name": "红俊风",
+        "u_email": "213123@dasf.com",
+        "u_sex": "女",
+        "u_status": "1",
+        "u_grade": "普通会员",
+        "u_endtime": "2018-05-01T16:00:00.000Z"
+      },
+      {
+        "id": 7,
+        "u_name": "宗骊雪",
+        "u_email": "213123@dasf.com",
+        "u_sex": "女",
+        "u_status": "1",
+        "u_grade": "普通会员",
+        "u_endtime": "2018-05-01T16:00:00.000Z"
+      },
+      {
+        "id": 8,
+        "u_name": "项幻珊",
+        "u_email": "213123@dasf.com",
+        "u_sex": "女",
+        "u_status": "1",
+        "u_grade": "普通会员",
+        "u_endtime": "2018-05-01T16:00:00.000Z"
+      },
+      {
+        "id": 9,
+        "u_name": "濮月朗",
+        "u_email": "213123@dasf.com",
+        "u_sex": "女",
+        "u_status": "1",
+        "u_grade": "普通会员",
+        "u_endtime": "2018-05-01T16:00:00.000Z"
+      },
+      {
+        "id": 10,
+        "u_name": "皮又青",
+        "u_email": "213123@dasf.com",
+        "u_sex": "男",
+        "u_status": "1",
+        "u_grade": "普通会员",
+        "u_endtime": "2018-09-01T16:00:00.000Z"
+      },
+      {
+        "id": 11,
+        "u_name": "务初柳",
+        "u_email": "8489879@dasf.com",
+        "u_sex": "女",
+        "u_status": "1",
+        "u_grade": "普通会员",
+        "u_endtime": "2018-11-01T16:00:00.000Z"
+      },
+      {
+        "id": 12,
+        "u_name": "富梅花",
+        "u_email": "213123@dasf.com",
+        "u_sex": "女",
+        "u_status": "1",
+        "u_grade": "普通会员",
+        "u_endtime": "2011-03-01T16:00:00.000Z"
+      },
+      {
+        "id": 13,
+        "u_name": "性丽雅",
+        "u_email": "213123@dasf.com",
+        "u_sex": "女",
+        "u_status": "1",
+        "u_grade": "普通会员",
+        "u_endtime": "2013-09-01T16:00:00.000Z"
+      },
+      {
+        "id": 14,
+        "u_name": "阎碧玉",
+        "u_email": "23523453@dasf.com",
+        "u_sex": "女",
+        "u_status": "1",
+        "u_grade": "普通会员",
+        "u_endtime": "2019-01-01T16:00:00.000Z"
+      },
+      {
+        "id": 15,
+        "u_name": "飞云心",
+        "u_email": "213123@dasf.com",
+        "u_sex": "男",
+        "u_status": "1",
+        "u_grade": "普通会员",
+        "u_endtime": "2015-02-01T16:00:00.000Z"
+      },
+      {
+        "id": 16,
+        "u_name": "汪欣可",
+        "u_email": "23523453@dasf.com",
+        "u_sex": "女",
+        "u_status": "1",
+        "u_grade": "普通会员",
+        "u_endtime": "2011-05-01T16:00:00.000Z"
+      }
+    ]
+  }
+}
