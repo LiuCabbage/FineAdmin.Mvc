@@ -7,7 +7,7 @@ layui.use(["element", "layer", "okUtils", "okTab", "okLayer"], function () {
     var layer = layui.layer;
     var okLayer = layui.okLayer;
     var okTab = layui.okTab({
-        url: "data/navs.json",
+        url: "/Content/data/navs.json",
         openTabNum: 30, // 允许同时选项卡的个数
         parseData: function (data) { // 如果返回的结果和navs.json中的数据结构一致可省略这个方法
             return data;
@@ -125,7 +125,7 @@ layui.use(["element", "layer", "okUtils", "okTab", "okLayer"], function () {
                     ele.removeAttr('style');
                 });
             } else {
-                ele.css({'display': 'block'});
+                ele.css({ 'display': 'block' });
                 ele.animate({
                     height: 0
                 }, function () {
@@ -179,6 +179,12 @@ layui.use(["element", "layer", "okUtils", "okTab", "okLayer"], function () {
      * 系统公告
      */
     $(document).on("click", "#notice", noticeFun);
+    //!function () {
+    //   var notice = sessionStorage.getItem("notice");
+    //   if (notice != "true") {
+    //      noticeFun();
+    //   }
+    //}();
 
     function noticeFun() {
         var srcWidth = okUtils.getBodyWidth();
@@ -222,7 +228,7 @@ layui.use(["element", "layer", "okUtils", "okTab", "okLayer"], function () {
                 content: "<img src='/Content/images/zfb.png' width='200' height='300' style='margin-left: 60px'>"
             }, {
                 title: "微信",
-                    content: "<img src='/Content/images/wx.png' width='200' height='300' style='margin-left: 60px'>"
+                content: "<img src='/Content/images/wx.png' width='200' height='300' style='margin-left: 60px'>"
             }]
         });
     });
@@ -234,18 +240,45 @@ layui.use(["element", "layer", "okUtils", "okTab", "okLayer"], function () {
         layer.tab({
             area: ["330px", "350px"],
             tab: [{
-                title: "QQ",
+                title: "QQ群",
                 content: "<img src='/Content/images/qq.jpg' width='200' height='300' style='margin-left: 60px'>"
             }]
         });
     });
 
+    /**
+     * 退出操作
+     */
+    //$("#logout").click(function () {
+    //    okLayer.confirm("确定要退出吗？", function (index) {
+    //        window.location = "/Login/OutLogin";
+    //    });
+    //});
+
+    /**
+     * 锁定账户
+     */
+    //$("#lock").click(function () {
+    //    okLayer.confirm("确定要锁定账户吗？", function (index) {
+    //        layer.close(index);
+    //        $(".yy").show();
+    //        layer.prompt({ btn: ['确定'], title: '输入密码解锁(123456)', closeBtn: 0, formType: 1 }, function (value, index, elem) {
+    //            if (value == "123456") {
+    //                layer.close(index);
+    //                $(".yy").hide();
+    //            } else {
+    //                layer.msg('密码错误', { anim: 6, time: 1000 });
+    //            }
+    //        });
+    //    });
+    //});
+
     console.log(" _                  _       _           _             __  __           \n" +
-                "| |    ___ _   _   / \\   __| |_ __ ___ (_)_ __       |  \\/  |_   _____ \n" +
-                "| |   / __| | | | / _ \\ / _` | '_ ` _ \\| | '_ \\ _____| |\\/| \\ \\ / / __|\n" +
-                "| |___\\__ \\ |_| |/ ___ \\ (_| | | | | | | | | | |_____| |  | |\\ V / (__ \n" +
-                "|_____|___/\\__, /_/   \\_\\__,_|_| |_| |_|_|_| |_|     |_|  |_| \\_/ \\___|\n" +
-                "           |___/                                                       \n" +
+        "| |    ___ _   _   / \\   __| |_ __ ___ (_)_ __       |  \\/  |_   _____ \n" +
+        "| |   / __| | | | / _ \\ / _` | '_ ` _ \\| | '_ \\ _____| |\\/| \\ \\ / / __|\n" +
+        "| |___\\__ \\ |_| |/ ___ \\ (_| | | | | | | | | | |_____| |  | |\\ V / (__ \n" +
+        "|_____|___/\\__, /_/   \\_\\__,_|_| |_| |_|_|_| |_|     |_|  |_| \\_/ \\___|\n" +
+        "           |___/                                                       \n" +
         "版本：v1.0\n" +
         "作者：Liu_Cabbage\n" +
         "邮箱：178899573@qq.com\n" +

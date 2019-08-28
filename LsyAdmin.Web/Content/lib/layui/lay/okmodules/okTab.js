@@ -20,8 +20,8 @@ String.prototype.format = function () {
 
 /**打开已经打开的tabMenu**/
 let OpenTabMenuFun = function ($, fun) {
-   var tabMenu = localStorage.getItem("tabMenu");//已经打开的tab页面
-   var tabMenuLeft = localStorage.getItem("tabMenuLeft");//tab的位置
+   var tabMenu = sessionStorage.getItem("tabMenu");//已经打开的tab页面
+   var tabMenuLeft = sessionStorage.getItem("tabMenuLeft");//tab的位置
    if (tabMenu) {
       tabMenu = JSON.parse(tabMenu);
       $("#tabTitle").html(tabMenu.tabTitle).animate({
@@ -42,14 +42,14 @@ function saveTabMenuFun($) {
       tabTitle: tabTitle.html(),
       tabContent: $("#tabContent").html()
    });
-   localStorage.setItem('tabMenu', tabMenu);
-   localStorage.setItem('tabMenuLeft', $("#tabTitle").css('left'));
+   sessionStorage.setItem('tabMenu', tabMenu);
+   sessionStorage.setItem('tabMenuLeft', $("#tabTitle").css('left'));
 }
 
 /**tab的位置**/
 function saveTabMenuPosition(num) {
    num = num || $("#tabTitle").css('left');
-   localStorage.setItem('tabMenuLeft', num);
+   sessionStorage.setItem('tabMenuLeft', num);
 }
 
 layui.define(["element", "jquery"], function (exports) {
@@ -385,9 +385,15 @@ layui.define(["element", "jquery"], function (exports) {
 
    //刷新当前tab页
    okTab.prototype.refresh = function (_this) {
-      
+      if (!($(_this).hasClass("refreshThis"))) {
+         $(_this).addClass("refreshThis");
          $(".ok-tab-content .layui-show").find("iframe")[0].contentWindow.location.reload(true);
-         
+         setTimeout(function () {
+            $(_this).removeClass("refreshThis");
+         }, 2000)
+      } else {
+         layer.msg("客官请不要频繁点击哦！我会反应不过来的");
+      }
    };
 
    /**
@@ -528,7 +534,11 @@ layui.define(["element", "jquery"], function (exports) {
    };
 
    exports("okTab", function (option) {
-      return new okTab().init(option);
+      if(parent.objOkTab){
+         return parent.objOkTab;
+      }else{
+         return new okTab().init(option);
+      }
    });
 
 

@@ -7,7 +7,8 @@ layui.define([], function(exprots) {
                 list: "https://easy-mock.com/mock/5d0ce725424f15399a6c2068/okadmin/menu/list"
             },
             user: {
-                list: "https://easy-mock.com/mock/5d0ce725424f15399a6c2068/okadmin/user/list",
+                list: "https://www.easy-mock.com/mock/5d5d0dd46cfcbd1b8627bf1d/ok-admin-v2.0/user/list",
+                list2: "https://www.easy-mock.com/mock/5d5d0dd46cfcbd1b8627bf1d/ok-admin-v2.0/user/list2",
                 batchNormal: "https://easy-mock.com/mock/5d0ce725424f15399a6c2068/okadmin/user/batchNormal",
                 batchStop: "https://easy-mock.com/mock/5d0ce725424f15399a6c2068/okadmin/user/batchStop",
                 batchDel: "https://easy-mock.com/mock/5d0ce725424f15399a6c2068/okadmin/user/batchDel",
@@ -15,13 +16,15 @@ layui.define([], function(exprots) {
                 edit: "https://easy-mock.com/mock/5d0ce725424f15399a6c2068/okadmin/user/edit"
             },
             role: {
-                list: "https://easy-mock.com/mock/5d0ce725424f15399a6c2068/okadmin/role/list"
+                list: "https://www.easy-mock.com/mock/5d5d0dd46cfcbd1b8627bf1d/ok-admin-v2.0/role/list"
             },
             permission: {
-                list: "https://easy-mock.com/mock/5d0ce725424f15399a6c2068/okadmin/permission/list"
+                tree: "https://www.easy-mock.com/mock/5d5d0dd46cfcbd1b8627bf1d/ok-admin-v2.0/permission/tree",
+                list: "https://www.easy-mock.com/mock/5d5d0dd46cfcbd1b8627bf1d/ok-admin-v2.0/permission/list",
+                list2: "https://www.easy-mock.com/mock/5d5d0dd46cfcbd1b8627bf1d/ok-admin-v2.0/permission/list2"
             },
             article: {
-                list: "https://easy-mock.com/mock/5d0ce725424f15399a6c2068/okadmin/article/list"
+                list: "https://www.easy-mock.com/mock/5d5d0dd46cfcbd1b8627bf1d/ok-admin-v2.0/article/list"
             },
             log: {
                 list: "https://easy-mock.com/mock/5d0ce725424f15399a6c2068/okadmin/log/list"

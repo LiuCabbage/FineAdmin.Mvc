@@ -1,266 +1,369 @@
 [
-  {
-    "title": "主页一",
-    "fontFamily": "ok-icon",
-    "icon": "&#xe901;",
-    "href": "pages/home.html",
-    "isClose": false,
-    "spread": true,
-    "isCheck": true
-  },
-  {
-    "title": "主页二",
-    "fontFamily": "layui-icon",
-    "icon": "layui-icon-home",
-    "href": "pages/home2.html"
-  },
-  {
-    "title": "字体图标",
-    "icon": "&#xe644;",
-    "href": "pages/other/okfont.html",
-    "spread": false
-  },
-  {
-    "title": "图表管理",
-    "icon": "&#xe62c;",
-    "href": "",
-    "spread": false,
-    "children": [
-      {
-        "title": "地图",
-        "fontFamily": "my-icon",
-        "icon": "my-iconditu",
-        "spread": false,
-        "children": [
-          {
-            "title": "中国地图",
-            "icon": "",
-            "href": "pages/echarts/mapchina2.html",
-            "spread": false
-          },
-          {
-            "title": "地区地图",
-            "icon": "",
-            "href": "pages/echarts/mapchina.html",
-            "spread": false
-          }
-        ]
-      },
-      {
-        "title": "数据图",
-        "fontFamily": "my-icon",
-        "icon": "my-icontubiao",
-        "spread": false,
-        "children": [
-          {
-            "title": "统计图",
-            "icon": "",
-            "href": "pages/echarts/map1.html",
-            "spread": false
-          },
-          {
-            "title": "折线图",
-            "icon": "",
-            "href": "pages/echarts/map2.html",
-            "spread": false
-          },
-          {
-            "title": "馅饼图",
-            "icon": "",
-            "href": "pages/echarts/map4.html",
-            "spread": false
-          },
-          {
-            "title": "圆形图",
-            "icon": "",
-            "href": "pages/echarts/map5.html",
-            "spread": false
-          },
-          {
-            "title": "指数图",
-            "icon": "",
-            "href": "pages/echarts/map6.html",
-            "spread": false
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "title": "框架使用说明",
-    "fontFamily": "ok-icon",
-    "icon": "&#xe9a6;",
-    "spread": false,
-    "children": [
-      {
-        "title": "插件目录",
-        "href": "pages/help/plugDirectory.html",
-        "spread": false
-      },
-      {
-        "title": "内部添加导航",
-        "href": "pages/help/navOperate.html",
-        "spread": false
-      },
-      {
-        "title": "导航的图标",
-        "href": "pages/help/navIcon.html",
-        "spread": false
-      },
-      {
-        "title": "导航的参数",
-        "href": "pages/help/navParameter.html",
-        "spread": false
-      }
-    ]
-  },
-  {
-    "title": "第三方js库",
-    "icon": "&#xe674;",
-    "children": [
-      {
-        "title": "二维码",
-        "href": "pages/tripartite/qrcode.html"
-      },
-      {
-        "title": "让数字动起来",
-        "href": "pages/tripartite/countup.html"
-      }
-    ]
-  },
-  {
-    "title": "会员管理",
-    "icon": "&#xe66f;",
-    "href": "",
-    "spread": false,
-    "children": [
-      {
-        "title": "用户列表",
-        "fontFamily": "layui-icon",
-        "icon": "&#xe61c;",
-        "href": "pages/member/user.html",
-        "spread": false
-      },
-      {
-        "title": "角色列表",
-        "icon": "&#xe60a;",
-        "href": "pages/member/role.html",
-        "spread": false
-      },
-      {
-        "title": "权限列表",
-        "icon": "&#xe642;",
-        "href": "pages/member/permission.html",
-        "spread": false
-      }
-    ]
-  },
-  {
-    "title": "新闻管理",
-    "icon": "&#xe705;",
-    "href": "",
-    "spread": false,
-    "children": [
-      {
-        "title": "文章列表",
-        "fontFamily": "layui-icon",
-        "icon": "&#xe61c;",
-        "href": "pages/article/article.html",
-        "spread": false
-      }
-    ]
-  },
-  {
-    "title": "多级导航",
-    "fontFamily": "ok-icon",
-    "icon": "ok-iconnavigation-2",
-    "spread": false,
-    "children": [
-      {
-        "title": "二级导航",
+    {
+        "title": "控制台",
+        "href": "pages/console.html",
+        "fontFamily": "ok-icon",
+        "icon": "&#xe901;",
+        "spread": true,
+        "isCheck": true
+    },
+    {
+        "title": "控制台示例",
         "href": "",
+        "fontFamily": "ok-icon",
+        "icon": "&#xe901;",
+        "children": [
+            {
+                "title": "控制台一",
+                "href": "pages/console1.html",
+                "icon": "&#xe68e;"
+            }
+        ]
+    },
+    {
+        "title": "会员管理",
+        "href": "",
+        "icon": "&#xe66f;",
         "spread": false,
         "children": [
-          {
-            "title": "三级导航1",
-            "fontFamily": "ok-icon",
-            "icon": "ok-iconairplay",
-            "href": "pages/home.html",
-            "spread": false
-          },
-          {
-            "title": "三级导航2",
-            "href": "",
-            "spread": false,
-            "children": [
-              {
-                "title": "四级导航1",
-                "href": "",
+            {
+                "title": "用户列表",
+                "href": "pages/member/user.html",
+                "fontFamily": "layui-icon",
+                "icon": "&#xe62e;",
                 "spread": false
-              },
-              {
-                "title": "四级导航2",
-                "href": "",
+            },
+            {
+                "title": "角色列表",
+                "href": "pages/member/role.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            },
+            {
+                "title": "权限列表",
+                "href": "pages/member/permission.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            }
+        ]
+    },
+    {
+        "title": "图表管理",
+        "href": "",
+        "icon": "&#xe62c;",
+        "spread": false,
+        "children": [
+            {
+                "title": "地图",
+                "fontFamily": "my-icon",
+                "icon": "my-iconditu",
                 "spread": false,
                 "children": [
-                  {
-                    "title": "五级导航",
-                    "fontFamily": "ok-icon",
-                    "icon": "&#xe971",
-                    "href": "",
-                    "spread": false
-                  },
-                  {
-                    "title": "五级导航",
-                    "href": "",
-                    "spread": false
-                  },
-                  {
-                    "title": "登录",
-                    "icon": "&#xe609;",
-                    "href": "pages/login.html",
-                    "spread": false,
-                    "target": "_blank"
-                  }
+                    {
+                        "title": "中国地图",
+                        "href": "pages/chart/chart-china.html",
+                        "icon": "&#xe62e;",
+                        "spread": false
+                    },
+                    {
+                        "title": "区域地图",
+                        "href": "pages/chart/chart-area.html",
+                        "icon": "&#xe62e;",
+                        "spread": false
+                    }
                 ]
-              }
-            ]
-          }
+            },
+            {
+                "title": "数据图",
+                "fontFamily": "my-icon",
+                "icon": "my-icontubiao",
+                "spread": false,
+                "children": [
+                    {
+                        "title": "统计图",
+                        "href": "pages/chart/chart1.html",
+                        "icon": "&#xe62e;",
+                        "spread": false
+                    },
+                    {
+                        "title": "折线图",
+                        "href": "pages/chart/chart2.html",
+                        "icon": "&#xe62e;",
+                        "spread": false
+                    },
+                    {
+                        "title": "馅饼图",
+                        "href": "pages/chart/chart4.html",
+                        "icon": "&#xe62e;",
+                        "spread": false
+                    },
+                    {
+                        "title": "圆形图",
+                        "href": "pages/chart/chart5.html",
+                        "icon": "&#xe62e;",
+                        "spread": false
+                    },
+                    {
+                        "title": "指数图",
+                        "href": "pages/chart/chart6.html",
+                        "icon": "&#xe62e;",
+                        "spread": false
+                    }
+                ]
+            }
         ]
-      }
-    ]
-  },
-  {
-    "title": "系统管理",
-    "icon": "&#xe614;",
-    "href": "",
-    "spread": false,
-    "children": [
-      {
-        "title": "登录",
-        "icon": "&#xe609;",
-        "href": "pages/login.html",
+    },
+    {
+        "title": "常用页面",
+        "href": "",
+        "icon": "&#xe705;",
         "spread": false,
-        "target": "_blank"
-      },
-      {
-        "title": "403页面",
-        "icon": "&#xe61c;",
-        "href": "pages/common/403.html",
-        "spread": false
-      },
-      {
-        "title": "404页面",
-        "icon": "&#xe61c;",
-        "href": "pages/common/404.html",
-        "spread": false
-      },
-      {
-        "title": "500页面",
-        "icon": "&#xe61c;",
-        "href": "pages/common/500.html",
-        "spread": false
-      }
-    ]
-  }
+        "children": [
+            {
+                "title": "文章列表",
+                "href": "pages/article/article.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            },
+			{
+			    "title": "留言列表",
+			    "href": "pages/article/article.html",
+			    "icon": "&#xe62e;",
+			    "spread": false
+			},
+			{
+			    "title": "产品列表",
+			    "href": "pages/article/article.html",
+			    "icon": "&#xe62e;",
+			    "spread": false
+			},
+			{
+			    "title": "下载列表",
+			    "href": "pages/article/article.html",
+			    "icon": "&#xe62e;",
+			    "spread": false
+			},
+			{
+			    "title": "链接列表",
+			    "href": "pages/article/article.html",
+			    "icon": "&#xe62e;",
+			    "spread": false
+			},
+			{
+			    "title": "任务列表",
+			    "href": "pages/article/article.html",
+			    "icon": "&#xe62e;",
+			    "spread": false
+			},
+			{
+			    "title": "图片列表",
+			    "href": "pages/article/article.html",
+			    "icon": "&#xe62e;",
+			    "spread": false
+			}
+        ]
+    },
+    {
+        "title": "系统管理",
+        "href": "",
+        "icon": "&#xe614;",
+        "spread": false,
+        "children": [
+            {
+                "title": "登录",
+                "href": "pages/login.html",
+                "icon": "&#xe609;",
+                "spread": false,
+                "target": "_blank"
+            },
+            {
+                "title": "403页面",
+                "href": "pages/common/403.html",
+                "icon": "&#xe61c;",
+                "spread": false
+            },
+            {
+                "title": "404页面",
+                "href": "pages/common/404.html",
+                "icon": "&#xe61c;",
+                "spread": false
+            },
+            {
+                "title": "500页面",
+                "href": "pages/common/500.html",
+                "icon": "&#xe61c;",
+                "spread": false
+            }
+        ]
+    },
+    {
+        "title": "文本编辑",
+        "href": "",
+        "icon": "&#xe636;",
+        "spread": false,
+        "children": [
+            {
+                "title": "UEditor",
+                "href": "pages/txtedit/UEditor.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            },
+            {
+                "title": "Neditor",
+                "href": "pages/txtedit/Neditor.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            },
+            {
+                "title": "TinyMCE",
+                "href": "pages/txtedit/TinyMCE.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            },
+            {
+                "title": "wangEditor",
+                "href": "pages/txtedit/wangEditor.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            },
+            {
+                "title": "CKEditor",
+                "href": "pages/txtedit/CKEditor.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            },
+            {
+                "title": "layedit",
+                "href": "pages/txtedit/layedit.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            }
+        ]
+    },
+    {
+        "title": "多级导航",
+        "fontFamily": "ok-icon",
+        "icon": "ok-iconnavigation-2",
+        "spread": false,
+        "children": [
+            {
+                "title": "购物网站",
+                "href": "",
+                "icon": "&#xe658;",
+                "spread": false,
+                "children": [
+                    {
+                        "title": "京东",
+                        "href": "https://www.jd.com",
+                        "icon": "&#xe600;",
+                        "spread": false
+                    },
+                    {
+                        "title": "苏宁",
+                        "href": "https://www.suning.com",
+                        "icon": "&#xe600;",
+                        "spread": false
+                    },
+                    {
+                        "title": "阿里",
+                        "href": "",
+                        "icon": "&#xe658;",
+                        "spread": false,
+                        "children": [
+                            {
+                                "title": "淘宝",
+                                "href": "https://www.taobao.com",
+                                "icon": "&#xe600;",
+                                "spread": false
+                            },
+                            {
+                                "title": "天猫",
+                                "href": "https://www.tmall.com",
+                                "icon": "&#xe658;",
+                                "spread": false,
+                                "children": [
+                                    {
+                                        "title": "天猫超市",
+                                        "href": "https://chaoshi.tmall.com",
+                                        "icon": "&#xe600;",
+                                        "spread": false
+                                    },
+                                    {
+                                        "title": "天猫电器",
+                                        "href": "https://3c.tmall.com",
+                                        "icon": "&#xe600;",
+                                        "spread": false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "框架使用",
+        "fontFamily": "ok-icon",
+        "icon": "&#xe9a6;",
+        "spread": false,
+        "children": [
+            {
+                "title": "字体图标",
+                "href": "pages/other/okfont.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            },
+            {
+                "title": "插件目录",
+                "href": "pages/help/plugDirectory.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            },
+            {
+                "title": "内部添加导航",
+                "href": "pages/help/navOperate.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            },
+            {
+                "title": "导航的图标",
+                "href": "pages/help/navIcon.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            },
+            {
+                "title": "导航的参数",
+                "href": "pages/help/navParameter.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            }
+        ]
+    },
+    {
+        "title": "第三方库",
+        "icon": "&#xe674;",
+        "children": [
+            {
+                "title": "jquery.qrcode.js",
+                "href": "pages/tripartite/qrcode.html"
+            },
+            {
+                "title": "jquery.countup.js",
+                "href": "pages/tripartite/countup.html"
+            },
+			{
+			    "title": "toastr.js",
+			    "href": "pages/tripartite/countup.html"
+			},
+			{
+			    "title": "SweetAlert2.js",
+			    "href": "pages/tripartite/countup.html"
+			},
+			{
+			    "title": "Animate.css",
+			    "href": "https://daneden.github.io/animate.css"
+			}
+        ]
+    }
 ]

@@ -1,43 +1,43 @@
 "use strict";
-layui.define(["layer"], function(exprots) {
-	var $ = layui.jquery;
-	var okUtils = {
+layui.define(["layer"], function (exprots) {
+    var $ = layui.jquery;
+    var okUtils = {
         /**
          * 是否前后端分离
          */
-		isFrontendBackendSeparate: false,
+        isFrontendBackendSeparate: false,
         /**
          * 服务器地址
          */
         baseUrl: "http://localhost:8080",
-		/**
-		 * 获取body的总宽度
-		 */
-		getBodyWidth: function() {
-			return document.body.scrollWidth;
-		},
-		/**
-		 * 主要用于对echart视图自动适应宽度
-		 */
-		echartsResize: function(elemnt) {
-			elemnt = elemnt || [];
-			window.addEventListener("resize", function() {
-				var isResize = localStorage.getItem("isResize");
-				if (isResize != 'false') {
-					for (var i = 0; i < elemnt.length; i++) {
-						elemnt[i].resize();
-					}
-				}
-			});
-		},
-		/**
+        /**
+         * 获取body的总宽度
+         */
+        getBodyWidth: function () {
+            return document.body.scrollWidth;
+        },
+        /**
+         * 主要用于对ECharts视图自动适应宽度
+         */
+        echartsResize: function (element) {
+            var element = element || [];
+            window.addEventListener("resize", function () {
+                var isResize = localStorage.getItem("isResize");
+                // if (isResize == "false") {
+                    for (let i = 0; i < element.length; i++) {
+                        element[i].resize();
+                    }
+                // }
+            });
+        },
+        /**
          * ajax()函数二次封装
          * @param url
          * @param type
          * @param param
          * @returns {*|*|*}
          */
-        ajax: function (url, type, param) {
+        ajax: function (url, type, param, load) {
             var deferred = $.Deferred();
             var loadIndex;
             $.ajax({
@@ -46,7 +46,9 @@ layui.define(["layer"], function(exprots) {
                 data: param || {},
                 dataType: "json",
                 beforeSend: function () {
-                    loadIndex = layer.load(0, {shade: false});
+                    if (load) {
+						loadIndex = layer.load(0, {shade: false});
+					}
                 },
                 success: function (data) {
                     if (data.status == 1000) {
@@ -59,7 +61,9 @@ layui.define(["layer"], function(exprots) {
                     }
                 },
                 complete: function () {
-                    layer.close(loadIndex);
+					if (load) {
+						layer.close(loadIndex);
+					}
                 },
                 error: function () {
                     layer.close(loadIndex);
@@ -98,7 +102,14 @@ layui.define(["layer"], function(exprots) {
                     $(".layui-laypage-btn")[0].click();
                 });
             }
+        },
+        /**
+         * 获取父窗体的okTab
+         * @returns {string}
+         */
+        getOkTab:function () {
+            return parent.objOkTab;
         }
-	};
-	exprots("okUtils", okUtils);
+    };
+    exprots("okUtils", okUtils);
 });

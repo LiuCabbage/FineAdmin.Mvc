@@ -1,9 +1,6 @@
 @import "../lib/layui/css/layui.css";
 @import "../lib/fonts/okfont.css";
 @import "../lib/fonts/myfont.css";
-@import "../lib/nprogress/nprogress.css";
-@import "../css/scroll-bar.css";
-@import "../css/sub-page.css";
 
 #navBar .layui-nav-child {
     /*transition: height .5s;*/
@@ -315,8 +312,19 @@
     padding-right: 10px;
 }
 
-.ok-left.layui-side-menu .layui-nav .layui-nav-item .layui-nav-child dl a {
+/*第三级菜单及其一下的缩进样式*/
+#navBar .layui-nav-child .layui-nav-child > dd > a {
     padding-left: 65px;
+}
+
+/*第四级菜单及其一下的缩进样式*/
+#navBar .layui-nav-child .layui-nav-child .layui-nav-child > dd > a {
+    padding-left: 90px;
+}
+
+/*第五级菜单及其一下的缩进样式*/
+#navBar .layui-nav-child .layui-nav-child .layui-nav-child .layui-nav-child > dd > a {
+    padding-left: 115px;
 }
 
 .ok-left .user-photo {

@@ -129,10 +129,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\common.css" />
-    <Content Include="Content\css\home.css" />
     <Content Include="Content\css\okadmin.css" />
-    <Content Include="Content\css\sub.css" />
-    <Content Include="Content\css\user.css" />
+    <Content Include="Content\css\oksub.css" />
     <Content Include="Content\images\face.jpg" />
     <Content Include="Content\images\head.jpg" />
     <Content Include="Content\images\home-01.png" />
@@ -145,16 +143,14 @@
     <Content Include="Content\images\qq.jpg" />
     <Content Include="Content\images\wx.png" />
     <Content Include="Content\images\zfb.png" />
+    <Content Include="Content\js\chartArea.js" />
+    <Content Include="Content\js\chartChina.js" />
+    <Content Include="Content\js\console.js" />
+    <Content Include="Content\js\console1.js" />
     <Content Include="Content\js\echartsData.js" />
-    <Content Include="Content\js\home.js" />
-    <Content Include="Content\js\home2.js" />
-    <Content Include="Content\js\home2Data.js" />
-    <Content Include="Content\js\mapTest.js" />
+    <Content Include="Content\js\home2Data-del.js" />
     <Content Include="Content\js\okadmin.js" />
-    <Content Include="Content\js\treetable\treetable.css" />
-    <Content Include="Content\js\treetable\treetable.js" />
     <Content Include="Content\lib\echarts\echarts.min.js" />
-    <Content Include="Content\lib\echarts\echarts.theme.js" />
     <Content Include="Content\lib\echarts\echarts.themez.js" />
     <Content Include="Content\lib\echarts\world\js\china-contour.js" />
     <Content Include="Content\lib\echarts\world\js\china.js" />
@@ -339,13 +335,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\data\address.json" />
-    <Content Include="Content\data\article.json" />
     <Content Include="Content\data\navs.json" />
-    <Content Include="Content\data\permission.json" />
-    <Content Include="Content\data\role.json" />
-    <Content Include="Content\data\tree.json" />
-    <Content Include="Content\data\user-list.json" />
-    <Content Include="Content\data\user.json" />
     <Content Include="Content\lib\echarts\world\json\china-cities.json" />
     <Content Include="Content\lib\echarts\world\json\china-contour.json" />
     <Content Include="Content\lib\echarts\world\json\china.json" />
