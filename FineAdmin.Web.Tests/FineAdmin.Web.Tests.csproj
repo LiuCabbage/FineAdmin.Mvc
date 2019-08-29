@@ -99,7 +99,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LsyAdmin.Web\FineAdmin.Web.csproj">
+    <ProjectReference Include="..\FineAdmin.Web\FineAdmin.Web.csproj">
       <Project>{B11C9B36-1092-48A5-9BFE-8B54013A9EB6}</Project>
       <Name>FineAdmin.Web</Name>
     </ProjectReference>

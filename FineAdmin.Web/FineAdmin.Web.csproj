@@ -391,27 +391,27 @@
     <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LsyAdmin.Common\FineAdmin.Common.csproj">
+    <ProjectReference Include="..\FineAdmin.Common\FineAdmin.Common.csproj">
       <Project>{55473f4c-cfdc-49e4-8776-4f067d50078b}</Project>
       <Name>FineAdmin.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LsyAdmin.IRepository\FineAdmin.IRepository.csproj">
+    <ProjectReference Include="..\FineAdmin.IRepository\FineAdmin.IRepository.csproj">
       <Project>{1fc7fcfb-8fcd-4310-b1cd-3515f1a84c4f}</Project>
       <Name>FineAdmin.IRepository</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LsyAdmin.IService\FineAdmin.IService.csproj">
+    <ProjectReference Include="..\FineAdmin.IService\FineAdmin.IService.csproj">
       <Project>{592274d7-61d6-4c54-afa9-6bee6e22e5c5}</Project>
       <Name>FineAdmin.IService</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LsyAdmin.Model\FineAdmin.Model.csproj">
+    <ProjectReference Include="..\FineAdmin.Model\FineAdmin.Model.csproj">
       <Project>{c5fa8c31-0fe8-4be5-bb97-726e8a734fe3}</Project>
       <Name>FineAdmin.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LsyAdmin.Repository\FineAdmin.Repository.csproj">
+    <ProjectReference Include="..\FineAdmin.Repository\FineAdmin.Repository.csproj">
       <Project>{3b0bf427-eb9a-4c1b-9ed8-2b5952fe5ec8}</Project>
       <Name>FineAdmin.Repository</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LsyAdmin.Service\FineAdmin.Service.csproj">
+    <ProjectReference Include="..\FineAdmin.Service\FineAdmin.Service.csproj">
       <Project>{f0ce8684-5543-4a6f-a554-3ff4fa4b8078}</Project>
       <Name>FineAdmin.Service</Name>
     </ProjectReference>

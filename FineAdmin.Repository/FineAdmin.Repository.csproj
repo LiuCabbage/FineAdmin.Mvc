@@ -45,15 +45,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LsyAdmin.Common\FineAdmin.Common.csproj">
+    <ProjectReference Include="..\FineAdmin.Common\FineAdmin.Common.csproj">
       <Project>{55473f4c-cfdc-49e4-8776-4f067d50078b}</Project>
       <Name>FineAdmin.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LsyAdmin.IRepository\FineAdmin.IRepository.csproj">
+    <ProjectReference Include="..\FineAdmin.IRepository\FineAdmin.IRepository.csproj">
       <Project>{1fc7fcfb-8fcd-4310-b1cd-3515f1a84c4f}</Project>
       <Name>FineAdmin.IRepository</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LsyAdmin.Model\FineAdmin.Model.csproj">
+    <ProjectReference Include="..\FineAdmin.Model\FineAdmin.Model.csproj">
       <Project>{c5fa8c31-0fe8-4be5-bb97-726e8a734fe3}</Project>
       <Name>FineAdmin.Model</Name>
     </ProjectReference>
