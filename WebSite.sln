@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LsyAdmin.Web", "LsyAdmin.Web\LsyAdmin.Web.csproj", "{B11C9B36-1092-48A5-9BFE-8B54013A9EB6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineAdmin.Web", "LsyAdmin.Web\FineAdmin.Web.csproj", "{B11C9B36-1092-48A5-9BFE-8B54013A9EB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LsyAdmin.Web.Tests", "LsyAdmin.Web.Tests\LsyAdmin.Web.Tests.csproj", "{0271D869-2320-41E4-BB8A-695E9BFF266D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineAdmin.Web.Tests", "LsyAdmin.Web.Tests\FineAdmin.Web.Tests.csproj", "{0271D869-2320-41E4-BB8A-695E9BFF266D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{49E6F000-456B-4381-B2FC-209C9736A808}"
 EndProject
@@ -17,17 +17,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{36B7A8DC-538A-48E9-906D-4ABA41983A71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LsyAdmin.Service", "LsyAdmin.Service\LsyAdmin.Service.csproj", "{F0CE8684-5543-4A6F-A554-3FF4FA4B8078}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineAdmin.Service", "LsyAdmin.Service\FineAdmin.Service.csproj", "{F0CE8684-5543-4A6F-A554-3FF4FA4B8078}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LsyAdmin.IService", "LsyAdmin.IService\LsyAdmin.IService.csproj", "{592274D7-61D6-4C54-AFA9-6BEE6E22E5C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineAdmin.IService", "LsyAdmin.IService\FineAdmin.IService.csproj", "{592274D7-61D6-4C54-AFA9-6BEE6E22E5C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LsyAdmin.IRepository", "LsyAdmin.IRepository\LsyAdmin.IRepository.csproj", "{1FC7FCFB-8FCD-4310-B1CD-3515F1A84C4F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineAdmin.IRepository", "LsyAdmin.IRepository\FineAdmin.IRepository.csproj", "{1FC7FCFB-8FCD-4310-B1CD-3515F1A84C4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LsyAdmin.Repository", "LsyAdmin.Repository\LsyAdmin.Repository.csproj", "{3B0BF427-EB9A-4C1B-9ED8-2B5952FE5EC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineAdmin.Repository", "LsyAdmin.Repository\FineAdmin.Repository.csproj", "{3B0BF427-EB9A-4C1B-9ED8-2B5952FE5EC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LsyAdmin.Common", "LsyAdmin.Common\LsyAdmin.Common.csproj", "{55473F4C-CFDC-49E4-8776-4F067D50078B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineAdmin.Common", "LsyAdmin.Common\FineAdmin.Common.csproj", "{55473F4C-CFDC-49E4-8776-4F067D50078B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LsyAdmin.Model", "LsyAdmin.Model\LsyAdmin.Model.csproj", "{C5FA8C31-0FE8-4BE5-BB97-726E8A734FE3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FineAdmin.Model", "LsyAdmin.Model\FineAdmin.Model.csproj", "{C5FA8C31-0FE8-4BE5-BB97-726E8A734FE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
