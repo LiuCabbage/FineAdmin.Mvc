@@ -1,4 +1,4 @@
-# LsyAdmin-Mvc
+# FineAdmin.Mvc
 
 #### 介绍
 使用ASP.NET MVC搭建的通用权限后台管理系统，持续更新中。。。<br>
