@@ -1,6 +1,28 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "FineAdmin.Mvc";
 }
+    <style>
+        /*天气预报*/
+        .tpwthwidt .text_1vUR5ag, .tpwthwidt .title_2I35arv {
+            color: green !important;
+        }
+
+        .tpwthwidt .container__sDy_v_ {
+            display: none !important;
+        }
+
+        #tp-weather-widget {
+            line-height: 26px;
+        }
+
+        #tp-weather-widget .tpwthwidt {
+            margin-top: 11px;
+        }
+
+        .tpwthwidt .front_2F0Ii3c {
+            margin-top: 12px !important;
+        }
+    </style>
 <div class="layui-layout layui-layout-admin okadmin">
     <!--头部导航-->
     <div class="layui-header okadmin-header">
@@ -15,29 +37,14 @@
                     <i class="layui-icon layui-icon-refresh-3"></i>
                 </a>
             </li>
-           <li class="layui-nav-item ok-input-search">
-                    <input type="text" placeholder="搜索..." class="layui-input layui-input-search" />
-                </li>
-            <li class="ok-nav-item ok-hide-md">
-                <!-- 天气信息 -->
-                <div class="weather-ok">
-                    <iframe frameborder="0" scrolling="no" class="iframe-style" src="/weather.html" frameborder="0"></iframe>
-                </div>
-            </li>
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="no-line layui-nav-item layui-hide-xs">
-                <a id="notice" class="flex-vc pr10 pl10" href="javascript:;">
-                    <i class="ok-iconbell icon-head-i"></i><cite>系统公告</cite>
+                <a href="javascript:;">
+                    <!-- 天气信息 -->
+                    <div id="tp-weather-widget"></div>
                 </a>
             </li>
-
-            @*<li class="no-line layui-nav-item layui-hide-xs">
-                    <a id="lock" class="flex-vc pr10 pl10" href="javascript:;">
-                        <i class="ok-iconlock_outline icon-head-i"></i><cite>锁屏</cite>
-                    </a>
-                </li>*@
-
             <li class="layui-nav-item layui-hide-xs">
                 <a id="fullScreen" class=" pr10 pl10" href="javascript:;">
                     <i class="layui-icon layui-icon-screen-full"></i>
@@ -80,11 +87,11 @@
             <!--左侧导航菜单-->
             <ul id="navBar" class="layui-nav okadmin-nav okadmin-bg-20222A layui-nav-tree">
                 @*<li class="layui-nav-item layui-this">
-                    <a href="javascript:;" lay-id="1" data-url="pages/home.html">
-                        <i is-close=false class="ok-icon ok-iconairplay"></i>
-                        主页一
-                    </a>
-                </li>*@
+                        <a href="javascript:;" lay-id="1" data-url="pages/home.html">
+                            <i is-close=false class="ok-icon ok-iconairplay"></i>
+                            主页一
+                        </a>
+                    </li>*@
             </ul>
         </div>
     </div>
@@ -136,3 +143,21 @@
 <script src="~/Content/lib/layui/layui.js"></script>
 <script src="~/Content/lib/nprogress/nprogress.js"></script>
 <script src="~/Content/js/okadmin.js"></script>
+<!--天气 -->
+<script>(function (T, h, i, n, k, P, a, g, e) { g = function () { P = h.createElement(i); a = h.getElementsByTagName(i)[0]; P.src = k; P.charset = "utf-8"; P.async = 1; a.parentNode.insertBefore(P, a) }; T["ThinkPageWeatherWidgetObject"] = n; T[n] || (T[n] = function () { (T[n].q = T[n].q || []).push(arguments) }); T[n].l = +new Date(); if (T.attachEvent) { T.attachEvent("onload", g) } else { T.addEventListener("load", g, false) } }(window, document, "script", "tpwidget", "//widget.seniverse.com/widget/chameleon.js"))</script>
+<script>
+    tpwidget("init", {
+        "container": "tp-weather-widget",
+        "color": "#FFFFFF",
+        "flavor": "slim",
+        "location": "WT33C6J2C563",
+        "geolocation": "enabled",
+        "language": "zh-chs",
+        "unit": "c",
+        "theme": "chameleon",
+        "bubble": "enabled",
+        "alarmType": "badge",
+        "uid": "U78371FB98",
+        "hash": "cd55c15865ecbe0f16ba78ca60ad51eb"
+    });
+    tpwidget("show");</script>

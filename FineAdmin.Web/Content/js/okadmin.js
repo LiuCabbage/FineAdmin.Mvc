@@ -179,12 +179,6 @@ layui.use(["element", "layer", "okUtils", "okTab", "okLayer"], function () {
      * 系统公告
      */
     $(document).on("click", "#notice", noticeFun);
-    //!function () {
-    //   var notice = sessionStorage.getItem("notice");
-    //   if (notice != "true") {
-    //      noticeFun();
-    //   }
-    //}();
 
     function noticeFun() {
         var srcWidth = okUtils.getBodyWidth();
@@ -246,42 +240,13 @@ layui.use(["element", "layer", "okUtils", "okTab", "okLayer"], function () {
         });
     });
 
-    /**
-     * 退出操作
-     */
-    //$("#logout").click(function () {
-    //    okLayer.confirm("确定要退出吗？", function (index) {
-    //        window.location = "/Login/OutLogin";
-    //    });
-    //});
-
-    /**
-     * 锁定账户
-     */
-    //$("#lock").click(function () {
-    //    okLayer.confirm("确定要锁定账户吗？", function (index) {
-    //        layer.close(index);
-    //        $(".yy").show();
-    //        layer.prompt({ btn: ['确定'], title: '输入密码解锁(123456)', closeBtn: 0, formType: 1 }, function (value, index, elem) {
-    //            if (value == "123456") {
-    //                layer.close(index);
-    //                $(".yy").hide();
-    //            } else {
-    //                layer.msg('密码错误', { anim: 6, time: 1000 });
-    //            }
-    //        });
-    //    });
-    //});
-
     console.log(" _____ _               _       _           _         __  __           \n" +
         "|  ___(_)_ __   ___   / \\   __| |_ __ ___ (_)_ __   |  \\/  |_   _____ \n" +
         "| |_  | | '_ \\ / _ \\ / _ \\ / _` | '_ ` _ \\| | '_ \\  | |\\/| \\ \\ / / __|\n" +
         "|  _| | | | | |  __// ___ \\ (_| | | | | | | | | | |_| |  | |\\ V / (__ \n" +
         "|_|   |_|_| |_|\\___/_/   \\_\\__,_|_| |_| |_|_|_| |_(_)_|  |_| \\_/ \\___|\n" +
-        "版本：v1.0\n" +
         "作者：Liu_Cabbage\n" +
         "邮箱：178899573@qq.com\n" +
-        "企鹅：178899573\n" +
         "描述：使用ASP.NET MVC搭建的通用权限后台管理系统。\n" +
         "模板：https://gitee.com/bobi1234/ok-admin\n" +
         "码云：https://gitee.com/Liu_Cabbage/FineAdmin.Mvc");
