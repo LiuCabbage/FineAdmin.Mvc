@@ -176,42 +176,6 @@ layui.use(["element", "layer", "okUtils", "okTab", "okLayer"], function () {
     }
 
     /**
-     * 系统公告
-     */
-    $(document).on("click", "#notice", noticeFun);
-
-    function noticeFun() {
-        var srcWidth = okUtils.getBodyWidth();
-        layer.open({
-            type: 0,
-            title: "系统公告",
-            btn: "我知道啦",
-            btnAlign: 'c',
-            content: "ok-admin v2.0上线啦(^し^)<br />" +
-                "在此郑重承诺该模板<span style='color:#5cb85c'>永久免费</span>为大家提供" +
-                "<br />若有更好的建议欢迎<span id='noticeQQ'>加入QQ群</span>一起聊",
-            yes: function (index) {
-                if (srcWidth > 800) {
-                    layer.tips('公告跑到这里去啦', '#notice', {
-                        tips: [1, '#000'],
-                        time: 2000
-                    });
-                }
-                sessionStorage.setItem("notice", "true");
-                layer.close(index);
-            },
-            cancel: function (index) {
-                if (srcWidth > 800) {
-                    layer.tips('公告跑到这里去啦', '#notice', {
-                        tips: [1, '#000'],
-                        time: 2000
-                    });
-                }
-            }
-        });
-    }
-
-    /**
      * 捐赠作者
      */
     $(".layui-footer button.donate").click(function () {
@@ -240,11 +204,11 @@ layui.use(["element", "layer", "okUtils", "okTab", "okLayer"], function () {
         });
     });
 
-    console.log(" _____ _               _       _           _         __  __           \n" +
-        "|  ___(_)_ __   ___   / \\   __| |_ __ ___ (_)_ __   |  \\/  |_   _____ \n" +
-        "| |_  | | '_ \\ / _ \\ / _ \\ / _` | '_ ` _ \\| | '_ \\  | |\\/| \\ \\ / / __|\n" +
-        "|  _| | | | | |  __// ___ \\ (_| | | | | | | | | | |_| |  | |\\ V / (__ \n" +
-        "|_|   |_|_| |_|\\___/_/   \\_\\__,_|_| |_| |_|_|_| |_(_)_|  |_| \\_/ \\___|\n" +
+    console.log(" _____ _               _       _           _       \n" +
+                "|  ___(_)_ __   ___   / \\   __| |_ __ ___ (_)_ __  \n" +
+                "| |_  | | '_ \\ / _ \\ / _ \\ / _` | '_ ` _ \\| | '_ \\ \n" +
+                "|  _| | | | | |  __// ___ \\ (_| | | | | | | | | | |\n" +
+                "|_|   |_|_| |_|\\___/_/   \\_\\__,_|_| |_| |_|_|_| |_|\n" +
         "作者：Liu_Cabbage\n" +
         "邮箱：178899573@qq.com\n" +
         "描述：使用ASP.NET MVC搭建的通用权限后台管理系统。\n" +
