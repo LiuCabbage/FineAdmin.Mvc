@@ -1,226 +1,221 @@
-/*==============================================================*/
-/* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2019/9/18 18:10:43                           */
-/*==============================================================*/
+/*
+ Navicat Premium Data Transfer
 
+ Source Server         : mysql
+ Source Server Type    : MySQL
+ Source Server Version : 50717
+ Source Host           : localhost:3306
+ Source Schema         : fineadmin
 
-drop table if exists Items;
+ Target Server Type    : MySQL
+ Target Server Version : 50717
+ File Encoding         : 65001
 
-drop table if exists ItemsDetail;
+ Date: 23/09/2019 18:25:33
+*/
 
-drop table if exists LogonLog;
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
 
-drop table if exists Module;
+-- ----------------------------
+-- Table structure for items
+-- ----------------------------
+DROP TABLE IF EXISTS `items`;
+CREATE TABLE `items`  (
+  `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT '????',
+  `ParentId` int(11) NULL DEFAULT NULL COMMENT '????',
+  `EnCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '???',
+  `FullName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '???',
+  `SortCode` int(11) NULL DEFAULT NULL COMMENT '???',
+  `Description` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '????',
+  `EnabledMark` bit(1) NULL DEFAULT NULL COMMENT '??–ß??÷æ',
+  `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '???? ±?',
+  `CreateUserId` int(11) NULL DEFAULT NULL COMMENT '?????√ª?????',
+  `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '?ﬁ∏? ±?',
+  `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '?ﬁ∏??√ª?????',
+  PRIMARY KEY (`Id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '?÷µ??' ROW_FORMAT = Dynamic;
 
-drop table if exists ModuleButton;
+-- ----------------------------
+-- Table structure for itemsdetail
+-- ----------------------------
+DROP TABLE IF EXISTS `itemsdetail`;
+CREATE TABLE `itemsdetail`  (
+  `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT '????',
+  `ItemId` int(11) NULL DEFAULT NULL COMMENT '????????',
+  `ItemCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '???',
+  `ItemName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '???',
+  `SortCode` int(11) NULL DEFAULT NULL COMMENT '???',
+  `Description` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '????',
+  `EnabledMark` bit(1) NULL DEFAULT NULL COMMENT '??–ß??÷æ',
+  `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '???? ±?',
+  `CreateUserId` int(11) NULL DEFAULT NULL COMMENT '?????√ª?????',
+  `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '?ﬁ∏? ±?',
+  `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '?ﬁ∏??√ª?????',
+  PRIMARY KEY (`Id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '?÷µ???œ∏?' ROW_FORMAT = Dynamic;
 
-drop table if exists Organize;
+-- ----------------------------
+-- Table structure for logonlog
+-- ----------------------------
+DROP TABLE IF EXISTS `logonlog`;
+CREATE TABLE `logonlog`  (
+  `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT '????',
+  `LogType` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '??¬º???',
+  `Account` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '?Àª?',
+  `RealName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '????',
+  `Description` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '????',
+  `IPAddress` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'IP??÷∑',
+  `IPAddressName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'IP???⁄≥??',
+  `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '???? ±?',
+  PRIMARY KEY (`Id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '??¬º??÷æ?' ROW_FORMAT = Dynamic;
 
-drop table if exists Role;
+-- ----------------------------
+-- Table structure for module
+-- ----------------------------
+DROP TABLE IF EXISTS `module`;
+CREATE TABLE `module`  (
+  `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT '????',
+  `ParentId` int(11) NULL DEFAULT NULL COMMENT '????',
+  `FullName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '???',
+  `FontFamily` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '???????',
+  `Icon` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '???',
+  `UrlAddress` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '???',
+  `IsMenu` bit(1) NULL DEFAULT NULL COMMENT '?«∑??Àµ?',
+  `SortCode` int(11) NULL DEFAULT NULL COMMENT '???',
+  `Description` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '????',
+  `EnabledMark` bit(1) NULL DEFAULT NULL COMMENT '??–ß??÷æ',
+  `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '???? ±?',
+  `CreateUserId` int(11) NULL DEFAULT NULL COMMENT '?????√ª?????',
+  `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '?ﬁ∏? ±?',
+  `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '?ﬁ∏??√ª?????',
+  PRIMARY KEY (`Id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = 'ƒ£???' ROW_FORMAT = Dynamic;
 
-drop table if exists RoleAuthorize;
+-- ----------------------------
+-- Records of module
+-- ----------------------------
+INSERT INTO `module` VALUES (1, 0, 'Á≥ªÁªüÁÆ°ÁêÜ', NULL, NULL, NULL, b'0', 1, 'Á≥ªÁªüÁÆ°ÁêÜ', b'0', '2019-09-19 15:28:17', 1, '2019-09-19 15:28:29', 1);
+INSERT INTO `module` VALUES (2, 0, 'Á≥ªÁªüÂÆâÂÖ®', NULL, NULL, NULL, b'0', 2, 'Á≥ªÁªüÂÆâÂÖ®', b'0', '2019-09-19 15:48:28', 1, '2019-09-19 15:48:33', 1);
+INSERT INTO `module` VALUES (3, 0, 'Á≥ªÁªüËÆæÁΩÆ', NULL, NULL, NULL, b'0', 3, 'Á≥ªÁªüËÆæÁΩÆ', b'0', '2019-09-19 15:49:03', 1, '2019-09-19 15:49:07', 1);
+INSERT INTO `module` VALUES (4, 1, 'Êú∫ÊûÑÁÆ°ÁêÜ', NULL, NULL, '/', b'1', 1, 'Êú∫ÊûÑÁÆ°ÁêÜ', b'0', '2019-09-19 16:51:51', 1, '2019-09-19 16:51:55', 1);
+INSERT INTO `module` VALUES (5, 1, 'ËßíËâ≤ÁÆ°ÁêÜ', NULL, NULL, '/', b'1', 2, 'ËßíËâ≤ÁÆ°ÁêÜ', b'0', '2019-09-19 16:54:54', 1, '2019-09-19 16:54:58', 1);
+INSERT INTO `module` VALUES (6, 1, 'Â≤ó‰ΩçÁÆ°ÁêÜ', NULL, NULL, '/', b'1', 3, 'Â≤ó‰ΩçÁÆ°ÁêÜ', b'0', '2019-09-19 16:56:10', 1, '2019-09-19 16:56:13', 1);
+INSERT INTO `module` VALUES (7, 1, 'Áî®Êà∑ÁÆ°ÁêÜ', NULL, NULL, '/', b'1', 4, 'Áî®Êà∑ÁÆ°ÁêÜ', b'0', '2019-09-19 16:57:34', 1, '2019-09-19 16:57:38', 1);
+INSERT INTO `module` VALUES (8, 1, 'Êï∞ÊçÆÂ≠óÂÖ∏', NULL, NULL, '/', b'1', 5, 'Êï∞ÊçÆÂ≠óÂÖ∏', b'0', '2019-09-19 16:58:27', 1, '2019-09-19 16:58:31', 1);
+INSERT INTO `module` VALUES (9, 1, 'Á≥ªÁªüËèúÂçï', NULL, NULL, '/', b'1', 6, 'Á≥ªÁªüËèúÂçï', b'0', '2019-09-19 16:58:49', 1, '2019-09-19 16:58:45', 1);
+INSERT INTO `module` VALUES (10, 2, 'ÁôªÂΩïÊó•Âøó', NULL, NULL, '/', b'1', 1, 'ÁôªÂΩïÊó•Âøó', b'0', '2019-09-23 18:17:12', 1, '2019-09-23 18:17:18', 1);
+INSERT INTO `module` VALUES (11, 3, 'Á≥ªÁªüËÆæÁΩÆ', NULL, NULL, '/', b'1', 1, 'Á≥ªÁªüËÆæÁΩÆ', b'0', '2019-09-23 18:18:43', 1, '2019-09-23 18:18:49', 1);
+INSERT INTO `module` VALUES (12, 3, 'ÈÇÆ‰ª∂ËÆæÁΩÆ', NULL, NULL, '/', b'1', 2, 'ÈÇÆ‰ª∂ËÆæÁΩÆ', b'0', '2019-09-23 18:19:34', 1, '2019-09-23 18:19:38', 1);
+INSERT INTO `module` VALUES (13, 3, '‰∏ä‰º†ËÆæÁΩÆ', NULL, NULL, '/', b'1', 3, '‰∏ä‰º†ËÆæÁΩÆ', b'0', '2019-09-23 18:20:02', 1, '2019-09-23 18:19:59', 1);
 
-drop table if exists User;
+-- ----------------------------
+-- Table structure for modulebutton
+-- ----------------------------
+DROP TABLE IF EXISTS `modulebutton`;
+CREATE TABLE `modulebutton`  (
+  `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT '????',
+  `ModuleId` int(11) NULL DEFAULT NULL COMMENT 'ƒ£??????',
+  `EnCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '???',
+  `FullName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '???',
+  `Location` int(11) NULL DEFAULT NULL COMMENT 'Œª?',
+  `ClassName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '??≈•?? Ω',
+  `SortCode` int(11) NULL DEFAULT NULL COMMENT '???',
+  `Description` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '????',
+  `EnabledMark` bit(1) NULL DEFAULT NULL COMMENT '??–ß??÷æ',
+  `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '???? ±?',
+  `CreateUserId` int(11) NULL DEFAULT NULL COMMENT '?????√ª?????',
+  `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '?ﬁ∏? ±?',
+  `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '?ﬁ∏??√ª?????',
+  PRIMARY KEY (`Id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = 'ƒ£?È∞¥≈•?' ROW_FORMAT = Dynamic;
 
-/*==============================================================*/
-/* Table: Items                                                 */
-/*==============================================================*/
-create table Items
-(
-   Id                   int not null auto_increment comment '÷˜º¸',
-   ParentId             int comment '∏∏º∂',
-   EnCode               varchar(50) comment '±‡¬Î',
-   FullName             varchar(50) comment '√˚≥∆',
-   SortCode             int comment '≈≈–Ú¬Î',
-   Description          varchar(200) comment '√Ë ˆ',
-   EnabledMark          bit comment '”––ß±Í÷æ',
-   CreateTime           datetime comment '¥¥Ω® ±º‰',
-   CreateUserId         int comment '¥¥Ω®”√ªß÷˜º¸',
-   UpdateTime           datetime comment '–ﬁ∏ƒ ±º‰',
-   UpdateUserId         int comment '–ﬁ∏ƒ”√ªß÷˜º¸',
-   primary key (Id)
-);
+-- ----------------------------
+-- Table structure for organize
+-- ----------------------------
+DROP TABLE IF EXISTS `organize`;
+CREATE TABLE `organize`  (
+  `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT '????',
+  `ParentId` int(11) NULL DEFAULT NULL COMMENT '????',
+  `EnCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '???',
+  `FullName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '???',
+  `CategoryId` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '???',
+  `ManagerId` int(11) NULL DEFAULT NULL COMMENT '???',
+  `TelePhone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '?Áª∞',
+  `MobilePhone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '?÷ª?',
+  `WeChat` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'Œ¢?',
+  `Fax` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '???',
+  `Email` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '???',
+  `Address` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '??œµ??÷∑',
+  `Description` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '????',
+  `EnabledMark` bit(1) NULL DEFAULT NULL COMMENT '??–ß??÷æ',
+  `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '???? ±?',
+  `CreateUserId` int(11) NULL DEFAULT NULL COMMENT '?????√ª?????',
+  `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '?ﬁ∏? ±?',
+  `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '?ﬁ∏??√ª?????',
+  PRIMARY KEY (`Id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '??÷Ø?' ROW_FORMAT = Dynamic;
 
-alter table Items comment '◊÷µ‰±Ì';
+-- ----------------------------
+-- Table structure for role
+-- ----------------------------
+DROP TABLE IF EXISTS `role`;
+CREATE TABLE `role`  (
+  `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT '????',
+  `OrganizeId` int(11) NULL DEFAULT NULL COMMENT '??÷Ø????',
+  `Category` int(11) NULL DEFAULT NULL COMMENT '???????',
+  `EnCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '???',
+  `FullName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '???',
+  `TypeClass` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '???',
+  `SortCode` int(11) NULL DEFAULT NULL COMMENT '???',
+  `Description` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '????',
+  `EnabledMark` bit(1) NULL DEFAULT NULL COMMENT '??–ß??÷æ',
+  `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '???? ±?',
+  `CreateUserId` int(11) NULL DEFAULT NULL COMMENT '?????√ª?????',
+  `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '?ﬁ∏? ±?',
+  `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '?ﬁ∏??√ª?????',
+  PRIMARY KEY (`Id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '??…´-??Œª?' ROW_FORMAT = Dynamic;
 
-/*==============================================================*/
-/* Table: ItemsDetail                                           */
-/*==============================================================*/
-create table ItemsDetail
-(
-   Id                   int not null auto_increment comment '÷˜º¸',
-   ItemId               int comment '÷˜±Ì÷˜º¸',
-   ItemCode             varchar(50) comment '±‡¬Î',
-   ItemName             varchar(50) comment '√˚≥∆',
-   SortCode             int comment '≈≈–Ú¬Î',
-   Description          varchar(200) comment '√Ë ˆ',
-   EnabledMark          bit comment '”––ß±Í÷æ',
-   CreateTime           datetime comment '¥¥Ω® ±º‰',
-   CreateUserId         int comment '¥¥Ω®”√ªß÷˜º¸',
-   UpdateTime           datetime comment '–ﬁ∏ƒ ±º‰',
-   UpdateUserId         int comment '–ﬁ∏ƒ”√ªß÷˜º¸',
-   primary key (Id)
-);
+-- ----------------------------
+-- Table structure for roleauthorize
+-- ----------------------------
+DROP TABLE IF EXISTS `roleauthorize`;
+CREATE TABLE `roleauthorize`  (
+  `RoleId` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '??…´????',
+  `ModuleId` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'ƒ£??????',
+  `ModuleButtonId` char(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '??≈•????',
+  PRIMARY KEY (`RoleId`, `ModuleId`, `ModuleButtonId`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '??…´??»®?' ROW_FORMAT = Dynamic;
 
-alter table ItemsDetail comment '◊÷µ‰√˜œ∏±Ì';
+-- ----------------------------
+-- Table structure for user
+-- ----------------------------
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user`  (
+  `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT '????',
+  `Account` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '?Àª?',
+  `UserPassword` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '???',
+  `RealName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '????',
+  `HeadIcon` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'Õ∑?',
+  `Gender` bit(1) NULL DEFAULT NULL COMMENT '?‘±',
+  `Birthday` datetime(0) NULL DEFAULT NULL COMMENT '???',
+  `MobilePhone` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '?÷ª?',
+  `Email` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '???',
+  `WeChat` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'Œ¢?',
+  `Description` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '????',
+  `OrganizeId` int(11) NULL DEFAULT NULL COMMENT '??÷Ø????',
+  `DepartmentId` int(11) NULL DEFAULT NULL COMMENT '????????',
+  `DutyId` int(11) NULL DEFAULT NULL COMMENT '??Œª????',
+  `RoleId` int(11) NULL DEFAULT NULL COMMENT '??…´????',
+  `IsAdministrator` bit(1) NULL DEFAULT NULL COMMENT '?«∑?????‘±',
+  `EnabledMark` bit(1) NULL DEFAULT NULL COMMENT '??–ß??÷æ',
+  `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '???? ±?',
+  `CreateUserId` int(11) NULL DEFAULT NULL COMMENT '?????√ª?????',
+  `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '?ﬁ∏? ±?',
+  `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '?ﬁ∏??√ª?????',
+  PRIMARY KEY (`Id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '?√ª??' ROW_FORMAT = Dynamic;
 
-/*==============================================================*/
-/* Table: LogonLog                                              */
-/*==============================================================*/
-create table LogonLog
-(
-   Id                   int not null auto_increment comment '÷˜º¸',
-   LogType              varchar(50) comment 'µ«¬º¿‡–Õ',
-   Account              varchar(50) comment '’Àªß',
-   RealName             varchar(50) comment '–’√˚',
-   Description          varchar(200) comment '√Ë ˆ',
-   IPAddress            varchar(50) comment 'IPµÿ÷∑',
-   IPAddressName        varchar(50) comment 'IPÀ˘‘⁄≥« –',
-   CreateTime           datetime comment '¥¥Ω® ±º‰',
-   primary key (Id)
-);
-
-alter table LogonLog comment 'µ«¬º»’÷æ±Ì';
-
-/*==============================================================*/
-/* Table: Module                                                */
-/*==============================================================*/
-create table Module
-(
-   Id                   int not null auto_increment comment '÷˜º¸',
-   ParentId             int comment '∏∏º∂',
-   FullName             varchar(50) comment '√˚≥∆',
-   FontFamily           varchar(50) comment '◊÷ÃÂ¿‡–Õ',
-   Icon                 varchar(50) comment '◊÷ÃÂ',
-   UrlAddress           varchar(100) comment '¡¥Ω”',
-   IsMenu               bit comment ' «∑Ò≤Àµ•',
-   SortCode             int comment '≈≈–Ú¬Î',
-   Description          varchar(200) comment '√Ë ˆ',
-   EnabledMark          bit comment '”––ß±Í÷æ',
-   CreateTime           datetime comment '¥¥Ω® ±º‰',
-   CreateUserId         int comment '¥¥Ω®”√ªß÷˜º¸',
-   UpdateTime           datetime comment '–ﬁ∏ƒ ±º‰',
-   UpdateUserId         int comment '–ﬁ∏ƒ”√ªß÷˜º¸',
-   primary key (Id)
-);
-
-alter table Module comment 'ƒ£øÈ±Ì';
-
-/*==============================================================*/
-/* Table: ModuleButton                                          */
-/*==============================================================*/
-create table ModuleButton
-(
-   Id                   int not null auto_increment comment '÷˜º¸',
-   ModuleId             int comment 'ƒ£øÈ÷˜º¸',
-   EnCode               varchar(50) comment '±‡¬Î',
-   FullName             varchar(50) comment '√˚≥∆',
-   Location             int comment 'Œª÷√',
-   ClassName            varchar(50) comment '∞¥≈•—˘ Ω',
-   SortCode             int comment '≈≈–Ú¬Î',
-   Description          varchar(200) comment '√Ë ˆ',
-   EnabledMark          bit comment '”––ß±Í÷æ',
-   CreateTime           datetime comment '¥¥Ω® ±º‰',
-   CreateUserId         int comment '¥¥Ω®”√ªß÷˜º¸',
-   UpdateTime           datetime comment '–ﬁ∏ƒ ±º‰',
-   UpdateUserId         int comment '–ﬁ∏ƒ”√ªß÷˜º¸',
-   primary key (Id)
-);
-
-alter table ModuleButton comment 'ƒ£øÈ∞¥≈•±Ì';
-
-/*==============================================================*/
-/* Table: Organize                                              */
-/*==============================================================*/
-create table Organize
-(
-   Id                   int not null auto_increment comment '÷˜º¸',
-   ParentId             int comment '∏∏º∂',
-   EnCode               varchar(50) comment '±‡¬Î',
-   FullName             varchar(50) comment '√˚≥∆',
-   CategoryId           varchar(50) comment '∑÷¿‡',
-   ManagerId            int comment '∏∫‘»À',
-   TelePhone            varchar(50) comment 'µÁª∞',
-   MobilePhone          varchar(50) comment ' ÷ª˙',
-   WeChat               varchar(50) comment 'Œ¢–≈',
-   Fax                  varchar(50) comment '¥´’Ê',
-   Email                varchar(50) comment '” œ‰',
-   Address              varchar(200) comment '¡™œµµÿ÷∑',
-   Description          varchar(200) comment '√Ë ˆ',
-   EnabledMark          bit comment '”––ß±Í÷æ',
-   CreateTime           datetime comment '¥¥Ω® ±º‰',
-   CreateUserId         int comment '¥¥Ω®”√ªß÷˜º¸',
-   UpdateTime           datetime comment '–ﬁ∏ƒ ±º‰',
-   UpdateUserId         int comment '–ﬁ∏ƒ”√ªß÷˜º¸',
-   primary key (Id)
-);
-
-alter table Organize comment '◊È÷Ø±Ì';
-
-/*==============================================================*/
-/* Table: Role                                                  */
-/*==============================================================*/
-create table Role
-(
-   Id                   int not null auto_increment comment '÷˜º¸',
-   OrganizeId           int comment '◊È÷Ø÷˜º¸',
-   Category             int comment '∑÷¿‡¿‡–Õ',
-   EnCode               varchar(50) comment '±‡¬Î',
-   FullName             varchar(50) comment '√˚≥∆',
-   TypeClass            varchar(50) comment '¿‡–Õ',
-   SortCode             int comment '≈≈–Ú¬Î',
-   Description          varchar(200) comment '√Ë ˆ',
-   EnabledMark          bit comment '”––ß±Í÷æ',
-   CreateTime           datetime comment '¥¥Ω® ±º‰',
-   CreateUserId         int comment '¥¥Ω®”√ªß÷˜º¸',
-   UpdateTime           datetime comment '–ﬁ∏ƒ ±º‰',
-   UpdateUserId         int comment '–ﬁ∏ƒ”√ªß÷˜º¸',
-   primary key (Id)
-);
-
-alter table Role comment 'Ω«…´-∏⁄Œª±Ì';
-
-/*==============================================================*/
-/* Table: RoleAuthorize                                         */
-/*==============================================================*/
-create table RoleAuthorize
-(
-   RoleId               char(10) not null comment 'Ω«…´÷˜º¸',
-   ModuleId             char(10) not null comment 'ƒ£øÈ÷˜º¸',
-   ModuleButtonId       char(10) not null comment '∞¥≈•÷˜º¸',
-   primary key (RoleId, ModuleId, ModuleButtonId)
-);
-
-alter table RoleAuthorize comment 'Ω«…´ ⁄»®±Ì';
-
-/*==============================================================*/
-/* Table: User                                                  */
-/*==============================================================*/
-create table User
-(
-   Id                   int not null auto_increment comment '÷˜º¸',
-   Account              varchar(50) comment '’Àªß',
-   UserPassword         varchar(50) comment '√‹¬Î',
-   RealName             varchar(50) comment '–’√˚',
-   HeadIcon             varchar(50) comment 'Õ∑œÒ',
-   Gender               bit comment '–‘±',
-   Birthday             datetime comment '…˙»’',
-   MobilePhone          varchar(50) comment ' ÷ª˙',
-   Email                varchar(50) comment '” œ‰',
-   WeChat               varchar(50) comment 'Œ¢–≈',
-   Description          varchar(200) comment '√Ë ˆ',
-   OrganizeId           int comment '◊È÷Ø÷˜º¸',
-   DepartmentId         int comment '≤ø√≈÷˜º¸',
-   DutyId               int comment '∏⁄Œª÷˜º¸',
-   RoleId               int comment 'Ω«…´÷˜º¸',
-   IsAdministrator      bit comment ' «∑Òπ‹¿Ì‘±',
-   EnabledMark          bit comment '”––ß±Í÷æ',
-   CreateTime           datetime comment '¥¥Ω® ±º‰',
-   CreateUserId         int comment '¥¥Ω®”√ªß÷˜º¸',
-   UpdateTime           datetime comment '–ﬁ∏ƒ ±º‰',
-   UpdateUserId         int comment '–ﬁ∏ƒ”√ªß÷˜º¸',
-   primary key (Id)
-);
-
-alter table User comment '”√ªß±Ì';
-
+SET FOREIGN_KEY_CHECKS = 1;
