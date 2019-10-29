@@ -11,7 +11,7 @@
  Target Server Version : 50717
  File Encoding         : 65001
 
- Date: 29/10/2019 17:11:55
+ Date: 29/10/2019 17:27:12
 */
 
 SET NAMES utf8mb4;
@@ -272,8 +272,6 @@ INSERT INTO `organize` VALUES (5, 1, 'IT Group', '研发小组', 3, 1, NULL, NUL
 DROP TABLE IF EXISTS `role`;
 CREATE TABLE `role`  (
   `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `OrganizeId` int(11) NULL DEFAULT NULL COMMENT '组织主键',
-  `Category` int(11) NULL DEFAULT NULL COMMENT '分类类型',
   `EnCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '编码',
   `FullName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '名称',
   `TypeClass` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '类型',
@@ -285,7 +283,15 @@ CREATE TABLE `role`  (
   `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '修改用户主键',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '角色表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '角色表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of role
+-- ----------------------------
+INSERT INTO `role` VALUES (1, '	administrator', '超级管理员', '4', 1, '超级管理员', b'0', '2019-10-29 17:20:49', 1, '2019-10-29 17:20:47', 1);
+INSERT INTO `role` VALUES (2, 'system', '系统管理员', '4', 2, '系统管理员', b'0', '2019-10-29 17:24:13', 1, '2019-10-29 17:24:18', 1);
+INSERT INTO `role` VALUES (3, 'user', '普通用户', '5', 3, '普通用户', b'0', '2019-10-29 17:25:42', 1, '2019-10-29 17:25:44', 1);
+INSERT INTO `role` VALUES (4, 'test', '测试用户', '6', 4, '测试用户', b'0', '2019-10-29 17:26:07', 1, '2019-10-29 17:26:10', 1);
 
 -- ----------------------------
 -- Table structure for roleauthorize
