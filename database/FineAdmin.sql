@@ -11,7 +11,7 @@
  Target Server Version : 50717
  File Encoding         : 65001
 
- Date: 29/10/2019 17:27:12
+ Date: 31/10/2019 18:01:37
 */
 
 SET NAMES utf8mb4;
@@ -27,6 +27,7 @@ CREATE TABLE `button`  (
   `FullName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '名称',
   `Location` int(11) NULL DEFAULT NULL COMMENT '位置',
   `ClassName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '按钮样式',
+  `Icon` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '图标',
   `SortCode` int(11) NULL DEFAULT NULL COMMENT '排序码',
   `Description` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '描述',
   `EnabledMark` bit(1) NULL DEFAULT NULL COMMENT '有效标志',
@@ -40,10 +41,10 @@ CREATE TABLE `button`  (
 -- ----------------------------
 -- Records of button
 -- ----------------------------
-INSERT INTO `button` VALUES (1, 'add', '添加', 1, '', 1, '添加', b'0', '2019-10-29 16:25:25', 1, '2019-10-29 16:25:29', 1);
-INSERT INTO `button` VALUES (2, 'del', '删除', 0, 'layui-btn-danger', 2, '删除', b'0', '2019-10-29 16:29:17', 1, '2019-10-29 16:29:20', 1);
-INSERT INTO `button` VALUES (3, 'edit', '修改', 0, '', 3, '修改', b'0', '2019-10-29 16:30:32', 1, '2019-10-29 16:30:36', 1);
-INSERT INTO `button` VALUES (4, 'batchDel', '批量删除', 1, 'layui-btn-danger', 4, '批量删除', b'0', '2019-10-29 16:35:16', 1, '2019-10-29 16:35:19', 1);
+INSERT INTO `button` VALUES (1, 'add', '添加', 1, '', 'ok-icon-roundadd', 1, '添加', b'0', '2019-10-29 16:25:25', 1, '2019-10-29 16:25:29', 1);
+INSERT INTO `button` VALUES (2, 'del', '删除', 0, 'layui-btn-danger', 'ok-icon-deletefill', 2, '删除', b'0', '2019-10-29 16:29:17', 1, '2019-10-29 16:29:20', 1);
+INSERT INTO `button` VALUES (3, 'edit', '修改', 0, '', 'ok-icon-writefill', 3, '修改', b'0', '2019-10-29 16:30:32', 1, '2019-10-29 16:30:36', 1);
+INSERT INTO `button` VALUES (4, 'batchDel', '批量删除', 1, 'layui-btn-danger', 'ok-icon-deletefill', 4, '批量删除', b'0', '2019-10-29 16:35:16', 1, '2019-10-29 16:35:19', 1);
 
 -- ----------------------------
 -- Table structure for donation
@@ -187,18 +188,18 @@ CREATE TABLE `module`  (
 -- ----------------------------
 -- Records of module
 -- ----------------------------
-INSERT INTO `module` VALUES (1, 0, '系统管理', NULL, NULL, NULL, b'0', 1, '系统管理', b'0', '2019-09-19 15:28:17', 1, '2019-09-19 15:28:29', 1);
-INSERT INTO `module` VALUES (2, 0, '系统安全', NULL, NULL, NULL, b'0', 2, '系统安全', b'0', '2019-09-19 15:48:28', 1, '2019-09-19 15:48:33', 1);
-INSERT INTO `module` VALUES (3, 0, '系统设置', NULL, NULL, NULL, b'0', 3, '系统设置', b'0', '2019-09-19 15:49:03', 1, '2019-09-19 15:49:07', 1);
-INSERT INTO `module` VALUES (4, 1, '机构管理', NULL, NULL, '/', b'1', 1, '机构管理', b'0', '2019-09-19 16:51:51', 1, '2019-09-19 16:51:55', 1);
-INSERT INTO `module` VALUES (5, 1, '角色管理', NULL, NULL, '/', b'1', 2, '角色管理', b'0', '2019-09-19 16:54:54', 1, '2019-09-19 16:54:58', 1);
-INSERT INTO `module` VALUES (6, 1, '用户管理', NULL, NULL, '/', b'1', 3, '用户管理', b'0', '2019-09-19 16:57:34', 1, '2019-09-19 16:57:38', 1);
-INSERT INTO `module` VALUES (7, 1, '数据字典', NULL, NULL, '/', b'1', 4, '数据字典', b'0', '2019-09-19 16:58:27', 1, '2019-09-19 16:58:31', 1);
-INSERT INTO `module` VALUES (8, 1, '系统菜单', NULL, NULL, '/', b'1', 5, '系统菜单', b'0', '2019-09-19 16:58:49', 1, '2019-09-19 16:58:45', 1);
-INSERT INTO `module` VALUES (9, 2, '登录日志', NULL, NULL, '/', b'1', 1, '登录日志', b'0', '2019-09-23 18:17:12', 1, '2019-09-23 18:17:18', 1);
-INSERT INTO `module` VALUES (10, 3, '系统设置', NULL, NULL, '/', b'1', 1, '系统设置', b'0', '2019-09-23 18:18:43', 1, '2019-09-23 18:18:49', 1);
-INSERT INTO `module` VALUES (11, 3, '邮件设置', NULL, NULL, '/', b'1', 2, '邮件设置', b'0', '2019-09-23 18:19:34', 1, '2019-09-23 18:19:38', 1);
-INSERT INTO `module` VALUES (12, 3, '上传设置', NULL, NULL, '/', b'1', 3, '上传设置', b'0', '2019-09-23 18:20:02', 1, '2019-09-23 18:19:59', 1);
+INSERT INTO `module` VALUES (1, 0, '系统管理', 'ok-icon', '&#xe6b0;', NULL, b'0', 1, '系统管理', b'0', '2019-09-19 15:28:17', 1, '2019-09-19 15:28:29', 1);
+INSERT INTO `module` VALUES (2, 0, '系统安全', 'ok-icon', '&#xe769;', NULL, b'0', 2, '系统安全', b'0', '2019-09-19 15:48:28', 1, '2019-09-19 15:48:33', 1);
+INSERT INTO `module` VALUES (3, 0, '系统设置', 'ok-icon', '&#xe889;', NULL, b'0', 3, '系统设置', b'0', '2019-09-19 15:49:03', 1, '2019-09-19 15:49:07', 1);
+INSERT INTO `module` VALUES (4, 1, '机构管理', 'ok-icon', '&#xe726;', '/', b'1', 1, '机构管理', b'0', '2019-09-19 16:51:51', 1, '2019-09-19 16:51:55', 1);
+INSERT INTO `module` VALUES (5, 1, '角色管理', 'ok-icon', '&#xe7be;', '/', b'1', 2, '角色管理', b'0', '2019-09-19 16:54:54', 1, '2019-09-19 16:54:58', 1);
+INSERT INTO `module` VALUES (6, 1, '用户管理', 'ok-icon', '&#xe736;', '/', b'1', 3, '用户管理', b'0', '2019-09-19 16:57:34', 1, '2019-09-19 16:57:38', 1);
+INSERT INTO `module` VALUES (7, 1, '数据字典', 'ok-icon', '&#xe660;', '/', b'1', 4, '数据字典', b'0', '2019-09-19 16:58:27', 1, '2019-09-19 16:58:31', 1);
+INSERT INTO `module` VALUES (8, 1, '系统菜单', 'ok-icon', '&#xe7ad;', '/', b'1', 5, '系统菜单', b'0', '2019-09-19 16:58:49', 1, '2019-09-19 16:58:45', 1);
+INSERT INTO `module` VALUES (9, 2, '登录日志', 'ok-icon', '&#xe706;', '/', b'1', 1, '登录日志', b'0', '2019-09-23 18:17:12', 1, '2019-09-23 18:17:18', 1);
+INSERT INTO `module` VALUES (10, 3, '系统设置', 'ok-icon', '&#xe611;', '/', b'1', 1, '系统设置', b'0', '2019-09-23 18:18:43', 1, '2019-09-23 18:18:49', 1);
+INSERT INTO `module` VALUES (11, 3, '邮件设置', 'ok-icon', '&#xe7bd;', '/', b'1', 2, '邮件设置', b'0', '2019-09-23 18:19:34', 1, '2019-09-23 18:19:38', 1);
+INSERT INTO `module` VALUES (12, 3, '上传设置', 'ok-icon', '&#xe75d;', '/', b'1', 3, '上传设置', b'0', '2019-09-23 18:20:02', 1, '2019-09-23 18:19:59', 1);
 
 -- ----------------------------
 -- Table structure for modulebutton
@@ -248,6 +249,7 @@ CREATE TABLE `organize`  (
   `Fax` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '传真',
   `Email` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '邮箱',
   `Address` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '联系地址',
+  `SortCode` int(4) NULL DEFAULT NULL COMMENT '排序码',
   `Description` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '描述',
   `EnabledMark` bit(1) NULL DEFAULT NULL COMMENT '有效标志',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
@@ -260,11 +262,11 @@ CREATE TABLE `organize`  (
 -- ----------------------------
 -- Records of organize
 -- ----------------------------
-INSERT INTO `organize` VALUES (1, 0, 'Company', '皮皮虾公司', 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, b'0', '2019-09-26 17:52:17', 1, '2019-09-26 17:52:12', 1);
-INSERT INTO `organize` VALUES (2, 1, 'Market', '业务部', 2, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, b'0', '2019-10-29 15:32:27', 1, '2019-10-29 15:32:30', 1);
-INSERT INTO `organize` VALUES (3, 1, 'Ministry', '技术部', 2, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, b'0', '2019-10-29 15:32:39', 1, '2019-10-29 15:32:42', 1);
-INSERT INTO `organize` VALUES (4, 1, 'HumanResourse', '人事部', 2, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, b'0', '2019-10-29 15:33:27', 1, '2019-10-29 15:33:31', 1);
-INSERT INTO `organize` VALUES (5, 1, 'IT Group', '研发小组', 3, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, b'0', '2019-10-29 15:35:10', 1, '2019-10-29 15:35:12', 1);
+INSERT INTO `organize` VALUES (1, 0, 'Company', '皮皮虾公司', 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, b'0', '2019-09-26 17:52:17', 1, '2019-09-26 17:52:12', 1);
+INSERT INTO `organize` VALUES (2, 1, 'Market', '业务部', 2, 1, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, b'0', '2019-10-29 15:32:27', 1, '2019-10-29 15:32:30', 1);
+INSERT INTO `organize` VALUES (3, 1, 'Ministry', '技术部', 2, 1, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, b'0', '2019-10-29 15:32:39', 1, '2019-10-29 15:32:42', 1);
+INSERT INTO `organize` VALUES (4, 1, 'HumanResourse', '人事部', 2, 1, NULL, NULL, NULL, NULL, NULL, NULL, 3, NULL, b'0', '2019-10-29 15:33:27', 1, '2019-10-29 15:33:31', 1);
+INSERT INTO `organize` VALUES (5, 1, 'IT Group', '研发小组', 3, 1, NULL, NULL, NULL, NULL, NULL, NULL, 4, NULL, b'0', '2019-10-29 15:35:10', 1, '2019-10-29 15:35:12', 1);
 
 -- ----------------------------
 -- Table structure for role
@@ -274,7 +276,7 @@ CREATE TABLE `role`  (
   `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `EnCode` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '编码',
   `FullName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '名称',
-  `TypeClass` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '类型',
+  `TypeClass` int(11) NULL DEFAULT NULL COMMENT '类型',
   `SortCode` int(11) NULL DEFAULT NULL COMMENT '排序码',
   `Description` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '描述',
   `EnabledMark` bit(1) NULL DEFAULT NULL COMMENT '有效标志',
@@ -288,10 +290,10 @@ CREATE TABLE `role`  (
 -- ----------------------------
 -- Records of role
 -- ----------------------------
-INSERT INTO `role` VALUES (1, '	administrator', '超级管理员', '4', 1, '超级管理员', b'0', '2019-10-29 17:20:49', 1, '2019-10-29 17:20:47', 1);
-INSERT INTO `role` VALUES (2, 'system', '系统管理员', '4', 2, '系统管理员', b'0', '2019-10-29 17:24:13', 1, '2019-10-29 17:24:18', 1);
-INSERT INTO `role` VALUES (3, 'user', '普通用户', '5', 3, '普通用户', b'0', '2019-10-29 17:25:42', 1, '2019-10-29 17:25:44', 1);
-INSERT INTO `role` VALUES (4, 'test', '测试用户', '6', 4, '测试用户', b'0', '2019-10-29 17:26:07', 1, '2019-10-29 17:26:10', 1);
+INSERT INTO `role` VALUES (1, '	administrator', '超级管理员', 4, 1, '超级管理员', b'0', '2019-10-29 17:20:49', 1, '2019-10-29 17:20:47', 1);
+INSERT INTO `role` VALUES (2, 'system', '系统管理员', 4, 2, '系统管理员', b'0', '2019-10-29 17:24:13', 1, '2019-10-29 17:24:18', 1);
+INSERT INTO `role` VALUES (3, 'user', '普通用户', 5, 3, '普通用户', b'0', '2019-10-29 17:25:42', 1, '2019-10-29 17:25:44', 1);
+INSERT INTO `role` VALUES (4, 'test', '测试用户', 6, 4, '测试用户', b'0', '2019-10-29 17:26:07', 1, '2019-10-29 17:26:10', 1);
 
 -- ----------------------------
 -- Table structure for roleauthorize
@@ -367,6 +369,6 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'admin', '123456', 'Liu_Cabbage', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 1, b'1', b'0', '2019-10-29 15:40:26', 1, '2019-10-29 15:40:28', 1);
+INSERT INTO `user` VALUES (1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'Liu_Cabbage', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 1, b'1', b'0', '2019-10-29 15:40:26', 1, '2019-10-29 15:40:28', 1);
 
 SET FOREIGN_KEY_CHECKS = 1;

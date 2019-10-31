@@ -1,17 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C5FA8C31-0FE8-4BE5-BB97-726E8A734FE3}</ProjectGuid>
+    <ProjectGuid>{2F606FC5-715B-4E54-B867-D7A0941C999C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FineAdmin.Model</RootNamespace>
-    <AssemblyName>FineAdmin.Model</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>DapperExtensions</RootNamespace>
+    <AssemblyName>DapperExtensions</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Dapper.1.50.4\lib\net451\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,24 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entity.cs" />
-    <Compile Include="Permissions\ButtonModel.cs" />
-    <Compile Include="Permissions\ItemsDetailModel.cs" />
-    <Compile Include="Permissions\ItemsModel.cs" />
-    <Compile Include="Permissions\ModuleButtonModel.cs" />
-    <Compile Include="Permissions\ModuleModel.cs" />
-    <Compile Include="Permissions\OrganizeModel.cs" />
-    <Compile Include="Permissions\RoleAuthorizeModel.cs" />
-    <Compile Include="Permissions\RoleModel.cs" />
-    <Compile Include="Permissions\UserModel.cs" />
+    <Compile Include="DapperExtAllSQL.cs" />
+    <Compile Include="DapperExtAttributes.cs" />
+    <Compile Include="DapperExtCommon.cs" />
+    <Compile Include="DapperExtSqls.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Security\LogonLogModel.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DapperExtensions\DapperExtensions.csproj">
-      <Project>{2f606fc5-715b-4e54-b867-d7a0941c999c}</Project>
-      <Name>DapperExtensions</Name>
-    </ProjectReference>
+    <Compile Include="SQLExts\MySQLExt.cs" />
+    <Compile Include="SQLExts\OracleExt.cs" />
+    <Compile Include="SQLExts\PostgreSQLExt.cs" />
+    <Compile Include="SQLExts\SqLiteExt.cs" />
+    <Compile Include="SQLExts\SqlServerExt.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>
