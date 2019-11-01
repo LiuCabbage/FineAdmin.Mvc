@@ -1,6 +1,6 @@
 ﻿namespace FineAdmin.Model
 {
-    public class RoleModel
+    public class RoleModel : Entity
     {
         /// <summary>
         /// 编码

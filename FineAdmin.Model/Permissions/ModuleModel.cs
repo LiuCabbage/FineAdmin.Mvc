@@ -1,6 +1,6 @@
 ﻿namespace FineAdmin.Model
 {
-    public class ModuleModel
+    public class ModuleModel : Entity
     {
         /// <summary>
         /// 父级

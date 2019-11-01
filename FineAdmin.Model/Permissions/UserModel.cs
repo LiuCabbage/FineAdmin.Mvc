@@ -3,7 +3,7 @@ using System;
 
 namespace FineAdmin.Model
 {
-    public class UserModel
+    public class UserModel : Entity
     {
         /// <summary>
         /// 账户

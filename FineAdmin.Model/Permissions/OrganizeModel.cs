@@ -1,6 +1,6 @@
 ﻿namespace FineAdmin.Model
 {
-    public class OrganizeModel
+    public class OrganizeModel : Entity
     {
         /// <summary>
         /// 父级
