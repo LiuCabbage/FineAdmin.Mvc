@@ -1,78 +1,106 @@
-﻿
-@{
-    ViewBag.Title = "FineAdmin 后台登录";
+﻿@{
+    Layout = null;
 }
+<!DOCTYPE html>
+<html lang="en" class="page-fill">
+<head>
+    <meta charset="UTF-8">
+    <title>FineAdmin - 登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="~/Content/css/oksub.css" />
+</head>
+<body class="page-fill">
+    <div class="page-fill" id="login">
+        <form class="layui-form">
+            <div class="login_face"><img src="~/Content/images/logo.jpg"></div>
+            <div class="layui-form-item input-item">
+                <label for="username">用户名</label>
+                <input type="text" lay-verify="required" name="username" placeholder="请输入账号" autocomplete="off" id="username" class="layui-input">
+            </div>
+            <div class="layui-form-item input-item">
+                <label for="password">密码</label>
+                <input type="password" lay-verify="required|password" name="password" placeholder="请输入密码" autocomplete="off" id="password" class="layui-input">
+            </div>
+            <div class="layui-form-item input-item captcha-box">
+                <label for="captcha">验证码</label>
+                <input type="text" lay-verify="required|captcha" name="captcha" placeholder="请输入验证码" autocomplete="off" id="captcha" maxlength="4" class="layui-input">
+                <div class="img ok-none-select" id="captchaImg"></div>
+            </div>
+            <div class="layui-form-item">
+                <button class="layui-btn layui-block" lay-filter="login" lay-submit="">登录</button>
+            </div>
+        </form>
+    </div>
+    <!--js逻辑-->
+    <script src="~/Content/lib/layui/layui.js"></script>
+    <script>
+        layui.use(["form", "okGVerify", "okUtils", "okMock", "okLayer"], function () {
+            let form = layui.form;
+            let $ = layui.jquery;
+            let okGVerify = layui.okGVerify;
+            let okUtils = layui.okUtils;
+            let okMock = layui.okMock;
+            let okLayer = layui.okLayer;
 
-<div id="app">
-    <form class="layui-form">
-        <div class="login_face"><img src="/Content/images/a.png" class="userAvatar"></div>
-        <div class="layui-form-item input-item">
-            <label for="userName">用户名</label>
-            <input type="text" lay-verify="required" name="userName" placeholder="请输入用户名" autocomplete="off" id="userName"
-                   class="layui-input">
-        </div>
-        <div class="layui-form-item input-item">
-            <label for="password">密码</label>
-            <input type="password" lay-verify="required|pass" name="password" placeholder="请输入密码" autocomplete="off"
-                   id="password" class="layui-input">
-        </div>
-        <div class="layui-form-item input-item" id="imgCode">
-            <label for="code">验证码</label>
-            <input type="text" lay-verify="required|yzmCode" name="code" placeholder="请输入验证码" autocomplete="off" id="code"
-                   class="layui-input">
-            <div class="img ok-none-select" id="codeImg"></div>
-        </div>
-        <div class="layui-form-item">
-            <button class="layui-btn layui-block" lay-filter="login" lay-submit="">登录</button>
-        </div>
-    </form>
-</div>
+            /**
+             * 初始化验证码
+             */
+            let verifyCode = new okGVerify("#captchaImg");
 
-<!--js逻辑-->
-<script src="../lib/layui/layui.js"></script>
-<script>
-    layui.config({
-        base: "/lib/okplugins/"
-    }).use(['form', 'jquery', 'okGVerify'], function () {
-        var form = layui.form;
-        var $ = layui.jquery;
-        var okGVerify = layui.okGVerify;
-        var verifyCode = new okGVerify("#codeImg");
-        // var res = verifyCode.validate(document.getElementById("code").value);
-        form.verify({
-            pass: [
-                /^[\S]{6,12}$/,
-                '密码必须6到12位，且不能出现空格'
-            ],
-            yzmCode: function (val) {
-                if (verifyCode.validate(val) != "true") {
-                    return verifyCode.validate(val)
+            /**
+             * 数据校验
+             */
+            form.verify({
+                password: [/^[\S]{6,12}$/, "密码必须6到12位，且不能出现空格"],
+                captcha: function (val) {
+                    if (verifyCode.validate(val) != "true") {
+                        return verifyCode.validate(val)
+                    }
                 }
-            }
-        });
-
-        form.on('submit(login)', function (data) {
-            layer.msg("登陆中...", { icon: 6, time: 1000, anim: 0 }, function () {
-                window.location = "/Admin/Home";
             });
-            return false;
-        });
 
-        //表单输入效果
-        $("#app .input-item .layui-input").click(function (e) {
-            e.stopPropagation();
-            $(this).addClass("layui-input-focus").find(".layui-input").focus();
-        })
-        $("#app .layui-form-item .layui-input").focus(function () {
-            $(this).parent().addClass("layui-input-focus");
-        })
-        $("#app .layui-form-item .layui-input").blur(function () {
-            $(this).parent().removeClass("layui-input-focus");
-            if ($(this).val() != '') {
-                $(this).parent().addClass("layui-input-active");
-            } else {
-                $(this).parent().removeClass("layui-input-active");
-            }
-        })
-    });
-</script>
+            /**
+             * 表单提交
+             */
+            form.on("submit(login)", function (data) {
+                okUtils.ajax(okMock.api.login, "post", data.field, true).done(function (response) {
+                    console.log(response);
+                    okLayer.msg.greenTick(response.msg, function () {
+                        window.location = "../index.html";
+                    })
+                }).fail(function (error) {
+                    console.log(error)
+                });
+                return false;
+            });
+
+            /**
+             * 表单input组件单击时
+             */
+            $("#login .input-item .layui-input").click(function (e) {
+                e.stopPropagation();
+                $(this).addClass("layui-input-focus").find(".layui-input").focus();
+            });
+
+            /**
+             * 表单input组件获取焦点时
+             */
+            $("#login .layui-form-item .layui-input").focus(function () {
+                $(this).parent().addClass("layui-input-focus");
+            });
+
+            /**
+             * 表单input组件失去焦点时
+             */
+            $("#login .layui-form-item .layui-input").blur(function () {
+                $(this).parent().removeClass("layui-input-focus");
+                if ($(this).val() != "") {
+                    $(this).parent().addClass("layui-input-active");
+                } else {
+                    $(this).parent().removeClass("layui-input-active");
+                }
+            })
+        });
+    </script>
+</body>
+</html>

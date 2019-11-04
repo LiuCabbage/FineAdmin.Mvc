@@ -18,12 +18,12 @@ namespace FineAdmin.Web.Controllers
             return View();
         }
         [HttpGet]
-        public ActionResult OutLogin()
+        public ActionResult LoginOut()
         {
             return RedirectToAction("Index", "Login");
         }
         [HttpPost]
-        public ActionResult CheckLogin() {
+        public ActionResult LoginOn() {
             return View();
         }
     }
