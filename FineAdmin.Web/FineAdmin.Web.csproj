@@ -393,8 +393,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Configs\" />
-    <Folder Include="fonts\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -404,6 +402,8 @@
     <Content Include="Content\lib\fonts\iconfont.ttf" />
     <Content Include="Content\lib\fonts\iconfont.woff" />
     <Content Include="Content\lib\fonts\iconfont.woff2" />
+    <Content Include="Configs\database.config" />
+    <Content Include="Configs\system.config" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />

@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DonationModel.cs" />
     <Compile Include="Entity.cs" />
+    <Compile Include="Filter\SearchFilter.cs" />
+    <Compile Include="ModifyPwd.cs" />
     <Compile Include="Permissions\ButtonModel.cs" />
     <Compile Include="Permissions\ItemsDetailModel.cs" />
     <Compile Include="Permissions\ItemsModel.cs" />
@@ -59,6 +62,9 @@
       <Project>{2f606fc5-715b-4e54-b867-d7a0941c999c}</Project>
       <Name>DapperExtensions</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
