@@ -178,7 +178,7 @@ layui.define(["element", "jquery"], function (exports) {
       contEle = $(contEle);//tab内容存放的父元素
       ele = $(ele);//当前的tab
 
-      var menuSet = $(".okadmin-side a[lay-id]");//获取所有菜单集合
+      var menuSet = $("#navBar a[lay-id]");//获取所有菜单集合
       var thatLayId = ele.attr('lay-id');
 
       var contWidth = contEle.width(),//父级元素宽度
@@ -234,7 +234,8 @@ layui.define(["element", "jquery"], function (exports) {
       /**
        * 左侧菜单的样式和多级菜单的展开
        */
-      $(".okadmin-side").find("li,dd").removeClass("layui-this").removeClass("layui-nav-itemed");//关闭所有展开的菜单
+      $("#navBar").find("li,dd").removeClass("layui-this").removeClass("layui-nav-itemed");//关闭所有展开的菜单
+      $("#navBar > li dl.layui-nav-child").removeAttr('style');
       for (let i = 0; i < menuSet.length; i++) {
          if ($(menuSet[i]).attr('lay-id') == thatLayId) {
             $(menuSet[i]).parents("dd").addClass("layui-nav-itemed");
@@ -384,9 +385,9 @@ layui.define(["element", "jquery"], function (exports) {
    };
 
    //刷新当前tab页
-    okTab.prototype.refresh = function (_this) {
-        $(".ok-tab-content .layui-show").find("iframe")[0].contentWindow.location.reload(true);
-    };
+   okTab.prototype.refresh = function (_this) {
+         $(".ok-tab-content .layui-show").find("iframe")[0].contentWindow.location.reload(true);
+   };
 
    /**
     * 关闭tab标签页操作

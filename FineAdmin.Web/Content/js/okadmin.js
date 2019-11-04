@@ -1,11 +1,10 @@
-/^http(s*):\/\//.test(location.href) || alert('请先部署到 localhost 下再访问');
-
 var objOkTab = "";
 layui.use(["element", "layer", "okUtils", "okTab", "okLayer"], function () {
     var okUtils = layui.okUtils;
     var $ = layui.jquery;
     var layer = layui.layer;
     var okLayer = layui.okLayer;
+
     var okTab = layui.okTab({
         url: "/Content/data/navs.json",
         openTabNum: 30, // 允许同时选项卡的个数
@@ -14,12 +13,11 @@ layui.use(["element", "layer", "okUtils", "okTab", "okLayer"], function () {
         }
     });
     objOkTab = okTab;
+
     /**
      * 左侧导航渲染完成之后的操作
      */
     okTab.render(function () {
-
-
     });
 
     /**
@@ -30,9 +28,43 @@ layui.use(["element", "layer", "okUtils", "okTab", "okLayer"], function () {
         if ($(this).siblings().length == 0) {
             okTab.tabAdd($(this));
         }
-        // 关闭其他的二级标签
-        $(this).parent("li").siblings().removeClass("layui-nav-itemed")
+        // 关闭其他展开的二级标签
+        $(this).parent("li").siblings().removeClass("layui-nav-itemed");
+        if (!$(this).attr('lay-id')) {
+            var topLevelEle = $(this).parents("li.layui-nav-item");
+            var childs = $("#navBar > li > dl.layui-nav-child").not(topLevelEle.children("dl.layui-nav-child"));
+            childs.removeAttr('style');
+        }
+    });
 
+    /**
+     * 左侧菜单展开动画
+     */
+    $("#navBar").on('click', '.layui-nav-item a', function () {
+        if (!$(this).attr('lay-id')) {
+            var superEle = $(this).parent();
+            var ele = $(this).next('.layui-nav-child');
+            var height = ele.height();
+            ele.css({'display': 'block'});
+
+            if (superEle.is('.layui-nav-itemed')) {//是否是展开状态
+                ele.height(0);
+                ele.animate({
+                    height: height + 'px'
+                }, function () {
+                    ele.css({
+                        height: "auto"
+                    });
+                    //ele.removeAttr('style');
+                });
+            } else {
+                ele.animate({
+                    height: 0
+                }, function () {
+                    ele.removeAttr('style');
+                });
+            }
+        }
     });
 
     /**
@@ -110,32 +142,6 @@ layui.use(["element", "layer", "okUtils", "okTab", "okLayer"], function () {
     });
 
     /**
-     * 左侧菜单展开动画
-     */
-    $("#navBar").on('click', '.layui-nav-item a', function () {
-        if (!$(this).attr('lay-id')) {
-            var superEle = $(this).parent();
-            var ele = $(this).next('.layui-nav-child');
-            var height = ele.height();
-            if (superEle.is('.layui-nav-itemed')) {
-                ele.height(0);
-                ele.animate({
-                    height: height + 'px'
-                }, function () {
-                    ele.removeAttr('style');
-                });
-            } else {
-                ele.css({ 'display': 'block' });
-                ele.animate({
-                    height: 0
-                }, function () {
-                    ele.removeAttr('style');
-                });
-            }
-        }
-    });
-
-    /**
      * 全屏和退出全屏的方法
      * @param num 1代表全屏 2代表退出全屏
      * @returns {Promise}
@@ -176,6 +182,26 @@ layui.use(["element", "layer", "okUtils", "okTab", "okLayer"], function () {
     }
 
     /**
+     * 系统公告
+     */
+    $(document).on("click", "#notice", noticeFun);
+
+    function noticeFun() {
+        var srcWidth = okUtils.getBodyWidth();
+        layer.open({
+            type: 0, title: "系统公告", btn: "我知道啦", btnAlign: 'c', content: getContent(),
+        });
+    }
+    
+    function getContent() {
+        let content = "";
+        content = "FineAdmin 上线啦(^し^)<br/>" +
+            "在此郑重承诺该项目<span style='color:#5cb85c'>永久免费</span>为大家提供<br/>" +
+            "码云开源地址：<a style='color:#ff5722;' target='_blank' href='https://gitee.com/Liu_Cabbage/FineAdmin.Mvc'><span>FineAdmin.Mvc</span></a>";
+        return content;
+    }
+
+    /**
      * 捐赠作者
      */
     $(".layui-footer button.donate").click(function () {
@@ -198,17 +224,17 @@ layui.use(["element", "layer", "okUtils", "okTab", "okLayer"], function () {
         layer.tab({
             area: ["330px", "350px"],
             tab: [{
-                title: "QQ群",
+                title: "QQ",
                 content: "<img src='/Content/images/qq.jpg' width='200' height='300' style='margin-left: 60px'>"
             }]
         });
     });
 
     console.log(" _____ _               _       _           _       \n" +
-                "|  ___(_)_ __   ___   / \\   __| |_ __ ___ (_)_ __  \n" +
-                "| |_  | | '_ \\ / _ \\ / _ \\ / _` | '_ ` _ \\| | '_ \\ \n" +
-                "|  _| | | | | |  __// ___ \\ (_| | | | | | | | | | |\n" +
-                "|_|   |_|_| |_|\\___/_/   \\_\\__,_|_| |_| |_|_|_| |_|\n" +
+        "|  ___(_)_ __   ___   / \\   __| |_ __ ___ (_)_ __  \n" +
+        "| |_  | | '_ \\ / _ \\ / _ \\ / _` | '_ ` _ \\| | '_ \\ \n" +
+        "|  _| | | | | |  __// ___ \\ (_| | | | | | | | | | |\n" +
+        "|_|   |_|_| |_|\\___/_/   \\_\\__,_|_| |_| |_|_|_| |_|\n" +
         "作者：Liu_Cabbage\n" +
         "邮箱：178899573@qq.com\n" +
         "描述：使用ASP.NET MVC搭建的通用权限后台管理系统。\n" +

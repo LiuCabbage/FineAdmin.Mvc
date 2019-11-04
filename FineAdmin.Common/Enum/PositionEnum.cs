@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FineAdmin.Common.Enum
+namespace FineAdmin.Common
 {
     /// <summary>
     /// 显示位置枚举

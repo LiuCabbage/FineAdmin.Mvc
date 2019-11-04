@@ -1,4 +1,4 @@
-@import "../css/common.css"; /**页面的公共样式**/
+@import "../css/common.css";
 @import "../lib/layui/css/layui.css";
 
 /**控制台样式*/
@@ -55,6 +55,8 @@
 #login .layui-form-item input::placeholder{color:transparent!important}
 #login .layui-form-item.layui-input-focus input::placeholder{color:#757575!important}
 #login .layui-form-item.layui-input-active label,#login .layui-form-item.layui-input-focus label{top:-10px;font-size:12px;color:#ff6700;background:#fff!important}
+#login .login-link{display:block;font-size:12px}
+#login .login-link a{display:inline-block;margin-right:20px}
 
 /*基本资料*/
 .user-info .user_left{float:left;margin:20px 0 0 5%}
@@ -73,17 +75,9 @@
 
 
 /*响应样式*/
-@media screen and (max-width: 750px) {
-    /*控制台*/
-    .ok-in-hide-md {
-        display: none !important;
-    }
+@media screen and (max-width:750px){
+	.ok-in-hide-md{display:none!important}
 }
-
-@media screen and (max-width: 548px) {
-    /**显隐样式**/
-    [ok-pc-in-show],
-    .ok-in-hide-xs {
-        display: none !important;
-    }
+@media screen and (max-width:548px){
+	.ok-in-hide-xs,[ok-pc-in-show]{display:none!important}
 }

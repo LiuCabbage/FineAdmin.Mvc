@@ -1,7 +1,9 @@
-﻿using System;
+﻿using DapperExtensions;
+using System;
 
 namespace FineAdmin.Model
 {
+    [Table("LogonLog")]
     public class LogonLogModel
     {
         /// <summary>

@@ -1,5 +1,8 @@
-﻿namespace FineAdmin.Model
+﻿using DapperExtensions;
+
+namespace FineAdmin.Model
 {
+    [Table("Items")]
     public class ItemsModel : Entity
     {
         /// <summary>

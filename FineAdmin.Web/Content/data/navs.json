@@ -1,17 +1,9 @@
 [
     {
-        "title": "控制台",
-        "href": "pages/console.html",
-        "fontFamily": "ok-icon",
-        "icon": "&#xe901;",
-        "spread": true,
-        "isCheck": true
-    },
-    {
         "title": "控制台示例",
         "href": "",
         "fontFamily": "ok-icon",
-        "icon": "&#xe901;",
+        "icon": "&#xe6b8;",
         "children": [
             {
                 "title": "控制台一",
@@ -55,8 +47,8 @@
         "children": [
             {
                 "title": "地图",
-                "fontFamily": "my-icon",
-                "icon": "my-iconditu",
+                "fontFamily": "ok-icon",
+                "icon": "&#xe882;",
                 "spread": false,
                 "children": [
                     {
@@ -75,8 +67,8 @@
             },
             {
                 "title": "数据图",
-                "fontFamily": "my-icon",
-                "icon": "my-icontubiao",
+                "fontFamily": "ok-icon",
+                "icon": "ok-icon-shuju1",
                 "spread": false,
                 "children": [
                     {
@@ -121,43 +113,49 @@
         "children": [
             {
                 "title": "文章列表",
-                "href": "pages/article/article.html",
+                "href": "pages/often/article.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            },
+            {
+                "title": "留言列表",
+                "href": "pages/often/message.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            },
+            {
+                "title": "产品列表",
+                "href": "pages/often/product.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            },
+            {
+                "title": "下载列表",
+                "href": "pages/often/download.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            },
+            {
+                "title": "链接列表",
+                "href": "pages/often/link.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            },
+            {
+                "title": "任务列表",
+                "href": "pages/often/task.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            },
+            {
+                "title": "图片列表",
+                "href": "pages/often/image.html",
                 "icon": "&#xe62e;",
                 "spread": false
             },
 			{
-			    "title": "留言列表",
-			    "href": "pages/article/article.html",
-			    "icon": "&#xe62e;",
-			    "spread": false
-			},
-			{
-			    "title": "产品列表",
-			    "href": "pages/article/article.html",
-			    "icon": "&#xe62e;",
-			    "spread": false
-			},
-			{
-			    "title": "下载列表",
-			    "href": "pages/article/article.html",
-			    "icon": "&#xe62e;",
-			    "spread": false
-			},
-			{
-			    "title": "链接列表",
-			    "href": "pages/article/article.html",
-			    "icon": "&#xe62e;",
-			    "spread": false
-			},
-			{
-			    "title": "任务列表",
-			    "href": "pages/article/article.html",
-			    "icon": "&#xe62e;",
-			    "spread": false
-			},
-			{
-			    "title": "图片列表",
-			    "href": "pages/article/article.html",
+			    "title": "帖子列表",
+			    "href": "pages/often/bbs.html",
 			    "icon": "&#xe62e;",
 			    "spread": false
 			}
@@ -166,11 +164,30 @@
     {
         "title": "系统管理",
         "href": "",
-        "icon": "&#xe614;",
+        "fontFamily": "ok-icon",
+        "icon": "&#xe68a;",
         "spread": false,
         "children": [
             {
-                "title": "登录",
+                "title": "系统设置",
+                "href": "pages/system/setup.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            },
+            {
+                "title": "日志列表",
+                "href": "pages/system/log.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            },
+            {
+                "title": "屏蔽词",
+                "href": "pages/system/shield.html",
+                "icon": "&#xe62e;",
+                "spread": false
+            },
+            {
+                "title": "登录页面",
                 "href": "pages/login.html",
                 "icon": "&#xe609;",
                 "spread": false,
@@ -178,19 +195,19 @@
             },
             {
                 "title": "403页面",
-                "href": "pages/common/403.html",
+                "href": "pages/system/403.html",
                 "icon": "&#xe61c;",
                 "spread": false
             },
             {
                 "title": "404页面",
-                "href": "pages/common/404.html",
+                "href": "pages/system/404.html",
                 "icon": "&#xe61c;",
                 "spread": false
             },
             {
                 "title": "500页面",
-                "href": "pages/common/500.html",
+                "href": "pages/system/500.html",
                 "icon": "&#xe61c;",
                 "spread": false
             }
@@ -241,9 +258,29 @@
         ]
     },
     {
+        "title": "数据表格",
+        "href": "",
+        "icon": "&#xe62d;",
+        "spread": false,
+        "children": [
+            {
+                "title": "Datatables",
+                "href": "http://www.datatables.club",
+                "icon": "&#xe62e;",
+                "spread": false
+            },
+            {
+                "title": "jQuery.bsgrid",
+                "href": "http://thebestofyouth.com/bsgrid",
+                "icon": "&#xe62e;",
+                "spread": false
+            }
+        ]
+    },
+    {
         "title": "多级导航",
         "fontFamily": "ok-icon",
-        "icon": "ok-iconnavigation-2",
+        "icon": "&#xe7a7;",
         "spread": false,
         "children": [
             {
@@ -305,36 +342,36 @@
     {
         "title": "框架使用",
         "fontFamily": "ok-icon",
-        "icon": "&#xe9a6;",
+        "icon": "ok-icon-yooxi",
         "spread": false,
         "children": [
             {
                 "title": "字体图标",
-                "href": "pages/other/okfont.html",
+                "href": "pages/help/ok_font.html",
                 "icon": "&#xe62e;",
                 "spread": false
             },
             {
                 "title": "插件目录",
-                "href": "pages/help/plugDirectory.html",
+                "href": "pages/help/plug_directory.html",
                 "icon": "&#xe62e;",
                 "spread": false
             },
             {
                 "title": "内部添加导航",
-                "href": "pages/help/navOperate.html",
+                "href": "pages/help/nav_operate.html",
                 "icon": "&#xe62e;",
                 "spread": false
             },
             {
                 "title": "导航的图标",
-                "href": "pages/help/navIcon.html",
+                "href": "pages/help/nav_icon.html",
                 "icon": "&#xe62e;",
                 "spread": false
             },
             {
                 "title": "导航的参数",
-                "href": "pages/help/navParameter.html",
+                "href": "pages/help/nav_parameter.html",
                 "icon": "&#xe62e;",
                 "spread": false
             }
@@ -352,18 +389,18 @@
                 "title": "jquery.countup.js",
                 "href": "pages/tripartite/countup.html"
             },
-			{
-			    "title": "toastr.js",
-			    "href": "pages/tripartite/countup.html"
-			},
-			{
-			    "title": "SweetAlert2.js",
-			    "href": "pages/tripartite/countup.html"
-			},
-			{
-			    "title": "Animate.css",
-			    "href": "https://daneden.github.io/animate.css"
-			}
+            {
+                "title": "toastr.js",
+                "href": "pages/tripartite/countup.html"
+            },
+            {
+                "title": "SweetAlert2.js",
+                "href": "pages/tripartite/countup.html"
+            },
+            {
+                "title": "Animate.css",
+                "href": "https://daneden.github.io/animate.css"
+            }
         ]
     }
 ]

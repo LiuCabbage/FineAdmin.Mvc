@@ -3,6 +3,7 @@ using System;
 
 namespace FineAdmin.Model
 {
+    [Table("User")]
     public class UserModel : Entity
     {
         /// <summary>
@@ -57,6 +58,6 @@ namespace FineAdmin.Model
         /// 排序码
         /// </summary>
         [Computed]
-        public virtual int SortCode { get; set; }
+        public override int SortCode { get; set; }
     }
 }

@@ -6,7 +6,7 @@
         {
             get { return new OperatorProvider(); }
         }
-        private string LoginUserKey = "fineadmin_loginkey";
+        private string LoginUserKey = "Loginkey";
         private string LoginProvider = Configs.GetValue("LoginProvider");
 
         public OperatorModel GetCurrent()
@@ -32,7 +32,7 @@
             {
                 WebHelper.WriteSession(LoginUserKey, DESEncrypt.Encrypt(operatorModel.ToJson()));
             }
-            WebHelper.WriteCookie("secom_mac", Md5.md5(Net.GetMacByNetworkInterface().ToJson(), 32));
+            WebHelper.WriteCookie("Mac", Md5.md5(Net.GetMacByNetworkInterface().ToJson(), 32));
         }
         public void RemoveCurrent()
         {

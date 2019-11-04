@@ -21,7 +21,7 @@ layui.use(["okUtils", "table", "countUp", "okMock"], function () {
     }
 
     var userSourceOption = {
-        "title": {"text": "用户访问"},
+        "title": {"text": ""},
         "tooltip": {"trigger": "axis", "axisPointer": {"type": "cross", "label": {"backgroundColor": "#6a7985"}}},
         "legend": {"data": ["邮件营销", "联盟广告", "视频广告", "直接访问", "搜索引擎"]},
         "toolbox": {"feature": {"saveAsImage": {}}},
@@ -41,7 +41,7 @@ layui.use(["okUtils", "table", "countUp", "okMock"], function () {
      * 用户访问
      */
     function userSource() {
-        var userSourceMap = echarts.init($("#userSourceMap")[0], "themez");
+        var userSourceMap = echarts.init($("#userSourceMap")[0], "theme");
         userSourceMap.setOption(userSourceOption);
         okUtils.echartsResize([userSourceMap]);
     }

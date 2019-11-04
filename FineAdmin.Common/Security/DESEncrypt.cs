@@ -6,7 +6,7 @@ namespace FineAdmin.Common
 {
     public class DESEncrypt
     {
-        private static string DESKey = "fineadmin";
+        private static string DESKey = "DESKey";
 
         #region ========加密========
         /// <summary>

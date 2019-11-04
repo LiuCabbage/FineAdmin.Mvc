@@ -9,11 +9,11 @@ layui.define([], function(exprots) {
             user: {
                 list: "https://www.easy-mock.com/mock/5d5d0dd46cfcbd1b8627bf1d/ok-admin-v2.0/user/list",
                 list2: "https://www.easy-mock.com/mock/5d5d0dd46cfcbd1b8627bf1d/ok-admin-v2.0/user/list2",
-                batchNormal: "https://easy-mock.com/mock/5d0ce725424f15399a6c2068/okadmin/user/batchNormal",
-                batchStop: "https://easy-mock.com/mock/5d0ce725424f15399a6c2068/okadmin/user/batchStop",
-                batchDel: "https://easy-mock.com/mock/5d0ce725424f15399a6c2068/okadmin/user/batchDel",
-                add: "https://easy-mock.com/mock/5d0ce725424f15399a6c2068/okadmin/user/add",
-                edit: "https://easy-mock.com/mock/5d0ce725424f15399a6c2068/okadmin/user/edit"
+                batchNormal: "https://www.easy-mock.com/mock/5d5d0dd46cfcbd1b8627bf1d/ok-admin-v2.0/user/batchNormal",
+                batchStop: "https://www.easy-mock.com/mock/5d5d0dd46cfcbd1b8627bf1d/ok-admin-v2.0/user/batchStop",
+                batchDel: "https://www.easy-mock.com/mock/5d5d0dd46cfcbd1b8627bf1d/ok-admin-v2.0/user/batchDel",
+                add: "https://www.easy-mock.com/mock/5d5d0dd46cfcbd1b8627bf1d/ok-admin-v2.0/user/add",
+                edit: "https://www.easy-mock.com/mock/5d5d0dd46cfcbd1b8627bf1d/ok-admin-v2.0/user/edit"
             },
             role: {
                 list: "https://www.easy-mock.com/mock/5d5d0dd46cfcbd1b8627bf1d/ok-admin-v2.0/role/list"
@@ -26,12 +26,27 @@ layui.define([], function(exprots) {
             article: {
                 list: "https://www.easy-mock.com/mock/5d5d0dd46cfcbd1b8627bf1d/ok-admin-v2.0/article/list"
             },
+			task: {
+			    list: "https://www.easy-mock.com/mock/5d5d0dd46cfcbd1b8627bf1d/ok-admin-v2.0/task/list"
+			},
+			link: {
+				list: "https://www.easy-mock.com/mock/5d5d0dd46cfcbd1b8627bf1d/ok-admin-v2.0/link/list"
+			},
+            product: {
+                list: "https://www.easy-mock.com/mock/5d5d0dd46cfcbd1b8627bf1d/ok-admin-v2.0/product/list"
+            },
             log: {
                 list: "https://easy-mock.com/mock/5d0ce725424f15399a6c2068/okadmin/log/list"
             },
             message: {
-                list: "https://easy-mock.com/mock/5d0ce725424f15399a6c2068/okadmin/message/list"
-            }
+                list: "https://www.easy-mock.com/mock/5d5d0dd46cfcbd1b8627bf1d/ok-admin-v2.0/message/list"
+            },
+			download: {
+			    list: "https://www.easy-mock.com/mock/5d5d0dd46cfcbd1b8627bf1d/ok-admin-v2.0/download/list"
+			},
+			bbs: {
+			    list: "https://www.easy-mock.com/mock/5d5d0dd46cfcbd1b8627bf1d/ok-admin-v2.0/bbs/list"
+			}
         }
 	};
 	exprots("okMock", okMock);

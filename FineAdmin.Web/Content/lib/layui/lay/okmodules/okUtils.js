@@ -24,9 +24,9 @@ layui.define(["layer"], function (exprots) {
             window.addEventListener("resize", function () {
                 var isResize = localStorage.getItem("isResize");
                 // if (isResize == "false") {
-                    for (let i = 0; i < element.length; i++) {
-                        element[i].resize();
-                    }
+                for (let i = 0; i < element.length; i++) {
+                    element[i].resize();
+                }
                 // }
             });
         },
@@ -35,7 +35,8 @@ layui.define(["layer"], function (exprots) {
          * @param url
          * @param type
          * @param param
-         * @returns {*|*|*}
+         * @param load
+         * @returns {*|never|{always, promise, state, then}}
          */
         ajax: function (url, type, param, load) {
             var deferred = $.Deferred();
@@ -47,8 +48,8 @@ layui.define(["layer"], function (exprots) {
                 dataType: "json",
                 beforeSend: function () {
                     if (load) {
-						loadIndex = layer.load(0, {shade: false});
-					}
+                        loadIndex = layer.load(0, {shade: false});
+                    }
                 },
                 success: function (data) {
                     if (data.status == 1000) {
@@ -61,9 +62,9 @@ layui.define(["layer"], function (exprots) {
                     }
                 },
                 complete: function () {
-					if (load) {
-						layer.close(loadIndex);
-					}
+                    if (load) {
+                        layer.close(loadIndex);
+                    }
                 },
                 error: function () {
                     layer.close(loadIndex);
@@ -107,8 +108,31 @@ layui.define(["layer"], function (exprots) {
          * 获取父窗体的okTab
          * @returns {string}
          */
-        getOkTab:function () {
+        getOkTab: function () {
             return parent.objOkTab;
+        },
+        /**
+         * 格式化当前日期
+         * @param date
+         * @param fmt
+         * @returns {void | string}
+         */
+        dateFormat: function (date, fmt) {
+            var o = {
+                "M+": date.getMonth() + 1,
+                "d+": date.getDate(),
+                "h+": date.getHours(),
+                "m+": date.getMinutes(),
+                "s+": date.getSeconds(),
+                "q+": Math.floor((date.getMonth() + 3) / 3),
+                "S": date.getMilliseconds()
+            };
+            if (/(y+)/.test(fmt))
+                fmt = fmt.replace(RegExp.$1, (date.getFullYear() + "").substr(4 - RegExp.$1.length));
+            for (var k in o)
+                if (new RegExp("(" + k + ")").test(fmt))
+                    fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            return fmt;
         }
     };
     exprots("okUtils", okUtils);
