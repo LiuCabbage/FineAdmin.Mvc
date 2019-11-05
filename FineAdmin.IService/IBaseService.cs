@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FineAdmin.Service
+namespace FineAdmin.IService
 {
-    public class Class1
+    public interface IBaseService<T> where T : class, new()
     {
+        
     }
 }

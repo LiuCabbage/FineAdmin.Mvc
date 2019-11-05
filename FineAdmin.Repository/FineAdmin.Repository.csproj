@@ -31,7 +31,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Dapper.1.50.4\lib\net451\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.Contrib">
+      <HintPath>..\packages\Dapper.Contrib.1.50.4\lib\net451\Dapper.Contrib.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,10 +52,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BaseRepository.cs" />
+    <Compile Include="DBHeper\Common.cs" />
+    <Compile Include="DBHeper\MySqlHelper.cs" />
+    <Compile Include="DBHeper\PageCriteria.cs" />
+    <Compile Include="DBHeper\PageDataView.cs" />
+    <Compile Include="DBHeper\SqlHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DapperExtensions\DapperExtensions.csproj">
+      <Project>{2f606fc5-715b-4e54-b867-d7a0941c999c}</Project>
+      <Name>DapperExtensions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FineAdmin.Common\FineAdmin.Common.csproj">
       <Project>{55473f4c-cfdc-49e4-8776-4f067d50078b}</Project>
       <Name>FineAdmin.Common</Name>
@@ -57,6 +77,10 @@
       <Project>{c5fa8c31-0fe8-4be5-bb97-726e8a734fe3}</Project>
       <Name>FineAdmin.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Permissions\" />
+    <Folder Include="Security\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
