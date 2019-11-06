@@ -42,7 +42,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseService.cs" />
+    <Compile Include="Permissions\ButtonService.cs" />
+    <Compile Include="Permissions\ItemsDetailService.cs" />
+    <Compile Include="Permissions\ItemsService.cs" />
+    <Compile Include="Permissions\ModuleButtonService.cs" />
+    <Compile Include="Permissions\ModuleService.cs" />
+    <Compile Include="Permissions\OrganizeService.cs" />
+    <Compile Include="Permissions\RoleAuthorizeService.cs" />
+    <Compile Include="Permissions\RoleService.cs" />
+    <Compile Include="Permissions\UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\LogonLogService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FineAdmin.Common\FineAdmin.Common.csproj">
@@ -66,9 +76,6 @@
       <Name>FineAdmin.Repository</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Permissions\" />
-    <Folder Include="Security\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
