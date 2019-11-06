@@ -58,7 +58,17 @@
     <Compile Include="DBHeper\PageCriteria.cs" />
     <Compile Include="DBHeper\PageDataView.cs" />
     <Compile Include="DBHeper\SqlHelper.cs" />
+    <Compile Include="Permissions\ButtonRepository.cs" />
+    <Compile Include="Permissions\ItemsDetailRepository.cs" />
+    <Compile Include="Permissions\ItemsRepository.cs" />
+    <Compile Include="Permissions\ModuleButtonRepository.cs" />
+    <Compile Include="Permissions\ModuleRepository.cs" />
+    <Compile Include="Permissions\OrganizeRepository.cs" />
+    <Compile Include="Permissions\RoleAuthorizeRepository.cs" />
+    <Compile Include="Permissions\RoleRepository.cs" />
+    <Compile Include="Permissions\UserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\LogonLogRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DapperExtensions\DapperExtensions.csproj">
@@ -78,9 +88,6 @@
       <Name>FineAdmin.Model</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Permissions\" />
-    <Folder Include="Security\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -42,6 +42,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IBaseRepository.cs" />
+    <Compile Include="Permissions\IButtonRepository.cs" />
+    <Compile Include="Permissions\IItemsDetailRepository.cs" />
+    <Compile Include="Permissions\IItemsRepository.cs" />
+    <Compile Include="Security\ILogonLogRepository.cs" />
+    <Compile Include="Permissions\IModuleButtonRepository.cs" />
+    <Compile Include="Permissions\IModuleRepository.cs" />
+    <Compile Include="Permissions\IOrganizeRepository.cs" />
+    <Compile Include="Permissions\IRoleAuthorizeRepository.cs" />
+    <Compile Include="Permissions\IRoleRepository.cs" />
+    <Compile Include="Permissions\IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -54,9 +64,6 @@
       <Name>FineAdmin.Model</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Permissions\" />
-    <Folder Include="Security\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
