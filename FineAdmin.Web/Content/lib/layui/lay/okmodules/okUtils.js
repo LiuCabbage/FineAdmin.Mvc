@@ -52,7 +52,7 @@ layui.define(["layer"], function (exprots) {
                     }
                 },
                 success: function (data) {
-                    if (data.status == 1000) {
+                    if (data.status == 1) {
                         // 业务正常
                         deferred.resolve(data)
                     } else {

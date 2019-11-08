@@ -3,15 +3,15 @@
     public class AjaxResult
     {
         /// <summary>
-        /// 操作结果类型
+        /// 状态码 1成功|0失败
         /// </summary>
-        public object state { get; set; }
+        public int status { get; set; }
         /// <summary>
-        /// 获取 消息内容
+        /// 返回消息内容
         /// </summary>
-        public string message { get; set; }
+        public string msg { get; set; }
         /// <summary>
-        /// 获取 返回数据
+        /// 返回数据
         /// </summary>
         public object data { get; set; }
     }
@@ -21,20 +21,12 @@
     public enum ResultType
     {
         /// <summary>
-        /// 消息结果类型
-        /// </summary>
-        info,
-        /// <summary>
         /// 成功结果类型
         /// </summary>
-        success,
-        /// <summary>
-        /// 警告结果类型
-        /// </summary>
-        warning,
+        success = 1,
         /// <summary>
         /// 异常结果类型
         /// </summary>
-        error
+        error = 0
     }
 }

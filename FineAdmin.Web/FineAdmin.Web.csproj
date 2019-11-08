@@ -379,7 +379,6 @@
     <Content Include="Content\lib\layui\lay\okmodules\okAddlink.js" />
     <Content Include="Content\lib\layui\lay\okmodules\okGVerify.js" />
     <Content Include="Content\lib\layui\lay\okmodules\okLayer.js" />
-    <Content Include="Content\lib\layui\lay\okmodules\okMock.js" />
     <Content Include="Content\lib\layui\lay\okmodules\okTab.js" />
     <Content Include="Content\lib\layui\lay\okmodules\okUtils.js" />
     <Content Include="Content\lib\layui\lay\okmodules\qrcode.js" />
@@ -403,6 +402,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Upload\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
