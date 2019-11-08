@@ -7,7 +7,9 @@ namespace FineAdmin.Web
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+            //默认的异常提示 HandleErrorAttribute
+            //自定义异常提示(Handler下的HandlerErrorAttribute)
+            filters.Add(new HandlerErrorAttribute());
         }
     }
 }

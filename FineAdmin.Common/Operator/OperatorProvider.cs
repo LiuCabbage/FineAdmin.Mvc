@@ -1,4 +1,4 @@
-﻿namespace FineAdmin.Common.Operator
+﻿namespace FineAdmin.Common
 {
     public class OperatorProvider
     {
