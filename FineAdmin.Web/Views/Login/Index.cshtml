@@ -58,6 +58,8 @@
                     })
                 }).fail(function (error) {
                     console.log(error)
+                    //刷新二维码
+                    $("#imgcode").click();
                 });
                 return false;
             });

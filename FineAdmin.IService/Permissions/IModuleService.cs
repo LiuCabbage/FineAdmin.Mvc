@@ -9,6 +9,12 @@ namespace FineAdmin.IService
 {
     public interface IModuleService : IBaseService<ModuleModel>
     {
+        /// <summary>
+        /// 获得菜单列表
+        /// </summary>
+        /// <param name="roleId"></param>
+        /// <returns></returns>
+        dynamic GetModuleList(int roleId);
 
     }
 }

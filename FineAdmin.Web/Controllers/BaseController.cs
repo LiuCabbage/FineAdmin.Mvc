@@ -22,6 +22,7 @@ namespace FineAdmin.Web.Controllers
         // GET: Base
         public virtual ActionResult Index(int? id)
         {
+
             return View();
         }
 

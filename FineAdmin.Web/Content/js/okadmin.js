@@ -6,7 +6,7 @@ layui.use(["element", "layer", "okUtils", "okTab", "okLayer"], function () {
     var okLayer = layui.okLayer;
 
     var okTab = layui.okTab({
-        url: "/Content/data/navs.json",
+        url: "/Permissions/Module/GetModuleList",
         openTabNum: 30, // 允许同时选项卡的个数
         parseData: function (data) { // 如果返回的结果和navs.json中的数据结构一致可省略这个方法
             return data;

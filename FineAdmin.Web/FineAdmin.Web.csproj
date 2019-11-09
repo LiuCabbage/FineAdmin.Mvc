@@ -132,6 +132,10 @@
     <Compile Include="App_Start\Handler\HandlerErrorAttribute.cs" />
     <Compile Include="App_Start\Handler\HandlerLoginAttribute.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Permissions\Controllers\ModuleController.cs" />
+    <Compile Include="Areas\Permissions\PermissionsAreaRegistration.cs" />
+    <Compile Include="Areas\Security\SecurityAreaRegistration.cs" />
+    <Compile Include="Areas\SysSet\SysSetAreaRegistration.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -401,6 +405,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Permissions\Models\" />
+    <Folder Include="Areas\Permissions\Views\Module\" />
+    <Folder Include="Areas\Permissions\Views\Shared\" />
+    <Folder Include="Areas\Security\Controllers\" />
+    <Folder Include="Areas\Security\Models\" />
+    <Folder Include="Areas\Security\Views\Shared\" />
+    <Folder Include="Areas\SysSet\Controllers\" />
+    <Folder Include="Areas\SysSet\Models\" />
+    <Folder Include="Areas\SysSet\Views\Shared\" />
     <Folder Include="Models\" />
     <Folder Include="Upload\" />
     <Folder Include="Views\Base\" />
@@ -414,6 +427,9 @@
     <Content Include="Content\lib\fonts\iconfont.woff2" />
     <Content Include="Configs\database.config" />
     <Content Include="Configs\system.config" />
+    <Content Include="Areas\Permissions\Views\web.config" />
+    <Content Include="Areas\Security\Views\web.config" />
+    <Content Include="Areas\SysSet\Views\web.config" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />

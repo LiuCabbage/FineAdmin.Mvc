@@ -16,15 +16,15 @@
         "title": "会员管理",
         "href": "",
         "icon": "&#xe66f;",
-        "spread": false,
+        "spread": true,
         "children": [
-            {
-                "title": "用户列表",
-                "href": "pages/member/user.html",
-                "fontFamily": "layui-icon",
-                "icon": "&#xe62e;",
-                "spread": false
-            },
+          {
+            "title": "用户列表",
+            "href": "pages/member/user.html",
+            "fontFamily": "layui-icon",
+            "icon": "&#xe62e;",
+            "spread": true
+          },
             {
                 "title": "角色列表",
                 "href": "pages/member/role.html",
@@ -45,26 +45,26 @@
         "icon": "&#xe62c;",
         "spread": false,
         "children": [
-            {
-                "title": "地图",
-                "fontFamily": "ok-icon",
-                "icon": "&#xe882;",
-                "spread": false,
-                "children": [
-                    {
-                        "title": "中国地图",
-                        "href": "pages/chart/chart-china.html",
-                        "icon": "&#xe62e;",
-                        "spread": false
-                    },
-                    {
-                        "title": "区域地图",
-                        "href": "pages/chart/chart-area.html",
-                        "icon": "&#xe62e;",
-                        "spread": false
-                    }
-                ]
-            },
+          {
+            "title": "地图",
+            "fontFamily": "ok-icon",
+            "icon": "&#xe882;",
+            "spread": true,
+            "children": [
+              {
+                "title": "中国地图",
+                "href": "pages/chart/chart-china.html",
+                "icon": "&#xe62e;",
+                "spread": false
+              },
+              {
+                "title": "区域地图",
+                "href": "pages/chart/chart-area.html",
+                "icon": "&#xe62e;",
+                "spread": false
+              }
+            ]
+          },
             {
                 "title": "数据图",
                 "fontFamily": "ok-icon",
