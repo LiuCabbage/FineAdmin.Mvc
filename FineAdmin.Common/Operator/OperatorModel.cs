@@ -24,10 +24,6 @@ namespace FineAdmin.Common
         /// </summary>
         public string HeadIcon { get; set; }
         /// <summary>
-        /// 是否管理员
-        /// </summary>
-        public int IsAdministrator { get; set; }
-        /// <summary>
         /// 角色Id
         /// </summary>
         public int RoleId { get; set; }
@@ -39,13 +35,5 @@ namespace FineAdmin.Common
         /// 登录IP城市
         /// </summary>
         public string LoginIPAddressName { get; set; }
-        /// <summary>
-        /// 登录Token
-        /// </summary>
-        public string LoginToken { get; set; }
-        /// <summary>
-        /// 登录时间
-        /// </summary>
-        public DateTime LoginTime { get; set; }
     }
 }

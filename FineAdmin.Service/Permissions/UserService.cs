@@ -5,11 +5,23 @@ using System.Text;
 using System.Threading.Tasks;
 using FineAdmin.IService;
 using FineAdmin.Model;
+using FineAdmin.IRepository;
+using FineAdmin.Common;
 
 namespace FineAdmin.Service
 {
     public class UserService : BaseService<UserModel>, IUserService
     {
-
+        public IUserRepository UserRepository { get; set; }
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public UserModel LoginOn(string username, string password)
+        {
+            return UserRepository.LoginOn(username, password);
+        }
     }
 }

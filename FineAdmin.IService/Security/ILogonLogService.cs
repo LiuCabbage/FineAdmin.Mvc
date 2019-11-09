@@ -9,6 +9,11 @@ namespace FineAdmin.IService
 {
     public interface ILogonLogService : IBaseService<LogonLogModel>
     {
-
+        /// <summary>
+        /// 写入登录日志
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        int WriteDbLog(LogonLogModel model);
     }
 }

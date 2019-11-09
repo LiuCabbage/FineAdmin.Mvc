@@ -5,11 +5,11 @@
         /// <summary>
         /// 状态码 1成功|0失败
         /// </summary>
-        public int status { get; set; }
+        public object state { get; set; }
         /// <summary>
         /// 返回消息内容
         /// </summary>
-        public string msg { get; set; }
+        public string message { get; set; }
         /// <summary>
         /// 返回数据
         /// </summary>
@@ -21,12 +21,20 @@
     public enum ResultType
     {
         /// <summary>
+        /// 消息结果类型
+        /// </summary>
+        info,
+        /// <summary>
         /// 成功结果类型
         /// </summary>
-        success = 1,
+        success,
+        /// <summary>
+        /// 警告结果类型
+        /// </summary>
+        warning,
         /// <summary>
         /// 异常结果类型
         /// </summary>
-        error = 0
+        error
     }
 }

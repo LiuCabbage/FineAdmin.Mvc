@@ -24,7 +24,6 @@ namespace FineAdmin.Web
             }
             if (OperatorProvider.Provider.GetCurrent() == null)
             {
-                WebHelper.WriteCookie("login_error", "overdue");
                 filterContext.HttpContext.Response.Write("<script>top.location.href = '/Login';</script>");
             }
         }

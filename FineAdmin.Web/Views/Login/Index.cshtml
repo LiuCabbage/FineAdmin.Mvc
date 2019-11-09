@@ -38,14 +38,13 @@
             let form = layui.form;
             let $ = layui.jquery;
             let okUtils = layui.okUtils;
-            let okMock = layui.okMock;
             let okLayer = layui.okLayer;
 
             /**
              * 数据校验
              */
             form.verify({
-                password: [/^[\S]{5,12}$/, "密码必须5到12位，且不能出现空格"]
+                password: [/^[\S]{6,12}$/, "密码必须6到12位，且不能出现空格"]
             });
 
             /**
@@ -54,7 +53,7 @@
             form.on("submit(login)", function (data) {
                 okUtils.ajax("/Login/LoginOn", "post", data.field, true).done(function (response) {
                     console.log(response);
-                    okLayer.msg.greenTick(response.msg, function () {
+                    okLayer.msg.greenTick(response.message, function () {
                         window.location = "/Home";
                     })
                 }).fail(function (error) {

@@ -9,6 +9,12 @@ namespace FineAdmin.IService
 {
     public interface IUserService : IBaseService<UserModel>
     {
-
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        UserModel LoginOn(string username, string password);
     }
 }

@@ -52,13 +52,13 @@ layui.define(["layer"], function (exprots) {
                     }
                 },
                 success: function (data) {
-                    if (data.status == 1) {
+                    if (data.state == "success") {
                         // 业务正常
                         deferred.resolve(data)
                     } else {
                         // 业务异常
-                        layer.msg(data.msg, {icon: 7, time: 2000});
-                        deferred.reject("okUtils.ajax warn: " + data.msg);
+                        layer.msg(data.message, {icon: 7, time: 2000});
+                        deferred.reject("okUtils.ajax warn: " + data.message);
                     }
                 },
                 complete: function () {

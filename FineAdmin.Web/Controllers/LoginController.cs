@@ -26,20 +26,56 @@ namespace FineAdmin.Web.Controllers
         [HttpPost]
         public ActionResult LoginOn(string username, string password, string captcha)
         {
-
-            return View();
+            LogonLogModel logEntity = new LogonLogModel();
+            logEntity.LogType = DbLogType.Login.ToString();
+            try
+            {
+                if (Session["session_verifycode"].IsEmpty() || Md5.md5(captcha.ToLower(), 16) != Session["session_verifycode"].ToString())
+                {
+                    throw new Exception("验证码错误");
+                }
+                UserModel userEntity = UserService.LoginOn(username, Md5.md5(password, 32));
+                if (userEntity != null)
+                {
+                    OperatorModel operatorModel = new OperatorModel();
+                    operatorModel.UserId = userEntity.Id;
+                    operatorModel.Account = userEntity.Account;
+                    operatorModel.RealName = userEntity.RealName;
+                    operatorModel.HeadIcon = userEntity.HeadIcon;
+                    operatorModel.RoleId = userEntity.RoleId;
+                    operatorModel.LoginIPAddress = Net.Ip;
+                    operatorModel.LoginIPAddressName = Net.GetLocation(Net.Ip);
+                    OperatorProvider.Provider.AddCurrent(operatorModel);
+                    logEntity.Account = userEntity.Account;
+                    logEntity.RealName = userEntity.RealName;
+                    logEntity.Description = "登陆成功";
+                    LogonLogService.WriteDbLog(logEntity);
+                    return Content(new AjaxResult { state = ResultType.success.ToString(), message = "登录成功" }.ToJson());
+                }
+                else
+                {
+                    throw new Exception("用户名或密码错误");
+                }
+            }
+            catch (Exception ex)
+            {
+                logEntity.Account = username;
+                logEntity.RealName = username;
+                logEntity.Description = "登录失败，" + ex.Message;
+                LogonLogService.WriteDbLog(logEntity);
+                return Content(new AjaxResult { state = ResultType.error.ToString(), message = ex.Message }.ToJson());
+            }
         }
         [HttpGet]
         public ActionResult LoginOut()
         {
-            //logService.WriteDbLog(new LogModel
-            //{
-            //    LogType = DbLogType.Exit.ToString(),
-            //    UserName = OperatorProvider.Provider.GetCurrent().UserName,
-            //    RealName = OperatorProvider.Provider.GetCurrent().RealName,
-            //    Status = true,
-            //    Description = "安全退出系统",
-            //});
+            LogonLogService.WriteDbLog(new LogonLogModel
+            {
+                LogType = DbLogType.Exit.ToString(),
+                Account = OperatorProvider.Provider.GetCurrent().Account,
+                RealName = OperatorProvider.Provider.GetCurrent().RealName,
+                Description = "安全退出系统",
+            });
             Session.Abandon();
             Session.Clear();
             OperatorProvider.Provider.RemoveCurrent();
