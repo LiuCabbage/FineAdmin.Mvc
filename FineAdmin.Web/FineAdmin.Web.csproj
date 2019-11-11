@@ -132,8 +132,14 @@
     <Compile Include="App_Start\Handler\HandlerErrorAttribute.cs" />
     <Compile Include="App_Start\Handler\HandlerLoginAttribute.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Permissions\Controllers\ButtonController.cs" />
+    <Compile Include="Areas\Permissions\Controllers\ItemsController.cs" />
     <Compile Include="Areas\Permissions\Controllers\ModuleController.cs" />
+    <Compile Include="Areas\Permissions\Controllers\OrganizeController.cs" />
+    <Compile Include="Areas\Permissions\Controllers\RoleController.cs" />
+    <Compile Include="Areas\Permissions\Controllers\UserController.cs" />
     <Compile Include="Areas\Permissions\PermissionsAreaRegistration.cs" />
+    <Compile Include="Areas\Security\Controllers\LogonLogController.cs" />
     <Compile Include="Areas\Security\SecurityAreaRegistration.cs" />
     <Compile Include="Areas\SysSet\Controllers\DevSetController.cs" />
     <Compile Include="Areas\SysSet\Controllers\EmailSetController.cs" />
@@ -412,9 +418,13 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Permissions\Models\" />
+    <Folder Include="Areas\Permissions\Views\Button\" />
+    <Folder Include="Areas\Permissions\Views\Items\" />
     <Folder Include="Areas\Permissions\Views\Module\" />
+    <Folder Include="Areas\Permissions\Views\Organize\" />
+    <Folder Include="Areas\Permissions\Views\Role\" />
     <Folder Include="Areas\Permissions\Views\Shared\" />
-    <Folder Include="Areas\Security\Controllers\" />
+    <Folder Include="Areas\Permissions\Views\User\" />
     <Folder Include="Areas\Security\Models\" />
     <Folder Include="Areas\Security\Views\Shared\" />
     <Folder Include="Areas\SysSet\Views\Shared\" />
@@ -437,10 +447,13 @@
     <Content Include="Areas\SysSet\Views\EmailSet\Index.cshtml" />
     <Content Include="Areas\SysSet\Views\DevSet\Index.cshtml" />
     <Content Include="Areas\SysSet\Views\WebSet\Index.cshtml" />
+    <Content Include="Areas\Security\Views\LogonLog\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutSysSetPage.cshtml" />
+    <Content Include="Views\Shared\_LayoutForm.cshtml" />
+    <Content Include="Views\Shared\_LayoutList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FineAdmin.Common\FineAdmin.Common.csproj">

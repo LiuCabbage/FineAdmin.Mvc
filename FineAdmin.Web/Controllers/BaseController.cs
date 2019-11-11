@@ -22,7 +22,12 @@ namespace FineAdmin.Web.Controllers
         // GET: Base
         public virtual ActionResult Index(int? id)
         {
+            var _menuId = id == null ? 0 : id.Value;
+            var _roleId = Operator.RoleId;
+            if (id != null)
+            {
 
+            }
             return View();
         }
         /// <summary>

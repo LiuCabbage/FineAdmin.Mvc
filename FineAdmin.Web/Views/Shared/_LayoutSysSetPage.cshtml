@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="~/Content/lib/layui/css/layui.css" rel="stylesheet" />
+    <link href="~/Content/css/common.css" rel="stylesheet" />
     <script src="~/Content/lib/layui/layui.js"></script>
     <style type="text/css">
 
@@ -29,10 +30,10 @@
     </style>
 </head>
 <body>
-    <div id="ajax-loader" style="cursor: progress; position: fixed; top: -50%; left: -50%; width: 200%; height: 200%; background: #fff; z-index: 10000; overflow: hidden;">
-        <img src="~/Content/images/ajax-loader.gif" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto;" />
-    </div>
-    <div>
+    <div class="ok-body">
+        <div id="ajax-loader" style="cursor: progress; position: fixed; top: -50%; left: -50%; width: 200%; height: 200%; background: #fff; z-index: 10000; overflow: hidden;">
+            <img src="~/Content/images/ajax-loader.gif" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto;" />
+        </div>
         @RenderBody()
     </div>
     <script type="text/javascript">

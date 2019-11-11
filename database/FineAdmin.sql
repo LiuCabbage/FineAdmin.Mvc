@@ -11,7 +11,7 @@
  Target Server Version : 50717
  File Encoding         : 65001
 
- Date: 31/10/2019 21:38:28
+ Date: 11/11/2019 17:42:45
 */
 
 SET NAMES utf8mb4;
@@ -161,7 +161,63 @@ CREATE TABLE `logonlog`  (
   `IPAddressName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'IP所在城市',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '登录日志表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 53 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '登录日志表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of logonlog
+-- ----------------------------
+INSERT INTO `logonlog` VALUES (1, 'Login', 'admin', 'admin', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-11-09 15:45:55');
+INSERT INTO `logonlog` VALUES (2, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-09 15:49:03');
+INSERT INTO `logonlog` VALUES (3, 'Login', 'ffds', 'ffds', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-09 15:50:46');
+INSERT INTO `logonlog` VALUES (4, 'Login', 'ffds', 'ffds', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-11-09 15:50:55');
+INSERT INTO `logonlog` VALUES (5, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-09 15:51:07');
+INSERT INTO `logonlog` VALUES (6, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-09 15:51:36');
+INSERT INTO `logonlog` VALUES (7, 'Login', 'admin', 'admin', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-11-09 15:51:48');
+INSERT INTO `logonlog` VALUES (8, 'Login', 'admin', 'admin', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-11-09 15:51:54');
+INSERT INTO `logonlog` VALUES (9, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-09 15:52:00');
+INSERT INTO `logonlog` VALUES (10, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-09 15:54:13');
+INSERT INTO `logonlog` VALUES (11, 'Login', 'admin', 'admin', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-11-09 15:59:31');
+INSERT INTO `logonlog` VALUES (12, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-09 16:00:34');
+INSERT INTO `logonlog` VALUES (13, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-09 16:00:37');
+INSERT INTO `logonlog` VALUES (14, 'Login', 'admin', 'admin', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-11-09 16:00:44');
+INSERT INTO `logonlog` VALUES (15, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-09 16:00:51');
+INSERT INTO `logonlog` VALUES (16, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-09 17:19:27');
+INSERT INTO `logonlog` VALUES (17, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-09 17:59:15');
+INSERT INTO `logonlog` VALUES (18, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-09 17:59:45');
+INSERT INTO `logonlog` VALUES (19, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-09 18:00:01');
+INSERT INTO `logonlog` VALUES (20, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-09 18:00:05');
+INSERT INTO `logonlog` VALUES (21, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-09 18:00:55');
+INSERT INTO `logonlog` VALUES (22, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-09 18:01:02');
+INSERT INTO `logonlog` VALUES (23, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-09 18:01:07');
+INSERT INTO `logonlog` VALUES (24, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-11 09:58:45');
+INSERT INTO `logonlog` VALUES (25, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-11 10:00:10');
+INSERT INTO `logonlog` VALUES (26, 'Login', 'admin', 'admin', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-11-11 10:00:24');
+INSERT INTO `logonlog` VALUES (27, 'Login', 'admin', 'admin', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-11-11 10:00:44');
+INSERT INTO `logonlog` VALUES (28, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-11 10:00:48');
+INSERT INTO `logonlog` VALUES (29, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-11 10:00:52');
+INSERT INTO `logonlog` VALUES (30, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-11 10:04:20');
+INSERT INTO `logonlog` VALUES (31, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-11 10:04:36');
+INSERT INTO `logonlog` VALUES (32, 'Login', 'admin', 'admin', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-11-11 10:04:42');
+INSERT INTO `logonlog` VALUES (33, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-11 10:04:50');
+INSERT INTO `logonlog` VALUES (34, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-11 10:12:39');
+INSERT INTO `logonlog` VALUES (35, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-11 10:12:54');
+INSERT INTO `logonlog` VALUES (36, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-11 10:14:19');
+INSERT INTO `logonlog` VALUES (37, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-11 11:19:12');
+INSERT INTO `logonlog` VALUES (38, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-11 11:19:25');
+INSERT INTO `logonlog` VALUES (39, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-11 11:26:45');
+INSERT INTO `logonlog` VALUES (40, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-11 11:26:48');
+INSERT INTO `logonlog` VALUES (41, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-11 11:26:56');
+INSERT INTO `logonlog` VALUES (42, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-11 11:28:10');
+INSERT INTO `logonlog` VALUES (43, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-11 11:28:43');
+INSERT INTO `logonlog` VALUES (44, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-11 11:30:22');
+INSERT INTO `logonlog` VALUES (45, 'Login', 'admin', 'admin', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-11-11 11:30:34');
+INSERT INTO `logonlog` VALUES (46, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-11 11:30:38');
+INSERT INTO `logonlog` VALUES (47, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-11 11:30:40');
+INSERT INTO `logonlog` VALUES (48, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-11 11:30:44');
+INSERT INTO `logonlog` VALUES (49, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-11 15:43:20');
+INSERT INTO `logonlog` VALUES (50, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-11 15:43:33');
+INSERT INTO `logonlog` VALUES (51, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-11 16:05:47');
+INSERT INTO `logonlog` VALUES (52, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-11 16:05:56');
 
 -- ----------------------------
 -- Table structure for module
@@ -188,18 +244,18 @@ CREATE TABLE `module`  (
 -- ----------------------------
 -- Records of module
 -- ----------------------------
-INSERT INTO `module` VALUES (1, 0, '系统管理', 'ok-icon', '&#xe6b0;', NULL, b'0', 1, '系统管理', b'0', '2019-09-19 15:28:17', 1, '2019-09-19 15:28:29', 1);
-INSERT INTO `module` VALUES (2, 0, '系统安全', 'ok-icon', '&#xe769;', NULL, b'0', 2, '系统安全', b'0', '2019-09-19 15:48:28', 1, '2019-09-19 15:48:33', 1);
-INSERT INTO `module` VALUES (3, 0, '系统设置', 'ok-icon', '&#xe889;', NULL, b'0', 3, '系统设置', b'0', '2019-09-19 15:49:03', 1, '2019-09-19 15:49:07', 1);
-INSERT INTO `module` VALUES (4, 1, '机构管理', 'ok-icon', '&#xe726;', '/', b'1', 1, '机构管理', b'0', '2019-09-19 16:51:51', 1, '2019-09-19 16:51:55', 1);
-INSERT INTO `module` VALUES (5, 1, '角色管理', 'ok-icon', '&#xe7be;', '/', b'1', 2, '角色管理', b'0', '2019-09-19 16:54:54', 1, '2019-09-19 16:54:58', 1);
-INSERT INTO `module` VALUES (6, 1, '用户管理', 'ok-icon', '&#xe736;', '/', b'1', 3, '用户管理', b'0', '2019-09-19 16:57:34', 1, '2019-09-19 16:57:38', 1);
-INSERT INTO `module` VALUES (7, 1, '数据字典', 'ok-icon', '&#xe660;', '/', b'1', 4, '数据字典', b'0', '2019-09-19 16:58:27', 1, '2019-09-19 16:58:31', 1);
-INSERT INTO `module` VALUES (8, 1, '系统菜单', 'ok-icon', '&#xe7ad;', '/', b'1', 5, '系统菜单', b'0', '2019-09-19 16:58:49', 1, '2019-09-19 16:58:45', 1);
-INSERT INTO `module` VALUES (9, 2, '登录日志', 'ok-icon', '&#xe706;', '/', b'1', 1, '登录日志', b'0', '2019-09-23 18:17:12', 1, '2019-09-23 18:17:18', 1);
-INSERT INTO `module` VALUES (10, 3, '系统设置', 'ok-icon', '&#xe611;', '/', b'1', 1, '系统设置', b'0', '2019-09-23 18:18:43', 1, '2019-09-23 18:18:49', 1);
-INSERT INTO `module` VALUES (11, 3, '邮件设置', 'ok-icon', '&#xe7bd;', '/', b'1', 2, '邮件设置', b'0', '2019-09-23 18:19:34', 1, '2019-09-23 18:19:38', 1);
-INSERT INTO `module` VALUES (12, 3, '上传设置', 'ok-icon', '&#xe75d;', '/', b'1', 3, '上传设置', b'0', '2019-09-23 18:20:02', 1, '2019-09-23 18:19:59', 1);
+INSERT INTO `module` VALUES (1, 0, '系统管理', 'ok-icon', '&#xe6b0;', '/', b'0', 1, '系统管理', b'0', '2019-09-19 15:28:17', 1, '2019-09-19 15:28:29', 1);
+INSERT INTO `module` VALUES (2, 0, '系统安全', 'ok-icon', '&#xe769;', '/', b'0', 2, '系统安全', b'0', '2019-09-19 15:48:28', 1, '2019-09-19 15:48:33', 1);
+INSERT INTO `module` VALUES (3, 0, '系统设置', 'ok-icon', '&#xe889;', '/', b'0', 3, '系统设置', b'0', '2019-09-19 15:49:03', 1, '2019-09-19 15:49:07', 1);
+INSERT INTO `module` VALUES (4, 1, '机构管理', 'ok-icon', '&#xe726;', '/Permissions/Organize', b'1', 1, '机构管理', b'0', '2019-09-19 16:51:51', 1, '2019-09-19 16:51:55', 1);
+INSERT INTO `module` VALUES (5, 1, '角色管理', 'ok-icon', '&#xe7be;', '/Permissions/Role', b'1', 2, '角色管理', b'0', '2019-09-19 16:54:54', 1, '2019-09-19 16:54:58', 1);
+INSERT INTO `module` VALUES (6, 1, '用户管理', 'ok-icon', '&#xe736;', '/Permissions/User', b'1', 3, '用户管理', b'0', '2019-09-19 16:57:34', 1, '2019-09-19 16:57:38', 1);
+INSERT INTO `module` VALUES (7, 1, '数据字典', 'ok-icon', '&#xe660;', '/Permissions/Items', b'1', 4, '数据字典', b'0', '2019-09-19 16:58:27', 1, '2019-09-19 16:58:31', 1);
+INSERT INTO `module` VALUES (8, 1, '系统菜单', 'ok-icon', '&#xe7ad;', '/Permissions/Module', b'1', 5, '系统菜单', b'0', '2019-09-19 16:58:49', 1, '2019-09-19 16:58:45', 1);
+INSERT INTO `module` VALUES (9, 2, '登录日志', 'ok-icon', '&#xe706;', '/Security/LogonLog', b'1', 1, '登录日志', b'0', '2019-09-23 18:17:12', 1, '2019-09-23 18:17:18', 1);
+INSERT INTO `module` VALUES (10, 3, '网站设置', 'ok-icon', '&#xe7d5;', '/SysSet/WebSet', b'1', 1, '系统设置', b'0', '2019-09-23 18:18:43', 1, '2019-09-23 18:18:49', 1);
+INSERT INTO `module` VALUES (11, 3, '开发设置', 'ok-icon', '&#xe738;', '/SysSet/DevSet', b'1', 2, '开发设置', b'0', '2019-09-23 18:19:34', 1, '2019-09-23 18:19:38', 1);
+INSERT INTO `module` VALUES (12, 3, '邮件设置', 'ok-icon', '&#xe7bd;', '/SysSet/EmailSet', b'1', 3, '邮件设置', b'0', '2019-09-23 18:20:02', 1, '2019-09-23 18:19:59', 1);
 
 -- ----------------------------
 -- Table structure for modulebutton
@@ -369,6 +425,6 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'Liu_Cabbage', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 1, b'1', b'0', '2019-10-29 15:40:26', 1, '2019-10-29 15:40:28', 1);
+INSERT INTO `user` VALUES (1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'Liu_Cabbage', '/Content/images/head.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 3, 1, b'1', b'0', '2019-10-29 15:40:26', 1, '2019-10-29 15:40:28', 1);
 
 SET FOREIGN_KEY_CHECKS = 1;

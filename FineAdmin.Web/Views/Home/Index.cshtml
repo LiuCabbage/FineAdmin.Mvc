@@ -1,5 +1,6 @@
-﻿@{
-    ViewBag.Title = "FineAdmin";
+﻿@model FineAdmin.Web.Areas.SysSet.Models.WebModel
+@{
+    ViewBag.Title = Model.SiteName;
 }
 <div class="layui-layout layui-layout-admin okadmin">
     <!--头部导航-->
@@ -33,8 +34,8 @@
 
             <li class="no-line layui-nav-item">
                 <a href="javascript:">
-                    <img src="~/Content/images/head.jpg" class="layui-nav-img">
-                    bobi
+                    <img src="@ViewBag.HeadIcon" class="layui-nav-img">
+                    @ViewBag.Account
                 </a>
                 <dl id="userInfo" class="layui-nav-child">
                     <dd><a lay-id="u-2" href="javascript:" data-url="javascript:;">基本资料</a></dd>
@@ -52,12 +53,12 @@
     <!--左侧导航区域-->
     <div class="layui-side layui-side-menu okadmin-bg-20222A ok-left">
         <div class="layui-side-scroll okadmin-side">
-            <div class="okadmin-logo">FineAdmin</div>
+            <div class="okadmin-logo">@Model.SiteName</div>
             <div class="user-photo">
                 <a class="img" title="我的头像">
-                    <img src="~/Content/images/head.jpg" class="userAvatar">
+                    <img src="@ViewBag.HeadIcon" class="userAvatar">
                 </a>
-                <p>你好！<span class="userName">admin</span>, 欢迎登录</p>
+                <p>你好！<span class="userName">@ViewBag.Account</span>, 欢迎登录</p>
             </div>
             <!--左侧导航菜单-->
             <ul id="navBar" class="layui-nav okadmin-nav okadmin-bg-20222A layui-nav-tree">
@@ -106,7 +107,7 @@
 
     <!--底部信息-->
     <div class="layui-footer okadmin-text-center">
-        Copyright ©2019 FineAdmin All Rights Reserved
+        @Model.CopyRight
         <button class="layui-btn layui-btn-danger layui-btn-xs donate">捐赠作者</button>
         <button class="layui-btn layui-btn-danger layui-btn-xs communication">QQ交流</button>
     </div>

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using FineAdmin.Common;
 using FineAdmin.IService;
 using FineAdmin.Model;
+using FineAdmin.Web.Areas.SysSet.Models;
 
 namespace FineAdmin.Web.Controllers
 {
@@ -16,7 +17,7 @@ namespace FineAdmin.Web.Controllers
         // GET: Login
         public ActionResult Index()
         {
-            return View();
+            return View(new WebModel().GetWebInfo());
         }
         [HttpGet]
         public ActionResult GetAuthCode()
