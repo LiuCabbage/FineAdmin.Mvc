@@ -83,7 +83,6 @@ layui.define(["element", "jquery"], function (exports) {
    //生成左侧菜单
    var temp = "";
     okTab.prototype.navBar = function (strData) {
-        console.log(strData);
       var data;
       if (typeof (strData) == "string") {
          var data = JSON.parse(strData); //有可能是字符串，转换一下

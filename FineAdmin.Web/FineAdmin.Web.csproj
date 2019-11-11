@@ -135,6 +135,12 @@
     <Compile Include="Areas\Permissions\Controllers\ModuleController.cs" />
     <Compile Include="Areas\Permissions\PermissionsAreaRegistration.cs" />
     <Compile Include="Areas\Security\SecurityAreaRegistration.cs" />
+    <Compile Include="Areas\SysSet\Controllers\DevSetController.cs" />
+    <Compile Include="Areas\SysSet\Controllers\EmailSetController.cs" />
+    <Compile Include="Areas\SysSet\Controllers\WebSetController.cs" />
+    <Compile Include="Areas\SysSet\Models\DevModel.cs" />
+    <Compile Include="Areas\SysSet\Models\EmailModel.cs" />
+    <Compile Include="Areas\SysSet\Models\WebModel.cs" />
     <Compile Include="Areas\SysSet\SysSetAreaRegistration.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -411,8 +417,6 @@
     <Folder Include="Areas\Security\Controllers\" />
     <Folder Include="Areas\Security\Models\" />
     <Folder Include="Areas\Security\Views\Shared\" />
-    <Folder Include="Areas\SysSet\Controllers\" />
-    <Folder Include="Areas\SysSet\Models\" />
     <Folder Include="Areas\SysSet\Views\Shared\" />
     <Folder Include="Models\" />
     <Folder Include="Upload\" />
@@ -430,9 +434,13 @@
     <Content Include="Areas\Permissions\Views\web.config" />
     <Content Include="Areas\Security\Views\web.config" />
     <Content Include="Areas\SysSet\Views\web.config" />
+    <Content Include="Areas\SysSet\Views\EmailSet\Index.cshtml" />
+    <Content Include="Areas\SysSet\Views\DevSet\Index.cshtml" />
+    <Content Include="Areas\SysSet\Views\WebSet\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutSysSetPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FineAdmin.Common\FineAdmin.Common.csproj">

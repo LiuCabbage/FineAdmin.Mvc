@@ -25,7 +25,24 @@ namespace FineAdmin.Web.Controllers
 
             return View();
         }
-
+        /// <summary>
+        /// 操作成功
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        protected virtual AjaxResult SuccessTip(string message = SuccessText)
+        {
+            return new AjaxResult { state = ResultType.success.ToString(), message = message };
+        }
+        /// <summary>
+        /// 操作失败
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        protected virtual AjaxResult ErrorTip(string message = ErrorText)
+        {
+            return new AjaxResult { state = ResultType.error.ToString(), message = message };
+        }
 
     }
 }
