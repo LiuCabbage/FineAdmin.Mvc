@@ -25,7 +25,7 @@ namespace FineAdmin.Service
             var rootMenus = allMenus.Where(x => x.ParentId == 0).OrderBy(x => x.SortCode);
             foreach (var item in rootMenus)
             {
-                var _tree = new Tree { Id = item.Id, Title = item.FullName, Href = item.UrlAddress, FontFamily = item.FontFamily, Icon = item.Icon };
+                var _tree = new Tree { id = item.Id, title = item.FullName, href = item.UrlAddress, fontFamily = item.FontFamily, icon = item.Icon };
                 GetModuleListByModuleId(treeList, allMenus, _tree, item.Id);
                 treeList.Add(_tree);
             }
@@ -47,9 +47,9 @@ namespace FineAdmin.Service
                 List<Tree> _children = new List<Tree>();
                 foreach (var item in childMenus)
                 {
-                    var _tree = new Tree { Id = item.Id, Title = item.FullName, Href = item.UrlAddress, FontFamily = item.FontFamily, Icon = item.Icon };
+                    var _tree = new Tree { id = item.Id, title = item.FullName, href = item.UrlAddress, fontFamily = item.FontFamily, icon = item.Icon };
                     _children.Add(_tree);
-                    tree.Children = _children;
+                    tree.children = _children;
                     GetModuleListByModuleId(treeList, allMenus, _tree, item.Id);
                 }
             }

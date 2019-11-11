@@ -8,11 +8,11 @@ namespace FineAdmin.Model
 {
     public class Tree
     {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public string Href { get; set; }
-        public string FontFamily { get; set; }
-        public string Icon { get; set; }
-        public IEnumerable<Tree> Children { get; set; }
+        public int id { get; set; }
+        public string title { get; set; }
+        public string href { get; set; }
+        public string fontFamily { get; set; }
+        public string icon { get; set; }
+        public IEnumerable<Tree> children { get; set; }
     }
 }

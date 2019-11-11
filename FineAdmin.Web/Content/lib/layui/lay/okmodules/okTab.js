@@ -82,7 +82,8 @@ layui.define(["element", "jquery"], function (exports) {
 
    //生成左侧菜单
    var temp = "";
-   okTab.prototype.navBar = function (strData) {
+    okTab.prototype.navBar = function (strData) {
+        console.log(strData);
       var data;
       if (typeof (strData) == "string") {
          var data = JSON.parse(strData); //有可能是字符串，转换一下
@@ -142,10 +143,10 @@ layui.define(["element", "jquery"], function (exports) {
          temp += "</dl>";
       } else {
          var isClose = data.isClose === false ? "false" : "true";
-         if (data.target) {
-            temp += ('<a lay-id="{0}" data-url="{1}" target="{2}" is-close="{3}">').format(tabID, data.href, data.target, isClose);
-         } else {
-            temp += ('<a lay-id="{0}" data-url="{1}" is-close="{2}">').format(tabID, data.href, isClose);
+          if (data.target) {
+              temp += ('<a lay-id="{0}" data-url="{1}?id={4}" target="{2}" is-close="{3}">').format(tabID, data.href, data.target, isClose, data.id);
+          } else {
+              temp += ('<a lay-id="{0}" data-url="{1}?id={3}" is-close="{2}">').format(tabID, data.href, isClose, data.id);
          }
          if (data.icon != undefined && data.icon != '') {
             if (!data.fontFamily || data.fontFamily.indexOf("layui-icon") >= 0) {
