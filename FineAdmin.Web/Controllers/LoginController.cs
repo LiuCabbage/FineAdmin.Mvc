@@ -38,6 +38,10 @@ namespace FineAdmin.Web.Controllers
                 UserModel userEntity = UserService.LoginOn(username, Md5.md5(password, 32));
                 if (userEntity != null)
                 {
+                    if (userEntity.EnabledMark)
+                    {
+                        throw new Exception("账号被锁定，禁止登录");
+                    }
                     OperatorModel operatorModel = new OperatorModel();
                     operatorModel.UserId = userEntity.Id;
                     operatorModel.Account = userEntity.Account;
