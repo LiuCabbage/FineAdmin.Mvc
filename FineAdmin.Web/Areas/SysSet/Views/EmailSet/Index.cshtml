@@ -10,7 +10,7 @@
             <div class="layui-card">
                 <div class="layui-card-header">邮件设置</div>
                 <div class="layui-card-body">
-                    <form class="layui-form" action="/SysSet/EmailSet/Index" method="post">
+                    <form class="layui-form" lay-filter="EmailForm" action="/SysSet/EmailSet/Index" method="post">
                         <div class="layui-form-item">
                             <label class="layui-form-label">SMTP服务器</label>
                             <div class="layui-input-block">
@@ -20,7 +20,10 @@
                         <div class="layui-form-item">
                             <label class="layui-form-label">SSL加密连接</label>
                             <div class="layui-input-block">
-                                @Html.TextBoxFor(x => x.EmailSSL, null, new Dictionary<string, object> { { "class", "layui-input" }, { "lay-verify", "required" }, { "autocomplete", "off" } })
+                                <select name="EmailSSL">
+                                    <option value="true">true</option>
+                                    <option value="false">false</option>
+                                </select>
                             </div>
                         </div>
                         <div class="layui-form-item">
@@ -65,3 +68,11 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    layui.use(['form'], function () {
+        var form = layui.form;
+        form.val("EmailForm",{
+            "EmailSSL":"@Model.EmailSSL"
+        });
+    })
+</script>

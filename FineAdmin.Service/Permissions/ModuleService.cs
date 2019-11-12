@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using FineAdmin.IService;
 using FineAdmin.Model;
 using FineAdmin.IRepository;
-using FineAdmin.IService;
 
 namespace FineAdmin.Service
 {
