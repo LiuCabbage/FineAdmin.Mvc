@@ -12,6 +12,12 @@ namespace FineAdmin.Service
     public class ModuleService : BaseService<ModuleModel>, IModuleService
     {
         public IModuleRepository ModuleRepository { get; set; }
+
+        public dynamic GetListByFilter(ModuleModel filter, PageInfo pageInfo)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// 获得菜单列表
         /// </summary>

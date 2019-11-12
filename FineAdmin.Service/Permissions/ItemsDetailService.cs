@@ -10,6 +10,9 @@ namespace FineAdmin.Service
 {
     public class ItemsDetailService : BaseService<ItemsDetailModel>, IItemsDetailService
     {
-
+        public dynamic GetListByFilter(ItemsDetailModel filter, PageInfo pageInfo)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -24,5 +24,10 @@ namespace FineAdmin.Service
         {
             return ButtonRepository.GetButtonListByRoleIdModuleId(roleId, moduleId, position);
         }
+
+        public dynamic GetListByFilter(ButtonModel filter, PageInfo pageInfo)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -12,6 +12,9 @@ namespace FineAdmin.Service
 {
     public class RoleAuthorizeService : BaseService<RoleAuthorizeModel>, IRoleAuthorizeService
     {
-        
+        public dynamic GetListByFilter(RoleAuthorizeModel filter, PageInfo pageInfo)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

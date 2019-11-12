@@ -10,6 +10,9 @@ namespace FineAdmin.Service
 {
     public class OrganizeService : BaseService<OrganizeModel>, IOrganizeService
     {
-
+        public dynamic GetListByFilter(OrganizeModel filter, PageInfo pageInfo)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

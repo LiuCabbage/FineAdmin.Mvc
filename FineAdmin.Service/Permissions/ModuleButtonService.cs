@@ -10,6 +10,9 @@ namespace FineAdmin.Service
 {
     public class ModuleButtonService : BaseService<ModuleButtonModel>, IModuleButtonService
     {
-
+        public dynamic GetListByFilter(ModuleButtonModel filter, PageInfo pageInfo)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

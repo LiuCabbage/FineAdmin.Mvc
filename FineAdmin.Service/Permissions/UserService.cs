@@ -13,6 +13,12 @@ namespace FineAdmin.Service
     public class UserService : BaseService<UserModel>, IUserService
     {
         public IUserRepository UserRepository { get; set; }
+
+        public dynamic GetListByFilter(UserModel filter, PageInfo pageInfo)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// 登录
         /// </summary>
