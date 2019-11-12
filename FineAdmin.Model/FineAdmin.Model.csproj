@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,6 +46,8 @@
     <Compile Include="Entity.cs" />
     <Compile Include="Filter\SearchFilter.cs" />
     <Compile Include="ModifyPwd.cs" />
+    <Compile Include="PageInfo.cs" />
+    <Compile Include="Pager.cs" />
     <Compile Include="Permissions\ButtonModel.cs" />
     <Compile Include="Permissions\ItemsDetailModel.cs" />
     <Compile Include="Permissions\ItemsModel.cs" />

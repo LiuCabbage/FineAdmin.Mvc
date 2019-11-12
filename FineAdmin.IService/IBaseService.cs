@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FineAdmin.Model;
+using System;
 
 namespace FineAdmin.IService
 {
@@ -31,6 +32,6 @@ namespace FineAdmin.IService
         bool DeleteByWhere(string where);
         #endregion
 
-
+        dynamic GetListByFilter(T filter, PageInfo pageInfo);
     }
 }

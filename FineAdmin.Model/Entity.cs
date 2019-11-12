@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace FineAdmin.Model
 {
@@ -24,6 +25,9 @@ namespace FineAdmin.Model
         /// <summary>
         /// 创建时间
         /// </summary>
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm:ss}")]
+        [Display(Name = "创建时间")]
         public DateTime CreateTime { get; set; }
         /// <summary>
         /// 创建用户主键
@@ -32,6 +36,9 @@ namespace FineAdmin.Model
         /// <summary>
         /// 修改时间
         /// </summary>
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm:ss}")]
+        [Display(Name = "修改时间")]
         public DateTime UpdateTime { get; set; }
         /// <summary>
         /// 修改用户主键

@@ -1,5 +1,6 @@
 ﻿using DapperExtensions;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace FineAdmin.Model
 {
@@ -38,6 +39,15 @@ namespace FineAdmin.Model
         /// <summary>
         /// 创建时间
         /// </summary>
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm:ss}")]
+        [Display(Name = "创建时间")]
         public DateTime CreateTime { get; set; }
+
+        /// <summary>
+        /// 日志查询时间范围
+        /// </summary>
+        [Computed]
+        public string StartEndDate { get; set; }
     }
 }

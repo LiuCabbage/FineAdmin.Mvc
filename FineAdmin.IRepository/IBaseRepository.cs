@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FineAdmin.Model;
+using System;
+using System.Collections.Generic;
 
 namespace FineAdmin.IRepository
 {
@@ -31,6 +33,6 @@ namespace FineAdmin.IRepository
         int DeleteByWhere(string where);
         #endregion
 
-
+        IEnumerable<T> GetByPage(SearchFilter filter, out long total);
     }
 }

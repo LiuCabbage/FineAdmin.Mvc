@@ -15,5 +15,6 @@ namespace FineAdmin.IService
         /// <param name="model"></param>
         /// <returns></returns>
         int WriteDbLog(LogonLogModel model);
+        
     }
 }

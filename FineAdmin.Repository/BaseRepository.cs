@@ -1,6 +1,8 @@
 ﻿using DapperExtensions.MySQLExt;
 using FineAdmin.IRepository;
+using FineAdmin.Model;
 using System;
+using System.Collections.Generic;
 
 namespace FineAdmin.Repository
 {
@@ -69,6 +71,13 @@ namespace FineAdmin.Repository
         }
         #endregion
 
+        public IEnumerable<T> GetByPage(SearchFilter filter, out long total)
+        {
+            using (var conn = MySqlHelper.GetConnection())
+            {
+                return conn.GetByPage<T>(filter.pageIndex, filter.pageSize, out total, filter.returnFields, filter.where, filter.param, filter.orderBy, filter.transaction, filter.commandTimeout);
+            }
+        }
 
     }
 }

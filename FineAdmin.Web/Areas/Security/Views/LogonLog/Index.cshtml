@@ -7,11 +7,11 @@
 <!--模糊搜索区域-->
 <div class="layui-row">
     <form class="layui-form layui-col-md12 ok-search">
-        <input class="layui-input" placeholder="开始日期" autocomplete="off" id="startTime">
-        <input class="layui-input" placeholder="截止日期" autocomplete="off" id="endTime">
-        <input class="layui-input" placeholder="请输入用户名" autocomplete="off">
+        <input class="layui-input" placeholder="请输入账户" name="Account" autocomplete="off">
+        <input class="layui-input" placeholder="请输入姓名" name="RealName" autocomplete="off">
+        <input class="layui-input" placeholder="开始日期" autocomplete="off" name="StartEndDate" id="StartEndDate">
         <button class="layui-btn" lay-submit="" lay-filter="search">
-            <i class="layui-icon">&#xe615;</i>
+            <i class="layui-icon">&#xe615;</i>查询
         </button>
     </form>
 </div>
@@ -24,12 +24,14 @@
         let laydate = layui.laydate;
         let okLayer = layui.okLayer;
         let okUtils = layui.okUtils;
-        laydate.render({ elem: "#startTime", type: "datetime" });
-        laydate.render({ elem: "#endTime", type: "datetime" });
+        laydate.render({
+            elem: '#StartEndDate'
+            , range: true
+        });
 
         let AllTable = table.render({
             elem: "#tableId",
-            url: "/Permissions/Module/GetModuleList",
+            url: "/Security/LogonLog/List",
             limit: 10,
             page: true,
             toolbar: "#toolbarTpl",
@@ -52,11 +54,12 @@
         });
 
         form.on("submit(search)", function (data) {
+            console.log(data);
+            console.log(data.field);
             AllTable.reload({
                 where: data.field,
                 page: { curr: 1 }
             });
-            console.log("0000")
             return false;
         });
 
@@ -118,6 +121,7 @@
                 });
             })
         }
+
     })
 </script>
 <!-- 头工具栏模板 -->

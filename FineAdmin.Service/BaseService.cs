@@ -1,9 +1,10 @@
 ﻿using FineAdmin.IRepository;
 using FineAdmin.IService;
+using FineAdmin.Model;
 
 namespace FineAdmin.Service
 {
-    public class BaseService<T> : IBaseService<T> where T : class, new()
+    public abstract class BaseService<T> where T : class, new()
     {
         public IBaseRepository<T> BaseRepository { get; set; }
         #region CRUD
@@ -51,6 +52,21 @@ namespace FineAdmin.Service
         }
         #endregion
 
+        public dynamic GetListByFilter(T filter, PageInfo pageInfo, string where = null)
+        {
+            string _orderBy = string.Empty;
+            if (!string.IsNullOrEmpty(pageInfo.field))
+            {
+                _orderBy = string.Format(" ORDER BY {0} {1}", pageInfo.field, pageInfo.order);
+            }
+            else
+            {
+                _orderBy = " ORDER BY CreateTime desc";
+            }
+            long total = 0;
+            var list = BaseRepository.GetByPage(new SearchFilter { pageIndex = pageInfo.page, pageSize = pageInfo.limit, returnFields = pageInfo.returnFields, param = filter, where = null, orderBy = _orderBy }, out total);
+            return Pager.Paging(list, total);
+        }
 
     }
 }

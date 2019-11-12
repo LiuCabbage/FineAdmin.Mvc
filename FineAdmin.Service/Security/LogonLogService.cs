@@ -11,6 +11,11 @@ namespace FineAdmin.Service
 {
     public class LogonLogService : BaseService<LogonLogModel>, ILogonLogService
     {
+        public dynamic GetListByFilter(LogonLogModel filter, PageInfo pageInfo)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// 写入登录日志
         /// </summary>
