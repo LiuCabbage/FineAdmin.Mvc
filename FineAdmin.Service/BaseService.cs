@@ -17,37 +17,37 @@ namespace FineAdmin.Service
         /// <summary>
         /// 新增
         /// </summary>
-        public int Insert(T model)
+        public bool Insert(T model)
         {
-            return BaseRepository.Insert(model);
+            return BaseRepository.Insert(model) > 0 ? true : false;
         }
         /// <summary>
         /// 根据主键修改数据
         /// </summary>
-        public int UpdateById(T model)
+        public bool UpdateById(T model)
         {
-            return BaseRepository.UpdateById(model);
+            return BaseRepository.UpdateById(model) > 0 ? true : false;
         }
         /// <summary>
         /// 根据主键删除数据
         /// </summary>
-        public int DeleteById(int Id)
+        public bool DeleteById(int Id)
         {
-            return BaseRepository.DeleteById(Id);
+            return BaseRepository.DeleteById(Id) > 0 ? true : false;
         }
         /// <summary>
         /// 根据主键批量删除数据
         /// </summary>
-        public int DeleteByIds(string Ids)
+        public bool DeleteByIds(string Ids)
         {
-            return BaseRepository.DeleteByIds(Ids);
+            return BaseRepository.DeleteByIds(Ids) > 0 ? true : false;
         }
         /// <summary>
         /// 根据条件删除
         /// </summary>
-        public int DeleteByWhere(string where)
+        public bool DeleteByWhere(string where)
         {
-            return BaseRepository.DeleteByWhere(where);
+            return BaseRepository.DeleteByWhere(where) > 0 ? true : false;
         }
         #endregion
 

@@ -12,23 +12,23 @@ namespace FineAdmin.IService
         /// <summary>
         /// 新增
         /// </summary>
-        int Insert(T model);
+        bool Insert(T model);
         /// <summary>
         /// 根据主键修改数据
         /// </summary>
-        int UpdateById(T model);
+        bool UpdateById(T model);
         /// <summary>
         /// 根据主键删除数据
         /// </summary>
-        int DeleteById(int Id);
+        bool DeleteById(int Id);
         /// <summary>
         /// 根据主键批量删除数据
         /// </summary>
-        int DeleteByIds(String Ids);
+        bool DeleteByIds(String Ids);
         /// <summary>
         /// 根据条件删除
         /// </summary>
-        int DeleteByWhere(string where);
+        bool DeleteByWhere(string where);
         #endregion
 
 
