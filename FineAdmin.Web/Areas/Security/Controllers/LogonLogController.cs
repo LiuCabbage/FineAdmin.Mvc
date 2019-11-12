@@ -5,14 +5,15 @@ using System.Web;
 using System.Web.Mvc;
 using FineAdmin.Model;
 using FineAdmin.IService;
+using FineAdmin.Web.Controllers;
 
 namespace FineAdmin.Web.Areas.Security.Controllers
 {
-    public class LogonLogController : Controller
+    public class LogonLogController : BaseController
     {
         public ILogonLogService LogonLogService { get; set; }
         // GET: Security/LogonLog
-        public ActionResult Index()
+        public override ActionResult Index(int? id)
         {
             return View();
         }

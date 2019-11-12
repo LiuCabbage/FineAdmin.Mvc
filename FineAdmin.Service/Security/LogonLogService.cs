@@ -13,7 +13,37 @@ namespace FineAdmin.Service
     {
         public dynamic GetListByFilter(LogonLogModel filter, PageInfo pageInfo)
         {
-            throw new NotImplementedException();
+            string _where = " where 1=1";
+            if (!string.IsNullOrEmpty(filter.Account))
+            {
+                _where += " and Account=@Account";
+            }
+            if (!string.IsNullOrEmpty(filter.RealName))
+            {
+                _where += " and RealName=@RealName";
+            }
+            if (!string.IsNullOrEmpty(filter.StartEndDate))
+            {
+                if (filter.StartEndDate.Contains("~"))
+                {
+                    if (filter.StartEndDate.Contains("+"))
+                    {
+                        filter.StartEndDate = filter.StartEndDate.Replace("+", "");
+                    }
+                    var dts = filter.StartEndDate.Split('~');
+                    var start = dts[0].Trim();
+                    var end = dts[1].Trim();
+                    if (!string.IsNullOrEmpty(start))
+                    {
+                        _where += string.Format(" and CreateTime>='{0}'", start + " 00:00");
+                    }
+                    if (!string.IsNullOrEmpty(end))
+                    {
+                        _where += string.Format(" and CreateTime<='{0}'", end + " 59:59");
+                    }
+                }
+            }
+            return GetListByFilter(filter, pageInfo, _where);
         }
 
         /// <summary>

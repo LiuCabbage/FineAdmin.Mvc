@@ -13,7 +13,6 @@ namespace FineAdmin.Web.Controllers
     {
         protected const string SuccessText = "操作成功！";
         protected const string ErrorText = "操作失败！";
-        public ILogonLogService LogonLogService { get; set; }
         public IButtonService ButtonService { get; set; }
         public OperatorModel Operator
         {
