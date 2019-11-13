@@ -11,7 +11,7 @@
  Target Server Version : 50717
  File Encoding         : 65001
 
- Date: 11/11/2019 17:42:45
+ Date: 13/11/2019 17:56:19
 */
 
 SET NAMES utf8mb4;
@@ -41,10 +41,10 @@ CREATE TABLE `button`  (
 -- ----------------------------
 -- Records of button
 -- ----------------------------
-INSERT INTO `button` VALUES (1, 'add', '添加', 1, '', 'ok-icon-roundadd', 1, '添加', b'0', '2019-10-29 16:25:25', 1, '2019-10-29 16:25:29', 1);
-INSERT INTO `button` VALUES (2, 'del', '删除', 0, 'layui-btn-danger', 'ok-icon-deletefill', 2, '删除', b'0', '2019-10-29 16:29:17', 1, '2019-10-29 16:29:20', 1);
-INSERT INTO `button` VALUES (3, 'edit', '修改', 0, '', 'ok-icon-writefill', 3, '修改', b'0', '2019-10-29 16:30:32', 1, '2019-10-29 16:30:36', 1);
-INSERT INTO `button` VALUES (4, 'batchDel', '批量删除', 1, 'layui-btn-danger', 'ok-icon-deletefill', 4, '批量删除', b'0', '2019-10-29 16:35:16', 1, '2019-10-29 16:35:19', 1);
+INSERT INTO `button` VALUES (1, 'add', '添加', 1, '', '&#xe6d9;', 1, '添加', b'0', '2019-10-29 16:25:25', 1, '2019-10-29 16:25:29', 1);
+INSERT INTO `button` VALUES (2, 'del', '删除', 0, 'layui-btn-danger', '&#xe659;', 3, '删除', b'0', '2019-10-29 16:29:17', 1, '2019-10-29 16:29:20', 1);
+INSERT INTO `button` VALUES (3, 'edit', '修改', 0, '', '&#xe761;', 2, '修改', b'0', '2019-10-29 16:30:32', 1, '2019-10-29 16:30:36', 1);
+INSERT INTO `button` VALUES (4, 'batchDel', '批量删除', 1, 'layui-btn-danger', '&#xe6b4;', 4, '批量删除', b'0', '2019-10-29 16:35:16', 1, '2019-10-29 16:35:19', 1);
 
 -- ----------------------------
 -- Table structure for donation
@@ -161,7 +161,7 @@ CREATE TABLE `logonlog`  (
   `IPAddressName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'IP所在城市',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 53 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '登录日志表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 59 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '登录日志表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of logonlog
@@ -214,10 +214,7 @@ INSERT INTO `logonlog` VALUES (45, 'Login', 'admin', 'admin', '登录失败，�
 INSERT INTO `logonlog` VALUES (46, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-11 11:30:38');
 INSERT INTO `logonlog` VALUES (47, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-11 11:30:40');
 INSERT INTO `logonlog` VALUES (48, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-11 11:30:44');
-INSERT INTO `logonlog` VALUES (49, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-11 15:43:20');
-INSERT INTO `logonlog` VALUES (50, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-11 15:43:33');
-INSERT INTO `logonlog` VALUES (51, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-11 16:05:47');
-INSERT INTO `logonlog` VALUES (52, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-11 16:05:56');
+INSERT INTO `logonlog` VALUES (58, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-13 15:46:29');
 
 -- ----------------------------
 -- Table structure for module
@@ -279,6 +276,7 @@ INSERT INTO `modulebutton` VALUES (5, 3);
 INSERT INTO `modulebutton` VALUES (6, 1);
 INSERT INTO `modulebutton` VALUES (6, 2);
 INSERT INTO `modulebutton` VALUES (6, 3);
+INSERT INTO `modulebutton` VALUES (6, 4);
 INSERT INTO `modulebutton` VALUES (7, 1);
 INSERT INTO `modulebutton` VALUES (7, 2);
 INSERT INTO `modulebutton` VALUES (7, 3);
@@ -383,6 +381,7 @@ INSERT INTO `roleauthorize` VALUES ('1', '6', '0');
 INSERT INTO `roleauthorize` VALUES ('1', '6', '1');
 INSERT INTO `roleauthorize` VALUES ('1', '6', '2');
 INSERT INTO `roleauthorize` VALUES ('1', '6', '3');
+INSERT INTO `roleauthorize` VALUES ('1', '6', '4');
 INSERT INTO `roleauthorize` VALUES ('1', '7', '0');
 INSERT INTO `roleauthorize` VALUES ('1', '7', '1');
 INSERT INTO `roleauthorize` VALUES ('1', '7', '2');
@@ -420,11 +419,13 @@ CREATE TABLE `user`  (
   `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '修改用户主键',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES (1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'Liu_Cabbage', '/Content/images/head.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 3, 1, b'1', b'0', '2019-10-29 15:40:26', 1, '2019-10-29 15:40:28', 1);
+INSERT INTO `user` VALUES (2, 'user', 'e10adc3949ba59abbe56e057f20f883e', 'user', '/Content/images/head.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 3, 3, b'0', b'0', '2019-11-13 14:45:55', 1, '2019-11-13 14:45:59', 1);
+INSERT INTO `user` VALUES (3, 'test', 'e10adc3949ba59abbe56e057f20f883e', 'test', '/Content/images/head.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 3, 4, b'0', b'1', '2019-11-13 14:47:47', 1, '2019-11-13 14:47:51', 1);
 
 SET FOREIGN_KEY_CHECKS = 1;
