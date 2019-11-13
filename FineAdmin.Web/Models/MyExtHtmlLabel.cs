@@ -20,6 +20,13 @@ namespace FineAdmin.Web
                                                 </button>", title, _class));
         }
         /// <summary>
+        /// 重置按钮
+        /// </summary>
+        public static HtmlString ResetBtnHtml(this HtmlHelper helper, string title = "重置", string _class = "layui-btn-primary")
+        {
+            return new HtmlString(string.Format(@"<button type='reset' class='layui-btn {1}'>{0}</button>", title, _class));
+        }
+        /// <summary>
         /// 表格内按钮组
         /// </summary>]
         public static HtmlString RightToolBarHtml(this HtmlHelper helper, dynamic _list = null)
@@ -30,7 +37,7 @@ namespace FineAdmin.Web
             {
                 foreach (var item in list)
                 {
-                    sb.AppendLine(string.Format(@"<a class='layui-btn layui-btn-xs {0}' href='javascript:;' lay-event='{1}'>{2}</a>", item.ClassName, item.EnCode, item.FullName));
+                    sb.AppendLine(string.Format(@"<a class='layui-btn layui-btn-xs {0}' href='javascript:;' lay-event='{1}'><i class='ok-icon'>{3}</i>{2}</a>", item.ClassName, item.EnCode, item.FullName, item.Icon));
                 }
             }
             return new HtmlString(sb.ToString());
@@ -46,10 +53,23 @@ namespace FineAdmin.Web
             {
                 foreach (var item in list)
                 {
-                    sb.AppendLine(string.Format(@"<button class='layui-btn layui-btn-sm {0}' lay-event='{1}'>{2}</button>", item.ClassName, item.EnCode, item.FullName));
+                    sb.AppendLine(string.Format(@"<button class='layui-btn layui-btn-sm {0}' lay-event='{1}'><i class='ok-icon'>{3}</i>{2}</button>", item.ClassName, item.EnCode, item.FullName, item.Icon));
                 }
             }
             return new HtmlString(sb.ToString());
+        }
+        /// <summary>
+        /// 状态下拉框
+        /// </summary>
+        public static HtmlString EnabledMarkSelectHtml(this HtmlHelper helper, string defaultTxt = "")
+        {
+            return new HtmlString(string.Format(@"<div class='layui-input-inline'>
+                                                    <select name='EnabledMark'>
+                                                        <option value=''>{0}</option>
+                                                        <option value='0'>启用</option >
+                                                        <option value='1'>禁用</option >
+                                                    </select>
+                                                </div>", defaultTxt));
         }
 
     }

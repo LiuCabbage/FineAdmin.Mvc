@@ -21,5 +21,9 @@ namespace FineAdmin.Model
         /// 按钮样式
         /// </summary>
         public string ClassName { get; set; }
+        /// <summary>
+        /// 图标
+        /// </summary>
+        public string Icon { get; set; }
     }
 }

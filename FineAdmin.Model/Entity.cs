@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DapperExtensions;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace FineAdmin.Model
@@ -44,5 +45,15 @@ namespace FineAdmin.Model
         /// 修改用户主键
         /// </summary>
         public int UpdateUserId { get; set; }
+        /// <summary>
+        /// 查询时间范围
+        /// </summary>
+        [Computed]
+        public string StartEndDate { get; set; }
+        /// <summary>
+        /// 用来接收查询启用禁用的值，EnabledMark Bool类型映射不到
+        /// </summary>
+        [Computed]
+        public int? EnabledMarkSelect { get; set; }
     }
 }
