@@ -9,10 +9,8 @@
     <form class="layui-form layui-col-md12 ok-search">
         <input class="layui-input" placeholder="请输入账户" name="Account" autocomplete="off">
         <input class="layui-input" placeholder="请输入姓名" name="RealName" autocomplete="off">
-        <input class="layui-input" placeholder="开始日期" autocomplete="off" name="StartEndDate" id="StartEndDate">
-        <button class="layui-btn" lay-submit="" lay-filter="search">
-            <i class="layui-icon">&#xe615;</i>查询
-        </button>
+        <input class="layui-input" placeholder="日期范围" autocomplete="off" name="StartEndDate" id="StartEndDate">
+        @Html.SearchBtnHtml("查询")
     </form>
 </div>
 <!--数据表格-->
@@ -78,10 +76,10 @@
             let data = obj.data;
             switch (obj.event) {
                 case "edit":
-                    edit(data.id);
+                    edit(data.Id);//field Id 和 数据库表字段 Id 要一致
                     break;
                 case "del":
-                    del(data.id);
+                    del(data.Id);
                     break;
             }
         });
@@ -96,9 +94,10 @@
             okLayer.confirm("确定要批量删除吗？", function (index) {
                 layer.close(index);
                 let idsStr = okUtils.tableBatchCheck(table);
+                console.log(idsStr);
                 if (idsStr) {
-                    okUtils.ajax("/role/deleteRole", "delete", { idsStr: idsStr }, true).done(function (response) {
-                        okUtils.tableSuccessMsg(response.msg);
+                    okUtils.ajax("/Security/LogonLog/BatchDel", "get", { idsStr: idsStr }, true).done(function (response) {
+                        okUtils.tableSuccessMsg(response.message);
                     }).fail(function (error) {
                         console.log(error)
                     });
@@ -113,9 +112,10 @@
         }
 
         function del(id) {
+            console.log(id);
             okLayer.confirm("确定要删除吗？", function () {
-                okUtils.ajax("/role/deleteRole", "delete", { idsStr: id }, true).done(function (response) {
-                    okUtils.tableSuccessMsg(response.msg);
+                okUtils.ajax("/Security/LogonLog/Delete", "get", { idsStr: id }, true).done(function (response) {
+                    okUtils.tableSuccessMsg(response.message);
                 }).fail(function (error) {
                     console.log(error)
                 });
@@ -126,23 +126,9 @@
 </script>
 <!-- 头工具栏模板 -->
 <script type="text/html" id="toolbarTpl">
-    <button class="layui-btn layui-btn-sm layui-btn-normal" lay-event="batchEnabled">批量上架</button>
-    <button class="layui-btn layui-btn-sm layui-btn-warm" lay-event="batchDisabled">批量下架</button>
-    <button class="layui-btn layui-btn-sm layui-btn-danger" lay-event="batchDel">批量删除</button>
-    <button class="layui-btn layui-btn-sm" lay-event="add">添加文章</button>
+    @Html.TopToolBarHtml(ViewData["TopButtonList"])
 </script>
 <!-- 行工具栏模板 -->
-<script type="text/html" id="statusTpl">
-    {{#  if(d.status == 0){ }}
-    <span class="layui-btn layui-btn-normal layui-btn-xs">启用</span>
-    {{#  } else if(d.status == 1) { }}
-    <span class="layui-btn layui-btn-warm layui-btn-xs">停用</span>
-    {{#  } else if(d.status == 2) { }}
-    <span class="layui-btn layui-btn-danger layui-btn-xs">删除</span>
-    {{#  } }}
-</script>
-
 <script type="text/html" id="operationTpl">
-    <a href="javascript:" title="编辑" lay-event="edit"><i class="layui-icon">&#xe642;</i></a>
-    <a href="javascript:" title="删除" lay-event="del"><i class="layui-icon">&#xe640;</i></a>
+    @Html.RightToolBarHtml(ViewData["RightButtonList"])
 </script>

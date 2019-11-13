@@ -74,35 +74,33 @@ layui.define(["layer"], function (exprots) {
             });
             return deferred.promise();
         },
-        table: {
-            /**
-             * 主要用于针对表格批量操作操作之前的检查
-             * @param table
-             * @returns {string}
-             */
-            batchCheck: function (table) {
-                var checkStatus = table.checkStatus("tableId");
-                var rows = checkStatus.data.length;
-                if (rows > 0) {
-                    var idsStr = "";
-                    for (var i = 0; i < checkStatus.data.length; i++) {
-                        idsStr += checkStatus.data[i].id + ",";
-                    }
-                    return idsStr;
-                } else {
-                    layer.msg("未选择有效数据", {offset: "t", anim: 6});
+        /**
+         * 主要用于针对表格批量操作操作之前的检查
+         * @param table
+         * @returns {string}
+         */
+        tableBatchCheck: function (table) {
+            var checkStatus = table.checkStatus("tableId");
+            var rows = checkStatus.data.length;
+            if (rows > 0) {
+                var idsStr = "";
+                for (var i = 0; i < checkStatus.data.length; i++) {
+                    idsStr += checkStatus.data[i].Id + ","; //Id 和 数据库表字段 Id 要一致
                 }
-            },
-            /**
-             * 在表格页面操作成功后弹窗提示
-             * @param content
-             */
-            successMsg: function (content) {
-                layer.msg(content, {icon: 1, time: 1000}, function () {
-                    // 刷新当前页table数据
-                    $(".layui-laypage-btn")[0].click();
-                });
+                return idsStr;
+            } else {
+                layer.msg("未选择有效数据", { offset: "t", anim: 6 });
             }
+        },
+        /**
+         * 在表格页面操作成功后弹窗提示
+         * @param content
+         */
+        tableSuccessMsg: function (content) {
+            layer.msg(content, { icon: 1, time: 1000 }, function () {
+                // 刷新当前页table数据
+                $(".layui-laypage-btn")[0].click();
+            });
         },
         /**
          * 获取父窗体的okTab

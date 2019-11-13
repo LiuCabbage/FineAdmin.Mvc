@@ -3,7 +3,7 @@
     public class AjaxResult
     {
         /// <summary>
-        /// 状态码 1成功|0失败
+        /// 状态码
         /// </summary>
         public object state { get; set; }
         /// <summary>

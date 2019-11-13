@@ -52,7 +52,7 @@ namespace FineAdmin.Repository
         /// <summary>
         /// 根据主键批量删除数据
         /// </summary>
-        public int DeleteByIds(String Ids)
+        public int DeleteByIds(object Ids)
         {
             using (var conn = MySqlHelper.GetConnection())
             {

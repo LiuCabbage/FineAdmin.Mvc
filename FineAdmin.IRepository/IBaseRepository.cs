@@ -26,7 +26,7 @@ namespace FineAdmin.IRepository
         /// <summary>
         /// 根据主键批量删除数据
         /// </summary>
-        int DeleteByIds(String Ids);
+        int DeleteByIds(object Ids);
         /// <summary>
         /// 根据条件删除
         /// </summary>

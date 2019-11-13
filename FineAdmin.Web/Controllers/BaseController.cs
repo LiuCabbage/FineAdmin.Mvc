@@ -25,8 +25,8 @@ namespace FineAdmin.Web.Controllers
             var _roleId = Operator.RoleId;
             if (id != null)
             {
-                ViewData["ButtonFormList"]=ButtonService.GetButtonListByRoleIdModuleId(_roleId,_menuId,PositionEnum.FormInside);
-                ViewData["ButtonFormTopList"] = ButtonService.GetButtonListByRoleIdModuleId(_roleId, _menuId, PositionEnum.FormRightTop);
+                ViewData["RightButtonList"]=ButtonService.GetButtonListByRoleIdModuleId(_roleId,_menuId,PositionEnum.FormInside);
+                ViewData["TopButtonList"] = ButtonService.GetButtonListByRoleIdModuleId(_roleId, _menuId, PositionEnum.FormRightTop);
             }
             return View();
         }

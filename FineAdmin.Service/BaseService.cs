@@ -39,7 +39,7 @@ namespace FineAdmin.Service
         /// <summary>
         /// 根据主键批量删除数据
         /// </summary>
-        public bool DeleteByIds(string Ids)
+        public bool DeleteByIds(object Ids)
         {
             return BaseRepository.DeleteByIds(Ids) > 0 ? true : false;
         }

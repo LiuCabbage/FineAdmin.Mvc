@@ -25,7 +25,7 @@ namespace FineAdmin.IService
         /// <summary>
         /// 根据主键批量删除数据
         /// </summary>
-        bool DeleteByIds(String Ids);
+        bool DeleteByIds(object Ids);
         /// <summary>
         /// 根据条件删除
         /// </summary>
