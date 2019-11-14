@@ -32,7 +32,13 @@ namespace FineAdmin.IRepository
         /// </summary>
         int DeleteByWhere(string where);
         #endregion
-
+        /// <summary>
+        /// 获取分页数据
+        /// </summary>
         IEnumerable<T> GetByPage(SearchFilter filter, out long total);
+        /// <summary>
+        /// 获取分页数据 联合查询
+        /// </summary>
+        IEnumerable<T> GetByPageUnite(SearchFilter filter, out long total);
     }
 }

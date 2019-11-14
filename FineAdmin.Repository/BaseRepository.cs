@@ -70,7 +70,9 @@ namespace FineAdmin.Repository
             }
         }
         #endregion
-
+        /// <summary>
+        /// 获取分页数据
+        /// </summary>
         public IEnumerable<T> GetByPage(SearchFilter filter, out long total)
         {
             using (var conn = MySqlHelper.GetConnection())
@@ -78,6 +80,15 @@ namespace FineAdmin.Repository
                 return conn.GetByPage<T>(filter.pageIndex, filter.pageSize, out total, filter.returnFields, filter.where, filter.param, filter.orderBy, filter.transaction, filter.commandTimeout);
             }
         }
-
+        /// <summary>
+        /// 获取分页数据 联合查询
+        /// </summary>
+        public IEnumerable<T> GetByPageUnite(SearchFilter filter, out long total)
+        {
+            using (var conn = MySqlHelper.GetConnection())
+            {
+                return conn.GetByPageUnite<T>(filter.pageIndex, filter.pageSize, out total, filter.returnFields, filter.where, filter.param, filter.orderBy, filter.transaction, filter.commandTimeout);
+            }
+        }
     }
 }

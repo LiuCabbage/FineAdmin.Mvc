@@ -16,42 +16,24 @@ namespace FineAdmin.Service
 
         public dynamic GetListByFilter(UserModel filter, PageInfo pageInfo)
         {
+            pageInfo.prefix = "a.";
             //管理员不显示
-            string _where = " where 1=1 and IsAdministrator!=1";
+            string _where = " user a INNER JOIN role b ON a.RoleId=b.Id INNER JOIN organize c ON a.DepartmentId=c.Id where 1=1 and a.IsAdministrator!=1";
             if (!string.IsNullOrEmpty(filter.Account))
             {
-                _where += " and Account=@Account";
+                _where += string.Format(" and {0}Account=@Account", pageInfo.prefix);
             }
             if (!string.IsNullOrEmpty(filter.RealName))
             {
-                _where += " and RealName=@RealName";
+                _where += string.Format(" and {0}RealName=@RealName", pageInfo.prefix);
             }
             if (filter.EnabledMarkSelect != null)
             {
-                _where += " and EnabledMark="+filter.EnabledMarkSelect;
+                _where += " and a.EnabledMark=" + filter.EnabledMarkSelect;
             }
-            if (!string.IsNullOrEmpty(filter.StartEndDate))
-            {
-                if (filter.StartEndDate.Contains("~"))
-                {
-                    if (filter.StartEndDate.Contains("+"))
-                    {
-                        filter.StartEndDate = filter.StartEndDate.Replace("+", "");
-                    }
-                    var dts = filter.StartEndDate.Split('~');
-                    var start = dts[0].Trim();
-                    var end = dts[1].Trim();
-                    if (!string.IsNullOrEmpty(start))
-                    {
-                        _where += string.Format(" and CreateTime>='{0}'", start + " 00:00");
-                    }
-                    if (!string.IsNullOrEmpty(end))
-                    {
-                        _where += string.Format(" and CreateTime<='{0}'", end + " 59:59");
-                    }
-                }
-            }
-            return GetListByFilter(filter, pageInfo, _where);
+            _where = CreateTimeWhereStr(filter.StartEndDate, _where, pageInfo.prefix);
+            pageInfo.returnFields = string.Format("{0}Id,{0}Account,{0}RealName,{0}HeadIcon,{0}Gender,c.FullName as 'DepartmentName',b.FullName as 'RoleName',{0}EnabledMark,{0}CreateTime", pageInfo.prefix);
+            return GetPageUnite(filter, pageInfo, _where);
         }
 
         /// <summary>

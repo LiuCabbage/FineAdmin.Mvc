@@ -59,5 +59,15 @@ namespace FineAdmin.Model
         /// </summary>
         [Computed]
         public override int SortCode { get; set; }
+        /// <summary>
+        /// 部门
+        /// </summary>
+        [Computed]
+        public string DepartmentName { get; set; }
+        /// <summary>
+        /// 角色
+        /// </summary>
+        [Computed]
+        public string RoleName { get; set; }
     }
 }

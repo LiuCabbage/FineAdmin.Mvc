@@ -51,7 +51,9 @@ namespace FineAdmin.Service
             return BaseRepository.DeleteByWhere(where) > 0 ? true : false;
         }
         #endregion
-
+        /// <summary>
+        /// 获取分页数据
+        /// </summary>
         public dynamic GetListByFilter(T filter, PageInfo pageInfo, string where = null)
         {
             string _orderBy = string.Empty;
@@ -67,5 +69,66 @@ namespace FineAdmin.Service
             var list = BaseRepository.GetByPage(new SearchFilter { pageIndex = pageInfo.page, pageSize = pageInfo.limit, returnFields = pageInfo.returnFields, param = filter, where = where, orderBy = _orderBy }, out total);
             return Pager.Paging(list, total);
         }
+        /// <summary>
+        /// 获取分页数据 联合查询
+        /// </summary>
+        public dynamic GetPageUnite(T filter, PageInfo pageInfo, string where = null)
+        {
+            string _orderBy = string.Empty;
+            if (!string.IsNullOrEmpty(pageInfo.field))
+            {
+                _orderBy = string.Format(" ORDER BY {0} {1}", pageInfo.field, pageInfo.order);
+            }
+            else
+            {
+                _orderBy = " ORDER BY CreateTime desc";
+            }
+            long total = 0;
+            var list = BaseRepository.GetByPageUnite(new SearchFilter { pageIndex = pageInfo.page, pageSize = pageInfo.limit, returnFields = pageInfo.returnFields, param = filter, where = where, orderBy = _orderBy }, out total);
+            return Pager.Paging(list, total);
+        }
+        /// <summary>
+        /// 创建时间范围条件
+        /// </summary>
+        protected string CreateTimeWhereStr(string StartEndDate, string _where, string prefix = null)
+        {
+            if (!string.IsNullOrEmpty(StartEndDate) && StartEndDate != " ~ ")
+            {
+                if (StartEndDate.Contains("~"))
+                {
+                    if (StartEndDate.Contains("+"))
+                    {
+                        StartEndDate = StartEndDate.Replace("+", "");
+                    }
+                    var dts = StartEndDate.Split('~');
+                    var start = dts[0].Trim();
+                    var end = dts[1].Trim();
+                    if (!string.IsNullOrEmpty(start))
+                    {
+                        if (!string.IsNullOrEmpty(prefix))
+                        {
+                            _where += string.Format(" and {1}CreateTime>='{0} 00:00'", start, prefix);
+                        }
+                        else
+                        {
+                            _where += string.Format(" and CreateTime>='{0} 00:00'", start);
+                        }
+                    }
+                    if (!string.IsNullOrEmpty(end))
+                    {
+                        if (!string.IsNullOrEmpty(prefix))
+                        {
+                            _where += string.Format(" and {1}CreateTime<='{0} 59:59'", end, prefix);
+                        }
+                        else
+                        {
+                            _where += string.Format(" and CreateTime<='{0} 59:59'", end);
+                        }
+                    }
+                }
+            }
+            return _where;
+        }
+
     }
 }
