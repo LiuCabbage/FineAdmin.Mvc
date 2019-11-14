@@ -20,6 +20,10 @@ namespace FineAdmin.IRepository
         /// </summary>
         int UpdateById(T model);
         /// <summary>
+        /// 根据主键修改数据 修改指定字段
+        /// </summary>
+        int UpdateById(T model, string updateFields);
+        /// <summary>
         /// 根据主键删除数据
         /// </summary>
         int DeleteById(int Id);
@@ -40,5 +44,10 @@ namespace FineAdmin.IRepository
         /// 获取分页数据 联合查询
         /// </summary>
         IEnumerable<T> GetByPageUnite(SearchFilter filter, out long total);
+        /// <summary>
+        /// 返回整张表数据
+        /// returnFields需要返回的列，用逗号隔开。默认null，返回所有列
+        /// </summary>
+        IEnumerable<T> GetAll(string returnFields = null, string orderby = null);
     }
 }

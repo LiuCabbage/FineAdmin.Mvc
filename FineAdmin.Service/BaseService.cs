@@ -1,6 +1,7 @@
 ﻿using FineAdmin.IRepository;
 using FineAdmin.IService;
 using FineAdmin.Model;
+using System.Collections.Generic;
 
 namespace FineAdmin.Service
 {
@@ -28,6 +29,13 @@ namespace FineAdmin.Service
         public bool UpdateById(T model)
         {
             return BaseRepository.UpdateById(model) > 0 ? true : false;
+        }
+        /// <summary>
+        /// 根据主键修改数据 修改指定字段
+        /// </summary>
+        public bool UpdateById(T model, string updateFields)
+        {
+            return BaseRepository.UpdateById(model, updateFields) > 0 ? true : false;
         }
         /// <summary>
         /// 根据主键删除数据
@@ -86,6 +94,14 @@ namespace FineAdmin.Service
             long total = 0;
             var list = BaseRepository.GetByPageUnite(new SearchFilter { pageIndex = pageInfo.page, pageSize = pageInfo.limit, returnFields = pageInfo.returnFields, param = filter, where = where, orderBy = _orderBy }, out total);
             return Pager.Paging(list, total);
+        }
+        /// <summary>
+        /// 返回整张表数据
+        /// returnFields需要返回的列，用逗号隔开。默认null，返回所有列
+        /// </summary>
+        public IEnumerable<T> GetAll(string returnFields = null, string orderby = null)
+        {
+            return BaseRepository.GetAll(returnFields, orderby);
         }
         /// <summary>
         /// 创建时间范围条件

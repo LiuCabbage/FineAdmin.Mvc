@@ -1,5 +1,6 @@
 ﻿using FineAdmin.Model;
 using System;
+using System.Collections.Generic;
 
 namespace FineAdmin.IService
 {
@@ -19,6 +20,10 @@ namespace FineAdmin.IService
         /// </summary>
         bool UpdateById(T model);
         /// <summary>
+        /// 根据主键修改数据 修改指定字段
+        /// </summary>
+        bool UpdateById(T model, string updateFields);
+        /// <summary>
         /// 根据主键删除数据
         /// </summary>
         bool DeleteById(int Id);
@@ -33,5 +38,10 @@ namespace FineAdmin.IService
         #endregion
 
         dynamic GetListByFilter(T filter, PageInfo pageInfo);
+        /// <summary>
+        /// 返回整张表数据
+        /// returnFields需要返回的列，用逗号隔开。默认null，返回所有列
+        /// </summary>
+        IEnumerable<T> GetAll(string returnFields = null, string orderby = null);
     }
 }

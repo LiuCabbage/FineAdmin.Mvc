@@ -161,16 +161,17 @@
     <Content Include="Content\css\common.css" />
     <Content Include="Content\css\okadmin.css" />
     <Content Include="Content\css\oksub.css" />
+    <Content Include="Content\images\ajax-loader.gif" />
     <Content Include="Content\images\face.jpg" />
     <Content Include="Content\images\head.jpg" />
     <Content Include="Content\images\home-01.png" />
     <Content Include="Content\images\home-02.png" />
     <Content Include="Content\images\home-03.png" />
     <Content Include="Content\images\home-04.png" />
-    <Content Include="Content\images\login-bg.jpg" />
     <Content Include="Content\images\loginbg.jpg" />
     <Content Include="Content\images\logo.jpg" />
     <Content Include="Content\images\qq.jpg" />
+    <Content Include="Content\images\timg.jpg" />
     <Content Include="Content\images\wx.png" />
     <Content Include="Content\images\zfb.png" />
     <Content Include="Content\js\chartArea.js" />
@@ -178,6 +179,7 @@
     <Content Include="Content\js\console.js" />
     <Content Include="Content\js\console1.js" />
     <Content Include="Content\js\echartsData.js" />
+    <Content Include="Content\js\global.js" />
     <Content Include="Content\js\home.js" />
     <Content Include="Content\js\home2.js" />
     <Content Include="Content\js\home2Data-del.js" />
@@ -448,6 +450,7 @@
     <Content Include="Areas\SysSet\Views\WebSet\Index.cshtml" />
     <Content Include="Areas\Security\Views\LogonLog\Index.cshtml" />
     <Content Include="Areas\Permissions\Views\User\Index.cshtml" />
+    <Content Include="Areas\Permissions\Views\User\Add.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />

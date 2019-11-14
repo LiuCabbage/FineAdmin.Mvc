@@ -40,6 +40,16 @@ namespace FineAdmin.Repository
             }
         }
         /// <summary>
+        /// 根据主键修改数据 修改指定字段
+        /// </summary>
+        public int UpdateById(T model, string updateFields)
+        {
+            using (var conn = MySqlHelper.GetConnection())
+            {
+                return conn.UpdateById<T>(model, updateFields);
+            }
+        }
+        /// <summary>
         /// 根据主键删除数据
         /// </summary>
         public int DeleteById(int Id)
@@ -88,6 +98,17 @@ namespace FineAdmin.Repository
             using (var conn = MySqlHelper.GetConnection())
             {
                 return conn.GetByPageUnite<T>(filter.pageIndex, filter.pageSize, out total, filter.returnFields, filter.where, filter.param, filter.orderBy, filter.transaction, filter.commandTimeout);
+            }
+        }
+        /// <summary>
+        /// 返回整张表数据
+        /// returnFields需要返回的列，用逗号隔开。默认null，返回所有列
+        /// </summary>
+        public IEnumerable<T> GetAll(string returnFields = null, string orderby = null)
+        {
+            using (var conn = MySqlHelper.GetConnection())
+            {
+                return conn.GetAll<T>(returnFields, orderby);
             }
         }
     }

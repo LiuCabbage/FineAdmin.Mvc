@@ -47,13 +47,12 @@
                 { field: "Id", title: "ID", width: 80, sort: true },
                 { field: "Account", title: "账户", width: 120 },
                 { field: "RealName", title: "姓名", width: 120 },
-                { field: "HeadIcon", title: "头像", width: 120 },
-                { field: "Gender", title: "性别", width: 80 },
+                { field: "Gender", title: "性别", width: 80, templet: "#genderTpl" },
                 { field: "DepartmentName", title: "部门", width: 120 },
                 { field: "RoleName", title: "角色", width: 120 },
-                { field: "EnabledMark", title: "状态", width: 80 },
-                { field: "CreateTime", title: "创建时间", width: 150 },
-                { title: "操作", width: 230, align: "center", fixed: "right", templet: "#operationTpl" }
+                { field: "EnabledMark", title: "状态", width: 80, templet: "#enabledMarkTpl" },
+                { field: "CreateTime", title: "创建时间", width: 150, templet: '<span>{{showDate(d.CreateTime)}}<span>' },
+                { title: "操作", width: 230, align: "center", fixed: "right", templet: "#operationTpl"}
             ]],
             done: function (res, curr, count) {
                 console.log(res, curr, count);
@@ -88,11 +87,14 @@
                 case "del":
                     del(data.Id);
                     break;
+                case "pwdReset":
+                    pwdReset(data.Id);
+                    break;
             }
         });
 
         function add() {
-            okLayer.open("添加角色", "role-add.html", "90%", "90%", null, function () {
+            okLayer.open("添加用户", "/Permissions/User/Add", "100%", "100%", null, function () {
                 AllTable.reload();
             })
         }
@@ -127,6 +129,16 @@
             })
         }
 
+        function pwdReset(id) {
+            okLayer.confirm("确定要重置密码吗？", function () {
+                okUtils.ajax("/Permissions/User/InitPwd", "get", { id: id }, true).done(function (response) {
+                    okUtils.tableSuccessMsg(response.message);
+                }).fail(function (error) {
+                    console.log(error)
+                });
+            })
+        }
+
     })
 </script>
 <!-- 头工具栏模板 -->
@@ -137,4 +149,19 @@
 <script type="text/html" id="operationTpl">
     @Html.RightToolBarHtml(ViewData["RightButtonList"])
 </script>
-
+<!-- 启用|停用模板 -->
+<script type="text/html" id="enabledMarkTpl">
+    {{#  if(!d.EnabledMark){ }}
+    <span class="layui-btn layui-btn-normal layui-btn-xs">已启用</span>
+    {{#  } else{ }}
+    <span class="layui-btn layui-btn-warm layui-btn-xs">已停用</span>
+    {{#  } }}
+</script>
+<!-- 性别模板 -->
+<script type="text/html" id="genderTpl">
+    {{#  if(d.Gender){ }}
+    <span>男</span>
+    {{#  } else{ }}
+    <span>女</span>
+    {{#  } }}
+</script>

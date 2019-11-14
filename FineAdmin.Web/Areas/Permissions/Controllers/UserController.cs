@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FineAdmin.Common;
 using FineAdmin.IService;
 using FineAdmin.Model;
 using FineAdmin.Web.Controllers;
@@ -12,6 +13,11 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
     public class UserController : BaseController
     {
         public IUserService UserService { get; set; }
+        public IOrganizeService OrganizeService { get; set; }
+        public IRoleService RoleService { get; set; }
+        public SelectList OrganizeList { get { return new SelectList(OrganizeService.GetAll("Id,FullName"),"Id","FullName"); } }
+        public SelectList RoleList { get { return new SelectList(RoleService.GetAll("Id,FullName"), "Id", "FullName"); } }
+
         // GET: Permissions/User
         public override ActionResult Index(int? id)
         {
@@ -28,6 +34,24 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
             var result = UserService.GetListByFilter(model, pageInfo);
             return Json(result, JsonRequestBehavior.AllowGet);
         }
+        public ActionResult Add()
+        {
+            ViewBag.OrganizeList = OrganizeList;
+            ViewBag.RoleList = RoleList;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Add(UserModel model)
+        {
+            model.IsAdministrator = 0;
+            model.UserPassword = Md5.md5(Configs.GetValue("InitUserPwd"), 32);
+            model.CreateTime = DateTime.Now;
+            model.CreateUserId = Operator.UserId;
+            model.UpdateTime = DateTime.Now;
+            model.UpdateUserId = Operator.UserId;
+            var result = UserService.Insert(model) ? SuccessTip("添加成功") : ErrorTip("添加失败");
+            return Json(result);
+        }
         [HttpGet]
         public JsonResult Delete(int idsStr)
         {
@@ -39,6 +63,15 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
         {
             var idsArray = idsStr.Substring(0, idsStr.Length - 1).Split(',');
             var result = UserService.DeleteByIds(idsArray) ? SuccessTip("批量删除成功") : ErrorTip("批量删除失败");
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
+        public JsonResult InitPwd(int id)
+        {
+            var pwd = Configs.GetValue("InitUserPwd");
+            var initPwd = Md5.md5(pwd, 32);
+            UserModel model = new UserModel { Id = id, UserPassword = initPwd };
+            var result = UserService.UpdateById(model, "UserPassword") ? SuccessTip("重置密码成功，新密码:" + pwd) : ErrorTip("重置密码失败");
             return Json(result, JsonRequestBehavior.AllowGet);
         }
     }
