@@ -40,7 +40,8 @@
             let $ = layui.jquery;
             let okUtils = layui.okUtils;
             let okLayer = layui.okLayer;
-
+            //退出登录时清空SessionStorage 切换不同账户登录后台会有Tab标签残留
+            sessionStorage.clear();
             /**
              * 数据校验
              */
