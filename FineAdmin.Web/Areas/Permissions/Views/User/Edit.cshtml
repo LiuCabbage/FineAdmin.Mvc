@@ -1,8 +1,9 @@
-﻿
+﻿@model FineAdmin.Model.UserModel
 @{
-    ViewBag.Title = "Add";
+    ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
+
 <style type="text/css">
     .fr {
         float: right;
@@ -18,7 +19,13 @@
         cursor: pointer;
     }
 </style>
-<form class="layui-form layui-form-pane ok-form">
+<form class="layui-form layui-form-pane ok-form" lay-filter="formTest">
+    @*一些不需要更新的隐藏字段*@
+    @Html.HiddenFor(x => x.Id)
+    @Html.HiddenFor(x => x.IsAdministrator)
+    @Html.HiddenFor(x => x.UserPassword)
+    @Html.HiddenFor(x => x.CreateTime)
+    @Html.HiddenFor(x => x.CreateUserId)
     <div class="layui-form-item">
         <label class="layui-form-label">用户名</label>
         <div class="layui-input-block">
@@ -119,12 +126,32 @@
                 }
             }
         });
+        if ("@Model.HeadIcon"!="") {
+            $("#imgHeadShot").attr("src", "@Model.HeadIcon");
+            $("#imgHeadShot").attr("layer-src", "@Model.HeadIcon");
+        }
         layer.photos({
             photos: '#layer-photos-demo',
             anim: 1
         });
+        //给表单赋值
+        form.val("formTest", { //formTest 即 class="layui-form" 所在元素属性 lay-filter="" 对应的值
+            "Account": "@Model.Account",
+            "RealName": "@Model.RealName",
+            "Gender": "@Model.Gender",
+            "HeadIcon": "@Model.HeadIcon",
+            "MobilePhone": "@Model.MobilePhone",
+            "WeChat": "@Model.WeChat",
+            "Email": "@Model.Email",
+            "Birthday": "@Model.Birthday.ToString("yyyy-MM-dd")",
+            "DepartmentId": "@Model.DepartmentId",
+            "RoleId": "@Model.RoleId",
+            "EnabledMark": "@Model.EnabledMark",
+            "Description": "@Model.Description"
+        });
+        form.render(); //更新全部
         form.on("submit(add)", function (data) {
-            okUtils.ajax("/Permissions/User/Add", "post", data.field, true).done(function (response) {
+            okUtils.ajax("/Permissions/User/Edit", "post", data.field, true).done(function (response) {
                 okLayer.greenTickMsg(response.message, function () {
                     parent.location.reload(); // 父页面刷新
                     parent.layer.close(parent.layer.getFrameIndex(window.name));//先得到当前iframe层的索引 再执行关闭
@@ -136,3 +163,4 @@
         });
     });
 </script>
+

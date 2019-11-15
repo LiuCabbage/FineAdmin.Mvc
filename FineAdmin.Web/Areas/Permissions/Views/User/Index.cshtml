@@ -13,7 +13,7 @@
         <div class="layui-input-inline">
             <input class="layui-input" placeholder="请输入姓名" name="RealName" autocomplete="off">
         </div>
-        @Html.EnabledMarkHtml()
+        @Html.EnabledMarkSelectHtml()
         <div class="layui-input-inline">
             <input class="layui-input" placeholder="日期范围" autocomplete="off" name="StartEndDate" id="StartEndDate">
         </div>
@@ -112,9 +112,7 @@
         }
 
         function edit(id) {
-            okLayer.open("编辑角色", "role-edit.html?id=" + id, "90%", "90%", null, function () {
-                AllTable.reload();
-            })
+            okLayer.open("编辑用户", "/Permissions/User/Edit/" + id, "100%", "100%", null, null);
         }
 
         function del(id) {

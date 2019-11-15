@@ -61,7 +61,7 @@ namespace FineAdmin.Web
         /// <summary>
         /// 状态下拉框
         /// </summary>
-        public static HtmlString EnabledMarkHtml(this HtmlHelper helper, string defaultTxt = "")
+        public static HtmlString EnabledMarkSelectHtml(this HtmlHelper helper, string defaultTxt = "")
         {
             return new HtmlString(string.Format(@"<div class='layui-input-inline'>
                                                     <select name='EnabledMark'>
@@ -74,28 +74,32 @@ namespace FineAdmin.Web
         /// <summary>
         /// 性别单选框
         /// </summary>
-        public static HtmlString GenderHtml(this HtmlHelper helper)
+        public static HtmlString GenderRadioHtml(this HtmlHelper helper, int defaultVal = 1)
         {
-            return new HtmlString(@"<div class='layui-form-item'>
+            var male = defaultVal == 1 ? "checked" : "";
+            var female = defaultVal == 0 ? "checked" : "";
+            return new HtmlString(string.Format(@"<div class='layui-form-item'>
                                         <label class='layui-form-label'>性别</label>
                                         <div class='layui-input-block'>
-                                            <input type='radio' name='Gender' value='1' title='男' checked>
-                                            <input type='radio' name='Gender' value='0' title='女'>
+                                            <input type='radio' name='Gender' value='1' title='男' {0}>
+                                            <input type='radio' name='Gender' value='0' title='女' {1}>
                                         </div>
-                                    </div>");
+                                    </div>", male, female));
         }
         /// <summary>
         /// 状态单选框
         /// </summary>
-        public static HtmlString EnabledMark(this HtmlHelper helper) 
+        public static HtmlString EnabledMarkRadioHtml(this HtmlHelper helper, int defaultVal = 0)
         {
-            return new HtmlString(@"<div class='layui-form-item'>
+            var enabled = defaultVal == 0 ? "checked" : "";
+            var disabled = defaultVal == 1 ? "checked" : "";
+            return new HtmlString(string.Format(@"<div class='layui-form-item'>
                                         <label class='layui-form-label'>状态</label>
                                         <div class='layui-input-block'>
-                                            <input type='radio' name='EnabledMark' value='0' title='开启' checked>
-                                            <input type='radio' name='EnabledMark' value='1' title='禁用'>
+                                            <input type='radio' name='EnabledMark' value='0' title='开启' {0}>
+                                            <input type='radio' name='EnabledMark' value='1' title='禁用' {1}>
                                         </div>
-                                    </div>");
+                                    </div>", enabled, disabled));
         }
 
     }

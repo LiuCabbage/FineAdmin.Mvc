@@ -11,7 +11,7 @@
  Target Server Version : 50717
  File Encoding         : 65001
 
- Date: 13/11/2019 17:56:19
+ Date: 15/11/2019 16:20:30
 */
 
 SET NAMES utf8mb4;
@@ -36,7 +36,7 @@ CREATE TABLE `button`  (
   `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '修改用户主键',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '按钮表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '按钮表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of button
@@ -45,6 +45,7 @@ INSERT INTO `button` VALUES (1, 'add', '添加', 1, '', '&#xe6d9;', 1, '添加',
 INSERT INTO `button` VALUES (2, 'del', '删除', 0, 'layui-btn-danger', '&#xe659;', 3, '删除', b'0', '2019-10-29 16:29:17', 1, '2019-10-29 16:29:20', 1);
 INSERT INTO `button` VALUES (3, 'edit', '修改', 0, '', '&#xe761;', 2, '修改', b'0', '2019-10-29 16:30:32', 1, '2019-10-29 16:30:36', 1);
 INSERT INTO `button` VALUES (4, 'batchDel', '批量删除', 1, 'layui-btn-danger', '&#xe6b4;', 4, '批量删除', b'0', '2019-10-29 16:35:16', 1, '2019-10-29 16:35:19', 1);
+INSERT INTO `button` VALUES (5, 'pwdReset', '重置密码', 0, 'layui-btn-warm', '&#xe6a4;', 5, '重置密码', b'0', '2019-11-14 09:26:11', 1, '2019-11-14 09:26:20', 1);
 
 -- ----------------------------
 -- Table structure for donation
@@ -161,7 +162,7 @@ CREATE TABLE `logonlog`  (
   `IPAddressName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'IP所在城市',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 59 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '登录日志表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 79 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '登录日志表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of logonlog
@@ -215,6 +216,26 @@ INSERT INTO `logonlog` VALUES (46, 'Login', 'admin', 'admin', '登录失败，�
 INSERT INTO `logonlog` VALUES (47, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-11 11:30:40');
 INSERT INTO `logonlog` VALUES (48, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-11 11:30:44');
 INSERT INTO `logonlog` VALUES (58, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-13 15:46:29');
+INSERT INTO `logonlog` VALUES (59, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-14 09:16:02');
+INSERT INTO `logonlog` VALUES (60, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-14 13:29:32');
+INSERT INTO `logonlog` VALUES (61, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-14 17:00:08');
+INSERT INTO `logonlog` VALUES (62, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-15 09:53:23');
+INSERT INTO `logonlog` VALUES (63, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-15 13:22:53');
+INSERT INTO `logonlog` VALUES (64, 'Login', 'admin', 'admin', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-11-15 13:24:43');
+INSERT INTO `logonlog` VALUES (65, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-15 13:24:49');
+INSERT INTO `logonlog` VALUES (66, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-15 16:16:55');
+INSERT INTO `logonlog` VALUES (67, 'Login', 'user', 'user', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-15 16:17:19');
+INSERT INTO `logonlog` VALUES (68, 'Exit', 'user', 'user', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-15 16:17:53');
+INSERT INTO `logonlog` VALUES (69, 'Login', 'user', 'user', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-15 16:18:00');
+INSERT INTO `logonlog` VALUES (70, 'Exit', 'user', 'user', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-15 16:18:29');
+INSERT INTO `logonlog` VALUES (71, 'Login', 'admin', 'admin', '登录失败，账号被锁定，禁止登录', '192.168.1.148', '本地局域网', '2019-11-15 16:18:35');
+INSERT INTO `logonlog` VALUES (72, 'Login', 'user', 'user', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-15 16:18:54');
+INSERT INTO `logonlog` VALUES (73, 'Login', 'user', 'user', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-15 16:19:01');
+INSERT INTO `logonlog` VALUES (74, 'Exit', 'user', 'user', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-15 16:19:06');
+INSERT INTO `logonlog` VALUES (75, 'Login', 'user', 'user', '登录失败，账号被锁定，禁止登录', '192.168.1.148', '本地局域网', '2019-11-15 16:19:12');
+INSERT INTO `logonlog` VALUES (76, 'Login', 'user', 'user', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-15 16:19:26');
+INSERT INTO `logonlog` VALUES (77, 'Exit', 'user', 'user', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-15 16:19:52');
+INSERT INTO `logonlog` VALUES (78, 'Login', 'test', 'test', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-15 16:20:08');
 
 -- ----------------------------
 -- Table structure for module
@@ -277,6 +298,7 @@ INSERT INTO `modulebutton` VALUES (6, 1);
 INSERT INTO `modulebutton` VALUES (6, 2);
 INSERT INTO `modulebutton` VALUES (6, 3);
 INSERT INTO `modulebutton` VALUES (6, 4);
+INSERT INTO `modulebutton` VALUES (6, 5);
 INSERT INTO `modulebutton` VALUES (7, 1);
 INSERT INTO `modulebutton` VALUES (7, 2);
 INSERT INTO `modulebutton` VALUES (7, 3);
@@ -382,6 +404,7 @@ INSERT INTO `roleauthorize` VALUES ('1', '6', '1');
 INSERT INTO `roleauthorize` VALUES ('1', '6', '2');
 INSERT INTO `roleauthorize` VALUES ('1', '6', '3');
 INSERT INTO `roleauthorize` VALUES ('1', '6', '4');
+INSERT INTO `roleauthorize` VALUES ('1', '6', '5');
 INSERT INTO `roleauthorize` VALUES ('1', '7', '0');
 INSERT INTO `roleauthorize` VALUES ('1', '7', '1');
 INSERT INTO `roleauthorize` VALUES ('1', '7', '2');
@@ -393,6 +416,20 @@ INSERT INTO `roleauthorize` VALUES ('1', '8', '3');
 INSERT INTO `roleauthorize` VALUES ('1', '9', '0');
 INSERT INTO `roleauthorize` VALUES ('1', '9', '2');
 INSERT INTO `roleauthorize` VALUES ('1', '9', '4');
+INSERT INTO `roleauthorize` VALUES ('2', '1', '0');
+INSERT INTO `roleauthorize` VALUES ('2', '12', '0');
+INSERT INTO `roleauthorize` VALUES ('2', '2', '0');
+INSERT INTO `roleauthorize` VALUES ('2', '3', '0');
+INSERT INTO `roleauthorize` VALUES ('2', '4', '0');
+INSERT INTO `roleauthorize` VALUES ('2', '5', '0');
+INSERT INTO `roleauthorize` VALUES ('2', '6', '0');
+INSERT INTO `roleauthorize` VALUES ('2', '7', '0');
+INSERT INTO `roleauthorize` VALUES ('2', '8', '0');
+INSERT INTO `roleauthorize` VALUES ('2', '9', '0');
+INSERT INTO `roleauthorize` VALUES ('3', '12', '0');
+INSERT INTO `roleauthorize` VALUES ('3', '2', '0');
+INSERT INTO `roleauthorize` VALUES ('3', '3', '0');
+INSERT INTO `roleauthorize` VALUES ('3', '9', '0');
 
 -- ----------------------------
 -- Table structure for user
@@ -419,13 +456,13 @@ CREATE TABLE `user`  (
   `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '修改用户主键',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 30 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'Liu_Cabbage', '/Content/images/head.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 3, 1, b'1', b'0', '2019-10-29 15:40:26', 1, '2019-10-29 15:40:28', 1);
-INSERT INTO `user` VALUES (2, 'user', 'e10adc3949ba59abbe56e057f20f883e', 'user', '/Content/images/head.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 3, 3, b'0', b'0', '2019-11-13 14:45:55', 1, '2019-11-13 14:45:59', 1);
-INSERT INTO `user` VALUES (3, 'test', 'e10adc3949ba59abbe56e057f20f883e', 'test', '/Content/images/head.jpg', NULL, NULL, NULL, NULL, NULL, NULL, 3, 4, b'0', b'1', '2019-11-13 14:47:47', 1, '2019-11-13 14:47:51', 1);
+INSERT INTO `user` VALUES (1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'Liu_Cabbage', '/Content/images/head.jpg', b'1', '2019-11-15 16:25:53', NULL, NULL, NULL, NULL, 3, 1, b'1', b'0', '2019-10-29 15:40:26', 1, '2019-10-29 15:40:28', 1);
+INSERT INTO `user` VALUES (2, 'user', 'e10adc3949ba59abbe56e057f20f883e', 'user', '/Content/images/head.jpg', b'1', '2019-11-16 16:25:56', NULL, NULL, NULL, NULL, 3, 3, b'0', b'0', '2019-11-13 14:45:55', 1, '2019-11-13 14:45:59', 1);
+INSERT INTO `user` VALUES (3, 'test', 'e10adc3949ba59abbe56e057f20f883e', 'test', '/Content/images/head.jpg', b'1', '2019-11-14 00:00:00', NULL, NULL, NULL, NULL, 3, 4, b'0', b'0', '2019-11-14 16:21:10', 1, '2019-11-15 16:16:10', 1);
 
 SET FOREIGN_KEY_CHECKS = 1;

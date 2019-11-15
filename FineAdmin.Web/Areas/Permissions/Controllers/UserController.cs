@@ -15,7 +15,7 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
         public IUserService UserService { get; set; }
         public IOrganizeService OrganizeService { get; set; }
         public IRoleService RoleService { get; set; }
-        public SelectList OrganizeList { get { return new SelectList(OrganizeService.GetAll("Id,FullName"),"Id","FullName"); } }
+        public SelectList OrganizeList { get { return new SelectList(OrganizeService.GetAll("Id,FullName"), "Id", "FullName"); } }
         public SelectList RoleList { get { return new SelectList(RoleService.GetAll("Id,FullName"), "Id", "FullName"); } }
 
         // GET: Permissions/User
@@ -48,6 +48,23 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
             model.UpdateTime = DateTime.Now;
             model.UpdateUserId = Operator.UserId;
             var result = UserService.Insert(model) ? SuccessTip("添加成功") : ErrorTip("添加失败");
+            return Json(result);
+        }
+        public ActionResult Edit(int id)
+        {
+            ViewBag.UploadFileSize = Configs.GetValue("UploadFileSize");
+            ViewBag.UploadFileType = Configs.GetValue("UploadFileType");
+            ViewBag.OrganizeList = OrganizeList;
+            ViewBag.RoleList = RoleList;
+            var model = UserService.GetById(id);
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult Edit(UserModel model)
+        {
+            model.UpdateTime = DateTime.Now;
+            model.UpdateUserId = Operator.UserId;
+            var result = UserService.UpdateById(model) ? SuccessTip("修改成功") : ErrorTip("修改失败");
             return Json(result);
         }
         [HttpGet]

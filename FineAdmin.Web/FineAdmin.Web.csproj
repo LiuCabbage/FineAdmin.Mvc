@@ -451,6 +451,7 @@
     <Content Include="Areas\Security\Views\LogonLog\Index.cshtml" />
     <Content Include="Areas\Permissions\Views\User\Index.cshtml" />
     <Content Include="Areas\Permissions\Views\User\Add.cshtml" />
+    <Content Include="Areas\Permissions\Views\User\Edit.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
