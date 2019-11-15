@@ -94,9 +94,7 @@
         });
 
         function add() {
-            okLayer.open("添加用户", "/Permissions/User/Add", "100%", "100%", null, function () {
-                AllTable.reload();
-            })
+            okLayer.open("添加用户", "/Permissions/User/Add", "100%", "100%", null, null);
         }
 
         function batchDel() {
@@ -121,7 +119,7 @@
 
         function del(id) {
             okLayer.confirm("确定要删除吗？", function () {
-                okUtils.ajax("/Permissions/User/Delete", "get", { idsStr: id }, true).done(function (response) {
+                okUtils.ajax("/Permissions/User/Delete", "get", { id: id }, true).done(function (response) {
                     okUtils.tableSuccessMsg(response.message);
                 }).fail(function (error) {
                     console.log(error)

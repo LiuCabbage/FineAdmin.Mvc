@@ -37,44 +37,42 @@ layui.define(["layer"], function (exports) {
         /**
          * msg()函数二次封装
          */
-        msg: {
-            // msg弹窗默认消失时间
-            time: 1000,
-            // 绿色勾
-            greenTick: function (content, callbackFunction) {
-                var options = {icon: 1, time: okLayer.msg.time, anim: okLayer.animChoose()};
-                layer.msg(content, options, callbackFunction);
-            },
-            // 红色叉
-            redCross: function (content, callbackFunction) {
-                var options = {icon: 2, time: okLayer.msg.time, anim: okLayer.animChoose()};
-                layer.msg(content, options, callbackFunction);
-            },
-            // 黄色问号
-            yellowQuestion: function (content, callbackFunction) {
-                var options = {icon: 3, time: okLayer.msg.time, anim: okLayer.animChoose()};
-                layer.msg(content, options, callbackFunction);
-            },
-            // 灰色锁
-            grayLock: function (content, callbackFunction) {
-                var options = {icon: 4, time: okLayer.msg.time, anim: okLayer.animChoose()};
-                layer.msg(content, options, callbackFunction);
-            },
-            // 红色哭脸
-            redCry: function (content, callbackFunction) {
-                var options = {icon: 5, time: okLayer.msg.time, anim: okLayer.animChoose()};
-                layer.msg(content, options, callbackFunction);
-            },
-            // 绿色笑脸
-            greenLaugh: function (content, callbackFunction) {
-                var options = {icon: 6, time: okLayer.msg.time, anim: okLayer.animChoose()};
-                layer.msg(content, options, callbackFunction);
-            },
-            // 黄色感叹号
-            yellowSigh: function (content, callbackFunction) {
-                var options = {icon: 7, time: okLayer.msg.time, anim: okLayer.animChoose()};
-                layer.msg(content, options, callbackFunction);
-            }
+        // msg弹窗默认消失时间
+        time: 1000,
+        // 绿色勾
+        greenTickMsg: function (content, callbackFunction) {
+            let options = { icon: 1, time: okLayer.time, anim: okLayer.animChoose() };
+            layer.msg(content, options, callbackFunction);
+        },
+        // 红色叉
+        redCrossMsg: function (content, callbackFunction) {
+            let options = { icon: 2, time: okLayer.time, anim: okLayer.animChoose() };
+            layer.msg(content, options, callbackFunction);
+        },
+        // 黄色问号
+        yellowQuestionMsg: function (content, callbackFunction) {
+            let options = { icon: 3, time: okLayer.time, anim: okLayer.animChoose() };
+            layer.msg(content, options, callbackFunction);
+        },
+        // 灰色锁
+        grayLockMsg: function (content, callbackFunction) {
+            let options = { icon: 4, time: okLayer.time, anim: okLayer.animChoose() };
+            layer.msg(content, options, callbackFunction);
+        },
+        // 红色哭脸
+        redCryMsg: function (content, callbackFunction) {
+            let options = { icon: 5, time: okLayer.time, anim: okLayer.animChoose() };
+            layer.msg(content, options, callbackFunction);
+        },
+        // 绿色笑脸
+        greenLaughMsg: function (content, callbackFunction) {
+            let options = { icon: 6, time: okLayer.time, anim: okLayer.animChoose() };
+            layer.msg(content, options, callbackFunction);
+        },
+        // 黄色感叹号
+        yellowSighMsg: function (content, callbackFunction) {
+            let options = { icon: 7, time: okLayer.time, anim: okLayer.animChoose() };
+            layer.msg(content, options, callbackFunction);
         },
         /**
          * 皮肤选择

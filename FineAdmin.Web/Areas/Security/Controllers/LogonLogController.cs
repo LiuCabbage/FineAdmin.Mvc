@@ -26,9 +26,9 @@ namespace FineAdmin.Web.Areas.Security.Controllers
             return Json(result, JsonRequestBehavior.AllowGet);
         }
         [HttpGet]
-        public JsonResult Delete(int idsStr)
+        public JsonResult Delete(int id)
         {
-            var result = LogonLogService.DeleteById(idsStr) ? SuccessTip("删除成功") : ErrorTip("删除失败");
+            var result = LogonLogService.DeleteById(id) ? SuccessTip("删除成功") : ErrorTip("删除失败");
             return Json(result, JsonRequestBehavior.AllowGet);
         }
         [HttpGet]

@@ -99,7 +99,7 @@
 
         function del(id) {
             okLayer.confirm("确定要删除吗？", function () {
-                okUtils.ajax("/Security/LogonLog/Delete", "get", { idsStr: id }, true).done(function (response) {
+                okUtils.ajax("/Security/LogonLog/Delete", "get", { id: id }, true).done(function (response) {
                     okUtils.tableSuccessMsg(response.message);
                 }).fail(function (error) {
                     console.log(error)

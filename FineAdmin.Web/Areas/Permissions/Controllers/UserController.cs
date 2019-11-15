@@ -36,6 +36,8 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
         }
         public ActionResult Add()
         {
+            ViewBag.UploadFileSize = Configs.GetValue("UploadFileSize");
+            ViewBag.UploadFileType = Configs.GetValue("UploadFileType");
             ViewBag.OrganizeList = OrganizeList;
             ViewBag.RoleList = RoleList;
             return View();
@@ -53,9 +55,9 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
             return Json(result);
         }
         [HttpGet]
-        public JsonResult Delete(int idsStr)
+        public JsonResult Delete(int id)
         {
-            var result = UserService.DeleteById(idsStr) ? SuccessTip("删除成功") : ErrorTip("删除失败");
+            var result = UserService.DeleteById(id) ? SuccessTip("删除成功") : ErrorTip("删除失败");
             return Json(result, JsonRequestBehavior.AllowGet);
         }
         [HttpGet]

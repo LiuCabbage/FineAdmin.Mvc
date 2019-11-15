@@ -53,7 +53,6 @@
              */
             form.on("submit(login)", function (data) {
                 okUtils.ajax("/Login/LoginOn", "post", data.field, true).done(function (response) {
-                    console.log(response);
                     okLayer.msg.greenTick(response.message, function () {
                         window.location = "/Home";
                     })
