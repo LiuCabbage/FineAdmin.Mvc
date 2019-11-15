@@ -15,6 +15,8 @@ namespace FineAdmin.Web
     {
         protected void Application_Start()
         {
+            RemoveWebFormEngines();
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
@@ -50,5 +52,19 @@ namespace FineAdmin.Web
               .Where(t => t.Name.EndsWith("Repository"))
               .AsImplementedInterfaces().PropertiesAutowired();
         }
+
+        /// <summary>
+        /// ÒÆ³ýwebformÊÔÍ¼ÒýÇæ
+        /// </summary>
+        void RemoveWebFormEngines()
+        {
+            var viewEngines = ViewEngines.Engines;
+            var webFormEngines = viewEngines.OfType<WebFormViewEngine>().FirstOrDefault();
+            if (webFormEngines != null)
+            {
+                viewEngines.Remove(webFormEngines);
+            }
+        }
+
     }
 }

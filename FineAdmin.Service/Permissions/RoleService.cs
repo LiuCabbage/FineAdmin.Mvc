@@ -12,7 +12,22 @@ namespace FineAdmin.Service
     {
         public dynamic GetListByFilter(RoleModel filter, PageInfo pageInfo)
         {
-            throw new NotImplementedException();
+            pageInfo.prefix = "a.";
+            string _where = " role a INNER JOIN itemsdetail b ON a.TypeClass=b.Id";
+            if (!string.IsNullOrEmpty(filter.EnCode))
+            {
+                _where += string.Format(" and {0}EnCode=@EnCode", pageInfo.prefix);
+            }
+            if (!string.IsNullOrEmpty(filter.FullName))
+            {
+                _where += string.Format(" and {0}FullName=@FullName", pageInfo.prefix);
+            }
+            if (filter.EnabledMark != null)
+            {
+                _where += string.Format(" and {0}EnabledMark=@EnabledMark", pageInfo.prefix);
+            }
+            pageInfo.returnFields = string.Format("{0}Id,{0}EnCode,{0}FullName,b.ItemName as TypeName,{0}SortCode,{0}Description,{0}EnabledMark,{0}CreateTime", pageInfo.prefix);
+            return GetPageUnite(filter, pageInfo, _where);
         }
     }
 }

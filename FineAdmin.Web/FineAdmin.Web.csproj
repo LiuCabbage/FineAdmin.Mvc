@@ -425,7 +425,6 @@
     <Folder Include="Areas\Permissions\Views\Items\" />
     <Folder Include="Areas\Permissions\Views\Module\" />
     <Folder Include="Areas\Permissions\Views\Organize\" />
-    <Folder Include="Areas\Permissions\Views\Role\" />
     <Folder Include="Areas\Permissions\Views\Shared\" />
     <Folder Include="Areas\Security\Models\" />
     <Folder Include="Areas\Security\Views\Shared\" />
@@ -452,6 +451,9 @@
     <Content Include="Areas\Permissions\Views\User\Index.cshtml" />
     <Content Include="Areas\Permissions\Views\User\Add.cshtml" />
     <Content Include="Areas\Permissions\Views\User\Edit.cshtml" />
+    <Content Include="Areas\Permissions\Views\Role\Index.cshtml" />
+    <Content Include="Areas\Permissions\Views\Role\Add.cshtml" />
+    <Content Include="Areas\Permissions\Views\Role\Edit.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />

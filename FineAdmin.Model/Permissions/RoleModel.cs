@@ -17,5 +17,10 @@ namespace FineAdmin.Model
         /// 类型
         /// </summary>
         public int TypeClass { get; set; }
+        /// <summary>
+        /// 角色类型
+        /// </summary>
+        [Computed]
+        public string TypeName { get; set; }
     }
 }
