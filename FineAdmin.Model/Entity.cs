@@ -21,8 +21,9 @@ namespace FineAdmin.Model
         public string Description { get; set; }
         /// <summary>
         /// 有效标识 0：有效 1：无效
+        /// 可空是用于查询
         /// </summary>
-        public bool EnabledMark { get; set; }
+        public int? EnabledMark { get; set; }
         /// <summary>
         /// 创建时间
         /// </summary>
@@ -50,10 +51,5 @@ namespace FineAdmin.Model
         /// </summary>
         [Computed]
         public string StartEndDate { get; set; }
-        /// <summary>
-        /// 用来接收查询启用禁用的值，EnabledMark Bool类型映射不到
-        /// </summary>
-        [Computed]
-        public int? EnabledMarkSelect { get; set; }
     }
 }

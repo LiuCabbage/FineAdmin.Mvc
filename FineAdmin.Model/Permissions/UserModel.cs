@@ -23,9 +23,9 @@ namespace FineAdmin.Model
         /// </summary>
         public string HeadIcon { get; set; }
         /// <summary>
-        /// 性别
+        /// 性别 1:男 0:女
         /// </summary>
-        public bool Gender { get; set; }
+        public int Gender { get; set; }
         /// <summary>
         /// 生日
         /// </summary>

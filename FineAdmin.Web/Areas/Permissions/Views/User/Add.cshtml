@@ -31,13 +31,7 @@
             <input type="text" name="RealName" placeholder="请输入姓名" autocomplete="off" class="layui-input" lay-verify="required">
         </div>
     </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label">性别</label>
-        <div class="layui-input-block">
-            <input type="radio" name="Gender" value="1" title="男" checked>
-            <input type="radio" name="Gender" value="0" title="女">
-        </div>
-    </div>
+    @Html.GenderHtml()
     <div class="layui-form-item">
         <label class="layui-form-label">头像</label>
         <div class="layui-input-inline">
@@ -88,12 +82,7 @@
             @Html.DropDownList("RoleId", (IEnumerable<SelectListItem>)ViewBag.RoleList, "请选择角色", new Dictionary<string, object> { { "lay-verify", "required" } })
         </div>
     </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label">状态</label>
-        <div class="layui-input-block">
-            <input type="checkbox" name="EnabledMark" lay-skin="switch" lay-text="启用|停用" checked value="0">
-        </div>
-    </div>
+    @Html.EnabledMark()
     <div class="layui-form-item layui-form-text">
         <label class="layui-form-label">备注</label>
         <div class="layui-input-block">
@@ -131,6 +120,7 @@
         });
 
         form.on("submit(add)", function (data) {
+            console.log(data.field);
             okUtils.ajax("/Permissions/User/Add", "post", data.field, true).done(function (response) {
                 okLayer.greenTickMsg("添加成功", function () {
                     parent.location.reload(); // 父页面刷新

@@ -61,7 +61,7 @@ namespace FineAdmin.Web
         /// <summary>
         /// 状态下拉框
         /// </summary>
-        public static HtmlString EnabledMarkSelectHtml(this HtmlHelper helper, string defaultTxt = "")
+        public static HtmlString EnabledMarkHtml(this HtmlHelper helper, string defaultTxt = "")
         {
             return new HtmlString(string.Format(@"<div class='layui-input-inline'>
                                                     <select name='EnabledMark'>
@@ -70,6 +70,32 @@ namespace FineAdmin.Web
                                                         <option value='1'>禁用</option >
                                                     </select>
                                                 </div>", defaultTxt));
+        }
+        /// <summary>
+        /// 性别单选框
+        /// </summary>
+        public static HtmlString GenderHtml(this HtmlHelper helper)
+        {
+            return new HtmlString(@"<div class='layui-form-item'>
+                                        <label class='layui-form-label'>性别</label>
+                                        <div class='layui-input-block'>
+                                            <input type='radio' name='Gender' value='1' title='男' checked>
+                                            <input type='radio' name='Gender' value='0' title='女'>
+                                        </div>
+                                    </div>");
+        }
+        /// <summary>
+        /// 状态单选框
+        /// </summary>
+        public static HtmlString EnabledMark(this HtmlHelper helper) 
+        {
+            return new HtmlString(@"<div class='layui-form-item'>
+                                        <label class='layui-form-label'>状态</label>
+                                        <div class='layui-input-block'>
+                                            <input type='radio' name='EnabledMark' value='0' title='开启' checked>
+                                            <input type='radio' name='EnabledMark' value='1' title='禁用'>
+                                        </div>
+                                    </div>");
         }
 
     }

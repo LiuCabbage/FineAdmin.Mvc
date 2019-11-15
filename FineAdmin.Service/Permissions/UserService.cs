@@ -26,9 +26,9 @@ namespace FineAdmin.Service
             {
                 _where += string.Format(" and {0}RealName=@RealName", pageInfo.prefix);
             }
-            if (filter.EnabledMarkSelect != null)
+            if (filter.EnabledMark != null)
             {
-                _where += " and a.EnabledMark=" + filter.EnabledMarkSelect;
+                _where += string.Format(" and {0}EnabledMark=@EnabledMark", pageInfo.prefix);
             }
             _where = CreateTimeWhereStr(filter.StartEndDate, _where, pageInfo.prefix);
             pageInfo.returnFields = string.Format("{0}Id,{0}Account,{0}RealName,{0}Gender,c.FullName as 'DepartmentName',b.FullName as 'RoleName',{0}EnabledMark,{0}CreateTime", pageInfo.prefix);

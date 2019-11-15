@@ -38,7 +38,7 @@ namespace FineAdmin.Web.Controllers
                 UserModel userEntity = UserService.LoginOn(username, Md5.md5(password, 32));
                 if (userEntity != null)
                 {
-                    if (userEntity.EnabledMark)
+                    if (userEntity.EnabledMark==0)
                     {
                         throw new Exception("账号被锁定，禁止登录");
                     }

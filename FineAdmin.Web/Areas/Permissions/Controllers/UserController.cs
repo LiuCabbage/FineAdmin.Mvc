@@ -25,12 +25,8 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
             return View();
         }
         [HttpGet]
-        public JsonResult List(UserModel model, PageInfo pageInfo, int? EnabledMark)
+        public JsonResult List(UserModel model, PageInfo pageInfo)
         {
-            if (EnabledMark != null)
-            {
-                model.EnabledMarkSelect = EnabledMark;
-            }
             var result = UserService.GetListByFilter(model, pageInfo);
             return Json(result, JsonRequestBehavior.AllowGet);
         }
