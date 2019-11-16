@@ -21,7 +21,7 @@ namespace FineAdmin.Repository
         {
             using (var conn = MySqlHelper.GetConnection())
             {
-                sql += @" WHERE b.EnabledMark=0
+                sql += @" WHERE 1=1
                         and a.RoleId = @RoleId
                         GROUP BY a.ModuleId
                         ORDER BY b.SortCode ASC";

@@ -18,12 +18,12 @@
 <table class="layui-hide" id="tableId" lay-filter="tableFilter"></table>
 <script>
     layui.use(["treeGrid", "form", "okLayer", "okUtils"], function () {
-        let treeGrid = layui.treeGrid;
+        let table = layui.treeGrid;
         let form = layui.form;
         let okLayer = layui.okLayer;
         let okUtils = layui.okUtils;
 
-        let AllTable = treeGrid.render({
+        table.render({
             elem: "#tableId",
             url: "/Permissions/Organize/List",
             page: false,
@@ -37,17 +37,8 @@
                 { field: "Id", title: "ID", width: 80, sort: true },
                 { field: "FullName", title: "机构名称", width: 120 },
                 { field: "EnCode", title: "机构编码", width: 120 },
-                { field: "CategoryName", title: "分类", width: 80, templet: "#genderTpl" },
-                { field: "ManagerName", title: "负责人", width: 120 },
+                { field: "CategoryName", title: "分类", width: 120 },
                 { field: "SortCode", title: "排序码", width: 120 },
-                { field: "TelePhone", title: "电话", width: 120 },
-                { field: "MobilePhone", title: "手机", width: 120 },
-                { field: "WeChat", title: "微信", width: 120 },
-                { field: "Fax", title: "传真", width: 120 },
-                { field: "Email", title: "邮箱", width: 120 },
-                { field: "Address", title: "联系地址", width: 120 },
-                { field: "Description", title: "描述", width: 120 },
-                { field: "EnabledMark", title: "状态", width: 80, templet: "#enabledMarkTpl" },
                 { field: "CreateTime", title: "创建时间", width: 150, templet: '<span>{{showDate(d.CreateTime)}}<span>' },
                 { title: "操作", width: 230, align: "center", fixed: "right", templet: "#operationTpl"}
             ]],
@@ -57,7 +48,7 @@
         });
 
         form.on("submit(search)", function (data) {
-            AllTable.reload({
+            table.reload({
                 where: data.field,
                 page: { curr: 1 }
             });
@@ -111,13 +102,5 @@
 <!-- 行工具栏模板 -->
 <script type="text/html" id="operationTpl">
     @Html.RightToolBarHtml(ViewData["RightButtonList"])
-</script>
-<!-- 启用|停用模板 -->
-<script type="text/html" id="enabledMarkTpl">
-    {{#  if(!d.EnabledMark){ }}
-    <span class="layui-btn layui-btn-normal layui-btn-xs">已启用</span>
-    {{#  } else{ }}
-    <span class="layui-btn layui-btn-warm layui-btn-xs">已停用</span>
-    {{#  } }}
 </script>
 

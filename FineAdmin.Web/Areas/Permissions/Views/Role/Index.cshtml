@@ -26,7 +26,7 @@
         let okLayer = layui.okLayer;
         let okUtils = layui.okUtils;
 
-        let AllTable = table.render({
+        table.render({
             elem: "#tableId",
             url: "/Permissions/Role/List",
             limit: 10,
@@ -40,10 +40,8 @@
                 { field: "FullName", title: "角色名称", width: 120 },
                 { field: "TypeName", title: "角色类型", width: 120 },
                 { field: "SortCode", title: "排序码", width: 80 },
-                { field: "Description", title: "描述", width: 120 },
-                { field: "EnabledMark", title: "状态", width: 80, templet: "#enabledMarkTpl" },
                 { field: "CreateTime", title: "创建时间", width: 150, templet: '<span>{{showDate(d.CreateTime)}}<span>' },
-                { title: "操作", width: 150, align: "center", fixed: "right", templet: "#operationTpl"}
+                { title: "操作", width: 230, align: "center", fixed: "right", templet: "#operationTpl"}
             ]],
             done: function (res, curr, count) {
                 console.log(res, curr, count);
@@ -51,7 +49,7 @@
         });
 
         form.on("submit(search)", function (data) {
-            AllTable.reload({
+            table.reload({
                 where: data.field,
                 page: { curr: 1 }
             });
@@ -75,15 +73,18 @@
                 case "del":
                     del(data.Id);
                     break;
+                case "assign":
+                    assign(data.Id);
+                    break;
             }
         });
 
         function add() {
-            okLayer.open("添加角色", "/Permissions/Role/Add", "100%", "100%", null, null);
+            okLayer.open("添加角色", "/Permissions/Role/Add", "80%", "75%", null, null);
         }
 
         function edit(id) {
-            okLayer.open("编辑角色", "/Permissions/Role/Edit/" + id, "100%", "100%", null, null);
+            okLayer.open("编辑角色", "/Permissions/Role/Edit/" + id, "80%", "75%", null, null);
         }
 
         function del(id) {
@@ -96,6 +97,10 @@
             })
         }
 
+        function assign(id) {
+            okLayer.open("分配权限", "/Permissions/Role/Assign/" + id, "100%", "100%", null, null);
+        }
+
     })
 </script>
 <!-- 头工具栏模板 -->
@@ -105,12 +110,4 @@
 <!-- 行工具栏模板 -->
 <script type="text/html" id="operationTpl">
     @Html.RightToolBarHtml(ViewData["RightButtonList"])
-</script>
-<!-- 启用|停用模板 -->
-<script type="text/html" id="enabledMarkTpl">
-    {{#  if(!d.EnabledMark){ }}
-    <span class="layui-btn layui-btn-normal layui-btn-xs">已启用</span>
-    {{#  } else{ }}
-    <span class="layui-btn layui-btn-warm layui-btn-xs">已停用</span>
-    {{#  } }}
 </script>

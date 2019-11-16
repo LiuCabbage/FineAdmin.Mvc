@@ -34,7 +34,7 @@
             , range: '~'
         });
 
-        let AllTable = table.render({
+        table.render({
             elem: "#tableId",
             url: "/Security/LogonLog/List",
             limit: 10,
@@ -59,7 +59,7 @@
         });
 
         form.on("submit(search)", function (data) {
-            AllTable.reload({
+            table.reload({
                 where: data.field,
                 page: { curr: 1 }
             });

@@ -22,7 +22,7 @@ namespace FineAdmin.Service
             {
                 _where += string.Format(" and {0}FullName=@FullName", pageInfo.prefix);
             }
-            pageInfo.returnFields = string.Format("{0}Id,{0}EnCode,{0}FullName,b.ItemName as TypeName,{0}SortCode,{0}Description,{0}EnabledMark,{0}CreateTime", pageInfo.prefix);
+            pageInfo.returnFields = string.Format("{0}Id,{0}EnCode,{0}FullName,b.ItemName as TypeName,{0}SortCode,{0}CreateTime", pageInfo.prefix);
             return GetPageUnite(filter, pageInfo, _where);
         }
     }
