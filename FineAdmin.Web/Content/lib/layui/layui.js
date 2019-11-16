@@ -35,6 +35,7 @@ if (!Object.assign) {
         "okAddlink": "okmodules/okAddlink",
         "okLayer": "okmodules/okLayer",
         "treeGrid": "okmodules/treeGrid",//加入treeGrid组件
+        "treeSelect": "okmodules/treeSelect",//加入treeSelect组件
     };
     var modulePath = Object.assign({
         layer: "modules/layer",
