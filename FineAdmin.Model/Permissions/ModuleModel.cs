@@ -25,9 +25,5 @@ namespace FineAdmin.Model
         /// 链接
         /// </summary>
         public string UrlAddress { get; set; }
-        /// <summary>
-        /// 是否菜单
-        /// </summary>
-        public bool IsMenu { get; set; }
     }
 }

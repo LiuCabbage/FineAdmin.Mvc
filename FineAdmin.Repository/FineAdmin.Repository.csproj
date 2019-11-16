@@ -61,7 +61,6 @@
     <Compile Include="Permissions\ButtonRepository.cs" />
     <Compile Include="Permissions\ItemsDetailRepository.cs" />
     <Compile Include="Permissions\ItemsRepository.cs" />
-    <Compile Include="Permissions\ModuleButtonRepository.cs" />
     <Compile Include="Permissions\ModuleRepository.cs" />
     <Compile Include="Permissions\OrganizeRepository.cs" />
     <Compile Include="Permissions\RoleAuthorizeRepository.cs" />

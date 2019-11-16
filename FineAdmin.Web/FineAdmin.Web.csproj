@@ -401,6 +401,7 @@
     <Content Include="Content\lib\layui\lay\okmodules\okTab.js" />
     <Content Include="Content\lib\layui\lay\okmodules\okUtils.js" />
     <Content Include="Content\lib\layui\lay\okmodules\qrcode.js" />
+    <Content Include="Content\lib\layui\lay\okmodules\treeGrid.js" />
     <Content Include="Content\lib\nprogress\nprogress.css" />
     <Content Include="Content\lib\nprogress\nprogress.js" />
     <Content Include="favicon.ico" />
@@ -424,7 +425,6 @@
     <Folder Include="Areas\Permissions\Views\Button\" />
     <Folder Include="Areas\Permissions\Views\Items\" />
     <Folder Include="Areas\Permissions\Views\Module\" />
-    <Folder Include="Areas\Permissions\Views\Organize\" />
     <Folder Include="Areas\Permissions\Views\Shared\" />
     <Folder Include="Areas\Security\Models\" />
     <Folder Include="Areas\Security\Views\Shared\" />
@@ -454,6 +454,7 @@
     <Content Include="Areas\Permissions\Views\Role\Index.cshtml" />
     <Content Include="Areas\Permissions\Views\Role\Add.cshtml" />
     <Content Include="Areas\Permissions\Views\Role\Edit.cshtml" />
+    <Content Include="Areas\Permissions\Views\Organize\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />

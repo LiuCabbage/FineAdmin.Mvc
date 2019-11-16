@@ -51,9 +51,10 @@ namespace FineAdmin.Model
         /// </summary>
         public int RoleId { get; set; }
         /// <summary>
-        /// 是否管理员
+        /// 有效标识 0：有效 1：无效
+        /// 可空是用于查询
         /// </summary>
-        public int IsAdministrator { get; set; }
+        public int? EnabledMark { get; set; }
         /// <summary>
         /// 排序码
         /// </summary>

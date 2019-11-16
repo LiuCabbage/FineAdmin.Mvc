@@ -46,7 +46,6 @@
     <Compile Include="Permissions\IItemsDetailRepository.cs" />
     <Compile Include="Permissions\IItemsRepository.cs" />
     <Compile Include="Security\ILogonLogRepository.cs" />
-    <Compile Include="Permissions\IModuleButtonRepository.cs" />
     <Compile Include="Permissions\IModuleRepository.cs" />
     <Compile Include="Permissions\IOrganizeRepository.cs" />
     <Compile Include="Permissions\IRoleAuthorizeRepository.cs" />

@@ -90,12 +90,6 @@
         </div>
     </div>
     @Html.EnabledMarkRadioHtml()
-    <div class="layui-form-item layui-form-text">
-        <label class="layui-form-label">备注</label>
-        <div class="layui-input-block">
-            <textarea name="Description" placeholder="请输入内容" class="layui-textarea"></textarea>
-        </div>
-    </div>
     <div class="layui-form-item">
         <div class="layui-input-block">
             <button class="layui-btn" lay-submit lay-filter="add">立即提交</button>
@@ -146,8 +140,7 @@
             "Birthday": "@Model.Birthday.ToString("yyyy-MM-dd")",
             "DepartmentId": "@Model.DepartmentId",
             "RoleId": "@Model.RoleId",
-            "EnabledMark": "@Model.EnabledMark",
-            "Description": "@Model.Description"
+            "EnabledMark": "@Model.EnabledMark"
         });
         form.render(); //更新全部
         form.on("submit(add)", function (data) {

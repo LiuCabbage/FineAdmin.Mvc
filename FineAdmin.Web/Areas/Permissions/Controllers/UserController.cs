@@ -41,7 +41,6 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
         [HttpPost]
         public ActionResult Add(UserModel model)
         {
-            model.IsAdministrator = 0;
             model.UserPassword = Md5.md5(Configs.GetValue("InitUserPwd"), 32);
             model.CreateTime = DateTime.Now;
             model.CreateUserId = Operator.UserId;

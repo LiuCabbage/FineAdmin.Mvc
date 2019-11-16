@@ -34,7 +34,7 @@ if (!Object.assign) {
         "jQqrcode": "okmodules/jQqrcode",
         "okAddlink": "okmodules/okAddlink",
         "okLayer": "okmodules/okLayer",
-        "okMock": "okmodules/okMock",
+        "treeGrid": "okmodules/treeGrid",//加入treeGrid组件
     };
     var modulePath = Object.assign({
         layer: "modules/layer",

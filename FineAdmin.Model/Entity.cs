@@ -16,15 +16,6 @@ namespace FineAdmin.Model
         /// </summary>
         public virtual int SortCode { get; set; }
         /// <summary>
-        /// 描述
-        /// </summary>
-        public string Description { get; set; }
-        /// <summary>
-        /// 有效标识 0：有效 1：无效
-        /// 可空是用于查询
-        /// </summary>
-        public int? EnabledMark { get; set; }
-        /// <summary>
         /// 创建时间
         /// </summary>
         [DataType(DataType.Date)]
