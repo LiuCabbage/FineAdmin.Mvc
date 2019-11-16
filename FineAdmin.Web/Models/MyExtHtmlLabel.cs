@@ -78,7 +78,7 @@ namespace FineAdmin.Web
         {
             var male = defaultVal == 1 ? "checked" : "";
             var female = defaultVal == 0 ? "checked" : "";
-            return new HtmlString(string.Format(@"<div class='layui-form-item'>
+            return new HtmlString(string.Format(@"<div class='layui-form-item' pane>
                                         <label class='layui-form-label'>性别</label>
                                         <div class='layui-input-block'>
                                             <input type='radio' name='Gender' value='1' title='男' {0}>
@@ -93,7 +93,7 @@ namespace FineAdmin.Web
         {
             var enabled = defaultVal == 0 ? "checked" : "";
             var disabled = defaultVal == 1 ? "checked" : "";
-            return new HtmlString(string.Format(@"<div class='layui-form-item'>
+            return new HtmlString(string.Format(@"<div class='layui-form-item' pane>
                                         <label class='layui-form-label'>状态</label>
                                         <div class='layui-input-block'>
                                             <input type='radio' name='EnabledMark' value='0' title='开启' {0}>

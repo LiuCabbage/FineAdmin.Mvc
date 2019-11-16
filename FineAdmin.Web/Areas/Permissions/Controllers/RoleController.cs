@@ -12,6 +12,9 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
     public class RoleController : BaseController
     {
         public IRoleService RoleService { get; set; }
+        public IItemsDetailService ItemsDetailService { get; set; }
+        public SelectList RoleTypeList { get { return new SelectList(ItemsDetailService.GetAll("Id,ItemName,ItemId", "ORDER BY SortCode ASC").Where(x=>x.ItemId==3), "Id", "ItemName"); } }
+
         // GET: Permissions/Role
         public override ActionResult Index(int? id)
         {
@@ -26,6 +29,7 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
         }
         public ActionResult Add() 
         {
+            ViewBag.RoleTypeList = RoleTypeList;
             return View();
         }
         [HttpPost]
@@ -40,6 +44,7 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
         }
         public ActionResult Edit(int id)
         {
+            ViewBag.RoleTypeList = RoleTypeList;
             var model = RoleService.GetById(id);
             return View(model);
         }

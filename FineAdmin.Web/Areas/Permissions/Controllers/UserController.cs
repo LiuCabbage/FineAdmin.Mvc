@@ -15,9 +15,8 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
         public IUserService UserService { get; set; }
         public IOrganizeService OrganizeService { get; set; }
         public IRoleService RoleService { get; set; }
-        //这两个要根据SortCode来取
-        public SelectList OrganizeList { get { return new SelectList(OrganizeService.GetAll("Id,FullName"), "Id", "FullName"); } }
-        public SelectList RoleList { get { return new SelectList(RoleService.GetAll("Id,FullName"), "Id", "FullName"); } }
+        public SelectList OrganizeList { get { return new SelectList(OrganizeService.GetAll("Id,FullName", "ORDER BY SortCode ASC"), "Id", "FullName"); } }
+        public SelectList RoleList { get { return new SelectList(RoleService.GetAll("Id,FullName", "ORDER BY SortCode ASC"), "Id", "FullName"); } }
 
         // GET: Permissions/User
         public override ActionResult Index(int? id)
