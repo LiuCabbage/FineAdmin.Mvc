@@ -26,7 +26,7 @@
         let okLayer = layui.okLayer;
         let okUtils = layui.okUtils;
 
-        table.render({
+        let AllTable = table.render({
             elem: "#tableId",
             url: "/Permissions/Role/List",
             limit: 10,
@@ -36,11 +36,11 @@
             cols: [[
                 { type: "checkbox" },
                 { field: "Id", title: "ID", width: 80, sort: true },
-                { field: "EnCode", title: "角色编码", width: 120 },
-                { field: "FullName", title: "角色名称", width: 120 },
-                { field: "TypeName", title: "角色类型", width: 120 },
+                { field: "EnCode", title: "角色编码" },
+                { field: "FullName", title: "角色名称" },
+                { field: "TypeName", title: "角色类型" },
                 { field: "SortCode", title: "排序码", width: 80 },
-                { field: "CreateTime", title: "创建时间", width: 150, templet: '<span>{{showDate(d.CreateTime)}}<span>' },
+                { field: "CreateTime", title: "创建时间", templet: '<span>{{showDate(d.CreateTime)}}<span>' },
                 { title: "操作", width: 230, align: "center", fixed: "right", templet: "#operationTpl"}
             ]],
             done: function (res, curr, count) {
@@ -49,7 +49,7 @@
         });
 
         form.on("submit(search)", function (data) {
-            table.reload({
+            AllTable.reload({
                 where: data.field,
                 page: { curr: 1 }
             });
@@ -80,11 +80,11 @@
         });
 
         function add() {
-            okLayer.open("添加角色", "/Permissions/Role/Add", "80%", "75%", null, null);
+            okLayer.open("添加角色", "/Permissions/Role/Add", "80%", "80%", null, null);
         }
 
         function edit(id) {
-            okLayer.open("编辑角色", "/Permissions/Role/Edit/" + id, "80%", "75%", null, null);
+            okLayer.open("编辑角色", "/Permissions/Role/Edit/" + id, "80%", "80%", null, null);
         }
 
         function del(id) {

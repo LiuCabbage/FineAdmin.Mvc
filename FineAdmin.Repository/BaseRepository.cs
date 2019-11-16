@@ -111,5 +111,15 @@ namespace FineAdmin.Repository
                 return conn.GetAll<T>(returnFields, orderby);
             }
         }
+        /// <summary>
+        /// 根据查询条件获取数据
+        /// </summary>
+        public IEnumerable<T> GetByWhere(string where = null, object param = null, string returnFields = null, string orderby = null)
+        {
+            using (var conn = MySqlHelper.GetConnection())
+            {
+                return conn.GetByWhere<T>(where, param, returnFields, orderby);
+            }
+        }
     }
 }

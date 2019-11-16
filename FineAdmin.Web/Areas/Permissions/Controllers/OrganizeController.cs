@@ -20,10 +20,12 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
             return View();
         }
         [HttpGet]
-        public JsonResult List(OrganizeModel model, PageInfo pageInfo)
+        public JsonResult List()
         {
-            var result = OrganizeService.GetListByFilter(model, pageInfo);
+            var list = OrganizeService.GetOrganizeList();
+            var result = new { code = 0, count = list.Count(), data = list };
             return Json(result, JsonRequestBehavior.AllowGet);
         }
+
     }
 }

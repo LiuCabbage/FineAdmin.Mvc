@@ -3,41 +3,39 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutList.cshtml";
 }
-
-<!--模糊搜索区域-->
-<div class="layui-row">
-    <form class="layui-form layui-col-md12 ok-search">
-        <div class="layui-input-inline">
-            <input class="layui-input" placeholder="请输入机构名称" name="Account" autocomplete="off">
-        </div>
-        @Html.SearchBtnHtml("查询")
-        @Html.ResetBtnHtml()
-    </form>
-</div>
+<style type="text/css">
+    .div-collapse {
+        float: left;
+        height: 28px;
+        line-height: 28px;
+        padding-left: 5px;
+    }
+</style>
 <!--数据表格-->
 <table class="layui-hide" id="tableId" lay-filter="tableFilter"></table>
 <script>
-    layui.use(["treeGrid", "form", "okLayer", "okUtils"], function () {
-        let table = layui.treeGrid;
-        let form = layui.form;
+    layui.use(["treeGrid", "okLayer", "okUtils"], function () {
+        let treeGrid = layui.treeGrid;
         let okLayer = layui.okLayer;
         let okUtils = layui.okUtils;
+        let $ = layui.$;
 
-        table.render({
+        treeGrid.render({
             elem: "#tableId",
             url: "/Permissions/Organize/List",
             page: false,
             toolbar: "#toolbarTpl",
             size: "sm",
+            cellMinWidth: 100,
             treeId: 'Id',   //树形id字段名称
             treeUpId: 'ParentId',   //树形父id字段名称
             treeShowName: 'FullName',   //以树形式显示的字段
             cols: [[
-                { type: "checkbox" },
-                { field: "Id", title: "ID", width: 80, sort: true },
-                { field: "FullName", title: "机构名称", width: 120 },
-                { field: "EnCode", title: "机构编码", width: 120 },
-                { field: "CategoryName", title: "分类", width: 120 },
+                //{ type: "checkbox" },
+                { field: "Id", title: "ID", sort: true },
+                { field: "FullName", title: "机构名称" },
+                { field: "EnCode", title: "机构编码" },
+                { field: "CategoryName", title: "分类" },
                 { field: "SortCode", title: "排序码", width: 120 },
                 { field: "CreateTime", title: "创建时间", width: 150, templet: '<span>{{showDate(d.CreateTime)}}<span>' },
                 { title: "操作", width: 230, align: "center", fixed: "right", templet: "#operationTpl"}
@@ -47,23 +45,21 @@
             }
         });
 
-        form.on("submit(search)", function (data) {
-            table.reload({
-                where: data.field,
-                page: { curr: 1 }
-            });
-            return false;
+        //treeGrid 监听不了toolbar
+        //treeGrid.on("toolbar(tableFilter)", function (obj) {
+        //    switch (obj.event) {
+        //        case "add":
+        //            add();
+        //            break;
+        //    }
+        //});
+
+        //add
+        $('#add').on('click', function () {
+            okLayer.open("添加机构", "/Permissions/Organize/Add", "100%", "100%", null, null);
         });
 
-        table.on("toolbar(tableFilter)", function (obj) {
-            switch (obj.event) {
-                case "add":
-                    add();
-                    break;
-            }
-        });
-
-        table.on("tool(tableFilter)", function (obj) {
+        treeGrid.on("tool(tableFilter)", function (obj) {
             let data = obj.data;
             switch (obj.event) {
                 case "edit":
@@ -75,9 +71,9 @@
             }
         });
 
-        function add() {
-            okLayer.open("添加机构", "/Permissions/Organize/Add", "100%", "100%", null, null);
-        }
+        //function add() {
+        //    okLayer.open("添加机构", "/Permissions/Organize/Add", "100%", "100%", null, null);
+        //}
 
         function edit(id) {
             okLayer.open("编辑机构", "/Permissions/Organize/Edit/" + id, "100%", "100%", null, null);

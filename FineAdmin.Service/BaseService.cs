@@ -145,6 +145,12 @@ namespace FineAdmin.Service
             }
             return _where;
         }
-
+        /// <summary>
+        /// 根据查询条件获取数据
+        /// </summary>
+        public IEnumerable<T> GetByWhere(string where = null, object param = null, string returnFields = null, string orderby = null)
+        {
+            return BaseRepository.GetByWhere(where, param, returnFields, orderby);
+        }
     }
 }

@@ -37,7 +37,7 @@ namespace FineAdmin.Web
             {
                 foreach (var item in list)
                 {
-                    sb.AppendLine(string.Format(@"<a class='layui-btn layui-btn-xs {0}' href='javascript:;' lay-event='{1}'><i class='ok-icon'>{3}</i>{2}</a>", item.ClassName, item.EnCode, item.FullName, item.Icon));
+                    sb.AppendLine(string.Format(@"<a class='layui-btn layui-btn-xs {0}' href='javascript:;' lay-event='{1}' id='{1}'><i class='ok-icon'>{3}</i>{2}</a>", item.ClassName, item.EnCode, item.FullName, item.Icon));
                 }
             }
             return new HtmlString(sb.ToString());
@@ -53,7 +53,7 @@ namespace FineAdmin.Web
             {
                 foreach (var item in list)
                 {
-                    sb.AppendLine(string.Format(@"<button class='layui-btn layui-btn-sm {0}' lay-event='{1}'><i class='ok-icon'>{3}</i>{2}</button>", item.ClassName, item.EnCode, item.FullName, item.Icon));
+                    sb.AppendLine(string.Format(@"<button class='layui-btn layui-btn-sm {0}' lay-event='{1}' id='{1}'><i class='ok-icon'>{3}</i>{2}</button>", item.ClassName, item.EnCode, item.FullName, item.Icon));
                 }
             }
             return new HtmlString(sb.ToString());

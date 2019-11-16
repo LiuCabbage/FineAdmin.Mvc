@@ -9,6 +9,6 @@ namespace FineAdmin.IRepository
 {
     public interface IOrganizeRepository : IBaseRepository<OrganizeModel>
     {
-
+        IEnumerable<OrganizeModel> GetOrganizeList();
     }
 }

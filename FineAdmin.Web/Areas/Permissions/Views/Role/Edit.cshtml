@@ -22,15 +22,15 @@
         </div>
     </div>
     <div class="layui-form-item">
-        <label class="layui-form-label">角色类型</label>
-        <div class="layui-input-block">
-            @Html.DropDownList("TypeClass", (IEnumerable<SelectListItem>)ViewBag.RoleTypeList, "请选择角色类型", new Dictionary<string, object> { { "lay-verify", "required" } })
-        </div>
-    </div>
-    <div class="layui-form-item">
         <label class="layui-form-label">排序码</label>
         <div class="layui-input-block">
             <input type="text" name="SortCode" placeholder="排序码" autocomplete="off" class="layui-input" lay-verify="number" maxlength="2">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">角色类型</label>
+        <div class="layui-input-block">
+            @Html.DropDownList("TypeClass", (IEnumerable<SelectListItem>)ViewBag.RoleTypeList, "请选择角色类型", new Dictionary<string, object> { { "lay-verify", "required" } })
         </div>
     </div>
     <div class="layui-form-item">

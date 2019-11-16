@@ -21,5 +21,10 @@ namespace FineAdmin.Model
         /// 分类
         /// </summary>
         public int CategoryId { get; set; }
+        /// <summary>
+        /// 机构分类
+        /// </summary>
+        [Computed]
+        public string CategoryName { get; set; }
     }
 }

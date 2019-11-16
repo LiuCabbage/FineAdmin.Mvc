@@ -43,5 +43,10 @@ namespace FineAdmin.IService
         /// returnFields需要返回的列，用逗号隔开。默认null，返回所有列
         /// </summary>
         IEnumerable<T> GetAll(string returnFields = null, string orderby = null);
+        /// <summary>
+        /// 根据查询条件获取数据
+        /// </summary>
+        IEnumerable<T> GetByWhere(string where = null, object param = null, string returnFields = null, string orderby = null);
+
     }
 }
