@@ -48,6 +48,7 @@
 </form>
 <script>
     layui.use(["treeSelect", "form", "okLayer", "okUtils"], function () {
+        let treeSelect = layui.treeSelect;
         let form = layui.form;
         let okLayer = layui.okLayer;
         let okUtils = layui.okUtils;
@@ -55,9 +56,16 @@
         form.val("formTest", { //formTest 即 class="layui-form" 所在元素属性 lay-filter="" 对应的值
             "EnCode": "@Model.EnCode",
             "FullName": "@Model.FullName",
-            "ParentId": "@Model.ParentId",
+            @*"ParentId": "@Model.ParentId",*@
             "SortCode": "@Model.SortCode",
             "CategoryId": "@Model.CategoryId"
+        });
+        //上级机构待渲染
+        treeSelect.render({
+            elem: "",
+            data: "/Permissions/Organize/List",
+            method: "GET",
+            initValue: '@Model.ParentId'
         });
         form.on("submit(add)", function (data) {
             okUtils.ajax("/Permissions/Organize/Edit", "post", data.field, true).done(function (response) {

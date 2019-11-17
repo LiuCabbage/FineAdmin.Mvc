@@ -2,7 +2,7 @@
 layui.define('tree', function (exports) {
     "use strict";
 
-    var _MOD = 'treeSelect',
+    var _MOD = 'treeselect',
         treeData = {}, //全局树形数据缓存
         $ = layui.jquery,
         hint = layui.hint(),
@@ -21,7 +21,7 @@ layui.define('tree', function (exports) {
             CLASS = 'layui-form-select',
             TITLE = 'layui-select-title',
             NONE = 'layui-select-none',
-            initValue = options.initValue||'',
+            initValue = options.initValue || '',
             thatInput,
             isString = function (obj) {
                 return Object.prototype.toString.call(obj) === "[object String]";
@@ -100,13 +100,13 @@ layui.define('tree', function (exports) {
 
                 //键盘事件
                 input.on('keyup',
-                        function (e) {
-                            var keyCode = e.keyCode;
-                            //Tab键
-                            if (keyCode === 9) {
-                                showDown();
-                            }
-                        })
+                    function (e) {
+                        var keyCode = e.keyCode;
+                        //Tab键
+                        if (keyCode === 9) {
+                            showDown();
+                        }
+                    })
                     .on('keydown',
                         function (e) {
                             var keyCode = e.keyCode;
