@@ -24,7 +24,7 @@
     <div class="layui-form-item">
         <label class="layui-form-label">上级机构</label>
         <div class="layui-input-block">
-            <input type="text" name="ParentId" placeholder="上级机构" autocomplete="off" class="layui-input" lay-verify="required">
+            <input type="text" id="ParentId" name="ParentId" placeholder="上级机构" autocomplete="off" class="layui-input" lay-verify="required">
         </div>
     </div>
     <div class="layui-form-item">
@@ -47,7 +47,7 @@
     </div>
 </form>
 <script>
-    layui.use(["treeSelect", "form", "okLayer", "okUtils"], function () {
+    layui.use(["form", "treeSelect", "okLayer", "okUtils"], function () {
         let treeSelect = layui.treeSelect;
         let form = layui.form;
         let okLayer = layui.okLayer;
@@ -60,9 +60,9 @@
             "SortCode": "@Model.SortCode",
             "CategoryId": "@Model.CategoryId"
         });
-        //上级机构待渲染
+        //上级机构待渲染 渲染和上面赋值都有问题 treeSelect加载问题有点迷
         treeSelect.render({
-            elem: "",
+            elem: "#ParentId",
             data: "/Permissions/Organize/List",
             method: "GET",
             initValue: '@Model.ParentId'
