@@ -16,7 +16,7 @@ namespace FineAdmin.Repository
             using (var conn=MySqlHelper.GetConnection())
             {
                 string sql = @"SELECT a.Id,a.ParentId,a.EnCode,a.FullName,a.SortCode,b.ItemName as CategoryName,a.CreateTime FROM organize a
-                               INNER JOIN itemsdetail b ON a.CategoryId=b.Id";
+                               INNER JOIN itemsdetail b ON a.CategoryId=b.Id ORDER BY SortCode ASC";
                 return conn.Query<OrganizeModel>(sql);
             }
         }

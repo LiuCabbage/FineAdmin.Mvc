@@ -11,5 +11,6 @@ namespace FineAdmin.IService
     public interface IOrganizeService : IBaseService<OrganizeModel>
     {
         IEnumerable<OrganizeModel> GetOrganizeList();
+        IEnumerable<TreeSelect> GetOrganizeTreeSelect();
     }
 }

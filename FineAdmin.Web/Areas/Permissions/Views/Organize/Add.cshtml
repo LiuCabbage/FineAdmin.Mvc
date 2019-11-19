@@ -20,7 +20,7 @@
     <div class="layui-form-item">
         <label class="layui-form-label">上级机构</label>
         <div class="layui-input-block">
-            <input type="text" name="ParentId" placeholder="上级机构" autocomplete="off" class="layui-input" lay-verify="required">
+            <input type="text" id="ParentId" name="ParentId" placeholder="上级机构" autocomplete="off" class="layui-input" lay-verify="required">
         </div>
     </div>
     <div class="layui-form-item">
@@ -51,8 +51,8 @@
         //上级机构待渲染
         treeSelect.render({
             elem: "#ParentId",
-            data: "/Permissions/Organize/List",
-            method: "GET"
+            data: "/Permissions/Organize/GetOrganizeTreeSelect",
+            type: "GET"
         });
         form.on("submit(add)", function (data) {
             okUtils.ajax("/Permissions/Organize/Add", "post", data.field, true).done(function (response) {

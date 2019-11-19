@@ -458,6 +458,7 @@
     <Content Include="Areas\Permissions\Views\Organize\Index.cshtml" />
     <Content Include="Areas\Permissions\Views\Organize\Add.cshtml" />
     <Content Include="Areas\Permissions\Views\Organize\Edit.cshtml" />
+    <Content Include="Content\data\data3.json" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />

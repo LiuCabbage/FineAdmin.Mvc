@@ -30,6 +30,12 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
             var result = new { code = 0, count = list.Count(), data = list };
             return Json(result, JsonRequestBehavior.AllowGet);
         }
+        [HttpGet]
+        public JsonResult GetOrganizeTreeSelect() 
+        {
+            var result = OrganizeService.GetOrganizeTreeSelect();
+            return Json(result,JsonRequestBehavior.AllowGet);
+        }
         public ActionResult Add()
         {
             ViewBag.CategoryNameList = CategoryNameList;
