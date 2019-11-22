@@ -18,3 +18,6 @@ function showDate(str) {
     var d = eval('new ' + str.substr(1, str.length - 2)); //new Date()
     return d.Format("yyyy-MM-dd hh:mm:ss");
 }
+function showIcon(icon) {
+    return "<i class='ok-icon'>" + icon + "</i>";
+}

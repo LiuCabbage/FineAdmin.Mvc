@@ -425,7 +425,6 @@
     <Folder Include="Areas\Permissions\Models\" />
     <Folder Include="Areas\Permissions\Views\Button\" />
     <Folder Include="Areas\Permissions\Views\Items\" />
-    <Folder Include="Areas\Permissions\Views\Module\" />
     <Folder Include="Areas\Permissions\Views\Shared\" />
     <Folder Include="Areas\Security\Models\" />
     <Folder Include="Areas\Security\Views\Shared\" />
@@ -459,6 +458,9 @@
     <Content Include="Areas\Permissions\Views\Organize\Add.cshtml" />
     <Content Include="Areas\Permissions\Views\Organize\Edit.cshtml" />
     <Content Include="Content\data\data3.json" />
+    <Content Include="Areas\Permissions\Views\Module\Index.cshtml" />
+    <Content Include="Areas\Permissions\Views\Module\Add.cshtml" />
+    <Content Include="Areas\Permissions\Views\Module\Edit.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />

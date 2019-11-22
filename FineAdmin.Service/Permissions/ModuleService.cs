@@ -37,6 +37,7 @@ namespace FineAdmin.Service
             var result = treeList;
             return result;
         }
+
         /// <summary>
         /// 根据一级菜单加载子菜单列表
         /// </summary>
@@ -59,6 +60,7 @@ namespace FineAdmin.Service
                 }
             }
         }
+
         /// <summary>
         /// 根据角色ID获取菜单列表
         /// </summary>
@@ -70,6 +72,52 @@ namespace FineAdmin.Service
                            INNER JOIN module b ON a.ModuleId = b.Id";
             var list = ModuleRepository.GetModuleListByRoleId(sql, roleId);
             return list;
+        }
+
+        /// <summary>
+        /// Module treeSelect数据列表
+        /// </summary>
+        public IEnumerable<TreeSelect> GetModuleTreeSelect()
+        {
+            IEnumerable<ModuleModel> moduleList = BaseRepository.GetAll("Id,FullName,ParentId", "ORDER BY SortCode ASC");
+            var rootModuleList = moduleList.Where(x => x.ParentId == 0).OrderBy(x => x.SortCode);
+            List<TreeSelect> treeSelectList = new List<TreeSelect>();
+            foreach (var item in rootModuleList)
+            {
+                TreeSelect tree = new TreeSelect
+                {
+                    id = item.Id,
+                    name = item.FullName,
+                    open = false
+                };
+                GetModuleChildren(treeSelectList, moduleList, tree, item.Id);
+                treeSelectList.Add(tree);
+            }
+            return treeSelectList;
+        }
+
+        /// <summary>
+        /// 递归遍历treeSelectList
+        /// </summary>
+        private void GetModuleChildren(List<TreeSelect> treeSelectList, IEnumerable<ModuleModel> moduleList, TreeSelect tree, int id)
+        {
+            var childModuleList = moduleList.Where(x => x.ParentId == id).OrderBy(x => x.SortCode);
+            if (childModuleList != null && childModuleList.Count() > 0)
+            {
+                List<TreeSelect> _children = new List<TreeSelect>();
+                foreach (var item in childModuleList)
+                {
+                    TreeSelect _tree = new TreeSelect
+                    {
+                        id = item.Id,
+                        name = item.FullName,
+                        open = false
+                    };
+                    _children.Add(_tree);
+                    tree.children = _children;
+                    GetModuleChildren(treeSelectList, moduleList, _tree, item.Id);
+                }
+            }
         }
 
 

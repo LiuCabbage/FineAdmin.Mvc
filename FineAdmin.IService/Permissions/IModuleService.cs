@@ -15,6 +15,6 @@ namespace FineAdmin.IService
         /// <param name="roleId"></param>
         /// <returns></returns>
         dynamic GetModuleList(int roleId);
-
+        IEnumerable<TreeSelect> GetModuleTreeSelect();
     }
 }

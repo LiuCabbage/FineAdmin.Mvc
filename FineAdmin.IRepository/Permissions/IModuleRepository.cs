@@ -16,6 +16,6 @@ namespace FineAdmin.IRepository
         /// <param name="roleId"></param>
         /// <returns></returns>
         IEnumerable<ModuleModel> GetModuleListByRoleId(string sql, int roleId);
-
+        
     }
 }

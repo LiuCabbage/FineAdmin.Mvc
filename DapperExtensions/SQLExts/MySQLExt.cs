@@ -860,7 +860,6 @@ namespace DapperExtensions.MySQLExt
             return GetByInBase<T>(conn, typeof(Table), field, ids, returnFields, transaction, commandTimeout);
         }
 
-        #region zouqj
         /// <summary>
         /// 获取分页数据 联合查询
         /// </summary>
@@ -881,6 +880,5 @@ namespace DapperExtensions.MySQLExt
                 return reader.Read<T>();
             }
         }
-        #endregion
     }
 }
