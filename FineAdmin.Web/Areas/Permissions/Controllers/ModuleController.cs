@@ -42,6 +42,7 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Add(ModuleModel model)
         {
             model.FontFamily = "ok-icon";
@@ -58,6 +59,7 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
             return View(model);
         }
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Edit(ModuleModel model)
         {
             model.UpdateTime = DateTime.Now;

@@ -24,7 +24,7 @@
     <div class="layui-form-item">
         <label class="layui-form-label">上级机构</label>
         <div class="layui-input-block">
-            <input type="text" id="ParentId" lay-filter="tree" name="ParentId" placeholder="上级机构" autocomplete="off" class="layui-input" lay-verify="required">
+            <input type="text" id="ParentId" lay-filter="tree" name="ParentId" placeholder="上级机构" autocomplete="off" class="layui-input">
         </div>
     </div>
     <div class="layui-form-item">
@@ -55,15 +55,18 @@
         treeSelect.render({
             elem: "#ParentId",
             data: "/Permissions/Organize/GetOrganizeTreeSelect",
-            type: "GET",
-            success: function (d) {
+            type: "GET"
+            @if (Model.ParentId!=0)
+            {
+                <text>,success: function (d) {
                 treeSelect.checkNode('tree', "@Model.ParentId");
                 treeSelect.refresh('tree');
+                }</text>
             }
         });
         //给表单赋值
         form.val("formTest", { //formTest 即 class="layui-form" 所在元素属性 lay-filter="" 对应的值
-            "EnCode": "@Model.EnCode",  //赋值编码问题，选择图片也没做
+            "EnCode": "@Model.EnCode",
             "FullName": "@Model.FullName",
             "SortCode": "@Model.SortCode",
             "CategoryId": "@Model.CategoryId"
