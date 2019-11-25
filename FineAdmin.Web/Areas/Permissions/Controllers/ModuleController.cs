@@ -39,12 +39,12 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
         }
         public ActionResult Add()
         {
-            //ViewBag.CategoryNameList = CategoryNameList;
             return View();
         }
         [HttpPost]
         public ActionResult Add(ModuleModel model)
         {
+            model.FontFamily = "ok-icon";
             model.CreateTime = DateTime.Now;
             model.CreateUserId = Operator.UserId;
             model.UpdateTime = DateTime.Now;
@@ -54,7 +54,6 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
         }
         public ActionResult Edit(int id)
         {
-            //ViewBag.CategoryNameList = CategoryNameList;
             var model = ModuleService.GetById(id);
             return View(model);
         }

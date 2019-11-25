@@ -3,12 +3,28 @@
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
+<style type="text/css">
+    #sltIcon {
+        height: 38px;
+        line-height: 38px;
+        margin-left: 40px;
+        float: left;
+        display: block;
+    }
 
+    #spnIcon {
+        font-size: 24px;
+        line-height: 38px;
+        float: left;
+        margin-left: 12px;
+    }
+</style>
 <form class="layui-form layui-form-pane ok-form" lay-filter="formTest">
     @*一些不需要更新的隐藏字段*@
     @Html.HiddenFor(x => x.Id)
     @Html.HiddenFor(x => x.CreateTime)
     @Html.HiddenFor(x => x.CreateUserId)
+    @Html.HiddenFor(x => x.FontFamily)
     <div class="layui-form-item">
         <label class="layui-form-label">菜单名称</label>
         <div class="layui-input-block">
@@ -22,15 +38,12 @@
         </div>
     </div>
     <div class="layui-form-item">
-        <label class="layui-form-label">图标类型</label>
-        <div class="layui-input-block">
-            <input type="text" name="FontFamily" placeholder="图标类型" disabled="disabled" autocomplete="off" class="layui-input" lay-verify="required">
+        <label class="layui-form-label">菜单图标</label>
+        <div class="layui-input-inline">
+            <input type="text" id="Icon" name="Icon" placeholder="菜单图标" autocomplete="off" class="layui-input" lay-verify="required">
         </div>
-    </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label">图标编码</label>
-        <div class="layui-input-block">
-            <input type="text" name="Icon" placeholder="图标编码" autocomplete="off" class="layui-input" lay-verify="required">
+        <div class="layui-input-inline">
+            <a id="sltIcon" href="javascript:;">选择图标</a><span id="spnIcon" class="icon ok-icon">@Html.Raw(Model.Icon)</span>
         </div>
     </div>
     <div class="layui-form-item">
@@ -58,13 +71,21 @@
         let form = layui.form;
         let okLayer = layui.okLayer;
         let okUtils = layui.okUtils;
+        let layer = layui.layer;
+        let $ = layui.$;
+        $("#sltIcon").on("click", function () {
+            openSetIcon();
+        })
         treeSelect.render({
             elem: "#ParentId",
             data: "/Permissions/Module/GetModuleTreeSelect",
-            type: "get",
-            success: function (d) {
+            type: "get"
+            @if (Model.ParentId!=0)
+            {
+                <text>,success: function (d) {
                 treeSelect.checkNode('tree', "@Model.ParentId");
                 treeSelect.refresh('tree');
+                }</text>
             }
         });
         //给表单赋值
@@ -72,7 +93,7 @@
             "FullName": "@Model.FullName",
             "UrlAddress": "@Model.UrlAddress",
             "FontFamily": "@Model.FontFamily",
-            "Icon": "@Model.Icon",
+            "Icon": "@Html.Raw(Model.Icon)",
             "SortCode": "@Model.SortCode"
         });
         form.on("submit(add)", function (data) {

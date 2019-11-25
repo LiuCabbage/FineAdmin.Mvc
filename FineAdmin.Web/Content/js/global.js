@@ -21,3 +21,13 @@ function showDate(str) {
 function showIcon(icon) {
     return "<i class='ok-icon'>" + icon + "</i>";
 }
+function openSetIcon() {
+    layer.open({
+        title: '选择图标',
+        type: 2,
+        area: ['100%', '100%'],
+        fixed: false, //不固定
+        maxmin: true,
+        content: '/Icon.html'
+    });
+}
