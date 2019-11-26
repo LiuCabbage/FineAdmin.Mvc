@@ -134,6 +134,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Permissions\Controllers\ButtonController.cs" />
     <Compile Include="Areas\Permissions\Controllers\ItemsController.cs" />
+    <Compile Include="Areas\Permissions\Controllers\ItemsDetailController.cs" />
     <Compile Include="Areas\Permissions\Controllers\ModuleController.cs" />
     <Compile Include="Areas\Permissions\Controllers\OrganizeController.cs" />
     <Compile Include="Areas\Permissions\Controllers\RoleController.cs" />
@@ -424,8 +425,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Permissions\Models\" />
-    <Folder Include="Areas\Permissions\Views\Button\" />
-    <Folder Include="Areas\Permissions\Views\Items\" />
     <Folder Include="Areas\Permissions\Views\Shared\" />
     <Folder Include="Areas\Security\Models\" />
     <Folder Include="Areas\Security\Views\Shared\" />
@@ -462,6 +461,11 @@
     <Content Include="Areas\Permissions\Views\Module\Index.cshtml" />
     <Content Include="Areas\Permissions\Views\Module\Add.cshtml" />
     <Content Include="Areas\Permissions\Views\Module\Edit.cshtml" />
+    <Content Include="Areas\Permissions\Views\Button\Index.cshtml" />
+    <Content Include="Areas\Permissions\Views\Items\Index.cshtml" />
+    <Content Include="Areas\Permissions\Views\Button\Add.cshtml" />
+    <Content Include="Areas\Permissions\Views\Button\Edit.cshtml" />
+    <Content Include="Areas\Permissions\Views\ItemsDetail\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />

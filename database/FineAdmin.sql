@@ -11,7 +11,7 @@
  Target Server Version : 50717
  File Encoding         : 65001
 
- Date: 16/11/2019 14:56:16
+ Date: 26/11/2019 15:57:26
 */
 
 SET NAMES utf8mb4;
@@ -34,7 +34,7 @@ CREATE TABLE `button`  (
   `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '修改用户主键',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '按钮表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '按钮表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of button
@@ -157,7 +157,7 @@ CREATE TABLE `logonlog`  (
   `IPAddressName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'IP所在城市',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 86 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '登录日志表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 96 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '登录日志表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of logonlog
@@ -238,6 +238,16 @@ INSERT INTO `logonlog` VALUES (82, 'Exit', 'admin', 'Liu_Cabbage', '安全退出
 INSERT INTO `logonlog` VALUES (83, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-15 16:28:57');
 INSERT INTO `logonlog` VALUES (84, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-16 09:28:16');
 INSERT INTO `logonlog` VALUES (85, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-16 13:36:02');
+INSERT INTO `logonlog` VALUES (86, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-16 16:59:06');
+INSERT INTO `logonlog` VALUES (87, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-22 14:06:42');
+INSERT INTO `logonlog` VALUES (88, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-22 17:28:40');
+INSERT INTO `logonlog` VALUES (89, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-25 10:45:43');
+INSERT INTO `logonlog` VALUES (90, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-25 14:18:09');
+INSERT INTO `logonlog` VALUES (91, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-25 17:20:53');
+INSERT INTO `logonlog` VALUES (92, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-25 17:20:59');
+INSERT INTO `logonlog` VALUES (93, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-25 17:21:03');
+INSERT INTO `logonlog` VALUES (94, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-26 09:55:07');
+INSERT INTO `logonlog` VALUES (95, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-26 14:20:44');
 
 -- ----------------------------
 -- Table structure for module
@@ -256,7 +266,7 @@ CREATE TABLE `module`  (
   `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '修改用户主键',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '模块表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '模块表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of module
@@ -264,15 +274,17 @@ CREATE TABLE `module`  (
 INSERT INTO `module` VALUES (1, 0, '系统管理', 'ok-icon', '&#xe6b0;', '/', 1, '2019-09-19 15:28:17', 1, '2019-09-19 15:28:29', 1);
 INSERT INTO `module` VALUES (2, 0, '系统安全', 'ok-icon', '&#xe769;', '/', 2, '2019-09-19 15:48:28', 1, '2019-09-19 15:48:33', 1);
 INSERT INTO `module` VALUES (3, 0, '系统设置', 'ok-icon', '&#xe889;', '/', 3, '2019-09-19 15:49:03', 1, '2019-09-19 15:49:07', 1);
-INSERT INTO `module` VALUES (4, 1, '机构管理', 'ok-icon', '&#xe726;', '/Permissions/Organize', 1, '2019-09-19 16:51:51', 1, '2019-09-19 16:51:55', 1);
-INSERT INTO `module` VALUES (5, 1, '角色管理', 'ok-icon', '&#xe7be;', '/Permissions/Role', 2, '2019-09-19 16:54:54', 1, '2019-09-19 16:54:58', 1);
+INSERT INTO `module` VALUES (4, 1, '机构管理', 'ok-icon', '&#xe726;', '/Permissions/Organize', 1, '2019-09-19 16:51:51', 1, '2019-11-25 10:48:26', 1);
+INSERT INTO `module` VALUES (5, 1, '角色管理', 'ok-icon', '&#xe7be;', '/Permissions/Role', 4, '2019-09-19 16:54:54', 1, '2019-09-19 16:54:58', 1);
 INSERT INTO `module` VALUES (6, 1, '用户管理', 'ok-icon', '&#xe736;', '/Permissions/User', 3, '2019-09-19 16:57:34', 1, '2019-09-19 16:57:38', 1);
-INSERT INTO `module` VALUES (7, 1, '数据字典', 'ok-icon', '&#xe660;', '/Permissions/Items', 4, '2019-09-19 16:58:27', 1, '2019-09-19 16:58:31', 1);
+INSERT INTO `module` VALUES (7, 1, '数据字典', 'ok-icon', '&#xe660;', '/Permissions/ItemsDetail', 2, '2019-09-19 16:58:27', 1, '2019-11-26 15:47:33', 1);
 INSERT INTO `module` VALUES (8, 1, '系统菜单', 'ok-icon', '&#xe7ad;', '/Permissions/Module', 5, '2019-09-19 16:58:49', 1, '2019-09-19 16:58:45', 1);
-INSERT INTO `module` VALUES (9, 2, '登录日志', 'ok-icon', '&#xe706;', '/Security/LogonLog', 1, '2019-09-23 18:17:12', 1, '2019-09-23 18:17:18', 1);
-INSERT INTO `module` VALUES (10, 3, '网站设置', 'ok-icon', '&#xe7d5;', '/SysSet/WebSet', 1, '2019-09-23 18:18:43', 1, '2019-09-23 18:18:49', 1);
-INSERT INTO `module` VALUES (11, 3, '开发设置', 'ok-icon', '&#xe738;', '/SysSet/DevSet', 2, '2019-09-23 18:19:34', 1, '2019-09-23 18:19:38', 1);
-INSERT INTO `module` VALUES (12, 3, '邮件设置', 'ok-icon', '&#xe7bd;', '/SysSet/EmailSet', 3, '2019-09-23 18:20:02', 1, '2019-09-23 18:19:59', 1);
+INSERT INTO `module` VALUES (9, 1, '按钮管理', 'ok-icon', '&#xe729;', '/Permissions/Button', 6, '2019-11-26 10:30:36', 1, '2019-11-26 10:30:36', 1);
+INSERT INTO `module` VALUES (10, 2, '登录日志', 'ok-icon', '&#xe706;', '/Security/LogonLog', 1, '2019-09-23 18:17:12', 1, '2019-09-23 18:17:18', 1);
+INSERT INTO `module` VALUES (11, 3, '网站设置', 'ok-icon', '&#xe7d5;', '/SysSet/WebSet', 1, '2019-09-23 18:18:43', 1, '2019-09-23 18:18:49', 1);
+INSERT INTO `module` VALUES (12, 3, '开发设置', 'ok-icon', '&#xe738;', '/SysSet/DevSet', 2, '2019-09-23 18:19:34', 1, '2019-09-23 18:19:38', 1);
+INSERT INTO `module` VALUES (13, 3, '邮件设置', 'ok-icon', '&#xe7bd;', '/SysSet/EmailSet', 3, '2019-09-23 18:20:02', 1, '2019-09-23 18:19:59', 1);
+INSERT INTO `module` VALUES (14, 1, '字典分类', 'ok-icon', '&#xe640;', '/Permissions/Items', 2, '2019-11-26 15:44:12', 1, '2019-11-26 15:44:12', 1);
 
 -- ----------------------------
 -- Table structure for organize
@@ -290,16 +302,16 @@ CREATE TABLE `organize`  (
   `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '修改用户主键',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '组织表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '组织表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of organize
 -- ----------------------------
-INSERT INTO `organize` VALUES (1, 0, 'Company', '皮皮虾公司', 1, 1, '2019-09-26 17:52:17', 1, '2019-09-26 17:52:12', 1);
-INSERT INTO `organize` VALUES (2, 1, 'Market', '业务部', 2, 1, '2019-10-29 15:32:27', 1, '2019-10-29 15:32:30', 1);
-INSERT INTO `organize` VALUES (3, 1, 'Ministry', '技术部', 2, 2, '2019-10-29 15:32:39', 1, '2019-10-29 15:32:42', 1);
+INSERT INTO `organize` VALUES (1, 0, 'Company', '皮皮虾公司', 1, 1, '2019-09-26 17:52:17', 1, '2019-11-25 17:52:40', 1);
+INSERT INTO `organize` VALUES (2, 1, 'Market', '业务部', 2, 5, '2019-10-29 15:32:27', 1, '2019-11-25 17:05:15', 1);
+INSERT INTO `organize` VALUES (3, 1, 'Ministry', '技术部', 2, 2, '2019-10-29 15:32:39', 1, '2019-11-25 16:21:27', 1);
 INSERT INTO `organize` VALUES (4, 1, 'HumanResourse', '人事部', 2, 3, '2019-10-29 15:33:27', 1, '2019-10-29 15:33:31', 1);
-INSERT INTO `organize` VALUES (5, 1, 'IT Group', '研发小组', 3, 4, '2019-10-29 15:35:10', 1, '2019-10-29 15:35:12', 1);
+INSERT INTO `organize` VALUES (5, 3, 'IT Group', '研发小组', 3, 4, '2019-10-29 15:35:10', 1, '2019-11-26 10:15:31', 1);
 
 -- ----------------------------
 -- Table structure for role
@@ -316,7 +328,7 @@ CREATE TABLE `role`  (
   `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '修改用户主键',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '角色表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '角色表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of role
@@ -342,8 +354,15 @@ CREATE TABLE `roleauthorize`  (
 -- ----------------------------
 INSERT INTO `roleauthorize` VALUES ('1', '1', '0');
 INSERT INTO `roleauthorize` VALUES ('1', '10', '0');
+INSERT INTO `roleauthorize` VALUES ('1', '10', '2');
+INSERT INTO `roleauthorize` VALUES ('1', '10', '4');
 INSERT INTO `roleauthorize` VALUES ('1', '11', '0');
 INSERT INTO `roleauthorize` VALUES ('1', '12', '0');
+INSERT INTO `roleauthorize` VALUES ('1', '13', '0');
+INSERT INTO `roleauthorize` VALUES ('1', '14', '0');
+INSERT INTO `roleauthorize` VALUES ('1', '14', '1');
+INSERT INTO `roleauthorize` VALUES ('1', '14', '2');
+INSERT INTO `roleauthorize` VALUES ('1', '14', '3');
 INSERT INTO `roleauthorize` VALUES ('1', '2', '0');
 INSERT INTO `roleauthorize` VALUES ('1', '3', '0');
 INSERT INTO `roleauthorize` VALUES ('1', '4', '0');
@@ -370,8 +389,9 @@ INSERT INTO `roleauthorize` VALUES ('1', '8', '1');
 INSERT INTO `roleauthorize` VALUES ('1', '8', '2');
 INSERT INTO `roleauthorize` VALUES ('1', '8', '3');
 INSERT INTO `roleauthorize` VALUES ('1', '9', '0');
+INSERT INTO `roleauthorize` VALUES ('1', '9', '1');
 INSERT INTO `roleauthorize` VALUES ('1', '9', '2');
-INSERT INTO `roleauthorize` VALUES ('1', '9', '4');
+INSERT INTO `roleauthorize` VALUES ('1', '9', '3');
 INSERT INTO `roleauthorize` VALUES ('2', '1', '0');
 INSERT INTO `roleauthorize` VALUES ('2', '12', '0');
 INSERT INTO `roleauthorize` VALUES ('2', '2', '0');
@@ -410,7 +430,7 @@ CREATE TABLE `user`  (
   `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '修改用户主键',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 30 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user

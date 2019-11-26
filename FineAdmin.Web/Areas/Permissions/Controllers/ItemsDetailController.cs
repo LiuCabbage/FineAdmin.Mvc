@@ -9,9 +9,9 @@ using FineAdmin.Model;
 
 namespace FineAdmin.Web.Areas.Permissions.Controllers
 {
-    public class ItemsController : BaseController
+    public class ItemsDetailController : BaseController
     {
-        // GET: Permissions/Items
+        // GET: Permissions/ItemsDetail
         public override ActionResult Index(int? id)
         {
             base.Index(id);

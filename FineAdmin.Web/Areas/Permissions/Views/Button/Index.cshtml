@@ -8,10 +8,10 @@
 <div class="layui-row">
     <form class="layui-form layui-col-md12 ok-search">
         <div class="layui-input-inline">
-            <input class="layui-input" placeholder="请输入角色编码" name="EnCode" autocomplete="off">
+            <input class="layui-input" placeholder="请输入按钮编码" name="EnCode" autocomplete="off">
         </div>
         <div class="layui-input-inline">
-            <input class="layui-input" placeholder="请输入角色名称" name="FullName" autocomplete="off">
+            <input class="layui-input" placeholder="请输入按钮名称" name="FullName" autocomplete="off">
         </div>
         @Html.SearchBtnHtml("查询")
         @Html.ResetBtnHtml()
@@ -28,7 +28,7 @@
 
         let AllTable = table.render({
             elem: "#tableId",
-            url: "/Permissions/Role/List",
+            url: "/Permissions/Button/List",
             limit: 10,
             page: true,
             toolbar: "#toolbarTpl",
@@ -36,12 +36,14 @@
             cols: [[
                 { type: "checkbox" },
                 { field: "Id", title: "ID", width: 80, sort: true },
-                { field: "EnCode", title: "角色编码" },
-                { field: "FullName", title: "角色名称" },
-                { field: "TypeName", title: "角色类型" },
+                { field: "EnCode", title: "按钮编码" },
+                { field: "FullName", title: "按钮名称" },
+                { field: "ClassName", title: "按钮样式" },
+                { field: "Icon", title: "按钮图标", width: 100, templet: '<span>{{showIcon(d.Icon)}}<span>' },
+                { field: "Location", title: "按钮位置", templet: '#locationTpl' },
                 { field: "SortCode", title: "排序码", width: 80 },
-                { field: "CreateTime", title: "创建时间", templet: '<span>{{showDate(d.CreateTime)}}<span>' },
-                { title: "操作", width: 230, align: "center", fixed: "right", templet: "#operationTpl"}
+                { field: "CreateTime", title: "创建时间", width: 150, templet: '<span>{{showDate(d.CreateTime)}}<span>' },
+                { title: "操作", width: 180, align: "center", fixed: "right", templet: "#operationTpl"}
             ]],
             done: function (res, curr, count) {
                 console.log(res, curr, count);
@@ -73,32 +75,25 @@
                 case "del":
                     del(data.Id);
                     break;
-                case "assign":
-                    assign(data.Id);
-                    break;
             }
         });
 
         function add() {
-            okLayer.open("添加角色", "/Permissions/Role/Add", "80%", "80%", null, null);
+            okLayer.open("添加按钮", "/Permissions/Button/Add", "100%", "100%", null, null);
         }
 
         function edit(id) {
-            okLayer.open("编辑角色", "/Permissions/Role/Edit/" + id, "80%", "80%", null, null);
+            okLayer.open("编辑按钮", "/Permissions/Button/Edit/" + id, "100%", "100%", null, null);
         }
 
         function del(id) {
             okLayer.confirm("确定要删除吗？", function () {
-                okUtils.ajax("/Permissions/Role/Delete", "get", { id: id }, true).done(function (response) {
+                okUtils.ajax("/Permissions/Button/Delete", "get", { id: id }, true).done(function (response) {
                     okUtils.tableSuccessMsg(response.message);
                 }).fail(function (error) {
                     console.log(error)
                 });
             })
-        }
-
-        function assign(id) {
-            okLayer.open("分配权限", "/Permissions/Role/Assign/" + id, "100%", "100%", null, null);
         }
 
     })
@@ -111,3 +106,12 @@
 <script type="text/html" id="operationTpl">
     @Html.RightToolBarHtml(ViewData["RightButtonList"])
 </script>
+<!-- 按钮位置模板 -->
+<script type="text/html" id="locationTpl">
+    {{#  if(d.Location==1){ }}
+    <span>表外</span>
+    {{#  } else{ }}
+    <span>表内</span>
+    {{#  } }}
+</script>
+

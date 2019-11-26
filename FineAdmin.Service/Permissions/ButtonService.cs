@@ -27,7 +27,17 @@ namespace FineAdmin.Service
 
         public dynamic GetListByFilter(ButtonModel filter, PageInfo pageInfo)
         {
-            throw new NotImplementedException();
+            string _where = " where 1=1";
+            if (!string.IsNullOrEmpty(filter.EnCode))
+            {
+                _where += " and EnCode=@EnCode";
+            }
+            if (!string.IsNullOrEmpty(filter.FullName))
+            {
+                _where += " and FullName=@FullName";
+            }
+            return GetListByFilter(filter, pageInfo, _where);
         }
+
     }
 }
