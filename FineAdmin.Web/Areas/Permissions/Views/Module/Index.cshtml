@@ -6,8 +6,8 @@
 <style type="text/css">
     .div-collapse {
         float: left;
-        height: 28px;
-        line-height: 28px;
+        height: 20px;
+        line-height: 20px;
         padding-left: 5px;
     }
 </style>
@@ -38,10 +38,7 @@
                 { field: "SortCode", title: "排序码", width: 120 },
                 { field: "CreateTime", title: "创建时间", width: 150, templet: '<span>{{showDate(d.CreateTime)}}<span>' },
                 { title: "操作", width: 180, align: "center", fixed: "right", templet: "#operationTpl"}
-            ]],
-            done: function (res, curr, count) {
-                console.log(res, curr, count);
-            }
+            ]]
         });
 
         //add
@@ -72,7 +69,7 @@
                     //没开启分页，没确定按钮，手动刷新
                     setTimeout(function () {
                         window.location.reload();
-                    }, 2000);
+                    }, 1500);
                 }).fail(function (error) {
                     console.log(error)
                 });

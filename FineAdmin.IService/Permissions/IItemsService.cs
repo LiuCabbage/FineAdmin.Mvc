@@ -9,6 +9,6 @@ namespace FineAdmin.IService
 {
     public interface IItemsService : IBaseService<ItemsModel>
     {
-
+        IEnumerable<TreeSelect> GetItemsTreeSelect();
     }
 }

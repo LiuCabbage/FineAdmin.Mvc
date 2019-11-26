@@ -6,8 +6,8 @@
 <style type="text/css">
     .div-collapse {
         float: left;
-        height: 28px;
-        line-height: 28px;
+        height: 20px;
+        line-height: 20px;
         padding-left: 5px;
     }
 </style>
@@ -31,7 +31,6 @@
             treeUpId: 'ParentId',   //树形父id字段名称
             treeShowName: 'FullName',   //以树形式显示的字段
             cols: [[
-                //{ type: "checkbox" },
                 { field: "Id", title: "ID", sort: true },
                 { field: "FullName", title: "机构名称" },
                 { field: "EnCode", title: "机构编码" },
@@ -39,10 +38,7 @@
                 { field: "SortCode", title: "排序码", width: 120 },
                 { field: "CreateTime", title: "创建时间", width: 150, templet: '<span>{{showDate(d.CreateTime)}}<span>' },
                 { title: "操作", width: 230, align: "center", fixed: "right", templet: "#operationTpl"}
-            ]],
-            done: function (res, curr, count) {
-                console.log(res, curr, count);
-            }
+            ]]
         });
 
         //treeGrid 监听不了toolbar
@@ -86,7 +82,7 @@
                     //没开启分页，没确定按钮，手动刷新
                     setTimeout(function () {
                         window.location.reload();
-                    }, 2000);
+                    }, 1500);
                 }).fail(function (error) {
                     console.log(error)
                 });
