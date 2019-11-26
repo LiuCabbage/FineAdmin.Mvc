@@ -97,7 +97,7 @@ layui.define(["layer"], function (exprots) {
          * @param content
          */
         tableSuccessMsg: function (content) {
-            layer.msg(content, { icon: 1, time: 1000 }, function () {
+            layer.msg(content, { icon: 1, time: 2000 }, function () {
                 // 刷新当前页table数据
                 $(".layui-laypage-btn")[0].click();
             });

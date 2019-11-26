@@ -38,7 +38,7 @@ layui.define(["layer"], function (exports) {
          * msg()函数二次封装
          */
         // msg弹窗默认消失时间
-        time: 1000,
+        time: 2000,
         // 绿色勾
         greenTickMsg: function (content, callbackFunction) {
             let options = { icon: 1, time: okLayer.time, anim: okLayer.animChoose() };

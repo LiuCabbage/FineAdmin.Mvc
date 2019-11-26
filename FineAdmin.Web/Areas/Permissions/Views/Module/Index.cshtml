@@ -69,7 +69,10 @@
             okLayer.confirm("确定要删除吗？", function () {
                 okUtils.ajax("/Permissions/Module/Delete", "get", { id: id }, true).done(function (response) {
                     okUtils.tableSuccessMsg(response.message);
-                    location.reload(); //没开启分页，没确定按钮，手动刷新
+                    //没开启分页，没确定按钮，手动刷新
+                    setTimeout(function () {
+                        window.location.reload();
+                    }, 2000);
                 }).fail(function (error) {
                     console.log(error)
                 });
