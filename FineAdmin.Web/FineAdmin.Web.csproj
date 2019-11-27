@@ -468,6 +468,8 @@
     <Content Include="Areas\Permissions\Views\ItemsDetail\Index.cshtml" />
     <Content Include="Areas\Permissions\Views\Items\Add.cshtml" />
     <Content Include="Areas\Permissions\Views\Items\Edit.cshtml" />
+    <Content Include="Areas\Permissions\Views\ItemsDetail\Add.cshtml" />
+    <Content Include="Areas\Permissions\Views\ItemsDetail\Edit.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />

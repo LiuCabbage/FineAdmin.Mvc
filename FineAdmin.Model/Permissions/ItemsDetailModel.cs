@@ -17,5 +17,10 @@ namespace FineAdmin.Model
         /// 名称
         /// </summary>
         public string ItemName { get; set; }
+        /// <summary>
+        /// 字典分类
+        /// </summary>
+        [Computed]
+        public string ItemType { get; set; }
     }
 }
