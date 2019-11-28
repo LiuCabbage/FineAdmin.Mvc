@@ -16,7 +16,7 @@ namespace FineAdmin.Service
         }
 
         /// <summary>
-        /// Module treeSelect数据列表
+        /// Items treeSelect数据列表
         /// </summary>
         public IEnumerable<TreeSelect> GetItemsTreeSelect()
         {

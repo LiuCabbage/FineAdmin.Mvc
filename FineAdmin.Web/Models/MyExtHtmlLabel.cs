@@ -24,7 +24,7 @@ namespace FineAdmin.Web
         /// </summary>
         public static HtmlString ResetBtnHtml(this HtmlHelper helper, string title = "重置", string _class = "layui-btn-primary")
         {
-            return new HtmlString(string.Format(@"<button type='reset' class='layui-btn {1}'>{0}</button>", title, _class));
+            return new HtmlString(string.Format(@"<button type='reset' id='reset' class='layui-btn {1}'>{0}</button>", title, _class));
         }
         /// <summary>
         /// 表格内按钮组

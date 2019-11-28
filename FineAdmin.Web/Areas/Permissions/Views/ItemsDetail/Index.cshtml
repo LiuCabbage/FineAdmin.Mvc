@@ -8,13 +8,14 @@
 <div class="layui-row">
     <form class="layui-form layui-col-md12 ok-search">
         <div class="layui-input-inline">
-            <input class="layui-input" placeholder="请输入字典编码" name="Account" autocomplete="off">
+            <input class="layui-input" placeholder="请输入字典编码" name="ItemCode" autocomplete="off">
         </div>
         <div class="layui-input-inline">
-            <input class="layui-input" placeholder="请输入字典名称" name="RealName" autocomplete="off">
+            <input class="layui-input" placeholder="请输入字典名称" name="ItemName" autocomplete="off">
         </div>
         <div class="layui-input-inline">
-            @*重点类型下拉框还没做*@
+            <!-- treeSelect渲染会给input自动加上style="display: none;"，导致jquery无法给input赋值，type text要改为hidden，但会存在渲染的过程 -->
+            <input type="hidden" id="ItemId" name="ItemId" autocomplete="off" class="layui-input">
         </div>
         @Html.SearchBtnHtml("查询")
         @Html.ResetBtnHtml()
@@ -23,11 +24,18 @@
 <!--数据表格-->
 <table class="layui-hide" id="tableId" lay-filter="tableFilter"></table>
 <script>
-    layui.use(["table", "form", "okLayer", "okUtils"], function () {
+    layui.use(["table", "form", "treeSelect", "okLayer", "okUtils"], function () {
         let table = layui.table;
         let form = layui.form;
         let okLayer = layui.okLayer;
         let okUtils = layui.okUtils;
+        let treeSelect = layui.treeSelect;
+        let $ = layui.$;
+        treeSelect.render({
+            elem: "#ItemId",
+            data: "/Permissions/Items/GetItemsTreeSelect",
+            type: "GET"
+        });
 
         let AllTable = table.render({
             elem: "#tableId",
@@ -97,6 +105,10 @@
             })
         }
 
+        //重置点击设置ItemId为0，原Button reset也会触发清空编码和名称
+        $("#reset").click(function () {
+            $("#ItemId").val("0"); //设置0 或则 "0" 效果一样，设置0查出所有
+        });
     })
 </script>
 <!-- 头工具栏模板 -->
