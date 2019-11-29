@@ -11,7 +11,7 @@
  Target Server Version : 50717
  File Encoding         : 65001
 
- Date: 26/11/2019 15:57:26
+ Date: 29/11/2019 17:53:56
 */
 
 SET NAMES utf8mb4;
@@ -34,7 +34,7 @@ CREATE TABLE `button`  (
   `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '修改用户主键',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '按钮表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '按钮表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of button
@@ -53,7 +53,8 @@ DROP TABLE IF EXISTS `donation`;
 CREATE TABLE `donation`  (
   `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '捐赠人',
-  `Price` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '捐赠金额',
+  `Price` decimal(50, 0) NULL DEFAULT NULL COMMENT '捐赠金额',
+  `Source` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '来源',
   `Detail` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`Id`) USING BTREE
@@ -62,10 +63,10 @@ CREATE TABLE `donation`  (
 -- ----------------------------
 -- Records of donation
 -- ----------------------------
-INSERT INTO `donation` VALUES (1, '蚯蚓', '1', '爱你么么哒', '2019-10-12 11:41:39');
-INSERT INTO `donation` VALUES (2, '蚯蚓', '2', '爱你么么哒', '2019-10-12 11:42:55');
-INSERT INTO `donation` VALUES (3, '小蚯蚓', '1', '爱你么么哒', '2019-10-12 11:43:09');
-INSERT INTO `donation` VALUES (4, '小小蚯蚓', '1', '爱你么么哒', '2019-10-12 11:43:32');
+INSERT INTO `donation` VALUES (1, '蚯蚓', 1, '支付宝', '爱你么么哒', '2019-10-12 11:41:39');
+INSERT INTO `donation` VALUES (2, '蚯蚓', 2, '微信', '爱你么么哒', '2019-10-12 11:42:55');
+INSERT INTO `donation` VALUES (3, '小蚯蚓', 1, '微信', '爱你么么哒', '2019-10-12 11:43:09');
+INSERT INTO `donation` VALUES (4, '小小蚯蚓', 1, '支付宝', '爱你么么哒', '2019-10-12 11:43:32');
 
 -- ----------------------------
 -- Table structure for items
@@ -82,12 +83,12 @@ CREATE TABLE `items`  (
   `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '修改用户主键',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '字典表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '字典表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of items
 -- ----------------------------
-INSERT INTO `items` VALUES (1, 0, 'Sys_Items', '通用字典', 0, '2019-10-12 11:47:23', 1, '2019-10-12 11:48:08', 1);
+INSERT INTO `items` VALUES (1, 0, 'Sys_Items', '通用字典', 0, '2019-10-12 11:47:23', 1, '2019-11-26 17:47:45', 1);
 INSERT INTO `items` VALUES (2, 1, 'OrganizeCategory', '机构分类', 1, '2019-10-12 15:44:12', 1, '2019-10-12 15:44:17', 1);
 INSERT INTO `items` VALUES (3, 1, 'RoleType', '角色类型', 2, '2019-10-12 15:45:26', 1, '2019-10-12 15:45:30', 1);
 INSERT INTO `items` VALUES (4, 1, 'Certificate', '证件名称', 3, '2019-10-12 15:49:04', 1, '2019-10-12 15:49:08', 1);
@@ -112,7 +113,7 @@ CREATE TABLE `itemsdetail`  (
   `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '修改用户主键',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '字典明细表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 27 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '字典明细表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of itemsdetail
@@ -157,7 +158,7 @@ CREATE TABLE `logonlog`  (
   `IPAddressName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'IP所在城市',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 96 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '登录日志表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 104 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '登录日志表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of logonlog
@@ -248,6 +249,11 @@ INSERT INTO `logonlog` VALUES (92, 'Login', 'admin', 'admin', '登录失败，�
 INSERT INTO `logonlog` VALUES (93, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-25 17:21:03');
 INSERT INTO `logonlog` VALUES (94, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-26 09:55:07');
 INSERT INTO `logonlog` VALUES (95, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-26 14:20:44');
+INSERT INTO `logonlog` VALUES (99, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-27 15:49:25');
+INSERT INTO `logonlog` VALUES (100, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-28 13:57:47');
+INSERT INTO `logonlog` VALUES (101, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-28 17:24:29');
+INSERT INTO `logonlog` VALUES (102, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-29 11:05:55');
+INSERT INTO `logonlog` VALUES (103, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-29 14:32:34');
 
 -- ----------------------------
 -- Table structure for module
@@ -266,7 +272,7 @@ CREATE TABLE `module`  (
   `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '修改用户主键',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '模块表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '模块表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of module
@@ -302,7 +308,7 @@ CREATE TABLE `organize`  (
   `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '修改用户主键',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '组织表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '组织表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of organize
@@ -328,7 +334,7 @@ CREATE TABLE `role`  (
   `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '修改用户主键',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '角色表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '角色表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of role
@@ -430,7 +436,7 @@ CREATE TABLE `user`  (
   `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '修改用户主键',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user

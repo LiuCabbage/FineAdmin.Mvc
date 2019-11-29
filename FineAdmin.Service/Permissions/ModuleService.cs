@@ -119,7 +119,14 @@ namespace FineAdmin.Service
                 }
             }
         }
-
-
+        /// <summary>
+        /// 获取所有菜单列表及可用按钮权限
+        /// </summary>
+        /// <param name="roleId">角色ID</param>
+        /// <returns></returns>
+        public IEnumerable<ModuleModel> GetAvailableMenuList(int roleId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -62,6 +62,10 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
             var result = RoleService.DeleteById(id) ? SuccessTip("删除成功") : ErrorTip("删除失败");
             return Json(result, JsonRequestBehavior.AllowGet);
         }
-
+        public ActionResult Assign(int id) 
+        {
+            ViewBag.RoleId = id;
+            return View();
+        }
     }
 }

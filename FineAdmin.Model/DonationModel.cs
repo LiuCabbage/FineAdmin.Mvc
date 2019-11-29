@@ -18,7 +18,11 @@ namespace FineAdmin.Model
         /// <summary>
         /// 捐赠金额
         /// </summary>
-        public string Price { get; set; }
+        public decimal Price { get; set; }
+        /// <summary>
+        /// 捐赠来源
+        /// </summary>
+        public string Source { get; set; }
         /// <summary>
         /// 捐赠详情
         /// </summary>
