@@ -7,11 +7,14 @@ using FineAdmin.Web.Areas.SysSet.Models;
 using FineAdmin.Model;
 using FineAdmin.Common;
 using System.IO;
+using FineAdmin.IRepository;
 
 namespace FineAdmin.Web.Controllers
 {
     public class HomeController : BaseController
     {
+        public IDonationRepository DonationRepository { get; set; }
+
         public override ActionResult Index(int? id)
         {
             ViewBag.Account = Operator == null ? "" : Operator.Account;
@@ -21,6 +24,7 @@ namespace FineAdmin.Web.Controllers
 
         public ActionResult Main()
         {
+            ViewBag.DonationTop = DonationRepository.GetSumPriceTop(5).ToList();
             return View();
         }
 

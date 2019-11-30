@@ -58,7 +58,7 @@
     <Compile Include="DBHeper\PageCriteria.cs" />
     <Compile Include="DBHeper\PageDataView.cs" />
     <Compile Include="DBHeper\SqlHelper.cs" />
-    <Compile Include="DonationRepository.cs" />
+    <Compile Include="Donation\DonationRepository.cs" />
     <Compile Include="Permissions\ButtonRepository.cs" />
     <Compile Include="Permissions\ItemsDetailRepository.cs" />
     <Compile Include="Permissions\ItemsRepository.cs" />

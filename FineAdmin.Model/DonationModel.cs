@@ -18,7 +18,7 @@ namespace FineAdmin.Model
         /// <summary>
         /// 捐赠金额
         /// </summary>
-        public decimal Price { get; set; }
+        public string Price { get; set; }
         /// <summary>
         /// 捐赠方式
         /// </summary>
@@ -31,5 +31,26 @@ namespace FineAdmin.Model
         /// 创建时间
         /// </summary>
         public DateTime CreateTime { get; set; }
+
+        /// <summary>
+        /// 捐赠总金额
+        /// </summary>
+        [Computed]
+        public string TotalPrice { get; set; }
+        /// <summary>
+        /// 捐赠总次数
+        /// </summary>
+        [Computed]
+        public string TotalNum { get; set; }
+        /// <summary>
+        /// 单笔最大金额
+        /// </summary>
+        [Computed]
+        public string MaxPrice { get; set; }
+        /// <summary>
+        /// 捐赠人数
+        /// </summary>
+        [Computed]
+        public string PeopleNum { get; set; }
     }
 }

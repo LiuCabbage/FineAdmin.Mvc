@@ -11,7 +11,7 @@
  Target Server Version : 50717
  File Encoding         : 65001
 
- Date: 29/11/2019 17:53:56
+ Date: 30/11/2019 17:56:27
 */
 
 SET NAMES utf8mb4;
@@ -53,20 +53,28 @@ DROP TABLE IF EXISTS `donation`;
 CREATE TABLE `donation`  (
   `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
   `Name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '捐赠人',
-  `Price` decimal(50, 0) NULL DEFAULT NULL COMMENT '捐赠金额',
-  `Source` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '来源',
+  `Price` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '捐赠金额',
+  `Source` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '捐赠方式',
   `Detail` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '捐赠表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '捐赠表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of donation
 -- ----------------------------
-INSERT INTO `donation` VALUES (1, '蚯蚓', 1, '支付宝', '爱你么么哒', '2019-10-12 11:41:39');
-INSERT INTO `donation` VALUES (2, '蚯蚓', 2, '微信', '爱你么么哒', '2019-10-12 11:42:55');
-INSERT INTO `donation` VALUES (3, '小蚯蚓', 1, '微信', '爱你么么哒', '2019-10-12 11:43:09');
-INSERT INTO `donation` VALUES (4, '小小蚯蚓', 1, '支付宝', '爱你么么哒', '2019-10-12 11:43:32');
+INSERT INTO `donation` VALUES (1, '蚯蚓', '1', '支付宝', '爱你么么哒', '2019-10-12 11:41:39');
+INSERT INTO `donation` VALUES (2, '蚯蚓', '2', '微信', '爱你么么哒', '2019-10-12 11:42:55');
+INSERT INTO `donation` VALUES (3, '小蚯蚓', '1', '微信', '爱你么么哒', '2019-10-12 11:43:09');
+INSERT INTO `donation` VALUES (4, '小小蚯蚓', '1', '支付宝', '爱你么么哒', '2019-10-12 11:43:32');
+INSERT INTO `donation` VALUES (6, '皮皮虾', '100', '支付宝', '0.0', '2019-11-30 16:32:04');
+INSERT INTO `donation` VALUES (7, '猫猫村长', '10', '支付宝', '嘻嘻', '2019-11-30 16:44:33');
+INSERT INTO `donation` VALUES (8, '皮皮虾', '0.01', '微信', '笑死', '2019-11-30 16:45:00');
+INSERT INTO `donation` VALUES (9, '王尼玛', '10.01', '微信', '王大头', '2019-11-30 16:49:53');
+INSERT INTO `donation` VALUES (10, '王尼玛', '0.03', '支付宝', '搞哦', '2019-11-30 16:50:55');
+INSERT INTO `donation` VALUES (11, '皮卡丘', '55.5', '支付宝', '十万伏特', '2019-11-30 16:51:33');
+INSERT INTO `donation` VALUES (12, '刘本伟55开', '1000', '支付宝', '你妈买菜超级加倍', '2019-11-30 16:53:01');
+INSERT INTO `donation` VALUES (13, '赵本山', '1100.05', '支付宝', '改革春风吹满地', '2019-11-30 17:37:09');
 
 -- ----------------------------
 -- Table structure for items
@@ -158,7 +166,7 @@ CREATE TABLE `logonlog`  (
   `IPAddressName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'IP所在城市',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 104 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '登录日志表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 116 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '登录日志表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of logonlog
@@ -254,6 +262,18 @@ INSERT INTO `logonlog` VALUES (100, 'Login', 'admin', 'Liu_Cabbage', '登陆成�
 INSERT INTO `logonlog` VALUES (101, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-28 17:24:29');
 INSERT INTO `logonlog` VALUES (102, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-29 11:05:55');
 INSERT INTO `logonlog` VALUES (103, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-29 14:32:34');
+INSERT INTO `logonlog` VALUES (104, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-30 10:03:07');
+INSERT INTO `logonlog` VALUES (105, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-30 10:10:13');
+INSERT INTO `logonlog` VALUES (106, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-30 10:10:21');
+INSERT INTO `logonlog` VALUES (107, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-30 10:10:41');
+INSERT INTO `logonlog` VALUES (108, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-30 10:11:05');
+INSERT INTO `logonlog` VALUES (109, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-30 10:11:21');
+INSERT INTO `logonlog` VALUES (110, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-30 10:11:54');
+INSERT INTO `logonlog` VALUES (111, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-30 10:15:45');
+INSERT INTO `logonlog` VALUES (112, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-30 10:15:54');
+INSERT INTO `logonlog` VALUES (113, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-30 14:28:30');
+INSERT INTO `logonlog` VALUES (114, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-30 14:28:38');
+INSERT INTO `logonlog` VALUES (115, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-30 17:28:52');
 
 -- ----------------------------
 -- Table structure for module
@@ -272,7 +292,7 @@ CREATE TABLE `module`  (
   `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '修改用户主键',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '模块表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '模块表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of module
@@ -291,6 +311,8 @@ INSERT INTO `module` VALUES (11, 3, '网站设置', 'ok-icon', '&#xe7d5;', '/Sys
 INSERT INTO `module` VALUES (12, 3, '开发设置', 'ok-icon', '&#xe738;', '/SysSet/DevSet', 2, '2019-09-23 18:19:34', 1, '2019-09-23 18:19:38', 1);
 INSERT INTO `module` VALUES (13, 3, '邮件设置', 'ok-icon', '&#xe7bd;', '/SysSet/EmailSet', 3, '2019-09-23 18:20:02', 1, '2019-09-23 18:19:59', 1);
 INSERT INTO `module` VALUES (14, 1, '字典分类', 'ok-icon', '&#xe640;', '/Permissions/Items', 2, '2019-11-26 15:44:12', 1, '2019-11-26 15:44:12', 1);
+INSERT INTO `module` VALUES (15, 0, '捐赠管理', 'ok-icon', '&#xe7d1;', '/', 0, '2019-11-30 10:07:40', 1, '2019-11-30 10:14:56', 1);
+INSERT INTO `module` VALUES (16, 15, '捐赠记录', 'ok-icon', '&#xe644;', '/Donation/Donation', 1, '2019-11-30 10:14:45', 1, '2019-11-30 11:29:25', 1);
 
 -- ----------------------------
 -- Table structure for organize
@@ -369,6 +391,11 @@ INSERT INTO `roleauthorize` VALUES ('1', '14', '0');
 INSERT INTO `roleauthorize` VALUES ('1', '14', '1');
 INSERT INTO `roleauthorize` VALUES ('1', '14', '2');
 INSERT INTO `roleauthorize` VALUES ('1', '14', '3');
+INSERT INTO `roleauthorize` VALUES ('1', '15', '0');
+INSERT INTO `roleauthorize` VALUES ('1', '16', '0');
+INSERT INTO `roleauthorize` VALUES ('1', '16', '1');
+INSERT INTO `roleauthorize` VALUES ('1', '16', '2');
+INSERT INTO `roleauthorize` VALUES ('1', '16', '3');
 INSERT INTO `roleauthorize` VALUES ('1', '2', '0');
 INSERT INTO `roleauthorize` VALUES ('1', '3', '0');
 INSERT INTO `roleauthorize` VALUES ('1', '4', '0');

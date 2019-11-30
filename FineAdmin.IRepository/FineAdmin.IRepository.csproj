@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IBaseRepository.cs" />
-    <Compile Include="IDonationRepository.cs" />
+    <Compile Include="Donation\IDonationRepository.cs" />
     <Compile Include="Permissions\IButtonRepository.cs" />
     <Compile Include="Permissions\IItemsDetailRepository.cs" />
     <Compile Include="Permissions\IItemsRepository.cs" />

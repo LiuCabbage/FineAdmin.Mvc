@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IBaseService.cs" />
-    <Compile Include="IDonationService.cs" />
+    <Compile Include="Donation\IDonationService.cs" />
     <Compile Include="Permissions\IButtonService.cs" />
     <Compile Include="Permissions\IItemsDetailService.cs" />
     <Compile Include="Permissions\IItemsService.cs" />

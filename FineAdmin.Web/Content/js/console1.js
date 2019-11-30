@@ -119,11 +119,11 @@ layui.use(["okUtils", "countUp"], function () {
         okUtils.echartsResize([userSourceWeekChart]);
     }
 
-    initMediaCont();
+    //initMediaCont();
     initDataTrendChart();
-    initUserActiveTodayChart();
-    initUserSourceTodayChart();
-    initUserSourceWeekChart();
+    //initUserActiveTodayChart();
+    //initUserSourceTodayChart();
+    //initUserSourceWeekChart();
 });
 
 

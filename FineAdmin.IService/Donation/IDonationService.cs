@@ -9,6 +9,11 @@ namespace FineAdmin.IService
 {
     public interface IDonationService : IBaseService<DonationModel>
     {
-
+        /// <summary>
+        /// 获得捐赠排行榜
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        IEnumerable<DonationModel> GetSumPriceTop(int num);
     }
 }
