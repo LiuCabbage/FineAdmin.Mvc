@@ -20,11 +20,11 @@ namespace FineAdmin.Model
         /// </summary>
         public decimal Price { get; set; }
         /// <summary>
-        /// 捐赠来源
+        /// 捐赠方式
         /// </summary>
         public string Source { get; set; }
         /// <summary>
-        /// 捐赠详情
+        /// 备注
         /// </summary>
         public string Detail { get; set; }
         /// <summary>

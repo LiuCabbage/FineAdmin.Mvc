@@ -41,7 +41,7 @@ namespace FineAdmin.Web.Controllers
                 //定义本地路径位置
                 string localPath = Server.MapPath("~/Upload");
                 string filePathName = string.Empty; //最终文件名
-                filePathName = Common.Common.CreateNo()+"."+ filecombin[1];
+                filePathName = Common.Common.CreateNo() + "." + filecombin[1];
                 //Upload不存在则创建文件夹
                 if (!System.IO.Directory.Exists(localPath))
                 {
