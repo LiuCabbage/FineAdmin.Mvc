@@ -197,7 +197,9 @@ layui.use(["element", "layer", "okUtils", "okTab", "okLayer"], function () {
         let content = "";
         content = "版权声明：<br/>" +
             "ok-admin 和 FineAdmin.Mvc都使用GPL-3.0开源协议，个人<span style='color:#5cb85c'>免费使用</span>，商用请联系作者<span style='color:#ff5722'>获取授权</span><br/>" +
+            "作者：bobi<br/>" +
             "ok-admin开源地址：<a style='color:#ff5722;' target='_blank' href='https://gitee.com/bobi1234/ok-admin'><span>ok-admin</span></a><br/>" +
+            "作者：Liu_Cabbage (我自己)<br/>"+
             "FineAdmin.Mvc开源地址：<a style='color:#ff5722;' target='_blank' href='https://gitee.com/Liu_Cabbage/FineAdmin.Mvc'><span>FineAdmin.Mvc</span></a>";
         return content;
     }

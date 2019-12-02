@@ -20,10 +20,10 @@ namespace FineAdmin.IService
         /// </summary>
         IEnumerable<TreeSelect> GetModuleTreeSelect();
         /// <summary>
-        /// 获取所有菜单列表及可用按钮权限
+        /// 获取所有菜单列表及可用按钮权限列表
         /// </summary>
         /// <param name="roleId">角色ID</param>
         /// <returns></returns>
-        IEnumerable<ModuleModel> GetAvailableMenuList(int roleId);
+        IEnumerable<ModuleModel> GetModuleButtonList(int roleId);
     }
 }

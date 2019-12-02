@@ -12,6 +12,8 @@ namespace FineAdmin.Service
     public class ModuleService : BaseService<ModuleModel>, IModuleService
     {
         public IModuleRepository ModuleRepository { get; set; }
+        public IButtonService ButtonService { get; set; }
+        public IRoleAuthorizeService RoleAuthorizeService { get; set; }
 
         public dynamic GetListByFilter(ModuleModel filter, PageInfo pageInfo)
         {
@@ -120,13 +122,21 @@ namespace FineAdmin.Service
             }
         }
         /// <summary>
-        /// 获取所有菜单列表及可用按钮权限
+        /// 获取所有菜单列表及可用按钮权限列表
         /// </summary>
         /// <param name="roleId">角色ID</param>
         /// <returns></returns>
-        public IEnumerable<ModuleModel> GetAvailableMenuList(int roleId)
+        public IEnumerable<ModuleModel> GetModuleButtonList(int roleId)
         {
-            throw new NotImplementedException();
+            string returnFields = "Id,ParentId,FullName,Icon,SortCode";
+            string orderby = "ORDER BY SortCode ASC";
+            IEnumerable<ModuleModel> list = GetAll(returnFields, orderby);
+            foreach (var item in list)
+            {
+                item.ModuleButtonHtml = ButtonService.GetButtonListHtmlByRoleIdModuleId(roleId, item.Id);
+                item.IsChecked = RoleAuthorizeService.GetListByRoleIdModuleId(roleId, item.Id).Count() > 0 ? true : false;
+            }
+            return list;
         }
     }
 }

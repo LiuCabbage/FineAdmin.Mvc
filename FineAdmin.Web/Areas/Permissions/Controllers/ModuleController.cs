@@ -73,5 +73,12 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
             var result = ModuleService.DeleteById(id) ? SuccessTip("删除成功") : ErrorTip("删除失败");
             return Json(result, JsonRequestBehavior.AllowGet);
         }
+        [HttpGet]
+        public JsonResult ModuleButtonList(int roleId)
+        {
+            var list = ModuleService.GetModuleButtonList(roleId);
+            var result = new { code = 0, count = list.Count(), data = list };
+            return Json(result,JsonRequestBehavior.AllowGet);
+        }
     }
 }

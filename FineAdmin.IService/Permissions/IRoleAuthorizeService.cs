@@ -10,6 +10,12 @@ namespace FineAdmin.IService
 {
     public interface IRoleAuthorizeService : IBaseService<RoleAuthorizeModel>
     {
-        
+        /// <summary>
+        /// 根据角色菜单获得列表
+        /// </summary>
+        /// <param name="roleId"></param>
+        /// <param name="moduleId"></param>
+        /// <returns></returns>
+        IEnumerable<RoleAuthorizeModel> GetListByRoleIdModuleId(int roleId, int moduleId);
     }
 }
