@@ -195,9 +195,10 @@ layui.use(["element", "layer", "okUtils", "okTab", "okLayer"], function () {
     
     function getContent() {
         let content = "";
-        content = "FineAdmin 上线啦(^し^)<br/>" +
-            "在此郑重承诺该项目<span style='color:#5cb85c'>永久免费</span>为大家提供<br/>" +
-            "码云开源地址：<a style='color:#ff5722;' target='_blank' href='https://gitee.com/Liu_Cabbage/FineAdmin.Mvc'><span>FineAdmin.Mvc</span></a>";
+        content = "版权声明：<br/>" +
+            "ok-admin 和 FineAdmin.Mvc都使用GPL-3.0开源协议，个人<span style='color:#5cb85c'>免费使用</span>，商用请联系作者<span style='color:#ff5722'>获取授权</span><br/>" +
+            "ok-admin开源地址：<a style='color:#ff5722;' target='_blank' href='https://gitee.com/bobi1234/ok-admin'><span>ok-admin</span></a><br/>" +
+            "FineAdmin.Mvc开源地址：<a style='color:#ff5722;' target='_blank' href='https://gitee.com/Liu_Cabbage/FineAdmin.Mvc'><span>FineAdmin.Mvc</span></a>";
         return content;
     }
 
@@ -229,7 +230,20 @@ layui.use(["element", "layer", "okUtils", "okTab", "okLayer"], function () {
             }]
         });
     });
-
+    console.log("        __                         .___      .__        \n" +
+        "  ____ |  | __         _____     __| _/_____ |__| ____  \n" +
+        " /  _ \\|  |/ /  ______ \\__  \\   / __ |/     \\|  |/    \\ \n" +
+        "(  <_> )    <  /_____/  / __ \\_/ /_/ |  Y Y  \\  |   |  \\\n" +
+        " \\____/|__|_ \\         (____  /\\____ |__|_|  /__|___|  /\n" +
+        "            \\/              \\/      \\/     \\/        \\/\n" +
+        "" +
+        "版本：v2.0\n" +
+        "作者：bobi\n" +
+        "邮箱：bobi1234@foxmail.com\n" +
+        "企鹅：833539807\n" +
+        "描述：一个很赞的，扁平化风格的，响应式布局的后台管理模版，旨为后端程序员减压！\n" +
+        "版权说明：项目使用GPL-3.0开源协议，个人免费使用，商用请获取授权\n" +
+        "码云：https://gitee.com/bobi1234/ok-admin");
     console.log(" _____ _               _       _           _       \n" +
         "|  ___(_)_ __   ___   / \\   __| |_ __ ___ (_)_ __  \n" +
         "| |_  | | '_ \\ / _ \\ / _ \\ / _` | '_ ` _ \\| | '_ \\ \n" +
@@ -237,7 +251,8 @@ layui.use(["element", "layer", "okUtils", "okTab", "okLayer"], function () {
         "|_|   |_|_| |_|\\___/_/   \\_\\__,_|_| |_| |_|_|_| |_|\n" +
         "作者：Liu_Cabbage\n" +
         "邮箱：178899573@qq.com\n" +
-        "描述：使用ASP.NET MVC搭建的通用权限后台管理系统。\n" +
-        "模板：https://gitee.com/bobi1234/ok-admin\n" +
+        "企鹅：178899573\n" +
+        "描述：使用okadmin+ASP.NET MVC搭建的通用权限后台管理系统。\n" +
+        "版权说明：项目使用GPL-3.0开源协议，个人免费使用，商用请获取授权\n" +
         "码云：https://gitee.com/Liu_Cabbage/FineAdmin.Mvc");
 });
