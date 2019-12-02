@@ -1,4 +1,5 @@
 ﻿@using FineAdmin.Model;
+@model FineAdmin.Model.DonationModel
 @{
     Layout = null;
 }
@@ -26,7 +27,7 @@
                         <div class="data-body">
                             <div class="media-cont">
                                 <p class="tit">捐赠总金额</p>
-                                <h5 class="num">0</h5>
+                                <h5 class="num">@Model.TotalPrice</h5>
                             </div>
                             <div class="w-img" ok-pc-in-show>
                                 <img src="~/Content/images/home-01.png" alt="收入" />
@@ -42,7 +43,7 @@
                         <div class="data-body">
                             <div class="media-cont">
                                 <p class="tit">捐赠总次数</p>
-                                <h5 class="num">0</h5>
+                                <h5 class="num">@Model.TotalNum</h5>
                             </div>
                             <div class="w-img" ok-pc-in-show>
                                 <img src="~/Content/images/home-02.png" alt="商品" />
@@ -58,7 +59,7 @@
                         <div class="data-body">
                             <div class="media-cont">
                                 <p class="tit">单笔最大金额</p>
-                                <h5 class="num">0</h5>
+                                <h5 class="num">@Model.MaxPrice</h5>
                             </div>
                             <div class="w-img" ok-pc-in-show>
                                 <img src="~/Content/images/home-03.png" alt="博客" />
@@ -74,7 +75,7 @@
                         <div class="data-body">
                             <div class="media-cont">
                                 <p class="tit">捐赠人数</p>
-                                <h5 class="num">0</h5>
+                                <h5 class="num">@Model.PeopleNum</h5>
                             </div>
                             <div class="w-img" ok-pc-in-show>
                                 <img src="~/Content/images/home-04.png" alt="用户" />

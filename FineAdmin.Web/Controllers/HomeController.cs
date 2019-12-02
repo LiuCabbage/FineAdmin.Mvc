@@ -7,13 +7,13 @@ using FineAdmin.Web.Areas.SysSet.Models;
 using FineAdmin.Model;
 using FineAdmin.Common;
 using System.IO;
-using FineAdmin.IRepository;
+using FineAdmin.IService;
 
 namespace FineAdmin.Web.Controllers
 {
     public class HomeController : BaseController
     {
-        public IDonationRepository DonationRepository { get; set; }
+        public IDonationService DonationService { get; set; }
 
         public override ActionResult Index(int? id)
         {
@@ -24,8 +24,9 @@ namespace FineAdmin.Web.Controllers
 
         public ActionResult Main()
         {
-            ViewBag.DonationTop = DonationRepository.GetSumPriceTop(5).ToList();
-            return View();
+            DonationModel donationModel = DonationService.GetConsoleNumShow();
+            ViewBag.DonationTop = DonationService.GetSumPriceTop(5).ToList();
+            return View(donationModel);
         }
 
         public JsonResult ExportFile()

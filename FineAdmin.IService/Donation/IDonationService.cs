@@ -15,5 +15,10 @@ namespace FineAdmin.IService
         /// <param name="num"></param>
         /// <returns></returns>
         IEnumerable<DonationModel> GetSumPriceTop(int num);
+        /// <summary>
+        /// 获得控制台显示数字
+        /// </summary>
+        /// <returns></returns>
+        DonationModel GetConsoleNumShow();
     }
 }

@@ -12,6 +12,7 @@ namespace FineAdmin.Service
     public class DonationService : BaseService<DonationModel>, IDonationService
     {
         public IDonationRepository DonationRepository { get; set; }
+
         public dynamic GetListByFilter(DonationModel filter, PageInfo pageInfo)
         {
             string _where = " where 1=1";
@@ -25,6 +26,11 @@ namespace FineAdmin.Service
         public IEnumerable<DonationModel> GetSumPriceTop(int num)
         {
             return DonationRepository.GetSumPriceTop(num);
+        }
+
+        public DonationModel GetConsoleNumShow()
+        {
+            return DonationRepository.GetConsoleNumShow();
         }
     }
 }
