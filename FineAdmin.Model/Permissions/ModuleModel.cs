@@ -25,5 +25,16 @@ namespace FineAdmin.Model
         /// 链接
         /// </summary>
         public string UrlAddress { get; set; }
+
+        /// <summary>
+        /// 菜单按钮复选框Html
+        /// </summary>
+        [Computed]
+        public string ModuleButtonHtml { get; set; }
+        /// <summary>
+        /// 菜单是否选中
+        /// </summary>
+        [Computed]
+        public bool IsChecked { get; set; }
     }
 }
