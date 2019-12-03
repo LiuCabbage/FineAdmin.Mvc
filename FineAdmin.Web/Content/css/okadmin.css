@@ -1,5 +1,7 @@
 @import "../lib/layui/css/layui.css";
 @import "../lib/fonts/iconfont.css";
+@import "./okadmin.theme.css";
+@import "../lib/layui/css/okmodules/jquery.contextMenu.css";/* 左侧菜单背景颜色，tab右键菜单，全屏小图标 还没和最新模板同步 */
 
 #navBar .layui-nav-child{overflow:hidden;padding:0!important}
 #navBar .layui-nav-child dd,#navBar .layui-nav-itemed .layui-nav-child{overflow:hidden}

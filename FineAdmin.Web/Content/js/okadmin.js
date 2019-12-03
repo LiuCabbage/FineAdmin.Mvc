@@ -254,7 +254,7 @@ layui.use(["element", "layer", "okUtils", "okTab", "okLayer"], function () {
         "作者：Liu_Cabbage\n" +
         "邮箱：178899573@qq.com\n" +
         "企鹅：178899573\n" +
-        "描述：使用okadmin+ASP.NET MVC搭建的通用权限后台管理系统。\n" +
+        "描述：使用ok-admin+ASP.NET MVC搭建的通用权限后台管理系统。\n" +
         "版权说明：项目使用GPL-3.0开源协议，个人免费使用，商用请获取授权\n" +
         "码云：https://gitee.com/Liu_Cabbage/FineAdmin.Mvc");
 });

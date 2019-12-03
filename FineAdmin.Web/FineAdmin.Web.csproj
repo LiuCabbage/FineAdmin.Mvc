@@ -164,6 +164,7 @@
   <ItemGroup>
     <Content Include="Content\css\common.css" />
     <Content Include="Content\css\okadmin.css" />
+    <Content Include="Content\css\okadmin.theme.css" />
     <Content Include="Content\css\oksub.css" />
     <Content Include="Content\images\ajax-loader.gif" />
     <Content Include="Content\images\face.jpg" />
@@ -291,6 +292,7 @@
     <Content Include="Content\lib\layui\css\layui.css" />
     <Content Include="Content\lib\layui\css\layui.mobile.css" />
     <Content Include="Content\lib\layui\css\modules\code.css" />
+    <Content Include="Content\lib\layui\css\okmodules\jquery.contextMenu.css" />
     <Content Include="Content\lib\layui\css\modules\laydate\default\laydate.css" />
     <Content Include="Content\lib\layui\css\modules\layer\default\icon-ext.png" />
     <Content Include="Content\lib\layui\css\modules\layer\default\icon.png" />

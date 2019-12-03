@@ -11,7 +11,7 @@
  Target Server Version : 50717
  File Encoding         : 65001
 
- Date: 30/11/2019 17:56:27
+ Date: 03/12/2019 17:54:30
 */
 
 SET NAMES utf8mb4;
@@ -58,23 +58,7 @@ CREATE TABLE `donation`  (
   `Detail` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '捐赠表' ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of donation
--- ----------------------------
-INSERT INTO `donation` VALUES (1, '蚯蚓', '1', '支付宝', '爱你么么哒', '2019-10-12 11:41:39');
-INSERT INTO `donation` VALUES (2, '蚯蚓', '2', '微信', '爱你么么哒', '2019-10-12 11:42:55');
-INSERT INTO `donation` VALUES (3, '小蚯蚓', '1', '微信', '爱你么么哒', '2019-10-12 11:43:09');
-INSERT INTO `donation` VALUES (4, '小小蚯蚓', '1', '支付宝', '爱你么么哒', '2019-10-12 11:43:32');
-INSERT INTO `donation` VALUES (6, '皮皮虾', '100', '支付宝', '0.0', '2019-11-30 16:32:04');
-INSERT INTO `donation` VALUES (7, '猫猫村长', '10', '支付宝', '嘻嘻', '2019-11-30 16:44:33');
-INSERT INTO `donation` VALUES (8, '皮皮虾', '0.01', '微信', '笑死', '2019-11-30 16:45:00');
-INSERT INTO `donation` VALUES (9, '王尼玛', '10.01', '微信', '王大头', '2019-11-30 16:49:53');
-INSERT INTO `donation` VALUES (10, '王尼玛', '0.03', '支付宝', '搞哦', '2019-11-30 16:50:55');
-INSERT INTO `donation` VALUES (11, '皮卡丘', '55.5', '支付宝', '十万伏特', '2019-11-30 16:51:33');
-INSERT INTO `donation` VALUES (12, '刘本伟55开', '1000', '支付宝', '你妈买菜超级加倍', '2019-11-30 16:53:01');
-INSERT INTO `donation` VALUES (13, '赵本山', '1100.05', '支付宝', '改革春风吹满地', '2019-11-30 17:37:09');
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '捐赠表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for items
@@ -166,7 +150,7 @@ CREATE TABLE `logonlog`  (
   `IPAddressName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'IP所在城市',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 116 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '登录日志表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 125 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '登录日志表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of logonlog
@@ -274,6 +258,15 @@ INSERT INTO `logonlog` VALUES (112, 'Login', 'admin', 'Liu_Cabbage', '登陆成�
 INSERT INTO `logonlog` VALUES (113, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-30 14:28:30');
 INSERT INTO `logonlog` VALUES (114, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-30 14:28:38');
 INSERT INTO `logonlog` VALUES (115, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-30 17:28:52');
+INSERT INTO `logonlog` VALUES (116, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-12-02 15:26:39');
+INSERT INTO `logonlog` VALUES (117, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-12-03 10:03:30');
+INSERT INTO `logonlog` VALUES (118, 'Login', 'test', 'test', '登陆成功', '192.168.1.148', '本地局域网', '2019-12-03 12:42:01');
+INSERT INTO `logonlog` VALUES (119, 'Exit', 'test', 'test', '安全退出系统', '192.168.1.148', '本地局域网', '2019-12-03 12:49:40');
+INSERT INTO `logonlog` VALUES (120, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-12-03 13:32:16');
+INSERT INTO `logonlog` VALUES (121, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-12-03 16:45:18');
+INSERT INTO `logonlog` VALUES (122, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-12-03 17:00:15');
+INSERT INTO `logonlog` VALUES (123, 'Login', 'admin', 'admin', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-12-03 17:00:24');
+INSERT INTO `logonlog` VALUES (124, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-12-03 17:00:31');
 
 -- ----------------------------
 -- Table structure for module
@@ -425,20 +418,18 @@ INSERT INTO `roleauthorize` VALUES ('1', '9', '0');
 INSERT INTO `roleauthorize` VALUES ('1', '9', '1');
 INSERT INTO `roleauthorize` VALUES ('1', '9', '2');
 INSERT INTO `roleauthorize` VALUES ('1', '9', '3');
-INSERT INTO `roleauthorize` VALUES ('2', '1', '0');
-INSERT INTO `roleauthorize` VALUES ('2', '12', '0');
-INSERT INTO `roleauthorize` VALUES ('2', '2', '0');
-INSERT INTO `roleauthorize` VALUES ('2', '3', '0');
-INSERT INTO `roleauthorize` VALUES ('2', '4', '0');
-INSERT INTO `roleauthorize` VALUES ('2', '5', '0');
-INSERT INTO `roleauthorize` VALUES ('2', '6', '0');
-INSERT INTO `roleauthorize` VALUES ('2', '7', '0');
-INSERT INTO `roleauthorize` VALUES ('2', '8', '0');
-INSERT INTO `roleauthorize` VALUES ('2', '9', '0');
-INSERT INTO `roleauthorize` VALUES ('3', '12', '0');
-INSERT INTO `roleauthorize` VALUES ('3', '2', '0');
-INSERT INTO `roleauthorize` VALUES ('3', '3', '0');
-INSERT INTO `roleauthorize` VALUES ('3', '9', '0');
+INSERT INTO `roleauthorize` VALUES ('4', '1', '0');
+INSERT INTO `roleauthorize` VALUES ('4', '10', '0');
+INSERT INTO `roleauthorize` VALUES ('4', '13', '0');
+INSERT INTO `roleauthorize` VALUES ('4', '14', '0');
+INSERT INTO `roleauthorize` VALUES ('4', '2', '0');
+INSERT INTO `roleauthorize` VALUES ('4', '3', '0');
+INSERT INTO `roleauthorize` VALUES ('4', '4', '0');
+INSERT INTO `roleauthorize` VALUES ('4', '5', '0');
+INSERT INTO `roleauthorize` VALUES ('4', '6', '0');
+INSERT INTO `roleauthorize` VALUES ('4', '7', '0');
+INSERT INTO `roleauthorize` VALUES ('4', '8', '0');
+INSERT INTO `roleauthorize` VALUES ('4', '9', '0');
 
 -- ----------------------------
 -- Table structure for user
@@ -468,7 +459,7 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'Liu_Cabbage', '/Content/images/head.jpg', b'1', '2019-11-15 16:25:53', NULL, NULL, NULL, 3, 1, b'0', '2019-10-29 15:40:26', 1, '2019-10-29 15:40:28', 1);
+INSERT INTO `user` VALUES (1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'Liu_Cabbage', '/Content/images/head.jpg', b'1', '2019-11-15 00:00:00', NULL, NULL, NULL, 3, 1, b'0', '2019-10-29 15:40:26', 1, '2019-12-03 17:30:32', 1);
 INSERT INTO `user` VALUES (2, 'user', 'e10adc3949ba59abbe56e057f20f883e', 'user', '/Content/images/head.jpg', b'1', '2019-11-16 16:25:56', NULL, NULL, NULL, 3, 3, b'0', '2019-11-13 14:45:55', 1, '2019-11-13 14:45:59', 1);
 INSERT INTO `user` VALUES (3, 'test', 'e10adc3949ba59abbe56e057f20f883e', 'test', '/Content/images/head.jpg', b'1', '2019-11-14 00:00:00', NULL, NULL, NULL, 3, 4, b'0', '2019-11-14 16:21:10', 1, '2019-11-15 16:32:55', 1);
 
