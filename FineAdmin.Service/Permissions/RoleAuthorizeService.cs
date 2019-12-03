@@ -12,10 +12,24 @@ namespace FineAdmin.Service
 {
     public class RoleAuthorizeService : BaseService<RoleAuthorizeModel>, IRoleAuthorizeService
     {
+        public IRoleAuthorizeRepository RoleAuthorizeRepository { get; set; }
+
         public dynamic GetListByFilter(RoleAuthorizeModel filter, PageInfo pageInfo)
         {
             throw new NotImplementedException();
         }
+
+        /// <summary>
+        /// 根据角色菜单获得列表
+        /// </summary>
+        /// <param name="entitys"></param>
+        /// <param name="roleId"></param>
+        /// <returns></returns>
+        public int SavePremission(IEnumerable<RoleAuthorizeModel> entitys, int roleId)
+        {
+            return RoleAuthorizeRepository.SavePremission(entitys, roleId);
+        }
+
         /// <summary>
         /// 根据角色菜单获得列表
         /// </summary>

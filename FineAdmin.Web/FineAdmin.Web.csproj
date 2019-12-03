@@ -139,6 +139,7 @@
     <Compile Include="Areas\Permissions\Controllers\ItemsDetailController.cs" />
     <Compile Include="Areas\Permissions\Controllers\ModuleController.cs" />
     <Compile Include="Areas\Permissions\Controllers\OrganizeController.cs" />
+    <Compile Include="Areas\Permissions\Controllers\RoleAuthorizeController.cs" />
     <Compile Include="Areas\Permissions\Controllers\RoleController.cs" />
     <Compile Include="Areas\Permissions\Controllers\UserController.cs" />
     <Compile Include="Areas\Permissions\PermissionsAreaRegistration.cs" />
@@ -429,6 +430,7 @@
     <Folder Include="Areas\Donation\Models\" />
     <Folder Include="Areas\Donation\Views\Shared\" />
     <Folder Include="Areas\Permissions\Models\" />
+    <Folder Include="Areas\Permissions\Views\RoleAuthorize\" />
     <Folder Include="Areas\Permissions\Views\Shared\" />
     <Folder Include="Areas\Security\Models\" />
     <Folder Include="Areas\Security\Views\Shared\" />
