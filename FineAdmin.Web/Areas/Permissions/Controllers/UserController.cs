@@ -88,5 +88,35 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
             var result = UserService.UpdateById(model, "UserPassword") ? SuccessTip("重置密码成功，新密码:" + pwd) : ErrorTip("重置密码失败");
             return Json(result, JsonRequestBehavior.AllowGet);
         }
+        public ActionResult UserInfo()
+        {
+            ViewBag.UploadFileSize = Configs.GetValue("UploadFileSize");
+            ViewBag.UploadFileType = Configs.GetValue("UploadFileType");
+            ViewBag.OrganizeList = OrganizeList;
+            ViewBag.RoleList = RoleList;
+            int userId = Operator.UserId;
+            var model = UserService.GetById(userId);
+            return View(model);
+        }
+        public ActionResult UserPwd()
+        {
+            ViewBag.UserName = Operator.Account;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ModifyUserPwd(ModifyPwd model)
+        {
+            int userId = Operator.UserId;
+            var result = ErrorTip("出现异常，密码修改失败");
+            if (UserService.LoginOn(model.UserName, Md5.md5(model.OldPassword, 32)) == null)
+            {
+                result = ErrorTip("旧密码不正确");
+            }
+            else
+            {
+                result = UserService.ModifyUserPwd(model, userId) > 0 ? SuccessTip("密码修改成功") : ErrorTip("密码修改失败");
+            }
+            return Json(result);
+        }
     }
 }

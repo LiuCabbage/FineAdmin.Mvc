@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DonationModel.cs" />
+    <Compile Include="Donation\DonationModel.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="Filter\SearchFilter.cs" />
     <Compile Include="ModifyPwd.cs" />

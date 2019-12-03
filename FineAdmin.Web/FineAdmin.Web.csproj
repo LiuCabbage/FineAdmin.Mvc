@@ -481,6 +481,8 @@
     <Content Include="Areas\Donation\Views\Donation\Index.cshtml" />
     <Content Include="Areas\Donation\Views\Donation\Edit.cshtml" />
     <Content Include="Areas\Donation\Views\Donation\Add.cshtml" />
+    <Content Include="Areas\Permissions\Views\User\UserInfo.cshtml" />
+    <Content Include="Areas\Permissions\Views\User\UserPwd.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />

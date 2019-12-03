@@ -16,5 +16,12 @@ namespace FineAdmin.IRepository
         /// <param name="password"></param>
         /// <returns></returns>
         UserModel LoginOn(string username, string password);
+        /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        int ModifyUserPwd(ModifyPwd model, int userId);
     }
 }

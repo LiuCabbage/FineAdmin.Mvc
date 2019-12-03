@@ -11,6 +11,11 @@
         line-height: 18px;
         padding-left: 5px;
     }
+
+    .layui-table-cell .layui-form-checkbox[lay-skin=primary] {
+        top: -1px;
+        padding-left: 25px;  /* 覆盖layui padding */
+    }
 </style>
 <!--数据表格-->
 <table class="layui-hide" id="tableId" lay-filter="tableFilter"></table>
@@ -52,7 +57,7 @@
             $(".div-collapse.root .layui-tree-head").click();
         });
 
-        //保存设置 差这里没做，做好还做一个清除冗余菜单按钮权限的按钮
+        //保存设置
         $("#btnSave").on('click', function () {
             var _roleId = @ViewBag.RoleId;
             var cbxs = $(".layui-table").find('tbody input[type="checkbox"]');

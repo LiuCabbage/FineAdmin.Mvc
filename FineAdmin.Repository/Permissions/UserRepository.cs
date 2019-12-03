@@ -33,7 +33,19 @@ namespace FineAdmin.Repository
                 return conn.Query<UserModel>(sql, new { Account = username, UserPassWord = password }).FirstOrDefault();
             }
         }
-
-
+        /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public int ModifyUserPwd(ModifyPwd model, int userId)
+        {
+            using (var conn = MySqlHelper.GetConnection())
+            {
+                var sql = "UPDATE user SET UserPassword=@UserPassword WHERE Id=@Id AND Account=@Account AND UserPassword=@OldPassword";
+                return conn.Execute(sql, new { UserPassword = model.Password, Id = userId, Account = model.UserName, OldPassword = model.OldPassword });
+            }
+        }
     }
 }

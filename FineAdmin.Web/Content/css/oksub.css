@@ -71,7 +71,7 @@
 .seting-pass{background: #FFFFFF;}
 .seting-pass .user_right p{margin:10px 0 25px;font-size:12px;text-align:center;color:#ff5722}
 .seting-pass .layui-table th{text-align:center}
-.seting-pass .changePwd{width:30%;margin:3% 0 0 5%}
+.seting-pass .changePwd{width:85%;margin:3% 0 0 5%}
 
 
 /*响应样式*/

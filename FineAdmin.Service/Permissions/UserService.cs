@@ -45,5 +45,18 @@ namespace FineAdmin.Service
         {
             return UserRepository.LoginOn(username, password);
         }
+
+        /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public int ModifyUserPwd(ModifyPwd model, int userId)
+        {
+            model.OldPassword = Md5.md5(model.OldPassword, 32);
+            model.Password = Md5.md5(model.Password, 32);
+            return UserRepository.ModifyUserPwd(model, userId);
+        }
     }
 }
