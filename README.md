@@ -21,15 +21,16 @@ RightControl后台layui模板不太好看，换成[ok-admin v2.0](https://gitee.
 2. 账号：admin
 3. 密码：123456
 
-#### 参与贡献
+#### 特别感谢
 
-1. Fork 本仓库
-2. 新建 Feat_xxx 分支
-3. 提交代码
-4. 新建 Pull Request
+1. [Layui](https://www.layui.com)
+2. [ok-admin](https://gitee.com/bobi1234/ok-admin)
 
+#### 开源协议
+
+[GPL-3.0](https://gitee.com/Liu_Cabbage/FineAdmin.Mvc/blob/master/LICENSE)
 
 #### 项目截图
 
-![输入图片说明](https://images.gitee.com/uploads/images/2019/1204/173746_401bbdba_1130037.png "1.png")
+![输入图片说明](https://images.gitee.com/uploads/images/2019/1204/175220_f5be0b2b_1130037.jpeg "1.jpg")
 ![输入图片说明](https://images.gitee.com/uploads/images/2019/1204/173800_fe49801d_1130037.png "2.png")
