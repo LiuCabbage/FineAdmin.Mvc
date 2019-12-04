@@ -11,7 +11,7 @@
  Target Server Version : 50717
  File Encoding         : 65001
 
- Date: 04/12/2019 13:57:28
+ Date: 04/12/2019 17:48:26
 */
 
 SET NAMES utf8mb4;
@@ -150,7 +150,17 @@ CREATE TABLE `logonlog`  (
   `IPAddressName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'IP所在城市',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '登录日志表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '登录日志表' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of logonlog
+-- ----------------------------
+INSERT INTO `logonlog` VALUES (1, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-12-04 14:13:28');
+INSERT INTO `logonlog` VALUES (2, 'Login', 'test', 'test', '登陆成功', '192.168.1.148', '本地局域网', '2019-12-04 17:09:39');
+INSERT INTO `logonlog` VALUES (3, 'Exit', 'test', 'test', '安全退出系统', '192.168.1.148', '本地局域网', '2019-12-04 17:09:50');
+INSERT INTO `logonlog` VALUES (4, 'Login', 'user', 'user', '登陆成功', '192.168.1.148', '本地局域网', '2019-12-04 17:09:59');
+INSERT INTO `logonlog` VALUES (5, 'Exit', 'user', 'user', '安全退出系统', '192.168.1.148', '本地局域网', '2019-12-04 17:10:12');
+INSERT INTO `logonlog` VALUES (6, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-12-04 17:47:30');
 
 -- ----------------------------
 -- Table structure for module
@@ -263,9 +273,7 @@ INSERT INTO `roleauthorize` VALUES ('1', '10', '1');
 INSERT INTO `roleauthorize` VALUES ('1', '10', '2');
 INSERT INTO `roleauthorize` VALUES ('1', '10', '3');
 INSERT INTO `roleauthorize` VALUES ('1', '11', '0');
-INSERT INTO `roleauthorize` VALUES ('1', '11', '1');
 INSERT INTO `roleauthorize` VALUES ('1', '11', '2');
-INSERT INTO `roleauthorize` VALUES ('1', '11', '3');
 INSERT INTO `roleauthorize` VALUES ('1', '11', '4');
 INSERT INTO `roleauthorize` VALUES ('1', '12', '0');
 INSERT INTO `roleauthorize` VALUES ('1', '13', '0');
