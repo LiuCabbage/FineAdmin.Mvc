@@ -11,7 +11,7 @@
  Target Server Version : 50717
  File Encoding         : 65001
 
- Date: 03/12/2019 17:54:30
+ Date: 04/12/2019 13:57:28
 */
 
 SET NAMES utf8mb4;
@@ -34,7 +34,7 @@ CREATE TABLE `button`  (
   `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '修改用户主键',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '按钮表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '按钮表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of button
@@ -58,7 +58,7 @@ CREATE TABLE `donation`  (
   `Detail` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '捐赠表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '捐赠表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for items
@@ -75,7 +75,7 @@ CREATE TABLE `items`  (
   `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '修改用户主键',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '字典表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '字典表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of items
@@ -105,7 +105,7 @@ CREATE TABLE `itemsdetail`  (
   `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '修改用户主键',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 27 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '字典明细表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '字典明细表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of itemsdetail
@@ -150,123 +150,7 @@ CREATE TABLE `logonlog`  (
   `IPAddressName` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'IP所在城市',
   `CreateTime` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 125 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '登录日志表' ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of logonlog
--- ----------------------------
-INSERT INTO `logonlog` VALUES (1, 'Login', 'admin', 'admin', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-11-09 15:45:55');
-INSERT INTO `logonlog` VALUES (2, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-09 15:49:03');
-INSERT INTO `logonlog` VALUES (3, 'Login', 'ffds', 'ffds', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-09 15:50:46');
-INSERT INTO `logonlog` VALUES (4, 'Login', 'ffds', 'ffds', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-11-09 15:50:55');
-INSERT INTO `logonlog` VALUES (5, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-09 15:51:07');
-INSERT INTO `logonlog` VALUES (6, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-09 15:51:36');
-INSERT INTO `logonlog` VALUES (7, 'Login', 'admin', 'admin', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-11-09 15:51:48');
-INSERT INTO `logonlog` VALUES (8, 'Login', 'admin', 'admin', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-11-09 15:51:54');
-INSERT INTO `logonlog` VALUES (9, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-09 15:52:00');
-INSERT INTO `logonlog` VALUES (10, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-09 15:54:13');
-INSERT INTO `logonlog` VALUES (11, 'Login', 'admin', 'admin', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-11-09 15:59:31');
-INSERT INTO `logonlog` VALUES (12, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-09 16:00:34');
-INSERT INTO `logonlog` VALUES (13, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-09 16:00:37');
-INSERT INTO `logonlog` VALUES (14, 'Login', 'admin', 'admin', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-11-09 16:00:44');
-INSERT INTO `logonlog` VALUES (15, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-09 16:00:51');
-INSERT INTO `logonlog` VALUES (16, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-09 17:19:27');
-INSERT INTO `logonlog` VALUES (17, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-09 17:59:15');
-INSERT INTO `logonlog` VALUES (18, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-09 17:59:45');
-INSERT INTO `logonlog` VALUES (19, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-09 18:00:01');
-INSERT INTO `logonlog` VALUES (20, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-09 18:00:05');
-INSERT INTO `logonlog` VALUES (21, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-09 18:00:55');
-INSERT INTO `logonlog` VALUES (22, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-09 18:01:02');
-INSERT INTO `logonlog` VALUES (23, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-09 18:01:07');
-INSERT INTO `logonlog` VALUES (24, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-11 09:58:45');
-INSERT INTO `logonlog` VALUES (25, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-11 10:00:10');
-INSERT INTO `logonlog` VALUES (26, 'Login', 'admin', 'admin', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-11-11 10:00:24');
-INSERT INTO `logonlog` VALUES (27, 'Login', 'admin', 'admin', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-11-11 10:00:44');
-INSERT INTO `logonlog` VALUES (28, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-11 10:00:48');
-INSERT INTO `logonlog` VALUES (29, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-11 10:00:52');
-INSERT INTO `logonlog` VALUES (30, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-11 10:04:20');
-INSERT INTO `logonlog` VALUES (31, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-11 10:04:36');
-INSERT INTO `logonlog` VALUES (32, 'Login', 'admin', 'admin', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-11-11 10:04:42');
-INSERT INTO `logonlog` VALUES (33, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-11 10:04:50');
-INSERT INTO `logonlog` VALUES (34, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-11 10:12:39');
-INSERT INTO `logonlog` VALUES (35, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-11 10:12:54');
-INSERT INTO `logonlog` VALUES (36, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-11 10:14:19');
-INSERT INTO `logonlog` VALUES (37, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-11 11:19:12');
-INSERT INTO `logonlog` VALUES (38, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-11 11:19:25');
-INSERT INTO `logonlog` VALUES (39, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-11 11:26:45');
-INSERT INTO `logonlog` VALUES (40, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-11 11:26:48');
-INSERT INTO `logonlog` VALUES (41, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-11 11:26:56');
-INSERT INTO `logonlog` VALUES (42, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-11 11:28:10');
-INSERT INTO `logonlog` VALUES (43, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-11 11:28:43');
-INSERT INTO `logonlog` VALUES (44, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-11 11:30:22');
-INSERT INTO `logonlog` VALUES (45, 'Login', 'admin', 'admin', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-11-11 11:30:34');
-INSERT INTO `logonlog` VALUES (46, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-11 11:30:38');
-INSERT INTO `logonlog` VALUES (47, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-11 11:30:40');
-INSERT INTO `logonlog` VALUES (48, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-11 11:30:44');
-INSERT INTO `logonlog` VALUES (58, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-13 15:46:29');
-INSERT INTO `logonlog` VALUES (59, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-14 09:16:02');
-INSERT INTO `logonlog` VALUES (60, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-14 13:29:32');
-INSERT INTO `logonlog` VALUES (61, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-14 17:00:08');
-INSERT INTO `logonlog` VALUES (62, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-15 09:53:23');
-INSERT INTO `logonlog` VALUES (63, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-15 13:22:53');
-INSERT INTO `logonlog` VALUES (64, 'Login', 'admin', 'admin', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-11-15 13:24:43');
-INSERT INTO `logonlog` VALUES (65, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-15 13:24:49');
-INSERT INTO `logonlog` VALUES (66, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-15 16:16:55');
-INSERT INTO `logonlog` VALUES (67, 'Login', 'user', 'user', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-15 16:17:19');
-INSERT INTO `logonlog` VALUES (68, 'Exit', 'user', 'user', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-15 16:17:53');
-INSERT INTO `logonlog` VALUES (69, 'Login', 'user', 'user', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-15 16:18:00');
-INSERT INTO `logonlog` VALUES (70, 'Exit', 'user', 'user', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-15 16:18:29');
-INSERT INTO `logonlog` VALUES (71, 'Login', 'admin', 'admin', '登录失败，账号被锁定，禁止登录', '192.168.1.148', '本地局域网', '2019-11-15 16:18:35');
-INSERT INTO `logonlog` VALUES (72, 'Login', 'user', 'user', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-15 16:18:54');
-INSERT INTO `logonlog` VALUES (73, 'Login', 'user', 'user', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-15 16:19:01');
-INSERT INTO `logonlog` VALUES (74, 'Exit', 'user', 'user', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-15 16:19:06');
-INSERT INTO `logonlog` VALUES (75, 'Login', 'user', 'user', '登录失败，账号被锁定，禁止登录', '192.168.1.148', '本地局域网', '2019-11-15 16:19:12');
-INSERT INTO `logonlog` VALUES (76, 'Login', 'user', 'user', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-15 16:19:26');
-INSERT INTO `logonlog` VALUES (77, 'Exit', 'user', 'user', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-15 16:19:52');
-INSERT INTO `logonlog` VALUES (78, 'Login', 'test', 'test', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-15 16:20:08');
-INSERT INTO `logonlog` VALUES (79, 'Exit', 'test', 'test', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-15 16:21:20');
-INSERT INTO `logonlog` VALUES (80, 'Exit', 'test', 'test', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-15 16:21:22');
-INSERT INTO `logonlog` VALUES (81, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-15 16:24:14');
-INSERT INTO `logonlog` VALUES (82, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-15 16:28:28');
-INSERT INTO `logonlog` VALUES (83, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-15 16:28:57');
-INSERT INTO `logonlog` VALUES (84, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-16 09:28:16');
-INSERT INTO `logonlog` VALUES (85, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-16 13:36:02');
-INSERT INTO `logonlog` VALUES (86, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-16 16:59:06');
-INSERT INTO `logonlog` VALUES (87, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-22 14:06:42');
-INSERT INTO `logonlog` VALUES (88, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-22 17:28:40');
-INSERT INTO `logonlog` VALUES (89, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-25 10:45:43');
-INSERT INTO `logonlog` VALUES (90, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-25 14:18:09');
-INSERT INTO `logonlog` VALUES (91, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-25 17:20:53');
-INSERT INTO `logonlog` VALUES (92, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-25 17:20:59');
-INSERT INTO `logonlog` VALUES (93, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-25 17:21:03');
-INSERT INTO `logonlog` VALUES (94, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-26 09:55:07');
-INSERT INTO `logonlog` VALUES (95, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-26 14:20:44');
-INSERT INTO `logonlog` VALUES (99, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-27 15:49:25');
-INSERT INTO `logonlog` VALUES (100, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-28 13:57:47');
-INSERT INTO `logonlog` VALUES (101, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-28 17:24:29');
-INSERT INTO `logonlog` VALUES (102, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-29 11:05:55');
-INSERT INTO `logonlog` VALUES (103, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-29 14:32:34');
-INSERT INTO `logonlog` VALUES (104, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-30 10:03:07');
-INSERT INTO `logonlog` VALUES (105, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-30 10:10:13');
-INSERT INTO `logonlog` VALUES (106, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-30 10:10:21');
-INSERT INTO `logonlog` VALUES (107, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-30 10:10:41');
-INSERT INTO `logonlog` VALUES (108, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-30 10:11:05');
-INSERT INTO `logonlog` VALUES (109, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-30 10:11:21');
-INSERT INTO `logonlog` VALUES (110, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-30 10:11:54');
-INSERT INTO `logonlog` VALUES (111, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-11-30 10:15:45');
-INSERT INTO `logonlog` VALUES (112, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-30 10:15:54');
-INSERT INTO `logonlog` VALUES (113, 'Login', 'admin', 'admin', '登录失败，验证码错误', '192.168.1.148', '本地局域网', '2019-11-30 14:28:30');
-INSERT INTO `logonlog` VALUES (114, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-30 14:28:38');
-INSERT INTO `logonlog` VALUES (115, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-11-30 17:28:52');
-INSERT INTO `logonlog` VALUES (116, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-12-02 15:26:39');
-INSERT INTO `logonlog` VALUES (117, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-12-03 10:03:30');
-INSERT INTO `logonlog` VALUES (118, 'Login', 'test', 'test', '登陆成功', '192.168.1.148', '本地局域网', '2019-12-03 12:42:01');
-INSERT INTO `logonlog` VALUES (119, 'Exit', 'test', 'test', '安全退出系统', '192.168.1.148', '本地局域网', '2019-12-03 12:49:40');
-INSERT INTO `logonlog` VALUES (120, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-12-03 13:32:16');
-INSERT INTO `logonlog` VALUES (121, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-12-03 16:45:18');
-INSERT INTO `logonlog` VALUES (122, 'Exit', 'admin', 'Liu_Cabbage', '安全退出系统', '192.168.1.148', '本地局域网', '2019-12-03 17:00:15');
-INSERT INTO `logonlog` VALUES (123, 'Login', 'admin', 'admin', '登录失败，用户名或密码错误', '192.168.1.148', '本地局域网', '2019-12-03 17:00:24');
-INSERT INTO `logonlog` VALUES (124, 'Login', 'admin', 'Liu_Cabbage', '登陆成功', '192.168.1.148', '本地局域网', '2019-12-03 17:00:31');
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '登录日志表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for module
@@ -294,16 +178,16 @@ INSERT INTO `module` VALUES (1, 0, '系统管理', 'ok-icon', '&#xe6b0;', '/', 1
 INSERT INTO `module` VALUES (2, 0, '系统安全', 'ok-icon', '&#xe769;', '/', 2, '2019-09-19 15:48:28', 1, '2019-09-19 15:48:33', 1);
 INSERT INTO `module` VALUES (3, 0, '系统设置', 'ok-icon', '&#xe889;', '/', 3, '2019-09-19 15:49:03', 1, '2019-09-19 15:49:07', 1);
 INSERT INTO `module` VALUES (4, 1, '机构管理', 'ok-icon', '&#xe726;', '/Permissions/Organize', 1, '2019-09-19 16:51:51', 1, '2019-11-25 10:48:26', 1);
-INSERT INTO `module` VALUES (5, 1, '角色管理', 'ok-icon', '&#xe7be;', '/Permissions/Role', 4, '2019-09-19 16:54:54', 1, '2019-09-19 16:54:58', 1);
-INSERT INTO `module` VALUES (6, 1, '用户管理', 'ok-icon', '&#xe736;', '/Permissions/User', 3, '2019-09-19 16:57:34', 1, '2019-09-19 16:57:38', 1);
-INSERT INTO `module` VALUES (7, 1, '数据字典', 'ok-icon', '&#xe660;', '/Permissions/ItemsDetail', 2, '2019-09-19 16:58:27', 1, '2019-11-26 15:47:33', 1);
-INSERT INTO `module` VALUES (8, 1, '系统菜单', 'ok-icon', '&#xe7ad;', '/Permissions/Module', 5, '2019-09-19 16:58:49', 1, '2019-09-19 16:58:45', 1);
-INSERT INTO `module` VALUES (9, 1, '按钮管理', 'ok-icon', '&#xe729;', '/Permissions/Button', 6, '2019-11-26 10:30:36', 1, '2019-11-26 10:30:36', 1);
-INSERT INTO `module` VALUES (10, 2, '登录日志', 'ok-icon', '&#xe706;', '/Security/LogonLog', 1, '2019-09-23 18:17:12', 1, '2019-09-23 18:17:18', 1);
-INSERT INTO `module` VALUES (11, 3, '网站设置', 'ok-icon', '&#xe7d5;', '/SysSet/WebSet', 1, '2019-09-23 18:18:43', 1, '2019-09-23 18:18:49', 1);
-INSERT INTO `module` VALUES (12, 3, '开发设置', 'ok-icon', '&#xe738;', '/SysSet/DevSet', 2, '2019-09-23 18:19:34', 1, '2019-09-23 18:19:38', 1);
-INSERT INTO `module` VALUES (13, 3, '邮件设置', 'ok-icon', '&#xe7bd;', '/SysSet/EmailSet', 3, '2019-09-23 18:20:02', 1, '2019-09-23 18:19:59', 1);
-INSERT INTO `module` VALUES (14, 1, '字典分类', 'ok-icon', '&#xe640;', '/Permissions/Items', 2, '2019-11-26 15:44:12', 1, '2019-11-26 15:44:12', 1);
+INSERT INTO `module` VALUES (5, 1, '字典分类', 'ok-icon', '&#xe640;', '/Permissions/Items', 2, '2019-11-26 15:44:12', 1, '2019-11-26 15:44:12', 1);
+INSERT INTO `module` VALUES (6, 1, '数据字典', 'ok-icon', '&#xe660;', '/Permissions/ItemsDetail', 3, '2019-09-19 16:58:27', 1, '2019-11-26 15:47:33', 1);
+INSERT INTO `module` VALUES (7, 1, '用户管理', 'ok-icon', '&#xe736;', '/Permissions/User', 4, '2019-09-19 16:57:34', 1, '2019-09-19 16:57:38', 1);
+INSERT INTO `module` VALUES (8, 1, '角色管理', 'ok-icon', '&#xe7be;', '/Permissions/Role', 5, '2019-09-19 16:54:54', 1, '2019-09-19 16:54:58', 1);
+INSERT INTO `module` VALUES (9, 1, '系统菜单', 'ok-icon', '&#xe7ad;', '/Permissions/Module', 6, '2019-09-19 16:58:49', 1, '2019-09-19 16:58:45', 1);
+INSERT INTO `module` VALUES (10, 1, '按钮管理', 'ok-icon', '&#xe729;', '/Permissions/Button', 7, '2019-11-26 10:30:36', 1, '2019-11-26 10:30:36', 1);
+INSERT INTO `module` VALUES (11, 2, '登录日志', 'ok-icon', '&#xe706;', '/Security/LogonLog', 1, '2019-09-23 18:17:12', 1, '2019-09-23 18:17:18', 1);
+INSERT INTO `module` VALUES (12, 3, '网站设置', 'ok-icon', '&#xe7d5;', '/SysSet/WebSet', 1, '2019-09-23 18:18:43', 1, '2019-09-23 18:18:49', 1);
+INSERT INTO `module` VALUES (13, 3, '开发设置', 'ok-icon', '&#xe738;', '/SysSet/DevSet', 2, '2019-09-23 18:19:34', 1, '2019-09-23 18:19:38', 1);
+INSERT INTO `module` VALUES (14, 3, '邮件设置', 'ok-icon', '&#xe7bd;', '/SysSet/EmailSet', 3, '2019-09-23 18:20:02', 1, '2019-09-23 18:19:59', 1);
 INSERT INTO `module` VALUES (15, 0, '捐赠管理', 'ok-icon', '&#xe7d1;', '/', 0, '2019-11-30 10:07:40', 1, '2019-11-30 10:14:56', 1);
 INSERT INTO `module` VALUES (16, 15, '捐赠记录', 'ok-icon', '&#xe644;', '/Donation/Donation', 1, '2019-11-30 10:14:45', 1, '2019-11-30 11:29:25', 1);
 
@@ -323,7 +207,7 @@ CREATE TABLE `organize`  (
   `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '修改用户主键',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '组织表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '组织表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of organize
@@ -349,7 +233,7 @@ CREATE TABLE `role`  (
   `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '修改用户主键',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '角色表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '角色表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of role
@@ -375,15 +259,17 @@ CREATE TABLE `roleauthorize`  (
 -- ----------------------------
 INSERT INTO `roleauthorize` VALUES ('1', '1', '0');
 INSERT INTO `roleauthorize` VALUES ('1', '10', '0');
+INSERT INTO `roleauthorize` VALUES ('1', '10', '1');
 INSERT INTO `roleauthorize` VALUES ('1', '10', '2');
-INSERT INTO `roleauthorize` VALUES ('1', '10', '4');
+INSERT INTO `roleauthorize` VALUES ('1', '10', '3');
 INSERT INTO `roleauthorize` VALUES ('1', '11', '0');
+INSERT INTO `roleauthorize` VALUES ('1', '11', '1');
+INSERT INTO `roleauthorize` VALUES ('1', '11', '2');
+INSERT INTO `roleauthorize` VALUES ('1', '11', '3');
+INSERT INTO `roleauthorize` VALUES ('1', '11', '4');
 INSERT INTO `roleauthorize` VALUES ('1', '12', '0');
 INSERT INTO `roleauthorize` VALUES ('1', '13', '0');
 INSERT INTO `roleauthorize` VALUES ('1', '14', '0');
-INSERT INTO `roleauthorize` VALUES ('1', '14', '1');
-INSERT INTO `roleauthorize` VALUES ('1', '14', '2');
-INSERT INTO `roleauthorize` VALUES ('1', '14', '3');
 INSERT INTO `roleauthorize` VALUES ('1', '15', '0');
 INSERT INTO `roleauthorize` VALUES ('1', '16', '0');
 INSERT INTO `roleauthorize` VALUES ('1', '16', '1');
@@ -399,37 +285,37 @@ INSERT INTO `roleauthorize` VALUES ('1', '5', '0');
 INSERT INTO `roleauthorize` VALUES ('1', '5', '1');
 INSERT INTO `roleauthorize` VALUES ('1', '5', '2');
 INSERT INTO `roleauthorize` VALUES ('1', '5', '3');
-INSERT INTO `roleauthorize` VALUES ('1', '5', '6');
 INSERT INTO `roleauthorize` VALUES ('1', '6', '0');
 INSERT INTO `roleauthorize` VALUES ('1', '6', '1');
 INSERT INTO `roleauthorize` VALUES ('1', '6', '2');
 INSERT INTO `roleauthorize` VALUES ('1', '6', '3');
-INSERT INTO `roleauthorize` VALUES ('1', '6', '4');
-INSERT INTO `roleauthorize` VALUES ('1', '6', '5');
 INSERT INTO `roleauthorize` VALUES ('1', '7', '0');
 INSERT INTO `roleauthorize` VALUES ('1', '7', '1');
 INSERT INTO `roleauthorize` VALUES ('1', '7', '2');
 INSERT INTO `roleauthorize` VALUES ('1', '7', '3');
+INSERT INTO `roleauthorize` VALUES ('1', '7', '4');
+INSERT INTO `roleauthorize` VALUES ('1', '7', '5');
 INSERT INTO `roleauthorize` VALUES ('1', '8', '0');
 INSERT INTO `roleauthorize` VALUES ('1', '8', '1');
 INSERT INTO `roleauthorize` VALUES ('1', '8', '2');
 INSERT INTO `roleauthorize` VALUES ('1', '8', '3');
+INSERT INTO `roleauthorize` VALUES ('1', '8', '6');
 INSERT INTO `roleauthorize` VALUES ('1', '9', '0');
 INSERT INTO `roleauthorize` VALUES ('1', '9', '1');
 INSERT INTO `roleauthorize` VALUES ('1', '9', '2');
 INSERT INTO `roleauthorize` VALUES ('1', '9', '3');
-INSERT INTO `roleauthorize` VALUES ('4', '1', '0');
-INSERT INTO `roleauthorize` VALUES ('4', '10', '0');
-INSERT INTO `roleauthorize` VALUES ('4', '13', '0');
-INSERT INTO `roleauthorize` VALUES ('4', '14', '0');
-INSERT INTO `roleauthorize` VALUES ('4', '2', '0');
-INSERT INTO `roleauthorize` VALUES ('4', '3', '0');
-INSERT INTO `roleauthorize` VALUES ('4', '4', '0');
-INSERT INTO `roleauthorize` VALUES ('4', '5', '0');
-INSERT INTO `roleauthorize` VALUES ('4', '6', '0');
-INSERT INTO `roleauthorize` VALUES ('4', '7', '0');
-INSERT INTO `roleauthorize` VALUES ('4', '8', '0');
-INSERT INTO `roleauthorize` VALUES ('4', '9', '0');
+INSERT INTO `roleauthorize` VALUES ('3', '1', '0');
+INSERT INTO `roleauthorize` VALUES ('3', '10', '0');
+INSERT INTO `roleauthorize` VALUES ('3', '11', '0');
+INSERT INTO `roleauthorize` VALUES ('3', '14', '0');
+INSERT INTO `roleauthorize` VALUES ('3', '2', '0');
+INSERT INTO `roleauthorize` VALUES ('3', '3', '0');
+INSERT INTO `roleauthorize` VALUES ('3', '4', '0');
+INSERT INTO `roleauthorize` VALUES ('3', '5', '0');
+INSERT INTO `roleauthorize` VALUES ('3', '6', '0');
+INSERT INTO `roleauthorize` VALUES ('3', '7', '0');
+INSERT INTO `roleauthorize` VALUES ('3', '8', '0');
+INSERT INTO `roleauthorize` VALUES ('3', '9', '0');
 
 -- ----------------------------
 -- Table structure for user
@@ -454,7 +340,7 @@ CREATE TABLE `user`  (
   `UpdateTime` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   `UpdateUserId` int(11) NULL DEFAULT NULL COMMENT '修改用户主键',
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user

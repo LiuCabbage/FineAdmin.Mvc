@@ -1,9 +1,9 @@
 "use strict";
-layui.use(["okUtils", "countUp"], function () {
-    var countUp = layui.countUp;
+layui.use(["okUtils", "okCountUp"], function () {
+    var countUp = layui.okCountUp;
     var okUtils = layui.okUtils;
     var $ = layui.jquery;
-
+    //okLoading.close();
     /**
      * 收入、商品、博客、用户
      */

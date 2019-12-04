@@ -1,16 +1,12 @@
+@import "../lib/loading/okLoading.css";
 @import "../lib/fonts/iconfont.css";
 
 [v-cloak]{display:none!important}
 .ok-body{padding:10px}
 
-/*面包屑导航*/
-.ok-body-breadcrumb{position:relative;line-height:39px;height:32px;border-bottom:1px solid #e5e5e5}
-.ok-body-breadcrumb .layui-btn{line-height:2.4em;margin-top:3px;float:right}
-.ok-body-breadcrumb .layui-btn .layui-icon{line-height:32px}
-
 /*多条件搜索框*/
-/*.ok-search{margin-top:15px}
-.ok-search .layui-input{width:190px;padding-left:10px;margin-left:10px;float:left}
+/*.ok-search{margin-top:15px}*/
+/*.ok-search .layui-input{width:190px;padding-left:10px;margin-left:10px;float:left}
 .ok-search .layui-input:first-child{margin-left:0}
 .ok-search .layui-btn{margin-left:10px}
 @media screen and (max-width:768px){
@@ -66,6 +62,7 @@
 .p0{padding:0!important}
 .ptb0{padding-top:0!important;padding-bottom:0!important}
 .plr0{padding-left:0!important;padding-right:0!important}
+.p20{padding:20px!important;}
 .ptb20{padding-top:20px!important;padding-bottom:20px!important}
 .plr20{padding-left:20px!important;padding-right:20px!important}
 .pl20{padding-left:20px!important}

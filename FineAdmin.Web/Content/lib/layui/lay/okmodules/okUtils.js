@@ -34,17 +34,17 @@ layui.define(["layer"], function (exprots) {
          * ajax()函数二次封装
          * @param url
          * @param type
-         * @param param
+         * @param params
          * @param load
          * @returns {*|never|{always, promise, state, then}}
          */
-        ajax: function (url, type, param, load) {
+        ajax: function (url, type, params, load) {
             var deferred = $.Deferred();
             var loadIndex;
             $.ajax({
                 url: okUtils.isFrontendBackendSeparate ? okUtils.baseUrl + url : url,
                 type: type || "get",
-                data: param || {},
+                data: params || {},
                 dataType: "json",
                 beforeSend: function () {
                     if (load) {
@@ -85,11 +85,11 @@ layui.define(["layer"], function (exprots) {
             if (rows > 0) {
                 var idsStr = "";
                 for (var i = 0; i < checkStatus.data.length; i++) {
-                    idsStr += checkStatus.data[i].Id + ","; //Id 和 数据库表字段 Id 要一致
+                    idsStr += checkStatus.data[i].Id + ",";
                 }
                 return idsStr;
             } else {
-                layer.msg("未选择有效数据", { offset: "t", anim: 6 });
+                layer.msg("未选择有效数据", {offset: "t", anim: 6});
             }
         },
         /**
@@ -97,7 +97,7 @@ layui.define(["layer"], function (exprots) {
          * @param content
          */
         tableSuccessMsg: function (content) {
-            layer.msg(content, { icon: 1, time: 1500 }, function () {
+            layer.msg(content, {icon: 1, time: 1500}, function () {
                 // 刷新当前页table数据
                 $(".layui-laypage-btn")[0].click();
             });
@@ -131,6 +131,32 @@ layui.define(["layer"], function (exprots) {
                 if (new RegExp("(" + k + ")").test(fmt))
                     fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
             return fmt;
+        },
+        number: {
+            /**
+             * 判断是否为一个正常的数字
+             * @param num
+             */
+            isNumber: function (num) {
+                if (num && !isNaN(num)) {
+                    return true;
+                }
+                return false;
+            },
+            /**
+             * 判断一个数字是否包括在某个范围
+             * @param num
+             * @param begin
+             * @param end
+             */
+            isNumberWith: function (num, begin, end) {
+                if (this.isNumber(num)) {
+                    if (num >= begin && num <= end) {
+                        return true;
+                    }
+                    return false;
+                }
+            },
         }
     };
     exprots("okUtils", okUtils);

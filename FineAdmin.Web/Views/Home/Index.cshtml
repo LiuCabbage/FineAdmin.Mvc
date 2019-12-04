@@ -2,7 +2,8 @@
 @{
     ViewBag.Title = Model.SiteName;
 }
-<div class="layui-layout layui-layout-admin okadmin">
+<!-- 更换主体 Eg:orange_theme|blue_theme -->
+<div class="layui-layout layui-layout-admin okadmin blue_theme">
     <!--头部导航-->
     <div class="layui-header okadmin-header">
         <ul class="layui-nav layui-layout-left">
@@ -40,6 +41,7 @@
                 <dl id="userInfo" class="layui-nav-child">
                     <dd><a lay-id="u-2" href="javascript:" data-url="/Permissions/User/UserInfo">基本资料</a></dd>
                     <dd><a lay-id="u-3" href="javascript:" data-url="/Permissions/User/UserPwd">修改密码</a></dd>
+                    <dd><a lay-id="u-4" href="javascript:" id="alertSkin">皮肤动画</a></dd>
                     <dd>
                         <hr />
                     </dd>

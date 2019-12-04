@@ -27,13 +27,22 @@ if (!Object.assign) {
     "use strict";
     var okmodules = {
         "okTab": "okmodules/okTab",
-        "countUp": "okmodules/countUp",
+        "okCountUp": "okmodules/okCountUp",
         "okUtils": "okmodules/okUtils",
         "okGVerify": "okmodules/okGVerify",
         "qrcode": "okmodules/qrcode",
-        "jQqrcode": "okmodules/jQqrcode",
+        "okQrcode": "okmodules/okQrcode",
         "okAddlink": "okmodules/okAddlink",
         "okLayer": "okmodules/okLayer",
+        "okMock": "okmodules/okMock",
+        "okContextMenu": "okmodules/okContextMenu",
+        "okCookie": "okmodules/okCookie",
+        "okMd5": "okmodules/okMd5",
+        "okToastr": "okmodules/okToastr",
+        "okBarcode": "okmodules/okBarcode",
+        "okNprogress": "okmodules/okNprogress",
+		"okSweetAlert2": "okmodules/okSweetAlert2",
+        "okHoliday": "okmodules/okHoliday",
         "treeGrid": "okmodules/treeGrid",//加入treeGrid组件
         "treeSelect": "okmodules/treeSelect",//加入treeSelect组件
     };
