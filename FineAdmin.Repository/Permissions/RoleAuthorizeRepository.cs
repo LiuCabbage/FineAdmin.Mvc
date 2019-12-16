@@ -15,7 +15,7 @@ namespace FineAdmin.Repository
     public class RoleAuthorizeRepository : BaseRepository<RoleAuthorizeModel>, IRoleAuthorizeRepository
     {
         /// <summary>
-        /// 根据角色菜单获得列表
+        /// 保存菜单角色权限配置
         /// </summary>
         /// <param name="entitys"></param>
         /// <param name="roleId"></param>

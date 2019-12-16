@@ -20,7 +20,7 @@ namespace FineAdmin.Service
         }
 
         /// <summary>
-        /// 根据角色菜单获得列表
+        /// 保存菜单角色权限配置
         /// </summary>
         /// <param name="entitys"></param>
         /// <param name="roleId"></param>
