@@ -92,8 +92,6 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
         {
             ViewBag.UploadFileSize = Configs.GetValue("UploadFileSize");
             ViewBag.UploadFileType = Configs.GetValue("UploadFileType");
-            ViewBag.OrganizeList = OrganizeList;
-            ViewBag.RoleList = RoleList;
             int userId = Operator.UserId;
             var model = UserService.GetById(userId);
             return View(model);

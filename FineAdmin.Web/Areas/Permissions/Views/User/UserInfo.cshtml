@@ -25,6 +25,9 @@
         @Html.HiddenFor(x => x.UserPassword)
         @Html.HiddenFor(x => x.CreateTime)
         @Html.HiddenFor(x => x.CreateUserId)
+        @Html.HiddenFor(x => x.DepartmentId)
+        @Html.HiddenFor(x => x.RoleId)
+        @Html.HiddenFor(x => x.EnabledMark)
         <div class="layui-form-item">
             <label class="layui-form-label">用户名</label>
             <div class="layui-input-block">
@@ -76,19 +79,6 @@
                 <input type="text" name="Birthday" id="birthday" placeholder="出生日期" autocomplete="off" class="layui-input" lay-verify="required">
             </div>
         </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">部门</label>
-            <div class="layui-input-block">
-                @Html.DropDownList("DepartmentId", (IEnumerable<SelectListItem>)ViewBag.OrganizeList, "请选择部门", new Dictionary<string, object> { { "lay-verify", "required" } })
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">角色</label>
-            <div class="layui-input-block">
-                @Html.DropDownList("RoleId", (IEnumerable<SelectListItem>)ViewBag.RoleList, "请选择角色", new Dictionary<string, object> { { "lay-verify", "required" } })
-            </div>
-        </div>
-        @Html.EnabledMarkRadioHtml()
         <div class="layui-form-item" style="text-align:center;">
             <button class="layui-btn" lay-submit="" lay-filter="changeUser">立即修改</button>
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
@@ -135,10 +125,7 @@
             "MobilePhone": "@Model.MobilePhone",
             "WeChat": "@Model.WeChat",
             "Email": "@Model.Email",
-            "Birthday": "@Model.Birthday.ToString("yyyy-MM-dd")",
-            "DepartmentId": "@Model.DepartmentId",
-            "RoleId": "@Model.RoleId",
-            "EnabledMark": "@Model.EnabledMark"
+            "Birthday": "@Model.Birthday.ToString("yyyy-MM-dd")"
         });
         form.render(); //更新全部
         form.on("submit(changeUser)", function (data) {
