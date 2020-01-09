@@ -9,10 +9,32 @@
     <title>@Model.SiteName-登录</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="~/Content/css/oksub.css" />
+    <style type="text/css">
+        .copyright {
+            padding: 12px 0;
+            background: #1D1D21;
+            width: 100%;
+            position: absolute;
+            bottom: 0px;
+            color: #fff;
+        }
+
+        .container {
+            width: 90%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .copyright .text-center {
+            text-align: center;
+        }
+    </style>
 </head>
 <body class="page-fill">
     <div style="position: absolute; z-index: 999; top: 20px; left: 20px; color: #fff; font-size: 13px; line-height: 22px;">
-        <strong style="color:red; font-size:14px; font-weight:bold;">Tip：普通用户只有菜单权限，测试用户啥都没有</strong><br>
+        <strong style=" color: red; font-size: 14px; font-weight: bold;">Tip：普通用户只有菜单权限，测试用户啥都没有</strong><br>
         普通用户账号：user 密码：123456<br>
         测试用户账号：test 密码：123456<br>
     </div>
@@ -36,6 +58,17 @@
                 <button class="layui-btn layui-block" lay-filter="login" lay-submit="">登录</button>
             </div>
         </form>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            <div class="layui-row">
+                <div class="layui-col-xs12 layui-col-sm12 layui-col-md12 text-center">
+                    <p>
+                        @Model.CopyRight | <a href="http://beian.miit.gov.cn" target="_blank" style="color:#fff;">赣ICP备19008895号</a>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
     <!--js逻辑-->
     <script src="~/Content/lib/layui/layui.js"></script>

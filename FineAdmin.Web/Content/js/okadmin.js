@@ -267,6 +267,9 @@ layui.use(["element", "layer", "okUtils", "okTab", "okLayer", "okContextMenu", "
             tab: [{
                 title: "QQ",
                 content: "<img src='/Content/images/qq.jpg' width='200' height='300' style='margin-left: 60px'>"
+            }, {
+                title: "QQ群",
+                content: "<img src='/Content/images/qqq.jpg' width='200' height='300' style='margin-left: 60px'>"
             }]
         });
     });
