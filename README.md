@@ -41,7 +41,7 @@ MVC5 Mysql Dapper DapperExtensions Autofac
 
 #### 开源协议
 
-[GPL-3.0](https://gitee.com/Liu_Cabbage/FineAdmin.Mvc/blob/master/LICENSE)
+[MIT](https://gitee.com/LiuCabbage/FineAdmin.Mvc/blob/master/LICENSE)
 
 #### 项目截图
 
