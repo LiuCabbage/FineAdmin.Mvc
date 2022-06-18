@@ -2,8 +2,7 @@
 
 #### 介绍
 使用ok-admin+ASP.NET MVC搭建的通用权限后台管理系统<br>
-RightControl后台layui模板不太好看，换成[ok-admin v2.0](https://gitee.com/bobi1234/ok-admin)重写一遍。<br>
-项目地址：[http://fineadmin.baocaige.top](http://fineadmin.baocaige.top)
+RightControl后台layui模板不太好看，换成ok-admin重写一遍。
 
 #### 技术选型
 MVC5 Mysql Dapper DapperExtensions Autofac
@@ -35,9 +34,6 @@ MVC5 Mysql Dapper DapperExtensions Autofac
 3. 密码：123456
 
 #### 特别感谢
-
-1. [Layui](https://www.layui.com)
-2. [ok-admin](https://gitee.com/bobi1234/ok-admin)
 
 #### 开源协议
 
