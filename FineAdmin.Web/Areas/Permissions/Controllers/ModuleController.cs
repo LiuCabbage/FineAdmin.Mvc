@@ -21,9 +21,11 @@ namespace FineAdmin.Web.Areas.Permissions.Controllers
         [HttpGet]
         public JsonResult List() 
         {
-            var list = ModuleService.GetAll();
+            string returnFields = "*";
+            string orderby = "ORDER BY ParentId,SortCode ASC";
+            var list = ModuleService.GetAll(returnFields, orderby);
             var result = new { code = 0, count = list.Count(), data = list };
-            return Json(result,JsonRequestBehavior.AllowGet);
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
         [HttpGet]
         public JsonResult GetModuleList()
